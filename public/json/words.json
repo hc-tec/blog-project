@@ -1,0 +1,111 @@
+{
+  "prior": {
+    "learn-day": "2020-02-25",
+    "ch-hans": "先前的;较早的;在前的;优先的;占先的;较重要的;在前面的",
+    "phrase": [],
+    "sentence": [
+        ["Prior to the class please make sure that all the devices are connected.", "上课前请确保所有设备都已连接。"],
+        ["Some prior knowledge/statistics is desirable if you are gonna sign up for the cousre.", "如果你想报名参加校友会的话，一些事先的知识/统计数据是可取的。"],
+        ["She will be unable to attend due to a prior engagement.", "由于事先有约，她将不能出席。"]
+    ],
+    "relavant-word": [
+        "priority"
+    ]
+  },
+  "priority": {
+    "learn-day": "2020-02-25",
+    "ch-hans": "优先事项;最重要的事;",
+    "phrase": [
+        ["give priority to sth/sb", ""], 
+        ["sth is a top/high priority", ""]
+    ],
+    "sentence": [],
+    "relavant-word": [
+        "prior"
+    ]
+  },
+  "awkward": {
+    "learn-day": "2020-02-25",
+    "ch-hans": "令人尴尬的;使人难堪的;难对付的;难处理的;不方便的",
+    "phrase": [
+        ["socially awkward", "社恐"],
+        ["verbally awkward", "笨手笨舌"],
+        ["technologically awkward", ""]
+    ],
+    "sentence": [],
+    "relavant-word": []
+  },
+  "trade": {
+    "learn-day": "2020-02-25",
+    "ch-hans": "交换;贸易",
+    "phrase": [
+        ["trade secrets/insults/jokes", "交换秘密/互怼/交换笑话"],
+        ["trade health for wealth", "用健康换取财富"],
+        ["trade A off against B", "权衡利弊"],
+        ["trade on", "利用（贬义） == exploit"]
+    ],
+    "sentence": [
+        ["It is a life-changing experience that I will never trade for anything.",
+          "这是一次改变人生的经历，我永远不会用它来换取任何东西。"],
+        ["Some traded on people's insecurity to sellinnferior masks.",
+          "一些人利用人们的不安全感来出售劣质口罩。" ]
+    ],
+    "relavant-word": []
+  },
+  "suck": {
+    "learn-day": "2020-02-25",
+    "ch-hans": "吸收",
+    "phrase": [
+        ["It susks.", "太糟糕了"],
+        ["suck the life/power/vitality out of sb", "吸收生命力"],
+        ["be sucked into sth", "被卷入"]
+    ],
+    "sentence": [
+        ["Internet economy is sucking life out of many brick-and-mortar stores.",
+           "互联网经济让实体店生意惨淡。"],
+        ["The country is sucked into the desperate situation due to the cult.",
+          "由于邪教，这个国家被卷入到一个绝望境地。"]
+    ],
+    "relavant-word": []
+  },
+  "massive": {
+    "learn-day": "2020-02-25",
+    "ch-hans": "大部分;大量",
+    "phrase": [
+        ["massive scale", "大规模"],
+        ["massive heart attack", "严重的心脏病突发"]
+    ],
+    "sentence": [],
+    "relavant-word": []
+  },
+  "obsessed": {
+    "learn-day": "2020-02-25",
+    "ch-hans": "沉迷于",
+    "phrase": [
+        ["become obsessed with", "迷上"],
+        ["be immersed in ", "沉迷于"]
+    ],
+    "sentence": [
+        ["Constant obsession with the updates will stress you out.",
+           "不断地沉迷于更新会让你感到压力。"]
+    ],
+    "relavant-word": []
+  },
+  "collision": {
+    "learn-day": "2020-02-25",
+    "ch-hans": "碰撞",
+    "phrase": [
+        ["collision with", "与...相撞"],
+        ["rear-end collision", "追尾"]
+    ],
+    "sentence": [],
+    "relavant-word": []
+  },
+  "": {
+    "learn-day": "",
+    "ch-hans": "",
+    "phrase": [],
+    "sentence": [],
+    "relavant-word": []
+  }
+}

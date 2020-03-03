@@ -1,18 +1,45 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="home">
+    <div id="leftCol">
+      <carousel />
+    </div>
+    <div id="rightCol">
+      <words />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
+import carousel from '../components/carousel'
+import words from '../components/wordsColumn'
 export default {
-  name: 'Home',
+  data(){
+    return {
+      
+    }
+  },
   components: {
-    HelloWorld
+    carousel,
+    words,
   }
 }
 </script>
+
+<style>
+#home {
+  overflow: hidden;
+  display: flex;
+  margin: 0 0 1% 5%;
+}
+#leftCol {
+  width: 70%;
+}
+#rightCol {
+  width: 25%;
+  margin: 0 3% 1% 1%;
+  background-color: #fff;
+  padding: 3% 2%;
+  border: 1px ridge #ddd;
+}
+</style>
