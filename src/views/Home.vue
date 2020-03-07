@@ -16,7 +16,7 @@ import words from '../components/wordsColumn'
 export default {
   data(){
     return {
-      
+
     }
   },
   components: {
@@ -31,6 +31,7 @@ export default {
   overflow: hidden;
   display: flex;
   margin: 0 0 1% 5%;
+  padding-top: 2%;
 }
 #leftCol {
   width: 70%;

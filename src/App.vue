@@ -1,10 +1,15 @@
 <template>
   <div id="app">
-    <pageHead :navList=navList /> 
-    <router-view>
-      <router-view></router-view>
-    </router-view>
-    <pageFoot />
+    <pageHead :navList=navList />
+    <transition :name="transitionName">
+      <router-view />
+    </transition>
+    <transition :name="transitionName">
+      <pageFoot />
+    </transition>
+    <transition :name="transitionName">
+      <backTop />
+    </transition>
   </div>
 </template>
 
@@ -12,30 +17,100 @@
 
 import pageHead from './components/Header'
 import pageFoot from './components/footer'
+import backTop from './components/backToTop'
 export default {
   data(){
     return {
       //Header组件数据
+      transitionName: "",
       navList: [
-        {"首页": '/'},
-        {"web前端": '/web'},
-        {"算法": '/algorithm'},
-        {"课堂笔记": '/note'},
-        {"英语四级": '/word'},
-        {"小测验": '/test'},
-        {"关于": '/about'},
+        {
+          "link": '/',
+          "img": "el-icon-s-home",
+          "text": "首页",
+        },
+        {
+          "link": '/web',
+          "img": "el-icon-monitor",
+          "text": "程序生活",
+        },
+        {
+          "link": '/note',
+          "img": "el-icon-notebook-2",
+          "text": "课堂笔记",
+        },
+        {
+          "link": '/word',
+          "img": "el-icon-s-opportunity",
+          "text": "英语学习",
+        },
+        {
+          "link": '/todoList',
+          "img": "el-icon-aim",
+          "text": "今日目标",
+        },
+        {
+          "link": '/test',
+          "img": "el-icon-document-checked",
+          "text": "小测验",
+        },
+        {
+          "link": '/about',
+          "img": "el-icon-user",
+          "text": "关于",
+        },
+        // {"<i class='el-icon-s-home'> 首页</i>": '/'},
+        // {"<i class='el-icon-tickets'> 程序生活</i>": '/web'},
+        // {"<i class='el-icon-s-opportunity'> 算法</i>": '/algorithm'},
+        // {"<i class='el-icon-notebook-2'> 课堂笔记</i>": '/note'},
+        // {"<i class='el-icon-aim'> 英语学习</i>": '/word'},
+        // {"<i class='el-icon-document-checked'> 小测验</i>": '/test'},
+        // {"<i class='el-icon-user'> 关于</i>": '/about'},
       ],
     }
   },
   components: {
     pageHead,
     pageFoot,
-  }
+    backTop,
+  },
+  watch: {
+    $route(to, from) {
+      if(to.meta.index > from.meta.index){
+        this.transitionName = "slide-left";
+      } else if (to.meta.index < from.meta.index) {
+        this.transitionName = "slide-right";
+      }
+    },
+  },
 }
 </script>
 
 <style scoped>
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  will-change: transform;
+  transition: all .5s;
+}
+.slide-right-enter {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+}
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+.slide-left-enter {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+.slide-left-leave-active {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
 }
 </style>

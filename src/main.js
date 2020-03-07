@@ -14,6 +14,10 @@ Vue.use(ElementUI)
 Vue.use(vueAxios, axios)
 Vue.config.productionTip = false
 
+router.afterEach(() => {
+  window.scrollTo(0, 0)
+})
+
 new Vue({
   router,
   render: h => h(App)

@@ -1,28 +1,51 @@
 <template>
-  <div id="pageHead">
+  <!-- <div id="pageHead">
     <div id="nav">
         <ul>
           <li style="padding:.6% 0 0 10%;margin-right:10%;">
             <router-link id="img" to="/">
-               <img src="../assets/img/person_img.jpg" width="70" />
+               <img src="../assets/img/person_img.jpg" width="50" />
             </router-link>
           </li>
           <li v-for="item in navList">
             <template v-for="site,name in item">
-              <router-link :to="site">{{ name }}</router-link>
+              <router-link :to="site" v-html="name"></router-link>
             </template>
           </li>
         </ul>
     </div>
-  </div>
+  </div> -->
+  <div class="area">
+        <nav class="main-menu" id="menu">
+            <ul>
+                <li v-for="ele in navList">
+                    <router-link :to="ele['link']">
+                        <i
+                        :class="ele['img']"
+                        :style="iconStyle"
+                        ></i>
+                        <span class="nav-text">
+                            {{ ele['text'] }}
+                        </span>
+                    </router-link>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </template>
 
 <script>
+
 export default {
   name: "pageHead",
   props: ["navList"],
   data () {
     return {
+      iconStyle: {
+            "display": "table-cell",
+            "vertical-align": "middle",
+            "font-size": "1.3em",
+        },
 
       // navList: [
       //   {"首页": '/'},
@@ -40,25 +63,26 @@ export default {
         "font-size": "1.4em",
         "padding": "1.5em 1.2em",
       },
-      
-      
+
+
     }
   },
 
 }
 
 </script>
-
+<style src="../assets/css/nav.css"></style>
 <style scoped>
-  #pageHead {
+  /* #pageHead {
     overflow: hidden;
-    margin-bottom: 8%;
+    margin-bottom: 6%;
   }
   #nav {
   z-index: 100;
   position: fixed;
   width: 100%;
-  transition: box-shadow .5s;
+  height: 70px;
+  transition: all .5s;
   background-color: white;
   border-bottom: 1px ridge #ddd;
 }
@@ -71,27 +95,30 @@ export default {
   overflow: hidden;
 }
   li {
-  float: left;
+
 }
   a:not(#img) {
   text-decoration: none;
   display: block;
-  padding: 2em 1.5em;
+  padding: 1.5em 1.25em;
   font-size: 1em;
   transition: all .5s;
   color: black;
   border-radius: 20px;
   font-family: "宋体";
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
 }
   a:not(#img):hover {
-  color: #42b983;
-
+    color: #42b983;
 }
+
   #img {
     border-radius: 50%;
     overflow: hidden;
   }
+  .active {
+    color: #42b983;
+  } */
 
 </style>

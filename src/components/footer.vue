@@ -4,7 +4,7 @@
       <div id="foot_about">
         <h3>关于本站</h3>
         <p>
-          本站是个人博客网站，2019.11.20日正式建成，托管于 <a href="https://github.com/ASP-CC/ASP-CC.github.io" target="_blank"> Github </a>，主要致力于 WEB 前端开发、Python算法及其他学科知识分享。“路漫漫其修远兮，吾将上下而求索”。
+          本站是个人博客网站，2019.11.20日正式建成，托管于 <a href="https://github.com/ASP-CC/contest" target="_blank"> Github </a>，主要致力于 WEB 前端开发、Python算法及其他学科知识分享。“路漫漫其修远兮，吾将上下而求索”。
         </p>
       </div>
       <div id="foot_friend">
@@ -43,7 +43,7 @@ export default {
         "北邮人博客圈"				: ["BYRIO"														, "北邮人博客圈"										, "https://planet.byr.moe/"			],
         "张哲夫学长" 				: ["大神的博客"													, ""												, "https://fumeboy.github.io"		]
 
-      },  
+      },
     }
   }
 }
@@ -61,7 +61,7 @@ export default {
 			margin-bottom: 5%;
 		}
 		.foot_font h3 {
-			margin-bottom: 3%; 
+			margin-bottom: 3%;
 			color: white;
     }
     #foot_about p {

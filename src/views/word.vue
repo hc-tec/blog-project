@@ -19,5 +19,7 @@ export default {
 #word-content {
   width: 600px;
   margin: 10% auto;
+  margin-top: 0;
+  padding-top: 10%;
 }
 </style>

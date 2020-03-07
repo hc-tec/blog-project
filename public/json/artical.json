@@ -1,0 +1,62 @@
+[
+  {
+    "img": "./jsonImg/headArtiImg/mountain.jpg",
+    "link": "/reading/",
+    "title": "做让自己快乐的事情",
+    "content": {
+      "para": "",
+      "publicDay": "2020-03-04",
+      "source": "沪江英语"
+    }
+  },
+  {
+    "img": "./jsonImg/headArtiImg/keyboard.jpg",
+    "link": "/reading/",
+    "title": "生而为人，生而为仁",
+    "content": {
+      "para": "",
+      "publicDay": "2020-03-04",
+      "source": "沪江英语"
+    }
+  },
+  {
+    "img": "./jsonImg/headArtiImg/E4XARZNDjzI.jpg",
+    "link": "/reading/",
+    "title": "不管未来怎样，都要过得快乐",
+    "content": {
+      "para": "",
+      "publicDay": "2020-03-04",
+      "source": "沪江英语"
+    }
+  },
+  {
+    "img": "./jsonImg/artical-img/zG0aXJyJsg8.jpg",
+    "link": "/reading/",
+    "title": "“毕业典礼”其实还可以这样说~",
+    "content": {
+      "para": "毕业季就要到了。毕业典礼除了说graduation ceremony，还有哪些说法?今天我们就来聊一聊吧~\n​\n01 graduation photo 毕业照\n\n对没错，就是那种扔帽子的。\n\n​Oh no! My graduation photo has been totally ruined by a photo bomber! Look at it.\n\n噢，不！我的毕业照完全被一个照片炸弹给毁了！看它。\n\n​02 academic dress 学士服\n\n去参加毕业典礼之前一定要选套学士服，每个学院都有属于自己的不同颜色哦~\n\n​The commencement ceremony is the only time I wear academic dress.\n\n毕业典礼是我唯一一次穿学士服。\n\n​03 turning of the tassel ceremony 拨穗礼\n\n穗也叫tessel.\n\n​很多人好奇，为什么学士帽旁边要有一道穗，干什么用的？\n\n学生授予学位后校长会帮他把穗由右拨到左边，称作“拨穗礼”，代表你毕业啦！激动不激动！\n\n​College students turn their tassel ceremony at the commencement.\n\n大学生们在毕业典礼上参与拨穗礼。\n\n​04 graduation ceremony 毕业典礼\n\n毕业典礼除了这个表达，还可以说commencement，优秀的学生代表会上台发言哟~\n\n​That is why, on this commencement day, we have nothing which to take much pride.\n\n这就是为什么，在这个毕业典礼上，我们没有什么值得骄傲的。\n\n​05 farewell dinner 散伙饭，告别晚宴\n\n散伙饭，可不叫the last dinner，那是人生最后一餐。\n\n​He had a farewell dinner with his classmates to mark the end of university days.\n\n他和同学们吃了告别晚餐，以纪念大学生活的结束。\n\n​06 graduation party 毕业晚会\n\n有些与同学一起，有些人与家人一起共同庆祝！\n\n​My folks are giving me a little graduation party.\n\n我的亲人要为我办一个小小的毕业派对。",
+      "publicDay": "2020-03-04",
+      "source": "chinadaily"
+    }
+  },
+  {
+    "img": "./jsonImg/artical-img/7esRPTt38nI.jpg",
+    "link": "/reading/",
+    "title": "Wi-Fi到底代表什么？",
+    "content": {
+      "para": "Long gone are the days of dial-up and waiting for your turn to use the computer. It’s easier than ever to connect to the Internet, in more ways than one, in the digital world today. This is mostly thanks to Wi-Fi.\n通过拨号等待使用网络的日子早已成为过去。在当今的数字时代，通过各种方式连接上网和以往相比轻而易举，而这主要归功于Wi-Fi。",
+      "publicDay": "2020-03-04",
+      "source": "沪江英语"
+    }
+  },
+  {
+    "img": "",
+    "link": "/reading/",
+    "title": "",
+    "content": {
+      "para": "",
+      "publicDay": "2020-03-04",
+      "source": ""
+    }
+  }
+]

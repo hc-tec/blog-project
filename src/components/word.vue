@@ -3,12 +3,12 @@
     <h2>{{ word }}</h2>
     <div>
       <span>中文翻译：</span><br />
-      <p>{{ words[word]['ch-hans'] }}</p>
+      <p>{{ words['ch-hans'] }}</p>
     </div>
     <div>
       <span>短语搭配：</span><br />
       <template v-if="showPhrase">
-        <template v-for="phra in words[word]['phrase']">
+        <template v-for="phra in words['phrase']">
           <p class="phraTrans">{{ phra[0] }}</p>
           <p>{{ phra[1] }}</p>
           <br />
@@ -21,7 +21,7 @@
     <div>
       <span>示例：</span>
       <template v-if="showSen">
-        <template v-for="sen in words[word]['sentence']">
+        <template v-for="sen in words['sentence']">
           <p class='sentence'>{{ sen[0] }}</p>
           <p>{{ sen[1] }}</p>
         </template>
@@ -34,8 +34,8 @@
       <span>相近词汇：</span>
       <template v-if="showRela">
         <div>
-          <router-link 
-            v-for="relaWord in words[word]['relavant-word']" 
+          <router-link
+            v-for="relaWord in words['relavant-word']"
             :to="relaWord">
             {{ relaWord }}
           </router-link>
@@ -62,22 +62,28 @@ export default {
       return this.$route.params.word
     },
     showPhrase: function(){
-      let words = this.words[this.copyWord]['phrase']
-      return words.length !== 0
+      let words = this.words['phrase']
+      if(words !== undefined)
+        return words.length !== 0
     },
     showSen: function(){
-      let sent = this.words[this.copyWord]['sentence']
+      let sent = this.words['sentence']
+      if(sent !== undefined)
       return sent.length !== 0
     },
     showRela: function(){
-      let rela = this.words[this.copyWord]['relavant-word']
+      let rela = this.words['relavant-word']
+      if(rela !== undefined)
       return rela.length !== 0
     }
   },
   mounted(){
     this.axios
       .get('../json/words.json')
-      .then(response => (this.words = response.data))
+      .then(response => {
+        this.words = response.data[this.copyWord]
+
+      })
       .catch(function(e){
         console.log(e);
       })
@@ -104,7 +110,7 @@ span {
   font-weight: bold;
 }
 p ,a{
-  margin: 2% 5%; 
+  margin: 2% 5%;
   font-family: "宋体";
 }
 .sentence {

@@ -1,6 +1,9 @@
 <template>
   <div id="carousel">
-    <el-carousel indicator-position="outside" trigger="click" height="500px">
+    <el-carousel
+      indicator-position="outside"
+      trigger="click"
+      height="500px">
       <el-carousel-item v-for="img in carou_img">
         <router-link :to="img['link']">
           <img :src="img['img']" class="img">
@@ -28,18 +31,18 @@ export default {
         "img": require("../assets/img/城市晚霞.jpg"),
         "link": "/",
         },
-        
+
       ]
     }
   }
 }
 </script>
 
-<style scoped>
+<style>
 #carousel {
   background-color: white;
   padding: 5px;
-  
+
   border: 1px ridge #ddd;
   min-width: 500px;
 }
@@ -47,7 +50,11 @@ export default {
 .img {
   width: 100%;
   height: 100%;
-  
-}
 
+}
+.el-icon-arrow-right,
+.el-icon-arrow-left {
+  width: auto;
+  height: auto;
+}
 </style>
