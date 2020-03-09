@@ -1,18 +1,18 @@
 <template>
   <div id="essay">
     <div id="essay-content">
-      <h1>{{ title }}</h1>
-      <span>来源：</span>
-      <span>{{ essayInfo['source'] }}</span>
-      &nbsp;&nbsp;&nbsp;&nbsp;|
-      <span>发布时间：</span>
-      <span>{{ essayInfo['publicDay'] }}</span>
-      <div id="img-reading">
-        <img :src="'.'+img">
-      </div>
-      <div id="essay-para">
-        <p>{{ essayInfo['para'] }}</p>
-      </div>
+      <article>
+        <p class="title">{{ title }}</p>
+        <span style="margin-left: 5%;">来源：</span>
+        <span>{{ essayInfo['source'] }}</span>&nbsp;|
+        <span>发布时间：</span>
+        <span>{{ essayInfo['publicDay'] }}</span>
+        <div id="img-reading">
+          <img :src="'.'+img">
+        </div>
+        <component :is="getComponent">
+        </component>
+      </article>
     </div>
   </div>
 </template>
@@ -31,6 +31,10 @@ export default {
       this.paraTitle = this.$route.params.read
       return this.paraTitle
     },
+    getComponent: function(){
+      this.install("essayArti", ()=>import('../assets/mdFile/english/' + this.paraTitle + '.md'))
+      return "essayArti"
+    }
   },
   mounted(){
     this.axios
@@ -48,11 +52,14 @@ export default {
 }
 </script>
 
-<style>
+<style src="../assets/css/article.css" scoped></style>
+<style scoped>
+.title {
+  margin-top: 5%;
+}
 #essay {
   width: 100%;
-  background-color: #fff;
-  padding: 40px 30px;
+  padding: 0 30px;
 }
 #essay h1 {
   text-align: center;
@@ -61,13 +68,15 @@ export default {
 }
 #essay span {
   color: gray;
+  margin-bottom: 4%;
 }
 #img-reading > img {
   width: 100%;
   height: 100%;
 }
 #img-reading {
-  padding: 5%;
+  margin: 3% 3% 0 3%;
+  padding: 2% 2% 0 2%;
 }
 #essay-para {
   white-space: pre-line;
@@ -76,5 +85,8 @@ export default {
   font-size: 1.2em;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
+}
+.title + span {
+  justify-self: flex-start;
 }
 </style>

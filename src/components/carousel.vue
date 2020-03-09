@@ -20,7 +20,7 @@ export default {
     return {
       carou_img: [
         {
-        "img": require("../assets/img/树林.jpg"),
+        "img": "http://titt-blog.com/image/树林.jpg",
         "link": "/",
         },
         {
@@ -28,7 +28,7 @@ export default {
         "link": "/",
         },
         {
-        "img": require("../assets/img/城市晚霞.jpg"),
+        "img": "http://titt-blog.com/image/城市晚霞.jpg",
         "link": "/",
         },
 

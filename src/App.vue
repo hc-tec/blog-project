@@ -50,22 +50,10 @@ export default {
           "text": "今日目标",
         },
         {
-          "link": '/test',
-          "img": "el-icon-document-checked",
-          "text": "小测验",
-        },
-        {
           "link": '/about',
           "img": "el-icon-user",
           "text": "关于",
         },
-        // {"<i class='el-icon-s-home'> 首页</i>": '/'},
-        // {"<i class='el-icon-tickets'> 程序生活</i>": '/web'},
-        // {"<i class='el-icon-s-opportunity'> 算法</i>": '/algorithm'},
-        // {"<i class='el-icon-notebook-2'> 课堂笔记</i>": '/note'},
-        // {"<i class='el-icon-aim'> 英语学习</i>": '/word'},
-        // {"<i class='el-icon-document-checked'> 小测验</i>": '/test'},
-        // {"<i class='el-icon-user'> 关于</i>": '/about'},
       ],
     }
   },
@@ -78,7 +66,7 @@ export default {
     $route(to, from) {
       if(to.meta.index > from.meta.index){
         this.transitionName = "slide-left";
-      } else if (to.meta.index < from.meta.index) {
+      } else if (to.meta.index <= from.meta.index) {
         this.transitionName = "slide-right";
       }
     },

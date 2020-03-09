@@ -6,6 +6,7 @@
       </div>
       <el-collapse v-model="activeName" class="info-content" accordion>
         <el-collapse-item
+          style="white-space: pre-line;"
           v-for="info,anal in content['content']"
           :title="anal"
           >
@@ -21,9 +22,8 @@
             <span class="icon"></span>
         </a>
         <a class="bg_links social dribbble"
-            href="https://dribbble.com/rafaelalucas"
-            target="_blank"
-            title="">
+            href="javascript:void(0)"
+            title="My QQ Number: 2598772546">
             <span class="icon"></span>
         </a>
         <a class="bg_links social linkedin"
@@ -57,9 +57,9 @@ export default {
       content: {
         "img": "./jsonImg/artical-img/person_img.jpg",
         "content": {
-          "Identify身份": "1",
-          "Hobby兴趣": "1",
-          "IndividualResume个人简介": "1"
+          "Identify - 身份": "南昌大学软件学院软件工程1910班学生，Web部成员。",
+          "Hobby - 兴趣": "不喜欢唱、跳、Rap与篮球，，，不过超级热爱写前端。\nPython也是我的最爱yo。",
+          "Individual Resume - 个人简介": "自高考后暑假接触第一本Python电子书时，我对编程的热爱便没有了尽头。\n之后无意间接触到了Web开发，于是跟着Web部大佬学习Web技术，努力成为一名优秀的Web攻城狮。目前已习得前端三件套，Vue框架与Django框架。"
         }
       },
     }

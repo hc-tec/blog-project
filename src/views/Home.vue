@@ -1,5 +1,6 @@
 <template>
   <div id="home">
+    {{ greet() }}
     <div id="leftCol">
       <carousel />
     </div>
@@ -17,6 +18,14 @@ export default {
   data(){
     return {
 
+    }
+  },
+  methods: {
+    greet: function(){
+      this.$message({
+        message: "欢迎来到我的博客",
+        type: 'success',
+      })
     }
   },
   components: {

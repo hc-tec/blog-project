@@ -101,11 +101,201 @@
     "sentence": [],
     "relavant-word": []
   },
+  "excursion": {
+    "learn-day": "2020-03-02",
+    "ch-hans": "(尤指集体)远足，短途旅行;(短期的)涉足，涉猎",
+    "phrase": [
+      ["excursion into sth", "（短期的）涉足，涉猎"]
+    ],
+    "sentence": [
+      ["In Bermuda, Sam's father took him on an excursion to a coral barrier.",
+         "在百慕大，萨姆的父亲带他到附近的珊瑚礁去游玩。"],
+      ["We also recommend a full day optional excursion to the Upper Douro.",
+         "我们还推荐去杜罗河上游的短途自选一日游。"],
+      ["The few excursions into stylistic experiment do not entirely come off.",
+        "几次体裁上的尝试都不算很成功。"]
+    ],
+    "relavant-word": ["journey"]
+  },
+  "journey": {
+    "learn-day": "2020-03-02",
+    "ch-hans": "(尤指长途)旅行，行程",
+    "phrase": [
+      
+    ],
+    "sentence": [
+      ["There is an express service from Paris which completes the journey to Bordeaux in under 4 hours. ",
+        "从巴黎有快车前往波尔多，全程不到4个小时。"],
+      ["How do we go about embarking on this 'inner journey' to understand ourselves? ",
+        "我们该如何开始这个“心灵历程”来了解自己呢？"],
+      ["We resumed our journey after a short rest. ",
+        "休息了一会儿之后，我们就继续赶路了。"]
+    ],
+    "relavant-word": ["excursion"]
+  },
+  "clue": {
+    "learn-day": "2020-03-02",
+    "ch-hans": "(帮助警方破案的)线索，迹象;(帮助警方破案的)线索，迹象;",
+    "phrase": [
+      ["clue (to sth)", "（帮助警方破案的）线索，迹象"],
+      ["not have a clue", "一无所知；不知怎么做"],
+      ["clue sb in (on sth)", "给（某人）提供最新信息"]
+    ],
+    "sentence": [
+      ["Geneticists in Canada have discovered a clue to the puzzle of why our cells get old and die.",
+        "加拿大的遗传学家已经发现了解开细胞衰老、死亡之谜的线索。"],
+      ["The vital clue to the killer's identity was his nickname, Peanuts.",
+        "查明杀手身份的重要线索是他的外号叫“花生”。"],
+      ["How a man shaves may be a telling clue to his age. ",
+        "男人刮胡子的方式也许能泄露其年龄。"]
+    ],
+    "relavant-word": []
+  },
+  "embrace": {
+    "learn-day": "2020-03-02",
+    "ch-hans": "抱;拥抱;欣然接受，乐意采纳(思想、建议等);信奉(宗教、信仰等);包括;包含",
+    "phrase": [
+    ],
+    "sentence": [
+      ["He embraces the new information age.",
+        "他迎接新的信息时代的到来。"],
+      ["At first people were sort of crying for joy and embracing each other.",
+        "起初人们几乎是喜极而泣，并互相拥抱。"],
+      ["He threw his arms round her and they embraced passionately. ",
+        "他伸出手臂搂住她，他们热情相拥。"]
+    ],
+    "relavant-word": ["clasp"]
+  },
+  "browse": {
+    "learn-day": "2020-03-02",
+    "ch-hans": "(在商店里)随便看看;浏览;翻阅;(在计算机，尤指互联网上)搜寻信息，浏览信息",
+    "phrase": [
+      ["browse through sth", "浏览；翻阅"],
+      ["browse on sth", "(牛、羊等) 吃（绿叶等高处的植物）"]
+    ],
+    "sentence": [
+      ["I stopped in several bookstores to browse.",
+        "我曾在几家书店停留，翻看里面的书。"],
+      ["Try browsing around in the network bulletin boards. ",
+        "试着在网络论坛上浏览信息。"],
+      ["Slow music encourages supermarket-shoppers to browse longer but spend more. ",
+        "舒缓的音乐会促使超市购物者花更长的时间浏览商品的同时花更多的钱。"]
+    ],
+    "relavant-word": []
+  },
+  "craft": {
+    "learn-day": "2020-03-02",
+    "ch-hans": "手艺;工艺;技巧;技能;技艺;诡计;手腕;骗术",
+    "phrase": [
+      
+    ],
+    "sentence": [
+      ["With great difficulty, the fisherman manoeuvred his small craft close to the reef .",
+        "渔夫费了很大的劲才把他的小船划到暗礁旁。"],
+      ["All kinds of traditional craft industries are preserved here.",
+        "这里保留着各种各样的传统手工业。"],
+      ["The troops are reported to have advanced nearly four miles since they were landed from naval craft on Sunday evening. ",
+        "据报道，部队自周日晚离开海军军舰登陆后已经挺进了将近4英里。"]
+    ],
+    "relavant-word": []
+  },
+  "cable": {
+    "learn-day": "2020-03-02",
+    "ch-hans": "(系船用的)缆绳;(支撑桥梁等用的)钢索;电缆;电报",
+    "phrase": [
+      ["fibre-optic cable", "光缆"],
+      ["to send sb a cable", "（给…）发电报"]
+    ],
+    "sentence": [
+      ["Steel cable will be used to replace worn ropes.",
+        "将用钢缆替换磨损的绳索。"],
+      ["They ran commercials on cable systems across the country.",
+        "他们在全国的有线电视网上投放商业广告。"],
+      ["In France, 27 major cities are soon to be cabled.",
+        "法国有27座大城市不久将安装有线电视。"]
+    ],
+    "relavant-word": []
+  },
+  "clasp": {
+    "learn-day": "2020-03-09",
+    "ch-hans": "握紧;攥紧;抓紧;抱紧;紧紧拥抱;",
+    "phrase": [
+      
+    ],
+    "sentence": [
+      ["She had sat there twiddling nervously with the clasp of her handbag.",
+        "她坐在那里紧张地摆弄着手提包的扣钩。"],
+      ["Clasp the chain like so.",
+        "像这样扣上链子。"],
+      ["He held her in a tight clasp. ",
+        "他紧紧地搂着她。"]
+    ],
+    "relavant-word": ["embrace"]
+  },
+
+  "bout": {
+    "learn-day": "2020-03-09",
+    "ch-hans": "一阵;一场;(尤指坏事的)一通，一次;(疾病的)发作;发病期;拳击(或摔跤)比赛",
+    "phrase": [
+      ["bout of sth/of doing sth", "一阵；一场；（尤指坏事的）一通，一次"],
+      ["bout of sth", "（疾病的）发作；发病期"]
+    ],
+    "sentence": [
+      ["He was recovering from a severe bout of flu.",
+        "他患了严重的流感，尚未痊愈。"],
+      ["The latest bout of violence has claimed twenty four lives.",
+        "最近发生的一起暴力事件造成24人死亡。"],
+      ["This will be his eighth title bout in 19 months.",
+        "这将是他19个月里的第8次卫冕赛。"]
+    ],
+    "relavant-word": []
+  },
+  
+  "swarm": {
+    "learn-day": "2020-03-09",
+    "ch-hans": "一大群(蜜蜂等昆虫);一大群，一大批(向同方向移动的人)",
+    "phrase": [
+      ["swarm of sth", "一大群（蜜蜂等昆虫）"]
+
+    ],
+    "sentence": [
+      ["A dark cloud of bees comes swarming out of the hive. ",
+        "黑压压的一大群蜜蜂从蜂巢中飞出来。"],
+      ["People swarmed to the shops, buying up everything in sight.",
+        "人们成群地涌向商店，见什么买什么。"],
+      ["A swarm of people encircled the hotel",
+        "一大群人围住了这个酒店。"]
+    ],
+    "relavant-word": []
+  },
+  "uproot": {
+    "learn-day": "2020-03-09",
+    "ch-hans": "将…连根拔起;(使)离开家园(或熟悉的地方等)",
+    "phrase": [
+      ["uproot sb", "（使）离开家园（或熟悉的地方等）"]
+    ],
+    "sentence": [
+      ["He had no wish to uproot Dena from her present home.",
+        "他没想过让德娜离开现在的家去别处居住。"],
+      ["They had been forced to uproot their vines and plant wheat. ",
+        "他们已被迫将葡萄藤连根拔除，改种小麦。"],
+      ["Work commitments forced her to uproot herself and her son from Reykjavik. ",
+        "她的工作迫使她和儿子从雷克雅未克搬走。"]
+    ],
+    "relavant-word": []
+  },
+  
   "": {
     "learn-day": "",
     "ch-hans": "",
-    "phrase": [],
-    "sentence": [],
+    "phrase": [
+      
+    ],
+    "sentence": [
+     
+    ],
     "relavant-word": []
   }
+
+
 }

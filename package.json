@@ -11,6 +11,7 @@
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.0",
+    "markdown-it": "^10.0.0",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-router": "^3.1.5"
@@ -28,6 +29,11 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.1.2",
+    "html-loader": "^0.5.5",
+    "markdown-loader": "^5.1.0",
+    "text-loader": "0.0.1",
+    "vue-markdown": "^2.2.4",
+    "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

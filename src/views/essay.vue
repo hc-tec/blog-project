@@ -15,12 +15,14 @@ export default {
 
 <style scoped>
 #essays {
-  display: flex;
-  margin: 0 3% 5% 10%;
-  width: 60%;
+  margin: auto;
   min-width: 700px;
-  padding: 40px 25px;
-  padding-top: 5%;
+  padding: 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: hsl(250, 85%, 97%);
 }
 
 </style>

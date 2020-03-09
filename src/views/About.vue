@@ -23,7 +23,7 @@ export default {
   align-items: center;
   justify-content: center; */
   padding-top: 10%;
-  padding-bottom: 10%;
+  padding-bottom: 20%;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 
 }

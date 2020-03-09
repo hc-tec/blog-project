@@ -1,0 +1,28 @@
+#note-content {
+  padding: 10% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#note-content .markdown {
+  background-color: #fff;
+  padding: 10%;
+}
+
+#note-content .markdown img {
+  width: 50%;
+}
+
+#note-content .markdown > * {
+  padding-bottom: 2%;
+  margin: auto;
+  text-align: center;
+}
+/*# sourceMappingURL=noteInfo.css.map */

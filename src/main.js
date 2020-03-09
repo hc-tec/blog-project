@@ -14,6 +14,13 @@ Vue.use(ElementUI)
 Vue.use(vueAxios, axios)
 Vue.config.productionTip = false
 
+//全局函数，用于动态注册组件
+Vue.prototype.install = function(componName, componSite){
+  Vue.component(componName, componSite)
+}
+
+
+
 router.afterEach(() => {
   window.scrollTo(0, 0)
 })

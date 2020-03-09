@@ -1,6 +1,6 @@
 <template>
   <div id="words">
-    <p>英语单词</p>
+    <p>English Words</p>
     <div id="words_content">
       <div>
         <p>Word</p>

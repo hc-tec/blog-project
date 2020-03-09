@@ -7,6 +7,8 @@ import english from '../views/CET4'
 import essay from '../views/essay'
 import program from '../views/program'
 import todoList from '../views/todoList'
+import note from '../views/note'
+import noteInfo from '../views/noteInfo'
 
 
 Vue.use(VueRouter)
@@ -49,15 +51,15 @@ const routes = [
     name: 'note',
     meta: {index: 5},
     components: {
-
+      default: note,
     }
   },
   {
-    path: '/test',
-    name: 'test',
-    meta: {index: 6},
+    path: '/noteInfo/:noteInfo',
+    name: 'noteInfo',
+    meta: {index: 12},
     components: {
-
+      default: noteInfo,
     }
   },
   {

@@ -64,7 +64,7 @@ export default {
     showPhrase: function(){
       let words = this.words['phrase']
       if(words !== undefined)
-        return words.length !== 0
+      return words.length !== 0
     },
     showSen: function(){
       let sent = this.words['sentence']
@@ -82,11 +82,22 @@ export default {
       .get('../json/words.json')
       .then(response => {
         this.words = response.data[this.copyWord]
-
       })
       .catch(function(e){
         console.log(e);
+      });
+  },
+  watch: {
+    '$route' (to, from) { // 监听路由是否变化
+      this.axios
+      .get('../json/words.json')
+      .then(response => {
+        this.words = response.data[this.copyWord]
       })
+      .catch(function(e){
+        console.log(e);
+      });
+    }
   }
 }
 </script>

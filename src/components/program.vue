@@ -68,7 +68,7 @@ export default {
       let childList = el.currentTarget.children
       let len = childList.length
       let a = childList[len-1]
-      a.style.top = "-40%"
+      a.style.top = "-100px"
     },
     navModi: (el) => {
       let ele = el.currentTarget
@@ -99,19 +99,24 @@ export default {
         var liFlag = false
         var eleFlag = null
         let divParent = document.getElementById("part")
+
         let childList = divParent.querySelectorAll("p")
         let ulParent = document.getElementsByClassName("navUl")
         let lichildList = ulParent[0].children
         let pList = []
         let bodyTop = window
-        for(let j=0;j*3<childList.length;j++){
-          pList.push(childList[j*3])
+        //获取所有匹配的 p 元素
+        for(let j=0;j<childList.length;j++){
+          let id = childList[j].getAttribute("id")
+          if(id !== null)
+            pList.push(childList[j])
         }
         let currentScrollPosition = window.pageYOffset
         for(let p of pList){
           if(30 >= (p.offsetTop-currentScrollPosition)){
             let className = p.id
             let li = document.getElementsByClassName(className)
+
             li[0].classList.add("active")
             li[0].children[0].classList.add("activeSpan")
             liFlag = true
@@ -227,11 +232,9 @@ li > span {
   margin-bottom: 3%;
 }
 .program-content {
-  padding: 10px 20px;
-  background: rgb(250, 246, 246);
+
+  background: white;
   margin-bottom: 5%;
-  transition: all .8s;
-  overflow: hidden;
 }
 .program-content span {
   cursor: pointer;
@@ -239,16 +242,21 @@ li > span {
 .program-content span:hover {
   color: rgb(66,185,131);
 }
-.program-content:hover {
+.program-content > div:hover {
   box-shadow: 5px 5px 10px #e0d6d6, -5px -5px 10px #dad8d8;;
 }
 .program-content > div {
+  padding: 10px 20px;
   position: relative;
+   margin-bottom: 3%;
+  transition: all .8s;
+  overflow: hidden;
+  background-color: rgb(250, 246, 246);
 }
 
 .program-content > div > a {
   position: absolute;
-  top: -40%;
+  top: -100px;
   right: 0;
   width: 20px;
   transition: all .3s;

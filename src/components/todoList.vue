@@ -40,21 +40,25 @@ export default {
   data(){
     return {
       todoListData: [{
-        startDate: "2020-03-06",
-        endDate: "2020-03-08",
-        thing: "000",
+        startDate: "2020-03-02",
+        endDate: "2020-03-10",
+        thing: "完成竞赛项目",
       }, {
-        startDate: "2020-03-06",
-        endDate: "2020-03-08",
-        thing: "000",
+        startDate: "2020-03-09",
+        endDate: "2020-03-10",
+        thing: "英语Language Quiz",
       }, {
-        startDate: "2020-03-06",
-        endDate: "2020-03-08",
-        thing: "000",
+        startDate: "2020-03-09",
+        endDate: "2020-03-15",
+        thing: "高数练习",
       }, {
-        startDate: "2020-03-06",
-        endDate: "2020-03-08",
-        thing: "000",
+        startDate: "2020-03-10",
+        endDate: "---",
+        thing: "Sass学习",
+      }, {
+        startDate: "2020-03-10",
+        endDate: "---",
+        thing: "Plug学习",
       }]
     }
   },
@@ -87,7 +91,7 @@ export default {
   margin: 0 auto;
   background-color: rgb(249,227,141);
   padding: 20px;
-  margin-bottom: 0.125em;
+  margin-bottom: 0.5em;
   border-radius: 40px;
 }
 /* .rolldown-list {

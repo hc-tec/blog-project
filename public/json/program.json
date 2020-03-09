@@ -6,7 +6,15 @@
       "publicDay": "2020-03-04",
       "source": "原创",
       "link": "/web/",
-      "para": "引言：\n\n仅仅使用 python 自带的 pip 下载 python 包速度非常慢，平均15Kb/s，这与我们高效率工程显然相悖。所以我们需要更换 pip 国内安装源。\n\n解决方法：\n\npip国内的一些镜像\n\n\n阿里云 http://mirrors.aliyun.com/pypi/simple/ \n中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/ \n豆瓣(douban) http://pypi.douban.com/simple/ \n清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/ \n中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/\n\n\n修改源方法：\n\n临时使用：\n\n可以在使用pip的时候在后面加上-i参数，指定pip源\n\n\npip install scrapy -i https://pypi.tuna.tsinghua.edu.cn/simple\n\n永久修改：\n\n直接在user目录中创建一个pip目录，如：C:\\Users\\xx\\pip，在pip 目录下新建文件pip.ini或者按照网友的建议：win+R 打开用户目录%HOMEPATH%，在此目录下创建 pip 文件夹，在 pip 目录下创建 pip.ini 文件, 内容如下\n\n\n[global]\ntimeout = 6000\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple\ntrusted-host = pypi.tuna.tsinghua.edu.cn\n\n"
+      "para": "引言：\n\n仅仅使用 python 自带的 pip 下载 python 包速度非常慢，平均15Kb/s，这与我们高效率工程显然相悖。所以我们需要更换 pip 国内安装源。\n\n解决方法：\n\npip国内的一些镜像\n\n\n阿里云 http://mirrors.aliyun.com/pypi/simple/ \n中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/"
+    },
+    {
+      "title": "map、fliter、reduce函数运用",
+      "img": "../jsonImg/artical-img/python.jpg",
+      "publicDay":"2020-03-09",
+      "source":"原创",
+      "link":"/web/",
+      "para": "引言：\n\nmap、fliter、reduce是python进阶学习时必学的三个重要函数。如果能够将他们合理运用，你的python代码将会较靠普通循坏完成这些功能的代码"
     }
   ],
   "Vue": [
@@ -16,17 +24,35 @@
       "publicDay": "2020-03-04",
       "source": "博客园",
       "link":"/web/",
-      "para": "<p @click = “clickfun($event)”>点击</p>\n\nmethods: {\nclickfun(e) {\n// e.target 是你当前点击的元素\n// e.currentTarget 是你绑定事件的元素\n    #获得点击元素的前一个元素\n    e.currentTarget.previousElementSibling.innerHTML\n    #获得点击元素的第一个子元素\n    e.currentTarget.firstElementChild\n    # 获得点击元素的下一个元素\n    e.currentTarget.nextElementSibling\n    # 获得点击元素中id为string的元素\n    e.currentTarget.getElementById('string')\n    # 获得点击元素的string属性\n    e.currentTarget.getAttributeNode('string')\n    # 获得点击元素的父级元素\n    e.currentTarget.parentElement\n    # 获得点击元素的前一个元素的第一个子元素的HTML值\n    e.currentTarget.previousElementSibling.firstElementChild.innerHTML\n    }\n        },\n"
+      "para": "<p @click = “clickfun($event)”>点击</p>\n\nmethods: {\nclickfun(e) {\n// e.target 是你当前点击的元素\n// e.currentTarget 是你绑定事件的元素\n"
     }
   ],
   "Git": [
     {
-      "title": "",
+      "title": "git_Permission问题",
       "img": "../jsonImg/artical-img/git.jfif",
-      "publicDay": "",
-      "source": "",
-      "link": "",
-      "para": ""
+      "publicDay": "2020-03-09",
+      "source": "原创",
+      "link": "/web/",
+      "para": "使用 git 过程中，总是出现那些令人摸不着头脑的错误，尤其是我这样的萌新，错误更是家常便饭。这不，今天又出现了一个 Git 问题。不过好在我<del>度娘神威</del>求知若渴，顺利解决，顺便写篇博文来'纪念'"
+    },
+    {
+      "title": "git_Update_reject问题",
+      "img": "../jsonImg/artical-img/git.jfif",
+      "publicDay": "2020-03-09",
+      "source": "原创",
+      "link": "/web/",
+      "para": "问题缘由：爆肝到凌晨三点硬是把博客“瓜分”完成，第二天 git push 时突然出现问题。"
+    }
+  ],
+  "Css": [
+    {
+      "title": "position属性",
+      "img": "../jsonImg/artical-img/css.jpg",
+      "publicDay": "2020-03-09",
+      "source": "原创",
+      "link": "/web/",
+      "para": "引言:\n\n制作网页过程中，我们经常需要用到position这个属性，不过用了这么久，我们到底有木有彻底理解呢？ \nposition属性共有五个值：\n > static\n > relative\n > fixed  \n"
     }
   ]
 }
