@@ -1,35 +1,34 @@
 <template>
   <div id="about">
-    <div id="info">
+
+    <!-- <div id="info">
       <div class="img-content">
-        <img :src="content['img']" width="100%" height="100%"/>
+        <router-link
+          to="/admin"
+          :style="this.getUserInfo.power.viewVistorStatus ? '':notToAdmin">
+          <img :src="content['img']" width="100%" height="100%"/>
+        </router-link>
       </div>
       <el-collapse v-model="activeName" class="info-content" accordion>
         <el-collapse-item
-          style="white-space: pre-line;"
-          v-for="info,anal in content['content']"
+          style="white-space: pre-wrap;"
+          v-for="(info,anal) in content['content']"
+          :key="info"
           :title="anal"
-          >
-          {{ info }}
+          >{{ info }}
         </el-collapse-item>
       </el-collapse>
 
       <div class="about">
         <a class="bg_links social portfolio"
-            href="https://github.com/ASP-CC"
+            :href="this.getUserInfo.ugithub"
             target="_blank"
             title="Github">
             <span class="icon"></span>
         </a>
         <a class="bg_links social dribbble"
             href="javascript:void(0)"
-            title="My QQ Number: 2598772546">
-            <span class="icon"></span>
-        </a>
-        <a class="bg_links social linkedin"
-            href="http://titt-blog.com/%E5%8D%9A%E5%AE%A2.html"
-            target="_blank"
-            title="My Blog">
+            :title="'QQ Number:' + this.getUserInfo.uqq">
             <span class="icon"></span>
         </a>
         <a class="bg_links logo"></a>
@@ -37,7 +36,39 @@
 
     </div>
     <div class="night" id="night">
-      <div class="shooting_star" v-for="i in 20"></div>
+      <div class="shooting_star" v-for="i in 20" :key="i"></div>
+    </div> -->
+
+    <div class="info-content">
+
+      <div class="out-info">
+        <h1>{{ content.uuser_name === 'annoy' ? 'Titto' : content.uuser_name }}</h1>
+        <h4>{{ content.uqq }}</h4>
+        <div class="article_num">
+          共发布
+            <h2>
+              {{ content.uarticle_num }}
+            </h2>
+          篇博文
+          <i class="el-icon-folder-checked"></i>
+        </div>
+
+      </div>
+
+      <div class="figure">
+        <img :src="content.uavatar"/>
+      </div>
+
+      <div class="info-details">
+        <p>Register-Time：</p>
+          <p>{{ content.uregis_time || '无'}}</p>
+        <p>Hobby：</p>
+          <p>{{ content.uhobby || '无' }}</p>
+        <p>Profile：</p>
+          <p>{{ content.uprofile || '无' }}</p>
+        <p>Github：</p>
+          <p>{{ content.ugithub || '无' }}</p>
+      </div>
     </div>
 
 
@@ -49,269 +80,108 @@
 export default {
   data(){
     return {
+      notToAdmin: {
+        "pointer-events": "none"
+      },
       data: {},
       img: "",
       content: {},
       activeName: '1',
       name: 1,
-      content: {
-        "img": "./jsonImg/artical-img/person_img.jpg",
-        "content": {
-          "Identify - 身份": "南昌大学软件学院软件工程1910班学生，Web部成员。",
-          "Hobby - 兴趣": "不喜欢唱、跳、Rap与篮球，，，不过超级热爱写前端。\nPython也是我的最爱yo。",
-          "Individual Resume - 个人简介": "自高考后暑假接触第一本Python电子书时，我对编程的热爱便没有了尽头。\n之后无意间接触到了Web开发，于是跟着Web部大佬学习Web技术，努力成为一名优秀的Web攻城狮。目前已习得前端三件套，Vue框架与Django框架。"
-        }
-      },
+      content: this.getUserInfo
     }
   },
 }
 </script>
 
-<style src="../assets/css/aboutLink.css"></style>
+
 <style>
+/* src="../assets/css/aboutLink.css" */
 #about {
   width: 100%;
 }
-.img-content {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  border-radius: 50%;
-  overflow: hidden;
-  opacity: .7;
-  z-index: 2;
-}
-#info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  flex-direction: column;
-  position: relative;
-  margin-bottom: 15%;
-}
 .info-content {
-  width: 60%;
-  margin: 5% auto;
-  border-radius: 30px;
-  overflow: hidden;
-  border: none;
-  z-index: 2;
+  width: 1170px;
+  margin: 0 auto;
+  position: relative;
 }
-.el-collapse-item__wrap {
-  border: none;
+.info-details {
+  background-color: rgb(246,246,246);
+  margin-top: 30px;
+  padding: 30px 30px 30px 500px;
 }
-.el-collapse-item__header {
-  background: linear-gradient(-45deg, #5f91ff, rgb(26, 165, 159));
-  padding-left: 5%;
-  padding-right: 1%;
-  border: none;
-  font-size: 1.5em;
-  font-family: "宋体";
+.info-details > p:nth-child(even) {
+  padding-left: 20px;
+  margin: 10px 0;
 }
-.el-collapse-item__content {
-  background: linear-gradient(-45deg, #5f91ff, rgb(26, 165, 159));
-  padding: 2% 0 2% 13%;
-  border: none;
-  line-height: 25px;
-  font-size: 1.2em;
-  font-family: Georgia, serif;
-  transition: all .5s;
-}
-.el-collapse-item__header:hover {
-  opacity: .9;
-}
-
-#page-1 {
-  width: 100%;
-}
-.night {
+.figure {
   position: absolute;
-  top: 0;
+  top: -50px;
   left: 10%;
-  width: 1100px;
-  height: 700px;
-  transform: rotateZ(45deg); }
-
-.shooting_star {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 2px;
-  background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
-  border-radius: 999px;
-  filter: drop-shadow(0 0 6px #699bff);
-  animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite; }
-  .shooting_star::before, .shooting_star::after {
-    content: '';
-    position: absolute;
-    top: calc(50% - 1px);
-    right: 0;
-    height: 2px;
-    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
-    transform: translateX(50%) rotateZ(45deg);
-    border-radius: 100%;
-    animation: shining 3000ms ease-in-out infinite; }
-  .shooting_star::after {
-    transform: translateX(50%) rotateZ(-45deg); }
-  .shooting_star:nth-child(1) {
-    top: calc(50% - -46px);
-    left: calc(50% - 156px);
-    animation-delay: 7412ms; }
-    .shooting_star:nth-child(1)::before, .shooting_star:nth-child(1)::after, .shooting_star:nth-child(1)::after {
-      animation-delay: 7412ms; }
-  .shooting_star:nth-child(2) {
-    top: calc(50% - -107px);
-    left: calc(50% - 299px);
-    animation-delay: 4567ms; }
-    .shooting_star:nth-child(2)::before, .shooting_star:nth-child(2)::after, .shooting_star:nth-child(2)::after {
-      animation-delay: 4567ms; }
-  .shooting_star:nth-child(3) {
-    top: calc(50% - -82px);
-    left: calc(50% - 241px);
-    animation-delay: 1055ms; }
-    .shooting_star:nth-child(3)::before, .shooting_star:nth-child(3)::after, .shooting_star:nth-child(3)::after {
-      animation-delay: 1055ms; }
-  .shooting_star:nth-child(4) {
-    top: calc(50% - -88px);
-    left: calc(50% - 289px);
-    animation-delay: 7517ms; }
-    .shooting_star:nth-child(4)::before, .shooting_star:nth-child(4)::after, .shooting_star:nth-child(4)::after {
-      animation-delay: 7517ms; }
-  .shooting_star:nth-child(5) {
-    top: calc(50% - -190px);
-    left: calc(50% - 9px);
-    animation-delay: 11ms; }
-    .shooting_star:nth-child(5)::before, .shooting_star:nth-child(5)::after, .shooting_star:nth-child(5)::after {
-      animation-delay: 11ms; }
-  .shooting_star:nth-child(6) {
-    top: calc(50% - -58px);
-    left: calc(50% - 180px);
-    animation-delay: 8282ms; }
-    .shooting_star:nth-child(6)::before, .shooting_star:nth-child(6)::after, .shooting_star:nth-child(6)::after {
-      animation-delay: 8282ms; }
-  .shooting_star:nth-child(7) {
-    top: calc(50% - -31px);
-    left: calc(50% - 44px);
-    animation-delay: 9230ms; }
-    .shooting_star:nth-child(7)::before, .shooting_star:nth-child(7)::after, .shooting_star:nth-child(7)::after {
-      animation-delay: 9230ms; }
-  .shooting_star:nth-child(8) {
-    top: calc(50% - 170px);
-    left: calc(50% - 296px);
-    animation-delay: 4283ms; }
-    .shooting_star:nth-child(8)::before, .shooting_star:nth-child(8)::after, .shooting_star:nth-child(8)::after {
-      animation-delay: 4283ms; }
-  .shooting_star:nth-child(9) {
-    top: calc(50% - -48px);
-    left: calc(50% - 274px);
-    animation-delay: 3517ms; }
-    .shooting_star:nth-child(9)::before, .shooting_star:nth-child(9)::after, .shooting_star:nth-child(9)::after {
-      animation-delay: 3517ms; }
-  .shooting_star:nth-child(10) {
-    top: calc(50% - 181px);
-    left: calc(50% - 186px);
-    animation-delay: 9854ms; }
-    .shooting_star:nth-child(10)::before, .shooting_star:nth-child(10)::after, .shooting_star:nth-child(10)::after {
-      animation-delay: 9854ms; }
-  .shooting_star:nth-child(11) {
-    top: calc(50% - -134px);
-    left: calc(50% - 246px);
-    animation-delay: 7774ms; }
-    .shooting_star:nth-child(11)::before, .shooting_star:nth-child(11)::after, .shooting_star:nth-child(11)::after {
-      animation-delay: 7774ms; }
-  .shooting_star:nth-child(12) {
-    top: calc(50% - 122px);
-    left: calc(50% - 114px);
-    animation-delay: 3535ms; }
-    .shooting_star:nth-child(12)::before, .shooting_star:nth-child(12)::after, .shooting_star:nth-child(12)::after {
-      animation-delay: 3535ms; }
-  .shooting_star:nth-child(13) {
-    top: calc(50% - 135px);
-    left: calc(50% - 126px);
-    animation-delay: 4417ms; }
-    .shooting_star:nth-child(13)::before, .shooting_star:nth-child(13)::after, .shooting_star:nth-child(13)::after {
-      animation-delay: 4417ms; }
-  .shooting_star:nth-child(14) {
-    top: calc(50% - -137px);
-    left: calc(50% - 208px);
-    animation-delay: 6549ms; }
-    .shooting_star:nth-child(14)::before, .shooting_star:nth-child(14)::after, .shooting_star:nth-child(14)::after {
-      animation-delay: 6549ms; }
-  .shooting_star:nth-child(15) {
-    top: calc(50% - 64px);
-    left: calc(50% - 31px);
-    animation-delay: 3199ms; }
-    .shooting_star:nth-child(15)::before, .shooting_star:nth-child(15)::after, .shooting_star:nth-child(15)::after {
-      animation-delay: 3199ms; }
-  .shooting_star:nth-child(16) {
-    top: calc(50% - 45px);
-    left: calc(50% - 68px);
-    animation-delay: 2338ms; }
-    .shooting_star:nth-child(16)::before, .shooting_star:nth-child(16)::after, .shooting_star:nth-child(16)::after {
-      animation-delay: 2338ms; }
-  .shooting_star:nth-child(17) {
-    top: calc(50% - 52px);
-    left: calc(50% - 104px);
-    animation-delay: 5944ms; }
-    .shooting_star:nth-child(17)::before, .shooting_star:nth-child(17)::after, .shooting_star:nth-child(17)::after {
-      animation-delay: 5944ms; }
-  .shooting_star:nth-child(18) {
-    top: calc(50% - -138px);
-    left: calc(50% - 236px);
-    animation-delay: 8161ms; }
-    .shooting_star:nth-child(18)::before, .shooting_star:nth-child(18)::after, .shooting_star:nth-child(18)::after {
-      animation-delay: 8161ms; }
-  .shooting_star:nth-child(19) {
-    top: calc(50% - 106px);
-    left: calc(50% - 261px);
-    animation-delay: 6336ms; }
-    .shooting_star:nth-child(19)::before, .shooting_star:nth-child(19)::after, .shooting_star:nth-child(19)::after {
-      animation-delay: 6336ms; }
-  .shooting_star:nth-child(20) {
-    top: calc(50% - 138px);
-    left: calc(50% - 199px);
-    animation-delay: 8239ms; }
-    .shooting_star:nth-child(20)::before, .shooting_star:nth-child(20)::after, .shooting_star:nth-child(20)::after {
-      animation-delay: 8239ms; }
-
-@keyframes tail {
-  0% {
-    width: 0; }
-  30% {
-    width: 100px; }
-  100% {
-    width: 0; } }
-@keyframes shining {
-  0% {
-    width: 0; }
-  50% {
-    width: 30px; }
-  100% {
-    width: 0; } }
-@keyframes shooting {
-  0% {
-    transform: translateX(0); }
-  100% {
-    transform: translateX(300px); } }
-@keyframes sky {
-  0% {
-    transform: rotate(45deg); }
-  100% {
-    transform: rotate(405deg); } }
-
-/*# sourceMappingURL=star.css.map */
-
-#star_word {
-  position: absolute;
-  top: 35%;
-  text-align: center;
+}
+.figure > img {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+.out-info {
+  padding-left: 500px;
+}
+.out-info * {
+  display: inline;
+}
+.out-info > h1 {
   font-size: 3em;
-  transform: translate(-50%);
-  left: 50%;
-  letter-spacing: 3px;
-  font-family: "宋体";
-  line-height: 60px;
-  color: white;
+}
+.out-info > h4 {
+  margin-left: 40px;
+  color: gray;
+}
+.out-info h2 {
+  font-size: 4em;
+  position: relative;
+  margin: 0 30px;
+}
+.out-info  h2::before {
+  content: "[";
+  position: absolute;
+  left: -30px;
+}
+.out-info  h2::after {
+  content: "]";
+  position: absolute;
+  right: -20px;
+}
+.article_num {
+  margin-left: 150px;
+}
+@media screen and (max-width: 800px){
+  .info-content {
+    width: 100%;
+    margin-top: 150px;
+  }
+  .out-info,
+  .info-details {
+    padding-left: 30px;
+  }
+  .out-info {
+    padding-top: 200px;
+    text-align: center;
+  }
+  .out-info * {
+    display: block;
+  }
+  .out-info h4 {
+    margin: 10px 0;
+  }
+  .article_num {
+    margin: 0;
+  }
+  .figure {
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
 }
 </style>

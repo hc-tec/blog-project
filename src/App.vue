@@ -2,7 +2,7 @@
   <div id="app">
     <pageHead :navList=navList />
     <transition :name="transitionName">
-      <router-view />
+        <router-view />
     </transition>
     <transition :name="transitionName">
       <pageFoot />
@@ -23,39 +23,69 @@ export default {
     return {
       //Header组件数据
       transitionName: "",
-      navList: [
-        {
-          "link": '/',
-          "img": "el-icon-s-home",
-          "text": "首页",
-        },
-        {
-          "link": '/web',
-          "img": "el-icon-monitor",
-          "text": "程序生活",
-        },
-        {
-          "link": '/note',
-          "img": "el-icon-notebook-2",
-          "text": "课堂笔记",
-        },
-        {
-          "link": '/word',
-          "img": "el-icon-s-opportunity",
-          "text": "英语学习",
-        },
-        {
-          "link": '/todoList',
-          "img": "el-icon-aim",
-          "text": "今日目标",
-        },
-        {
-          "link": '/about',
-          "img": "el-icon-user",
-          "text": "关于",
-        },
-      ],
+      navList: this.navList,
     }
+  },
+  methods: {
+    getIP: function(){
+      this.axios
+        .get("http://47.115.147.39/get_IP.php")
+        .then(response => {
+          let code = response.data['code'];
+          //let msg = response.data['msg'];
+        })
+    },
+    getCookie: (name) => {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    },
+    autoLogin: function() {
+      let token = this.getCookie('token');
+      if(token){
+        this.axios.post(`http://${this.host}/api/autoLogin`, `token=${token}`)
+          .then(response => {
+          let code = response.data['code'];
+          let msg = response.data['msg'];
+          let info = 'error';
+          //状态码 270 表示登录成功
+          if(270 == code){
+            info = 'success';
+            let user_info = response.data['data'][0];
+            // 读取信息
+            this.getUserInfo.uid = user_info['id'];
+            this.getUserInfo.uuser_name = user_info['user_name'];
+            this.getUserInfo.ugender = user_info['gender'];
+            this.getUserInfo.uqq = user_info['qq'];
+            this.getUserInfo.uavatar = user_info['avatar'];
+            this.getUserInfo.friend_card = user_info['friend_card'];
+            this.getUserInfo.uhobby = user_info['hobby'];
+            this.getUserInfo.ugithub = user_info['github'];
+            this.getUserInfo.uprofile = user_info['profile'];
+            this.getUserInfo.uisSubscribe = user_info['isSubscribe'];
+            this.getUserInfo.uregis_time = user_info['regis_time'];
+            this.getUserInfo.uarticle_num = user_info['article_num'];
+
+
+            this.getUserInfo.power.isLogin = true;
+            // 获取用户类型
+            if("超级管理员" === user_info['user_type']){
+              // 获取所有权限
+              this.getUserInfo.user_name = user_info['user_name'];
+              Object.keys(this.getUserInfo.power).forEach(el => {
+                this.$set(this.getUserInfo.power, el, true);
+              })
+            }
+          }
+        })
+      }
+    }
+  },
+  mounted(){
+    this.getIP();
+    this.autoLogin();
   },
   components: {
     pageHead,

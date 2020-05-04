@@ -1,14 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import home from '../views/Home'
-import notFound from '../views/404'
-import word from '../views/word'
-import english from '../views/CET4'
-import essay from '../views/essay'
-import program from '../views/program'
-import todoList from '../views/todoList'
-import note from '../views/note'
-import noteInfo from '../views/noteInfo'
+
+
+
 
 
 Vue.use(VueRouter)
@@ -19,7 +13,48 @@ const routes = [
     name: 'Home',
     meta: {index: 1},
     components: {
-      default: home,
+      default: () => import('../views/Home'),
+    }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    meta: {index: 13},
+    components: {
+      default: () => import('../components/login'),
+
+    }
+  },
+  {
+    path: '/register',
+    name: 'register',
+    meta: {index: 17},
+    components: {
+      default: () => import('../components/register'),
+    }
+  },
+  {
+    path: '/recordWord',
+    name: 'recordWord',
+    meta: {index: 14},
+    components: {
+      default: () => import('../components/recordWord'),
+    }
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    meta: {index: 15},
+    components: {
+      default: () => import('../views/admin')
+    }
+  },
+  {
+    path: '/write',
+    name: 'write',
+    meta: {index: 16},
+    components: {
+      default: () => import('../components/writer')
     }
   },
   {
@@ -27,7 +62,7 @@ const routes = [
     name: 'web',
     meta: {index: 2},
     components: {
-      default: program,
+      default: () => import('../views/program'),
     }
   },
   {
@@ -43,23 +78,31 @@ const routes = [
     name: 'todoList',
     meta: {index: 4},
     components: {
-      default: todoList,
+      default: () => import('../views/todoList'),
     }
   },
+  // {
+  //   path: '/note',
+  //   name: 'note',
+  //   meta: {index: 5},
+  //   components: {
+  //     default: () => import('../views/note'),
+  //   }
+  // },
+  // {
+  //   path: '/noteInfo/:noteInfo',
+  //   name: 'noteInfo',
+  //   meta: {index: 12},
+  //   components: {
+  //     default: () => import('../views/noteInfo'),
+  //   }
+  // },
   {
-    path: '/note',
-    name: 'note',
-    meta: {index: 5},
+    path: '/message',
+    name: 'message',
+    meta: {index: 6},
     components: {
-      default: note,
-    }
-  },
-  {
-    path: '/noteInfo/:noteInfo',
-    name: 'noteInfo',
-    meta: {index: 12},
-    components: {
-      default: noteInfo,
+      default: () => import('../views/comment'),
     }
   },
   {
@@ -76,7 +119,7 @@ const routes = [
     name: 'words',
     meta: {index: 8},
     components: {
-      default: english
+      default: () => import('../views/CET4'),
     },
   },
   {
@@ -84,28 +127,36 @@ const routes = [
     name: 'word',
     meta: {index: 9},
     components: {
-      default: word
+      default: () => import('../views/word')
     },
   },
+  // {
+  //   path: '/reading/:read',
+  //   name: 'read',
+  //   meta: {index: 10},
+  //   components: {
+  //     default: () => import('../views/essay'),
+  //   },
+  // },
   {
-    path: '/reading/:read',
-    name: 'read',
+    path: '/feed',
+    name: 'feed',
     meta: {index: 10},
     components: {
-      default: essay,
-    },
+      default: () => import('../components/feed.vue'),
+    }
   },
   {
     path: '*',
     meta: {index: 11},
     components: {
-      default: notFound,
+      default: () => import('../views/404'),
     }
   }
 ]
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "hash",
   routes
 })
 

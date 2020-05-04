@@ -9,13 +9,11 @@
       text-align: center;
       .ch-title
         font-size: 2em;
-        font-family: "楷体";
+        font-family: Georgia, serif;
       .eng-title
         background: url(../img/navbg.png);
         background-repeat: no-repeat;
         background-position: center;
-        color: gray;
-        font-style: italic;
         margin: .5% 0 3% 0;
     .note-info
       display: flex;
@@ -23,30 +21,37 @@
       flex-wrap: wrap;
       > div
         width: 25%;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
+        transform: rotateX(23deg) rotateZ(-9deg) rotateY(15deg) scale3d(1, 1, -0.9);
         margin-right: 3%;
         padding: 20px 10px 0 0;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         flex-direction: column;
-        background-color: #03ffe81c;
+        background-color: #1c1c1c;
         border-radius: 10px;
         transition: all .8s;
-        &:hover
-          box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
-          transform: translateY(-20px);
       div
         margin-left: 3%;
-        img
-          width: 100%;
-          height: 100%;
         > *
           margin-bottom: 5%;
+          overflow-wrap: break-word;
 .note-info
   p
     width: 100%;
     font-family: "宋体";
     font-size: 1.3em;
+    color: #00f1db;
+  span
+    width: 50px;
+    height: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: all .5s;
+  > div:hover
+    span
+      background: #fff;
   a
     text-align: right;
   > div > div
@@ -54,13 +59,19 @@
     color: gray;
 .note-img-content
   height: 250px;
-.classic_btn 
+.classic_btn
   display: flex;
-  justify-content: flex-end;
-  
-  & > a 
+  justify-content: space-around;
+  & > a:nth-child(2)
+    border-color: lime;
+    &:hover
+      background-color: lime;
+      color: #fff;
+    
+
+  & > a
     text-decoration: none;
-    background-color: #f3f0f1;
+    background-color: transparent;
     position: relative;
     border-radius: 5px;
     text-align: center;
@@ -69,19 +80,18 @@
     font-family: "宋体";
     font-size: 1em;
     font-weight: semibold;
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),6px 6px 10px rgba(0, 0, 0, 0.2);
     color: #409eff;
     margin-right: 5%;
-    &:hover 
+    border: 1px solid white;
+    transition: all .5s;
+    &:hover
       color: rgb(29, 165, 29);
       opacity: 0.6;
-      box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),6px 6px 10px rgba(0, 0, 0, 0.2);
-    
-    &:active 
-      opacity: 1;
+      background-color: #fff
+    &:active
+      opacity: .3;
       box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),inset 8px 8px 16px rgba(0, 0, 0, 0.1);
       color: #79e3b6;
- 
 
-    
-          
+
+

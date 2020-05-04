@@ -15,9 +15,14 @@ export default {
 
 <style>
 #programLife {
-  display: flex;
-  margin: 0 5% 15% 5%;
-  padding-top: 3%;
-
+  margin: 0 50px 15% 50px;
+  padding-top: 8%;
+}
+@media screen and (max-width: 800px){
+  #programLife {
+    margin: 0;
+    padding-top: 50px;
+    /* padding: 50px 20px; */
+  }
 }
 </style>

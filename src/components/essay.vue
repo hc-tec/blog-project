@@ -32,7 +32,7 @@ export default {
       return this.paraTitle
     },
     getComponent: function(){
-      this.install("essayArti", ()=>import('../assets/mdFile/english/' + this.paraTitle + '.md'))
+      this.install("essayArti", ()=>import('../../public/mdFile/english/' + this.paraTitle + '.md'))
       return "essayArti"
     }
   },

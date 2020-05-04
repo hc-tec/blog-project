@@ -1,17 +1,17 @@
 <template>
   <div id="pageAbout">
     <about />
-    <timeLine />
+    <!-- <timeLine /> -->
   </div>
 </template>
 
 <script>
 import about from '../components/about'
-import timeLine from '../components/timeLine'
+//import timeLine from '../components/timeLine'
 export default {
   components: {
     about,
-    timeLine,
+    //timeLine,
   }
 }
 </script>
@@ -24,7 +24,8 @@ export default {
   justify-content: center; */
   padding-top: 10%;
   padding-bottom: 20%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-color: #fff;
+  /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
 
 }
 </style>

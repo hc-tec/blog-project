@@ -28,14 +28,14 @@ export default {
 #cetWord {
   width: 25%;
   background-color: #fff;
-  border: 1px ridge #ddd;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
   margin: 5% 4% 0 0;
   padding: 20px 15px;
 }
 #cetArtical {
   margin: 3% 0 0 0;
   background: #fff;
-  border: 1px ridge #ddd;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
   width: 70%;
   padding: 20px;
 }

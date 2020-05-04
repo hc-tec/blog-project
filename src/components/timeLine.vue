@@ -9,8 +9,8 @@
     </div>
     <el-timeline :reverse="reverse">
       <el-timeline-item
-        v-for="item,index in timeLineData"
-        :key="index"
+        v-for="item in timeLineData"
+        :key="item.time"
         :timestamp="item['time']"
         :icon="item['icon']"
         :color="item['color']"
@@ -18,7 +18,7 @@
         placement="top">
         <el-card>
           <h4>{{ item['title'] }}</h4>
-          <img v-for="img in item['img']" :src="img" width="50%"/>
+          <img v-for="img in item['img']" :key="img" :src="img" width="50%"/>
         </el-card>
       </el-timeline-item>
     </el-timeline>

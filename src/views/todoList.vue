@@ -18,6 +18,5 @@ export default {
 /*不能加 scoped!!! */
   #todoList {
     padding-top: 5%;
-    margin: 0 0 10% 10%;
   }
 </style>

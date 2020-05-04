@@ -44,7 +44,7 @@ export default {
     },
     getComponent: function(){
       this.img =  this.subjectData[this.class_][this.title]["img"]
-      this.install("compon", ()=>import("../assets/mdFile/" + this.title + ".md"))
+      this.install("compon", ()=>import("../../public/mdFile/" + this.title + ".md"))
       //  const context = require.context( '../assets/mdFile/programArticle/', true, /\.md$/)
       // this.install("compon", context("./pip换源.md"))
 
@@ -68,4 +68,7 @@ export default {
   padding-bottom: 2%;
   margin: auto;
 }
+
+
+
 </style>

@@ -14,6 +14,7 @@
 #note-content .markdown {
   background-color: #fff;
   padding: 10%;
+  overflow: hidden;
 }
 
 #note-content .markdown img {

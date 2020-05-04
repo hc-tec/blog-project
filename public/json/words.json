@@ -8,7 +8,7 @@
         ["Some prior knowledge/statistics is desirable if you are gonna sign up for the cousre.", "如果你想报名参加校友会的话，一些事先的知识/统计数据是可取的。"],
         ["She will be unable to attend due to a prior engagement.", "由于事先有约，她将不能出席。"]
     ],
-    "relavant-word": [
+    "relevant-word": [
         "priority"
     ]
   },
@@ -16,11 +16,11 @@
     "learn-day": "2020-02-25",
     "ch-hans": "优先事项;最重要的事;",
     "phrase": [
-        ["give priority to sth/sb", ""], 
+        ["give priority to sth/sb", ""],
         ["sth is a top/high priority", ""]
     ],
     "sentence": [],
-    "relavant-word": [
+    "relevant-word": [
         "prior"
     ]
   },
@@ -33,7 +33,7 @@
         ["technologically awkward", ""]
     ],
     "sentence": [],
-    "relavant-word": []
+    "relevant-word": []
   },
   "trade": {
     "learn-day": "2020-02-25",
@@ -50,7 +50,7 @@
         ["Some traded on people's insecurity to sellinnferior masks.",
           "一些人利用人们的不安全感来出售劣质口罩。" ]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
   "suck": {
     "learn-day": "2020-02-25",
@@ -66,7 +66,7 @@
         ["The country is sucked into the desperate situation due to the cult.",
           "由于邪教，这个国家被卷入到一个绝望境地。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
   "massive": {
     "learn-day": "2020-02-25",
@@ -76,7 +76,7 @@
         ["massive heart attack", "严重的心脏病突发"]
     ],
     "sentence": [],
-    "relavant-word": []
+    "relevant-word": []
   },
   "obsessed": {
     "learn-day": "2020-02-25",
@@ -89,7 +89,7 @@
         ["Constant obsession with the updates will stress you out.",
            "不断地沉迷于更新会让你感到压力。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
   "collision": {
     "learn-day": "2020-02-25",
@@ -99,7 +99,7 @@
         ["rear-end collision", "追尾"]
     ],
     "sentence": [],
-    "relavant-word": []
+    "relevant-word": ["crash"]
   },
   "excursion": {
     "learn-day": "2020-03-02",
@@ -115,13 +115,13 @@
       ["The few excursions into stylistic experiment do not entirely come off.",
         "几次体裁上的尝试都不算很成功。"]
     ],
-    "relavant-word": ["journey"]
+    "relevant-word": ["journey"]
   },
   "journey": {
     "learn-day": "2020-03-02",
     "ch-hans": "(尤指长途)旅行，行程",
     "phrase": [
-      
+
     ],
     "sentence": [
       ["There is an express service from Paris which completes the journey to Bordeaux in under 4 hours. ",
@@ -131,7 +131,7 @@
       ["We resumed our journey after a short rest. ",
         "休息了一会儿之后，我们就继续赶路了。"]
     ],
-    "relavant-word": ["excursion"]
+    "relevant-word": ["excursion"]
   },
   "clue": {
     "learn-day": "2020-03-02",
@@ -149,7 +149,7 @@
       ["How a man shaves may be a telling clue to his age. ",
         "男人刮胡子的方式也许能泄露其年龄。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
   "embrace": {
     "learn-day": "2020-03-02",
@@ -164,7 +164,7 @@
       ["He threw his arms round her and they embraced passionately. ",
         "他伸出手臂搂住她，他们热情相拥。"]
     ],
-    "relavant-word": ["clasp"]
+    "relevant-word": ["clasp"]
   },
   "browse": {
     "learn-day": "2020-03-02",
@@ -181,14 +181,12 @@
       ["Slow music encourages supermarket-shoppers to browse longer but spend more. ",
         "舒缓的音乐会促使超市购物者花更长的时间浏览商品的同时花更多的钱。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
   "craft": {
     "learn-day": "2020-03-02",
     "ch-hans": "手艺;工艺;技巧;技能;技艺;诡计;手腕;骗术",
-    "phrase": [
-      
-    ],
+    "phrase": [],
     "sentence": [
       ["With great difficulty, the fisherman manoeuvred his small craft close to the reef .",
         "渔夫费了很大的劲才把他的小船划到暗礁旁。"],
@@ -197,7 +195,7 @@
       ["The troops are reported to have advanced nearly four miles since they were landed from naval craft on Sunday evening. ",
         "据报道，部队自周日晚离开海军军舰登陆后已经挺进了将近4英里。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
   "cable": {
     "learn-day": "2020-03-02",
@@ -214,13 +212,13 @@
       ["In France, 27 major cities are soon to be cabled.",
         "法国有27座大城市不久将安装有线电视。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
   "clasp": {
     "learn-day": "2020-03-09",
     "ch-hans": "握紧;攥紧;抓紧;抱紧;紧紧拥抱;",
     "phrase": [
-      
+
     ],
     "sentence": [
       ["She had sat there twiddling nervously with the clasp of her handbag.",
@@ -230,7 +228,7 @@
       ["He held her in a tight clasp. ",
         "他紧紧地搂着她。"]
     ],
-    "relavant-word": ["embrace"]
+    "relevant-word": ["embrace"]
   },
 
   "bout": {
@@ -248,9 +246,9 @@
       ["This will be his eighth title bout in 19 months.",
         "这将是他19个月里的第8次卫冕赛。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
-  
+
   "swarm": {
     "learn-day": "2020-03-09",
     "ch-hans": "一大群(蜜蜂等昆虫);一大群，一大批(向同方向移动的人)",
@@ -266,7 +264,7 @@
       ["A swarm of people encircled the hotel",
         "一大群人围住了这个酒店。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
   "uproot": {
     "learn-day": "2020-03-09",
@@ -282,20 +280,3620 @@
       ["Work commitments forced her to uproot herself and her son from Reykjavik. ",
         "她的工作迫使她和儿子从雷克雅未克搬走。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
   },
-  
-  "": {
-    "learn-day": "",
-    "ch-hans": "",
+
+  "smack": {
+    "learn-day": "2020-03-10",
+    "ch-hans": "打，敲;刚好，恰好;",
     "phrase": [
-      
+
     ],
     "sentence": [
-     
+      ["He slapped the book smack onto the desk.", "他一巴掌把书拍在桌子上。"]
     ],
-    "relavant-word": []
+    "relevant-word": []
+  },
+  "loom": {
+    "learn-day": "2020-03-10",
+    "ch-hans": "赫然耸现;(尤指)令人惊恐地隐现;显得突出;逼近",
+    "phrase": [
+
+    ],
+    "sentence": [
+      ["The prospect of war loomed large.",
+         "战争的阴影隐约可见。"]
+    ],
+    "relevant-word": []
+  },
+  "universal": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "普遍的;全体的;全世界的;共同的;普遍存在的;广泛适用的",
+    "phrase": [],
+    "sentence":  [
+      ["The insurance industry has produced its own proposals for universal health care.",
+        "保险业提出了自己的全民医疗保健方案。"],
+      ["The desire to look attractive is universal. ",
+        "爱美之心，人皆有之。"],
+      ["There is no universal prescription for discovering these simplifying patterns of nature. ",
+        "对于怎样才能发现自然界的这些简化图式，并没有什么万能的方法。"]
+    ],
+    "relevant-word": []
+  },
+  "reputation": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "名誉;名声",
+    "phrase": [
+      ["to earn/establish/build a reputation", "赢得 / 确立 / 树立声誉"],
+      ["to have a good/bad reputation", "有好 / 坏名声"]
+    ],
+    "sentence":  [
+      ["This college has a good academic reputation.",
+        "这所大学有良好的学术声誉。"],
+      ["He has acquired a reputation as this country's premier solo violinist.",
+        "他已经赢得了该国首席小提琴独奏家的名誉。"],
+      ["The stories ruined his reputation.",
+        "这些传闻把他的名誉全毁了。"]
+    ],
+    "relevant-word": ["fame"]
+  },
+  "fame": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "名声;声誉;名气;使闻名;使出名;使有名望;<古>盛传",
+    "phrase": [],
+    "sentence":  [
+      ["At the height of his fame, his every word was valued.",
+        "在他声名鼎盛之时，他的每句话都受到重视。"],
+      ["Money, fame and social position have no interest for him.",
+        "他对金钱，名誉和社会地位都不动心。"]
+    ],
+    "relevant-word": ["reputation"]
+  },
+  "journal": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "(某学科或专业的)报纸，刊物，杂志;(用于报纸名)…报;日志;日记",
+    "phrase": [
+
+    ],
+    "sentence": [
+      ["All our results are published in scientific journals. ",
+        "我们的研究结果全都发表在科学刊物上了。"],
+      ["He was a newspaperman for The New York Times and some other journals. ",
+        "他是个记者，为《纽约时报》和其他一些报刊撰稿。"],
+      ["The study, published in the Journal nature, raises hopes of new drug therapy to stop cancer spread.",
+        "发表在《自然》杂志上的这个研究，燃起了药物治疗控制癌扩散的新的希望。"]
+    ],
+    "relevant-word": []
+  },
+  "approval": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "赞成;同意;批准，通过，认可(计划、要求等);(商品)试用，包退包换",
+    "phrase": [
+      ["approval for sth from sb", "批准，通过，认可（计划、要求等）"],
+      ["gain the approval of", "得到...的同意"],
+      ["with sb's approval", "在某人允许的情况下"]
+    ],
+    "sentence": [
+      ["The chairman has also given his approval for an investigation into the case.",
+        "主席也已同意对此案进行调查。"],
+      ["The testing and approval of new drugs will be speeded up. ",
+        "新药品的检测和审批速度将会加快。"],
+      ["The proposal was greeted with a chorus of approval.",
+        "大家对这个建议异口同声地表示赞成。"]
+    ],
+    "relevant-word": []
+  },
+  "ultimate": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "最后的;最终的;终极的;极端的;最好(或坏、伟大、重要等)的;根本的;基本的;基础性的最好(或先进、伟大等)的事物;极品;精华",
+    "phrase": [
+      ["ultimate aim/goal/objective", "最终目标"],
+      ["ultimate power", "至高权力"]
+    ],
+    "sentence": [
+      ["He said it is still not possible to predict the ultimate outcome.",
+        "他说现在还无法预料最终的结局。"],
+      ["Plants are the ultimate source of all foodstuffs.",
+        "植物是所有食物的最根本来源。"],
+      ["The extreme rhetoric aside, everywhere in America, liberty is deemed competition's ultimate rationale.",
+        "且把过激的言辞搁在一边，在美国各地，自由是被视作竞争的基本原理的。"]
+    ],
+    "relevant-word": []
+  },
+  "extraordinary": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "意想不到的;令人惊奇的;奇怪的;不平常的;不一般的;非凡的;卓越的;特别的;临时的",
+    "phrase": [
+    ],
+    "sentence": [
+      ["We've made extraordinary progress as a society in that regard.",
+        "在那个方面，我们的社会已经取得了巨大的进步。"],
+      ["The task requires extraordinary patience and endurance.",
+        "那项任务需要非凡的耐心和毅力。"],
+      ["My grandfather was a most extraordinary man.",
+        "我祖父是一个非常奇特的人。"]
+    ],
+    "relevant-word": []
+  },
+  "description": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "描写(文字);形容;说明;类型",
+    "phrase": [
+      ["description of sb/sth", "描写（文字）；形容；说明"],
+      ["a brief/general description of the software", "软件的简要 / 概括性说明"],
+      ["answer/fit a description (of sb/sth)", "与描述的…相像"],
+      ["beggar belief/description", "难以相信；无法形容"]
+    ],
+    "sentence": [
+      ["Events of this description occurred daily.",
+        "这类事件天天发生。"],
+      ["His face is weary beyond description.",
+        "他一脸难以形容的疲惫。"],
+      ["Her description of the nature and action of poisons is amazingly accurate.",
+        "他对一些毒药的性质和作用的描述惊人地准确。"]
+    ],
+    "relevant-word": []
+  },
+  "column": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "柱;(通常为)圆形石柱;纪念柱;圆柱状物;柱形物;(书、报纸印刷页上的)栏",
+    "phrase": [
+      ["the gossip/financial column", "漫谈 / 财经专栏"]
+    ],
+    "sentence": [
+      ["His name features frequently in the social columns of the tabloid newspapers.",
+        "他的名字频繁地出现在各种小报社会专栏的显著位置上。"],
+      ["She also writes a regular column for the Times Educational Supplement.",
+        "她也定期为《泰晤士报高等教育增刊》写专栏文章。"],
+      ["Both batch and column variants of SPE can be used for preconcentration purposes. ",
+        "固相萃取的分配变量和圆柱变量都可以用于预浓缩的用途。"]
+    ],
+    "relevant-word": []
+  },
+  "relevant": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "紧密相关的;切题的;有价值的;有意义的",
+    "phrase": [
+      ["relevant to sth/sb", "紧密相关的；切题的"],
+      ["be relevant to", "与...相关"]
+    ],
+    "sentence": [
+      ["We have passed all relevant information on to the police.",
+        "我们已经把所有相关信息都告知了警方。"],
+      ["I think there was deliberate concealment of relevant documents.",
+        "我认为有人故意隐瞒相关文件。"],
+      ["我认为有人故意隐瞒相关文件。", "这是一个中肯的问题。"]
+    ],
+    "relevant-word": []
+  },
+  "relative": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "相比较而言的;比较的;相对的;相关联的;相比之下存在(或有)的;相比较而言的;比较的;相对的;相关联的;相比之下存在(或有)的",
+    "phrase": [
+      ["relative to sth", "相对的；相关联的;关于（或涉及到）…的"]
+    ],
+    "sentence": [
+      ["The fighting resumed after a period of relative calm.",
+        "战斗在相对平静的一段时间之后再次打响。"],
+      ["Fitness is relative; one must always ask 'Fit for what?'",
+        "“适合”是相对而言的；应该常常问一问“适合什么？”"],
+      ["Can I be exempted from testifying against my relative? ",
+        "我可以不证明我的亲属有罪吗？"]
+    ],
+    "relevant-word": []
+  },
+  "solar": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "太阳的;太阳能的",
+    "phrase": [
+      ["solar radiation", "太阳辐射"],
+      ["solar power/heating ", "太阳能动力 / 加热"]
+    ],
+    "sentence": [
+      ["A total solar eclipse is due to take place some time tomorrow.",
+        "明天某个时刻会发生日全食。"],
+      ["Saturn is the second biggest planet in the solar system. ",
+        "土星是太阳系中的第二大行星。"],
+      ["Scientists in many countries are studying ways of harnessing solar energy at a reasonable cost.",
+        "许多国家的科学家们正在研究一合理代价利用太阳能的方法。"]
+    ],
+    "relevant-word": []
+  },
+  "command": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "(给人或动物的)命令;指令;命令;控制;管辖;指挥;(给人或动物的)命令;指令;命令;控制;管辖;指挥",
+    "phrase": [
+      ["an instruction given to a computer", "计算机指令"],
+      ["at your command", "可自由使用；可支配"],
+      ["be at sb's command", "听候某人的吩咐；服从某人的支配"],
+      ["your wish is my command", "唯命是从"]
+    ],
+    "sentence": [
+      ["There is no limit to what can be achieved here because of the fantastic support we command. ",
+        "由于赢得了极大的支持，我们将无往不胜。"],
+      ["He had authorisation from the military command to retaliate.",
+        "他得到军事指挥部授权，准备反击。"]
+    ],
+    "relevant-word": []
+  },
+  "appeal": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "上诉;申诉;吸引力;感染力;魅力;(尤指慈善机构或警方的)呼吁，吁请，恳求",
+    "phrase": [
+      ["appeal to lodge an appeal", "上诉；申诉"],
+      ["appeal to sb to do sth", "（尤指慈善机构或警方的）呼吁，吁请，恳求"]
+    ],
+    "sentence": [
+      ["This is not another appeal for famine relief. ",
+        "这不是为赈济饥荒的又一次募捐。"],
+      ["On the other hand, the idea appealed to him",
+        "从另一方面来说，这个想法又使他很感兴趣。"],
+      ["Now that you have come to an agreement, it is no need to appeal to a lawyer. ",
+        "既然你们已达成协议，就没有必要求助于律师了。"]
+    ],
+    "relevant-word": []
+  },
+  "external": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "外部的;外面的;外界的;外来的;在外的;来自(学校或机构)以外的;",
+    "phrase": [
+      ["external pressure", "外界压力"]
+    ],
+    "sentence": [
+      ["Such events occur only when the external conditions are favorable.",
+        "这种事情只有在外部条件有利时才会发生。"],
+      ["The database is fully hyperlinked both within the database and to thousands of external links. ",
+        "该数据库在其内部以及和数千个外部链接之间充分实现了超链接。"],
+      ["It is through our nervous system that we adapt ourselves to our environment and to all external stimuli. ",
+        "我们是通过神经系统使自己适应环境及所有外部刺激的。"]
+    ],
+    "relevant-word": []
+  },
+  "destruction": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "摧毁;毁灭;破坏",
+    "phrase": [
+      ["lead to destruction", "导致毁灭"]
+    ],
+    "sentence": [
+      ["The destruction of war and the death of millions of young people shook the foundations of Western idealism.",
+        "战争的破坏和数百万年轻人的死亡动摇了西方理想主义的根基。"],
+      ["To that extent they helped bring about their own destruction.",
+        "他们正是如此推波助澜，导致了自己的毁灭。"],
+      ["From horizontal dimension, the chief means of overseas network of separatism force are propaganda and destruction, the aim of which is to win sympathy and support from foreign powers and diaspora. ",
+        "在横向维度上，分裂主义势力的海外活动网络以宣传和破坏为手段，向外部势力及散居者寻求同情和支持。"]
+    ],
+    "relevant-word": []
+  },
+  "comparative": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "比较的;相比的;比较而言的;相对的;比较级的(如better、worse、slower和more difficult)",
+    "phrase": [
+
+    ],
+    "sentence": [
+      ["The task was accomplished with comparative ease. ",
+        "相对而言，任务完成得比较轻松。"],
+      ["Comparative advantage is shifting to high value-added sectors.",
+        "相对优势正转移向高附加值行业。"],
+      ["Onlybnearhas a comparative and superlative form and can relate to time as well as space. ",
+        "有比较级和最高级形式，且可指时间和空间。"]
+    ],
+    "relevant-word": []
+  },
+  "terror": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "惊恐;恐惧;惊骇;可怕的人;恐怖的事;可怕的情况;(通常出于政治目的)恐怖行动，恐怖",
+    "phrase": [
+    ],
+    "sentence": [
+      ["I shook with terror whenever I was about to fly in an aeroplane.",
+        "每次坐飞机前，我都吓得直发抖。"],
+      ["The bomb attack on the capital could signal the start of a pre-election terror campaign.",
+        "对首都的炸弹袭击可能标志着选举前的恐怖活动开始了。"],
+      ["As a boy, he had a real terror of facing people. ",
+        "小时候，他特别害怕见人。"]
+    ],
+    "relevant-word": []
+  },
+  "diverse": {
+    "learn-day": "2020-03-12",
+    "ch-hans": "不同的;相异的;多种多样的;形形色色的",
+    "phrase": [
+      ["culturally diverse", "文化多元"],
+      ["religiously diverse", "宗教信仰多元"]
+    ],
+    "sentence": [
+      ["Society is now much more diverse than ever before.",
+        "当今社会较之以往任何时候都要丰富多彩得多。"],
+      ["Other committees are balanced by requiring that members have diverse educational and professional backgrounds. ",
+        "还有的委员会通过要求成员有不同的教育和专业背景来实现均衡。"],
+      ["We support a diverse set of languages, operating systems, databases, and development and deployment platforms. ",
+        "我们支持一个变化多的语言集，开放的系统，数据库，和开发，以及开发平台。"]
+    ],
+    "relevant-word": []
+  },
+  "pace": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "(移动的)速度;步速;发生的速度;步伐;节奏;(走或跑时)迈出的一步，一步的距离;步幅;来回踱步;走来走去;确定速度;调整节奏;调整自己的工作(或活动)节奏",
+    "phrase": [
+      ["pace of sth", "发生的速度；步伐；节奏"],
+      ["go through your paces", "展示自己的能力"],
+      ["keep pace (with sb/sth)", "（与…）并驾齐驱；（与…）步调一致"],
+      ["off the pace", "(in sport 体育运动) （赛跑或比赛中）在领头人之后，在领头队之后"],
+      ["put sb/sth through their/its paces", "考察，考验（某人的能力）"],
+      ["set the pace", "确定速度；确立标准；领先"]
+
+    ],
+    "sentence": [
+      ["Many people were not satisfied with the pace of change. ",
+        "很多人对变革的步伐不满意"],
+      ["As they waited, Kravis paced the room nervously.",
+        "他们等的时候，克拉维斯在屋里不安地踱来踱去。"],
+      ["Nash saw Colin pace out the length of the field in which he had landed to ensure that he could fly safely out of it.",
+        "纳什看见科林步测了他着陆场地的长度，以确保自己能够安全飞离。"]
+    ],
+    "relevant-word": []
+  },
+  "territory": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "领土;版图;领地;(个人、群体、动物等占据的)领域，管区，地盘;(某人负责的)地区",
+    "phrase": [
+      ["come/go with the territory", "成为必然的部分（或结果）"],
+      ["on neutral ground/territory", "在中立地区；在第三方地区"]
+    ],
+    "sentence": [
+      ["The government denies that any of its territory is under rebel control.",
+        "政府否认有领土被反叛分子所控制。"],
+      ["The territory of a cat only remains fixed for as long as the cat dominates the area. ",
+        "猫的地盘只在它占据那个地方的时候是固定不变的。"],
+      ["Nothing can stop you from going into the other faction's territory, but NPC guards will chew you up if you get too close to them.",
+        "没什么会阻止你进入其他势力范围，但如果你离NPC守卫太近的话，他们会撕碎你。"]
+    ],
+    "relevant-word": ["terrific"]
+  },
+  "terrific": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "极好的;绝妙的;了不起的;很大的;巨大的;异乎寻常的(物极必反--此词引申之处)",
+    "phrase": [
+    ],
+    "sentence": [
+      ["You're a terrific person.",
+         "你是个了不起的人。"],
+      ["You're in terrific shape and feeling better every day! ",
+        "你每天是处在极好的状态和更好的感觉中。"],
+      ["Getting the job gave him a terrific boost. ",
+        "得到那份工作给了他很大的激励。"]
+    ],
+    "relevant-word": ["territory"]
+  },
+  "instrument": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "器械;仪器;器具;(车辆、机器的)仪器，仪表;促成某事的人(或事物);手段",
+    "phrase": [
+      ["instrument of/for sth", "of/for sth"],
+      ["instrument  of sb/sth", "受利用（或控制）的人；工具"]
+    ],
+    "sentence": [
+      ["Learning a musical instrument introduces a child to an understanding of music.",
+        "学一门乐器能引导孩子了解音乐。"],
+      ["The instrument has been installed. ",
+        "仪器已经装置好了。"],
+      ["The veto has been a traditional instrument of diplomacy for centuries.",
+        "几个世纪以来否决权一直是外交上惯用的手段。"],
+      ["Language is an instrument for communication. ",
+        "语言是交际的工具。"],
+      ["Currently, he says, no legal instrument exists which can force governments to do this. ",
+        "他说，目前还没有一部法律文件能够强制要求各国政府这样做。"]
+    ],
+    "relevant-word": []
+  },
+  "odd": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "奇怪的;怪异的;反常的;(某方面)怪异的;偶然出现的;偶尔发生的;不规律的",
+    "phrase": [
+      ["the odd man/one out", "与其他不同（或合不来）的人（或物）；异类"],
+      ["an odd/a queer fish", "古怪的人；有些荒唐的人"]
+    ],
+    "sentence": [
+      ["He is an odd man.",
+        "他是一个古怪的人。"],
+      ["The game can't be played by an odd number of people. ",
+        "这个游戏不能由奇数的人玩。"],
+      ["The answer seems to be a lot of time spent talking-as well as the odd junket. ",
+        "这个答案似乎需要很多时间去讲，就像临时的密集式访问一样。"],
+      ["When she took a look at me she thought I was a kind of odd ball. ",
+        "她看了我一眼便知道我是一个怪人。"]
+    ],
+    "relevant-word": []
+  },
+  "accurate": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "正确无误的;精确的;准确的;准确的(掷、射、击等)",
+    "phrase": [],
+    "sentence": [
+      ["Some pulsars keep time better than the earth's most accurate clocks.",
+        "某些脉冲星发送脉冲比地球上最精确的时钟都准时。"],
+      ["Laboratory work needs not only accurate measurements but also correct calculation. ",
+        "实验工作不但需要准确的测量，而且需要准确的计算。"],
+      ["When disclosure is announced we wish for correct and accurate coverage, and that people will understand what we represent and our true reason for making contact with you. ",
+        "当“揭露”被宣告，我们希望正确无误的新闻报道，这样人们才能了解，我们重新制定了什么，以及我们接触你们的真实意图。"]
+    ],
+    "relevant-word": ["accuracy"]
+  },
+  "accuracy": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "准确(性);精确(程度)",
+    "phrase": [
+      ["predict sth with great accuracy", "极精确地预测某事"],
+      ["ensure the accuracy of", "确保...的精确性"],
+      ["with accuracy", "精确地"]
+    ],
+    "sentence": [
+      ["We cannot guarantee the accuracy of these figures. ",
+        "我们不能保证这些数据的准确性。"],
+      ["In order to transform their environment, he drew up the project with painstaking accuracy.",
+        "为了改造环境，他苦心孤诣地制订了这个计划。"]
+    ],
+    "relevant-word": ["accurate"]
+  },
+  "feature": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "特色;特征;特点;面容的一部分(如鼻、口、眼);(报章、电视等的)特写，专题节目;以…为特色;由…主演;以…为主要组成;起重要作用;占重要地位",
+    "phrase": [
+      ["record the clinical feature", "记录临床特征"],
+      ["basic features", "基本特征"],
+      ["feature"]
+    ],
+    "sentence": [
+      ["Scientists provided the key to understanding the genetic code that determines every bodily feature.",
+        "科学家们找到了破解决定各种身体特征的遗传密码的密钥。"],
+      ["She exceeded the rest not only in feature and proportion.",
+        "她不仅仅在容貌和身材方面超过其他的。"],
+      ["Production for the fourth season which will feature eight episodes and a Christmas special will begin February, 2013. ",
+        "第四季的制作有8集和一个圣诞节特辑，将于2013年2月开拍。"],
+      ["The main contents of this paper is my graduation project-one feature called 'Our Story'.",
+        "这篇论文的主体内容是我的毕业设计&一部名为《我们的故事》的故事片。"],
+      ["It starts with the introduction of feature structures, which model the signs of natural languages.",
+        "首先介绍用以描写自然语言符号的特征结构。"]
+    ],
+    "relevant-word": []
+  },
+  "protein": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "蛋白质",
+    "phrase": [],
+    "sentence": [
+      ["Isolation and identification the auxin binding protein is one of the major works in the studying of auxin receptor.",
+        "分离、鉴定与生长素结合的蛋白是生长素受体研究中的一个重要方面。"],
+      ["Protein degradation during storage or processing is a major concern in both manufacturing and research. ",
+        "在储存和处理过程中，蛋白质的降解是生产和研究中的一个重要问题。"],
+      ["After purification and refoldation of the recombinant OvPrPC, conformational changes of ovine prion protein was triggered by thermal denaturation. ",
+        "并在热力学因素的作用下，研究了重组绵羊朊蛋白的构象转化。"]
+    ],
+    "relevant-word": []
+  },
+  "intellectual": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "智力的;脑力的;理智的;有才智的;智力发达的;知识分子;脑力劳动者",
+    "phrase": [],
+    "sentence": [
+      ["A noble person does a great service for the intellectual, spiritual cognitive and ethical development of the society.",
+        "一个崇高的人对社会的智力的，精神认知和道德的发展做出了杰出贡献。"],
+      ["And that's what Neal Cassady was to them at first, a kind of wanderer who wanted to be in their intellectual, but bohemian, circle. ",
+        "刚开始时尼尔卡萨迪对他们就是这样，想要进入他们这个既有高才智，又放荡不羁的圈子的流浪汉。"],
+      ["She was a fiery, brilliant and unyielding intellectual and politician",
+        "她是个充满激情、才华卓越、毫不妥协的知识分子和政治家。"]
+    ],
+    "relevant-word": []
+  },
+  "affect": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "影响;侵袭;使感染;(感情上)深深打动;使悲伤(或怜悯等)",
+    "phrase": [
+    ],
+    "sentence": [
+      ["Climate and weather affect every aspect of our lives.",
+        "气候和天气影响着我们生活的方方面面。"],
+      ["He is interested in how our perceptions of death affect the way we live.",
+        "他感兴趣的是我们对死亡的看法如何影响我们的生活。"],
+      ["I will not affect not to know what you mean. ",
+        "我不故意假装不了解你的意思。"]
+    ],
+    "relevant-word": []
+  },
+  "affection": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "喜爱;钟爱;爱情",
+    "phrase": [
+      ["affection for/towards...", "对...的喜爱"],
+      ["win/gain sb's affection", "赢得某人的欢心"],
+      ["feel no affection", "对...没感情"]
+    ],
+    "sentence": [
+      ["She thought of him with affection.",
+        "她很想念他。"],
+      ["Their affection for her soon increased almost to idolatry.",
+        "他们对她的喜爱不久就发展到了盲目崇拜的地步。"],
+      ["While her mother gave my boundless affection, subtle things I trained fine, the people love traits.",
+        "而妈妈则给予了我无边的慈爱，潜移默化的培养了我对事细腻，对人友爱的性格特点。"]
+    ],
+    "relevant-word": []
+  },
+  "portion": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "部分;(食物的)一份，一客;分享的部分;分担的责任;把…分成若干份(或部分)",
+    "phrase": [
+      ["portion sth out", "把…分成若干份"],
+      ["take up a considerable portion of", "占据了...中相当可观的一部分"],
+      ["bear some portion of the blame", "承担一部分责任"]
+    ],
+    "sentence": [
+      ["A large portion of this cost devolves upon the patient. ",
+        "这笔费用的很大一部分落在病人身上。"],
+      ["But in Tang, Song, Ming and Qing dynasty, daughters can inherit` marriage portion 'and family estate according to the common law and customs, which indicates that there is conflict between the traditional and the common on women's estate heritance. ",
+        "但是，唐、宋以及明清的法律以及法律习惯上女儿是可以继承一定的“嫁妆”和财产的。反映出传统法律在女性的财产继承上，法律原理与制定法及法律习惯存在着冲突。"],
+      ["One tenth is the correct portion to allocate. ",
+        "按十分之一分配是对的。"]
+    ],
+    "relevant-word": []
+  },
+  "comprehensive": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "全部的;所有的;(几乎)无所不包的;详尽的;综合性的(接收各种资质的学生);(英国为各种资质的学生设立的)综合中学",
+    "phrase": [
+      ["have a comprehensive grasp of...", "全面掌握"],
+      ["a comprehensive account", "面面俱到的叙述"],
+      ["comprehensive knowledge", "渊博的知识"]
+    ],
+    "sentence": [
+      ["Bloor Research also examines these two analytics systems, providing a comprehensive comparison for IT specialists. ",
+        "Bloor Research也研究了这两个分析系统，为IT专家提供一个全面综合的比较。"],
+      ["The newspaper made a comprehensive report of his deeds.",
+        "报纸对他的行为做了内容广泛的报道。"],
+      ["If a person has a comprehensive mind he is able to understand many different things.",
+        "一个人如有理解力，他能领会许多不同的事物。"],
+      ["Therefore, some relevant training should be carried out and strengthened in order to improve students 'comprehensive level of English and thus level the ratio of passing the examination. ",
+        "由此提出，有必要加强英语专业学生短文听写的训练，提高学生的综合英语水平，从而提高英语专业四级考试的通过率。"],
+      ["The academic performance of comprehensive schools was below par.",
+        "综合学校的学业成绩比一般水平还要差。"]
+    ],
+    "relevant-word": []
+  },
+  "expansion": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "扩张;扩展;扩大;膨胀",
+    "phrase": [
+      ["territorial expansion", "领土扩张"],
+      ["the expansion of konwledge", "知识扩大"]
+    ],
+    "sentence": [
+      ["The company has abandoned plans for further expansion. ",
+        "该公司已经放弃了进一步扩张的计划。"],
+      ["With the continuous development and expansion of business, partners and scope are also Further enlargement. ",
+        "随着业务的不断发展和扩大，合作伙伴和范围也在进一步的扩大。"],
+      ["Result In objective group, after taking the medicine, the spontaneous abortion occured in 21 cases, and the rest were found to be better expansion of the cervical canal, easier to operate. ",
+        "结果观察组27例病人，21例在服药后自然流产，6例清宫中发现宫颈扩张良好，宫腔内容物易清除，手术操作难度低、用时少、痛苦轻、出血少；"],
+      ["Based on the testing results for the mechanical parameters of altered rock mass and on the comparison of the expansion stress of fracture fillings, the mechanical effects of the fillings on fracture seepage are discussed. ",
+        "基于裂隙充填物膨胀压力与蚀变岩体力学参数测试分析成果，针对膨胀性充填物对裂隙岩体渗流影响极少开展的问题，探讨了充填物的力学响应对裂隙渗流的影响。"]
+    ],
+    "relevant-word": ["expand"]
+  },
+  "expand": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "扩大，增加，增强(尺码、数量或重要性);扩展，发展(业务);细谈;详述;详细阐明",
+    "phrase": [
+      ["expand on/upon sth", "详述；充分叙述；详细阐明"]
+    ],
+    "sentence": [
+      ["Years of rapid investment have seen capacity for much of the industrial and manufacturing sector expand ahead of demand. ",
+        "在多年来投资快速增长的驱动下，工业和制造业中很多企业的产能扩张跑在了需求的前头。"],
+      ["Having A Job Where You Sit All Day A study last month found that sitting for long periods of time can actually expand your ass. ",
+        "上个月，一份新研究出炉，证实了长期坐在位子上会使屁股变大。"],
+      ["In the next section, I expand on this test case and implement multiple threads. ",
+        "在下一节中，我将详述这个测验用例并实现多个线程。"],
+      ["Health officials are proposing to expand their services by organising counselling. ",
+        "卫生官员计划通过组织咨询来扩展他们的服务。"],
+      ["Expand local users and groups. ",
+         "展开“本地用户和组”。"],
+      ["How to expand and collapse sections of code to increase visibility in the editor. ",
+        "如何在编辑器中展开和折叠代码节以增强可见性。"]
+    ],
+    "relevant-word": ["expansion"]
+  },
+  "remark": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "谈论;言论;评述;引人注目;显耀;说起;谈论;评论",
+    "phrase": [
+      ["remark on...", "评论"],
+      ["remark behind one's back", "在背后议论"],
+      ["remark casually", "随便说"]
+    ],
+    "sentence": [
+      ["His hostility to the woman found vent in a sharp remark.",
+        "他用尖刻的话语发泄对那个女人的敌意。"],
+      ["Did you remark the similarity between them? ",
+        "你注意到他们中的相似之处吗？"],
+      ["I feel the remark was inappropriate for such a serious issue.",
+        "我认为对如此严肃的问题来说，该评论不合时宜。"],
+      ["An agreeable or amusing remark. ",
+        "一种令人愉快或有趣的谈论。"]
+    ],
+    "relevant-word": []
+  },
+  "draft": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "草稿;草案;草图;汇票;运动员选拔制(某些职业运动队每年在大学生中选拔新队员);初步画出或（写出）的;（设计、草图、提纲或版本）正在起草中的，草拟的;以草稿形式的;草图的;初步画出或（写出）的;（设计、草图、提纲或版本）正在起草中的，草拟的;以草稿形式的;草图的",
+    "phrase": [
+      ["draw up a draft", "写一份草稿"],
+      ["a working draft", "工作草图"]
+    ],
+    "sentence": [
+      ["I rewrote his rough draft, which was published under my name.",
+        "我把他的草稿重新改写，并以我的名字发表了。"],
+      ["Officials have now been delegated to start work on a draft settlement.",
+        "现在已经委派官员着手起草解决方案。"],
+      ["Payments should be made by credit card or bank draft in U.S. dollars.",
+        "必须以信用卡或银行汇票用美元支付。"],
+      ["Children believe that if a draft draws the letter up through the chimney, their wishes will be fulfilled.",
+        "他们相信，如果上升的气流把灰烬顺烟囱带了上去，他们的愿望便会得到满足。"],
+      ["The basic law will be an important document, which you should draft very carefully, proceeding from realities.",
+        "基本法是个重要的文件，要非常认真地从实际出发来制定。"],
+      ["Three weeks later he asserted that Arabs of draft age must not be allowed to return.",
+        "三周以后，他断定符合征募年龄的阿拉伯人不鞥被允许回来。"]
+    ],
+    "relevant-word": []
+  },
+  "mystery": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "神秘的事物;不可理解之事;奥秘;神秘的人(或事物);陌生而有趣的人(或事物);神秘;不可思议",
+    "phrase": [],
+    "sentence": [
+      ["Life was a dark, insoluble mystery, but whatever it was, strength and weakness were its two constituents.",
+        "人生是玄妙的，不可分解的秘密，但是不管怎么样，强和弱就是它的两种组织成分。"],
+      ["It's a mystery to me. ",
+        "这对我来说是个谜。"],
+      ["Now she's written a novel which is not a mystery and is a considerable departure from her previous work.",
+        "她现在创作了一部非推理小说，与她以前的作品大相径庭。"]
+    ],
+    "relevant-word": []
+  },
+  "mysterious": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "神秘的;奇怪的;不易解释的;陌生的;诡秘的;故弄玄虚的",
+    "phrase": [
+      ["be mysterious about", "对...神神秘秘"],
+      ["the mysterious universe", "神秘的宇宙"]
+    ],
+    "sentence": [
+      ["But when the joy is truly there, it is so mysterious, it is so primal, that you cannot find any reason in it.",
+        "但在愉快真实存在的时候，它是如此的玄妙，如此的原始，你找不到它的缘由。"],
+      ["A mysterious illness confined him to bed for over a month.",
+        "他得了一种神秘的怪病，卧床有一个多月。"],
+      ["The implicit rules and conventions can be difficult to discern during development and the resulting errors often manifest themselves in mysterious manners during runtime, making debugging difficult.",
+        "隐含的规则和约定在开发过程中可能很难识别，而且在运行时，通常以难以理解的方式来表达产生的错误，导致调试变得很难。"],
+      ["Initially, writing this code can be a little dreary, but it also has a real advantage in reliability: many mysterious problems instantly disappear if you immediately reject bad data.",
+        "在开始时，编写这些代码可能会有一点无聊，不过它对于可靠性确实有好处：如果您拒绝了那些非法数据，许多不可思议的问题马上就会消失。"]
+    ],
+    "relevant-word": []
+  },
+  "tremendous": {
+    "learn-day": "2020-03-13",
+    "ch-hans": "巨大的;极大的;极好的;精彩的;了不起的",
+    "phrase": [
+      ["at a tremendous cost", "巨大的代价"],
+      ["at tremendous speed", "以极快的速度"]
+    ],
+    "sentence": [
+      ["The neglect that large cities like New York have received over the past 12 years is tremendous",
+        "过去12年里，纽约等大城市受到了极大的冷遇。"],
+      ["Tremendous changes have taken place here.",
+        "这里发生了巨大的变化。"],
+      ["Every day the sun supplies the solar system with a tremendous amount of heat, light and energy. ",
+        "每天太阳以惊人可怕的数量供给着太阳系以热、光和能量。"]
+    ],
+    "relevant-word": []
+  },
+  "considerable": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "相当多(或大、重要等)的",
+    "phrase": [
+      ["be of considerable importance", "相当重要"],
+      ["attract considerable attention", "吸引大量关注"]
+    ],
+    "sentence": [
+      ["To be without Pearce would be a considerable blow.",
+        "失去皮尔斯将是一个巨大的打击。"],
+      ["Doing it properly makes considerable demands on our time.",
+        "把这事做好要耗费我们相当多的时间。"]
+    ],
+    "relevant-word": ["considerate"]
+  },
+  "considerate": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "考虑周到的;为(他人)着想的;体谅的;体贴的",
+    "phrase": [
+      ["be considerate of others", "为他人着想"],
+      ["courteously considerate", "殷勤周到的"],
+      ["thoughtfully considerate", "体贴周到的"]
+    ],
+    "sentence": [
+      ["I think he's the most charming, most considerate man I've ever known.",
+        "我觉得他是我所认识的最有魅力并且最为体贴的男士。"],
+      ["In society, it is no doubt that a considerate heart can help to promote interpersonal relations.",
+        "在社会上，沟通人与人之间的情感的，无疑是一颗体谅的心。"],
+      ["However, for the translator, those manuscripts show the traces of thoughts during the translation, and record directly the ideological spark at the beginning and the considerate talent at the end. ",
+        "然而对于译者来说，手稿是翻译过程中的思考痕迹，它直接记录了译者最初的思想火花和深思熟虑后的才情。"]
+    ],
+    "relevant-word": ["considerable"]
+  },
+  "participate": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "参加;参与",
+    "phrase": [
+      ["participate in sth", "参加;参与"]
+    ],
+    "sentence": [
+      ["Over half the population of this country participate in sport. ",
+        "这个国家一半以上的人口参加体育锻炼。"],
+      ["They expected him to participate in the ceremony.",
+        "他们希望他参加典礼。"]
+    ],
+    "relevant-word": []
+  },
+  "shift": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "转移;挪动;赶快;快速移动;变换;更替;变动;改变;转移;转换;变换;班;轮班;轮班工作时间;轮班职工",
+    "phrase": [
+      ["shift sth from ... to ...", "从...转移/挪动 到..."],
+      ["shift yourself", "赶快；快速移动"],
+      ["shift responsibility/blame (for sth)", "推卸，转嫁（责任）"],
+      ["shift your ground", "（尤指讨论时）改变立场"],
+      ["(the) shifting sands (of sth)", "变幻莫测；变化无常"],
+      ["shift for yourself", "独立设法应付；独立谋生；自立"],
+      ["shift in sth", "改变；转移；转换；变换"]
+    ],
+    "sentence": [
+      ["Tory-bashing or Labour-bashing will not be enough to shift bored, suspicious voters. ",
+        "抨击保守党或工党并不足以改变那些心生厌倦、心存怀疑的选民的态度。"],
+      ["Some automatic transmissions also have a manual shift mode allowing the driver to select gears manually.",
+        "有些自动变速器还有一个手动换挡模式，驾驶员也可以手动换挡。"],
+      ["Standards: Reservation shift leader will be responsible to keep guest profile database clean and eradicate any duplicated profiles. ",
+        "标准：预订部主管负责客史数据的管理，并去掉重复的和无用的档案。"],
+      ["Many will also be at the peak of their career, leading fast-paced lives which will help shift any excess weight alongside a diet,' she said.'",
+        "“很多女孩子也可能是处在事业的高峰期，快节奏的生活方式也会助节食一臂之力，帮助她们摆脱掉超重的烦恼，”她说道。（实习编辑：顾萍）"],
+      ["US oil demand is being curbed by high prices inhibiting driving, a shift to more efficient cars and the rise of alternative fuels, particularly ethanol but also natural gas.",
+        "高油价抑制了驾车行为，加上更节能汽车和替代能源（以乙醇和天然气为代表）的兴起，这都抑制了美国的石油需求。"]
+    ],
+    "relevant-word": []
+  },
+  "raw": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "生的;未烹制的;未煮的;未经加工的;自然状态的;未经处理的;未经分析的;原始的;擦伤处",
+    "phrase": [],
+    "sentence": [
+      ["Half of it is burned and half of it is raw.",
+        "一半烧焦了，另一半还是生的。"],
+      ["Only a small fraction of that represents growth in the tonnage of physical materials-oil, coal, ores, wood, and raw chemicals, for example. ",
+        "只有很小比例的增长代表了自然原料吨位的增长&例如油、煤、矿石，木材和未加工的化学制品。"],
+      ["For example, dogs who lick themselves raw are prone to infection, and some dogs with this disorder will quit eating or drinking.",
+        "比如，狗如果狗舔有伤口的地方，可能会引起发炎。一些患病的狗可能不吃不喝。"],
+      ["Agriculture has developed rapidly, thus providing light industry with ample raw materials.",
+        "农业迅速发展，从而为轻工业提供了充足的原料。"],
+      ["Responsible for microbiological test on raw material, plant, and finished products.",
+        "巡检每天生产的半成品和成品（外观、理化指标、微生物指标）。"]
+    ],
+    "relevant-word": []
+  },
+  "tank": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "(贮放液体或气体的)箱，槽，罐;箱(或桶等)所装之物;一箱(或一桶等)的量;坦克;彻底失败;破产;倒闭;(尤指故意)输掉(比赛)",
+    "phrase": [
+      ["tank sth up", "给（汽车）加油"]
+    ],
+    "sentence": [
+      ["A school bus was hit by gunfire which exploded the fuel tank.",
+        "校车被炮火击中，引爆了油箱。"],
+      ["The division will consist of two tank companies and one infantry company.",
+        "这个师的组成部队将包括两个坦克连和一个步兵连。"],
+      ["Design Considerations of Storage Tank for Domestic and Fire Water Consumption.",
+        "生活与消防共用贮水池的出水设计。"]
+    ],
+    "relevant-word": []
+  },
+  "revolution": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "革命;巨变;大变革;(环绕中心点的)旋转;(尤指)天体运行",
+    "phrase": [
+      ["revolution (in sth)", "巨变；大变革"],
+      ["revolution (around/on sth)", "环绕中心点的）旋转；（尤指）天体运行"]
+    ],
+    "sentence": [
+      ["This was a prologue to today's bloodless revolution.",
+        "这拉开了当今不流血革命的序幕。"],
+      ["Revolution of a right triangle about one of its legs generates a cone.",
+        "直角三角形绕一直角边旋转即成锥形。"],
+      ["The invention of air travel caused a revolution in our way of living.",
+        "飞行工具的发明使我们的生活方式彻底改变。"],
+      ["Uranus, the planet of revolution, will visit your house of relationships, so you could see a new beginning come through a chance encounter or possibly a radical shift in your current affair.",
+        "金星，将开始运行至你的人际关系宫，因而，你可能会看到一个新的开始，一次偶然相遇或者事态的忽然转变。"],
+      ["Earth's rotation and keep the revolution, while the crust is constantly changing internal. ",
+        "地球在不停地自转和公转，同时地壳内部也在不停地变化。"]
+    ],
+    "relevant-word": []
+  },
+  "revolutionary": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "革命的;彻底变革的;巨变的;(支持)改革者;(尤指)革命者，革命支持者",
+    "phrase": [],
+    "sentence": [
+      ["The revolutionary struggle is getting more and more intense. ",
+        "革命的烈火愈烧愈旺。"],
+      ["It was a revolutionary new technology, given rise to new tools and weapons.",
+        "这是革命性的新技术，产生了武器和工具。"],
+      ["Welcome to the fourth installment of my column that focuses on the evolutionary and revolutionary aspects of Web services technology.",
+        "欢迎进入本专栏的第4部分，本专栏重点讲述Web服务技术正在革新和创新的方面。"],
+      ["The magneto-elastic effects in a thin current carrying conical shells under the combined action of electro-magnetic field and mechanical load are studied based on the nonlinear magneto-elastic kinetic equations of revolutionary shells. ",
+        "在建立旋转壳体的非线性磁弹性运动方程的基础上，研究了电磁场和机械载荷联合作用下载流圆锥薄壳的磁弹性效应。"],
+      ["But we must not think of Chekhov as a leftist, much less a revolutionary.",
+        "但是我们绝不应把契科夫看成是个左派人物，他更不是革命者。"],
+      ["A revolutionary, you are likely to oppose tradition with its limits on individuality. ",
+        "作为革新者，你可能就个人主义的限制方面而与传统对立。"]
+    ],
+    "relevant-word": []
+  },
+  "item": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "项目;一件商品(或物品);一则，一条(新闻)",
+    "phrase": [
+      ["be an item", "恋爱；有性关系"],
+      ["luxury items", "奢侈品"]
+    ],
+    "sentence": [
+      ["Are they an item?",
+        "他们在恋爱吗？"],
+      ["You must specify a valid class for this item. ",
+        "您必须为这个项目指定一个有效的class。"],
+      ["This item of news reflects the voices of the common people. ",
+        "这条新闻反映了普通老百姓的声音。"],
+      ["We accepted the item in principle. ",
+        "我们在原则上接受了这个条款。"],
+      ["For example, an item that features an interview with a female economics minister might focus on her views about trade tariffs, or general economic policy.",
+        "例如，一则对女经济部长的采访报道可能只聚焦于她对贸易关税或整体经济政策的观点。"],
+      ["And each item gets a price. ",
+        "每一件商品都有一个价格。"]
+    ],
+    "relevant-word": []
+  },
+  "belt": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "腰带;皮带;传送带;传动带;地带;地区;猛击;狠打;飞奔;飞驰;用带系住",
+    "phrase": [
+      ["safety belt", "安全带"]
+    ],
+    "sentence": [
+      ["Philippe was in uniform, wearing a pistol holster on his belt",
+        "菲利普身着制服，腰带上别着手枪皮套。"],
+      ["It was taken right there on a conveyor belt.",
+        "它被传送带直接送到了那边。"],
+      ["The Study of GPS Interpolation in Belt.",
+        "带状区域GPS高程拟合方法的研究。"]
+    ],
+    "relevant-word": []
+  },
+  "leather": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "皮革;(尤指骑摩托车人穿的)皮衣，皮外套",
+    "phrase": [
+      ["hell for leather", "尽快"]
+    ],
+    "sentence": [
+      ["It's an imitation of leather. ",
+        "它是仿皮革制品。"],
+      ["The jacket had leather fringes.",
+        "这件夹克有皮穗。"],
+      ["What is the bag made of? It is made of leather. ",
+        "这个包是由什么制成的？-它是皮制的。"]
+    ],
+    "relevant-word": []
+  },
+  "headquarters": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "总部;总公司;大本营;司令部",
+    "phrase": [
+      ["police headquarters", "警察总局"],
+      ["corporation headquarters", "公司总部"]
+    ],
+    "sentence": [
+      ["Headquarters was swamped by an avalanche of applications for battle assignments. ",
+        "请战书像雪片似地飞向指挥部"],
+      ["The soldier reported to headquarters. ",
+        "这个士兵向司令部作了报告。"],
+      ["We fixed for the team to visit our headquarters.",
+        "我们安排了该工作组参观我们的总部。"],
+      ["Xinhua Bookstore, in our country has more than 2,700 headquarters and branches. The sales of Xinhua bookstore account for 60% book distribution sales, and it has become the main channel of domestic book sales. ",
+        "新华书店在全国有2700多家总店和分店，其图书销售额约占全国图书销售总量的60%，已成为国内图书销售的主要渠道。"]
+    ],
+    "relevant-word": []
+  },
+  "prominent": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "重要的;著名的;杰出的;显眼的;显著的;突出的;凸现的",
+    "phrase": [
+      ["brilliantly prominent", "极其突出的"],
+      ["prominent among", "在...中很突出"]
+    ],
+    "sentence": [
+      ["Other prominent bloggers have removed comments, too.",
+        "其它著名的博客也已经移走了评论。"],
+      ["The most prominent of these interfaces are JMS and JCA.",
+        "这些接口中最突出的是JMS和JCA。"],
+      ["Several prominent scientists defected to another country. ",
+        "有几位杰出的科学家逃到另一个国家去了。"],
+      ["Application of Binding Agent in Prominent Pavement Sign Installation.",
+        "突起路标粘结剂在安装过程中的应用。"]
+    ],
+    "relevant-word": []
+  },
+  "evolution": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "进化;演变;发展;渐进",
+    "phrase": [
+      ["Evolution theory", "进化论"]
+    ],
+    "sentence": [
+      ["First of all, we systematically review the historical evolution of regional economic policy in China and institutional change.",
+        "首先，系统地梳理了我国区域经济政策的历史演变和制度变迁。"],
+      ["Darwin eventually put forward a model of biological evolution.",
+        "达尔文最终提出了生物进化的模型。"],
+      ["With the evolution of software and software tools, architects have overcome this limitation.",
+        "随着软件和软件工具的发展，架构师们已经克服了这一局限性。"]
+    ],
+    "relevant-word": ["evolve"]
+  },
+  "evolve": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "(使)逐渐形成，逐步发展，逐渐演变;进化;进化形成",
+    "phrase": [
+      ["evolve (sth) (from sth) (into sth)", "（使）逐渐形成，逐步发展，逐渐演变"],
+      ["evolve (from sth)", "进化；进化形成"]
+    ],
+    "sentence": [
+      ["And each successive iteration builds on the work of previous iterations to evolve and refine the system until the final product is complete. ",
+        "每个后续的迭代都建立在前一个迭代的基础上以使系统得到发展和细化，直到最终产品被完成。"],
+      ["The individual in PEA is encoded by a probabilistic superposed bit. The observing step is used in PEA to obtain the observed individual, and the update method is used to evolve the population. ",
+        "在概率进化算法中，个体采用由观测概率构成的概率复合位进行编码，通过观测操作得到个体的观测值，通过更新操作改变概率复合位中的观测概率使个体得以进化。"],
+      ["So, you can evolve services based on product-line features without introducing separate WSDL documents.",
+        "因此，您可以基于产品线功能来设计服务，而不必引入单独的WSDL文档。"],
+      ["Flexible architectures need to evolve with technology and standards.",
+        "灵活的架构需要与技术和标准一起发展。"]
+    ],
+    "relevant-word": ["evolution"]
+  },
+  "stable": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "稳定的;稳固的;牢固的;稳重的;沉稳的;持重的;(化学状态或原子状态)稳定的;马厩;(养马作特定用途的)养马场;马房;统称某人拥有(或训练的)赛马;使(马)入厩;把(马)拴在马厩",
+    "phrase": [
+      ["in a stable way", "以稳定的方式"],
+      ["stable of a person", "稳重的；沉稳的；持重的"],
+      ["stable of a substance", "(化学状态或原子状态)稳定的"]
+    ],
+    "sentence": [
+      ["The less stable compounds were converted into a compound called Delta-A THC. ",
+        "不太稳定的化合物被转换成了一种叫做Delta-A THC的化合物。"],
+      ["Only by this way, it is possible for us to have a stable, tranquil and peaceful mind.",
+        "唯有这样，我们的生活，我们的身心，才能有平静，沉稳，舒坦的可能。"],
+      ["The force is always opposing the direction of increasing potential energy, so the force will drive it back and so that's why we call this a stable equilibrium. ",
+        "力一直和势能，增加的方向，相反，作用力会将其推回，那就是为什么称它，稳定平衡的状态。"],
+      ["The world needs stable peace. ",
+        "世界需要持久的和平。"],
+      ["After a while I turned and trotted back to the stable.",
+        "过了一会儿，我掉转马头，催马小跑着返回马厩。"]
+    ],
+    "relevant-word": ["stability"]
+  },
+  "stability": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "稳定(性);稳固(性)",
+    "phrase": [],
+    "sentence": [
+      ["Peace and stability in the world need the active involvement of China.",
+        "世界和平和稳定需有中国的积极参与。"],
+      ["Stability: must do what you should do, importance must be done well.",
+        "坚定：该做的事必须去做，重要的事一定要做好。"]
+    ],
+    "relevant-word": ["stable"]
+  },
+  "ceiling": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "天花板;顶棚;最高限度;上限;最大限量;最高飞行限度;升限;装天花板；装壁板；装隔板",
+    "phrase": [
+      ["hit the ceiling/roof", "勃然大怒；怒气冲天"]
+    ],
+    "sentence": [
+      ["The roof support structure had collapsed and the entire weight was bearing down on the ceiling. ",
+        "屋顶的支架倒塌了，全部重量都压到了天花板上。"],
+      ["The government has set a wages and prices ceiling of 10%. ",
+        "政府规定工资和物价提高的最高限度为10%。"]
+    ],
+    "relevant-word": []
+  },
+  "storage": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "贮存，贮藏(空间);存储(方式);付费托管",
+    "phrase": [
+      ["in storage", "贮藏"],
+      ["storage battery", "蓄电池"]
+    ],
+    "sentence": [
+      ["Records storage facilities and system.",
+        "档案贮存设施和系统。"],
+      ["Some of the space will at first be used for storage.",
+        "一部分空间将首先用于贮藏。"],
+      ["Storage management is a problem which is closely bound up our daily life. ",
+        "仓库管理是与我们日常生活息息相关的问题。"],
+      ["NOVELTY-A determination unit determines whether inside temperature of an electrical storage apparatus is in cold condition. ",
+        "新颖性–确定单元能判断蓄电设备的内部温度是否处于低温状态。"]
+    ],
+    "relevant-word": []
+  },
+  "vital": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "必不可少的;对…极重要的;生命的;维持生命所必需的;生气勃勃的;充满生机的;热情洋溢的",
+    "phrase": [
+      ["vital (for/to sth)", "必不可少的；对…极重要的"],
+      ["be vital to", "对...至关重要"],
+      ["it is vita that...", "重要的是..."],
+      ["vital interest", "切身利益"]
+    ],
+    "sentence": [
+      ["These projects will provide vital links between companies and universities. ",
+        "这些项目将会成为公司和大学之间至关重要的联系纽带。"],
+      ["We must try to ensure that vital food supplies are maintained.",
+        "我们必须确保维持生命所必需的食物之供应。"],
+      ["The researchers then examined cells extracted from the hippocampus, a brain region vital to memory and learning. ",
+        "接着研究人员对与技艺和学习生死攸关的大脑部位，海马提取的细胞进行了检测。"],
+      ["Vital and creative socialism is created by the masses of people themselves.",
+        "生气勃勃的创造性的社会主义是由人民群众自己创造的。"]
+    ],
+    "relevant-word": ["crucial"]
+  },
+  "entry": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "进入(指行动);进入(指权利等);参与，加入(指权利、机会)",
+    "phrase": [
+      ["entry into sth", "进入（指行动）"],
+      ["entry (to/into sth)", "进入（指权利等）"],
+      ["entry in sth", "条目；词条；账目；记录"]
+    ],
+    "sentence": [
+      ["Non-residents were refused entry into the region without authority from their own district.",
+        "非本地区居民未经所在地许可，不得进入该区域。"],
+      ["Tickets will be printed with fixed entry times.",
+        "票面上将印有固定的入场时间。"],
+      ["I will wait for you at the entry.",
+        "我在入口处等你。"],
+      ["We stopped at the entry to admire the architecture. ",
+        "我们在门口停下，欣赏它的建筑。"],
+      ["Remember to write your daytime telephone number on the entry form.",
+        "别忘了在登记表上写下你白天的电话号码。"],
+      ["He made an entry in a list.",
+        "他在名单上记了一条记录。"],
+      ["There is a very mixed entry for the competition this year, but in the normal course of events the best two players finish up in the final.",
+        "今年参加比赛的人各种各样，但是按照程序最好的两名选手将结束决赛。"]
+    ],
+    "relevant-word": []
+  },
+  "index": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "索引;(物价和工资等的)指数;标志;指标;表征;量度;为…编索引;将…编入索引;将(工资等)与(物价水平等)挂钩;使指数化",
+    "phrase": [
+      ["index sth (to sth)", "将（工资等）与（物价水平等）挂钩；使指数化"]
+    ],
+    "sentence": [
+      ["I riffled through the pages until I reached the index. ",
+        "我快速翻至索引部分。"],
+      ["The HapMap has been invaluable in detecting variants involved in many diseases and these results suggest that the CNV index will prove similarly useful. ",
+        "人类基因组单体型图在检测在许多疾病涉及的基因变异方面的作用不言而喻并且这些结论也表明变异基因拷贝数指数也有类似的作用。"],
+      ["Following identification of the index case, an outbreak investigation was conducted in the area.",
+        "确认指示病例之后，在该地区开展了疫情调查。"],
+      ["Color is commonly an index of ripeness or spoilage. ",
+        "色泽一般是成熟和败坏的标志。"],
+      ["Agecon search-designed to index and electronically disribute full text reports of scholarly research in the field of agricultural and applied economics. ",
+        "搜索，把完整文本关于在农业和应用经济学的学术性研究的报告编入索引。"],
+      ["A turnable structure matched with index bit ( named index spacer) has been designed.",
+        "本文设计和计算了一种可转位刀垫的结构。"]
+    ],
+    "relevant-word": []
+  },
+  "stream": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "小河;溪;流;(液)流;(气)流;(人)流;(车)流;流;流动;流出;鱼贯而行;一个接一个地移动;飘动;飘扬",
+    "phrase": [
+      ["stream (of sth)", "流；（液）流；（气）流;（人）流；（车）流"]
+    ],
+    "sentence": [
+      ["We are taking steps to prevent stream and air pollution. ",
+        "我们正采取措施防止河流和空气污染。"],
+      ["This paper have a overall analysis to international and Chinese decision-making law and stream of FDl R& D by virtue of the present situation, including theory and reality example.",
+        "借鉴国际经验和国内现实情况，研究了国际跨国公司R D决策行为的理论综述、规律和趋势，旨在对我国吸引跨国公司R D投资政府决策中起到一定的借鉴作用。"],
+      ["Within the Internet, information is not transmitted as a constant stream from host to host.",
+        "在因特网内部，信息从主机到主机的传送并不是连续不断的。"],
+      ["The argon-rich waste stream from the low pressure column is sent to an argon distillation column.",
+        "从低压塔流出的富氩废物被送到氩分裂蒸馏塔。"],
+      ["Throughout the year the company announced a steady stream of new products and upgrades. ",
+        "这一年中，公司发布了一连串可靠的新产品和更新。"]
+    ],
+    "relevant-word": []
+  },
+  "strive": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "努力;奋斗;力争;力求",
+    "phrase": [
+      ["strive for", "努力，力求"],
+      ["strive to do sth", "努力，力求"]
+    ],
+    "sentence": [
+      ["In putting forward the concept of building a harmonious world, China will also strive to attain this goal.",
+        "（既然）中国提出了建设和谐世界的理念，（中国）也将为达到这个目标努力奋斗。"],
+      ["We strive through our efforts, in order to make our customers to gain the competitive product, and make us and the customers grow up together.",
+        "我们力求通过我们的努力，让我们的客户获得性价比有竞争力的产品，使我们和客户一起成长。"],
+      ["Strive for the successful fulfilment of the First Five-Year Plan!",
+        "为胜利地完成第一个五年计划而斗争！"],
+      ["At the level of collecting data, all the scientists strive for objectivity.",
+        "任何一个科学家，他们在收集资料的工作阶段都力争客观。"],
+      ["Striving for perfection will stress you out.",
+        "追求尽善尽美会让你很累。"]
+    ],
+    "relevant-word": []
+  },
+  "derive": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "获得;取得;得到;(使)起源;(使)产生",
+    "phrase": [
+      ["derive from", "源自；源于"],
+      ["derive sth from sth", "（从…中）得到，获得"]
+    ],
+    "sentence": [
+      ["They derive enormous pleasure from reading.",
+        "他们从阅读中得到了极大的乐趣。"],
+      ["Dialog box to derive names for some files and classes.",
+        "框中指定的名称导出某些文件和类的名称。"],
+      ["You cannot truly forgive yourself or others as long as you derive your sense of self from the past. ",
+        "如果你的自我感觉源于过去，你就不会真正地宽恕自己和别人。"],
+      ["Client& Component both derive from Connection which does the XML stream processing.",
+        "客户端和组件都来自于连接，连接进行XML流处理。"],
+      ["This paper proposes a new model 'rule tree' to derive layered image association rules. ",
+        "提出了一种新的模型&规则树来进行图像关联规则的分层次提取。"]
+    ],
+    "relevant-word": ["originate"]
+  },
+  "poke": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "(用手指或其他东西)捅，杵;推;捅;戳;探;露出;伸出;探出;捅;戳;拨;挑;(汽车的)马力，推进力;模拟",
+    "phrase": [
+      ["poke sb/sth (with sth)", "（用手指或其他东西）捅，戳，杵"],
+      ["poke fun at", "嘲弄，开玩笑"],
+      ["poke a hole in sth (with sth)", "捅窟窿；扎洞"],
+      ["poke/stick your nose into sth", "poke/stick your nose into sth"],
+      ["poke about/around", "搜查；翻找"],
+      ["poke at sth", "捅，戳，扎"],
+      ["have a poke around", "仔细寻觅；探究；打探"],
+      ["take a poke at sb/sth", "嘲弄；奚落；嘲笑"],
+      ["(buy) a pig in a poke", "（买）未看过的东西；（买）不知优劣的东西"]
+    ],
+    "sentence": [
+      ["Poke two holes in the sack so you can see through it.",
+        "在袋子上戳两个洞就能透过它看了。"],
+      ["I want to poke a beehive. ",
+        "我想捅蜜蜂窝。"],
+      ["She gave the fire a poke.",
+        "她拨了拨火。"],
+      ["He used a nail to poke a hole. ",
+        "他用钉子刺了个洞。"],
+      ["He came over to poke his nose in my business.",
+        "他过来干涉了我的事。"],
+      ["Don't let your boy poke his head out of the train window& it's dangerous!",
+        "别让你的孩子把头伸出火车窗外，太危险了。"],
+      ["The man who owns this land said I could poke around here anytime.",
+        "这块地的主人说我可以随时到这儿来闲逛。"],
+      ["Don't buy a pig in a poke.",
+        "不要买袋子罩著的猪。"]
+    ],
+    "relevant-word": []
+  },
+  "vanish": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "(莫名其妙地)突然消失;不复存在;消亡;绝迹",
+    "phrase": [
+      ["do, perform, stage a disappearing/vanishing act", " 隐藏踪迹；潜踪隐迹"],
+      ["disappear/vanish off the face of the earth", "完全消失；消逝得无影无踪"]
+    ],
+    "sentence": [
+      ["He just vanished and was never seen again.",
+        "他就这么消失了，再也没人见到过他。"],
+      ["With the advancement of our society, this phenomenon will gradually vanish inevitably. ",
+        "随着社会的进步，潜规则现象必将逐渐消亡。"],
+      ["The supremacy of the proletariat will cause them to vanish still faster.",
+        "无产阶级的统治将使它们更快地消失。"]
+    ],
+    "relevant-word": []
+  },
+  "episode": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "(人生的)一段经历;(小说的)片段，插曲;(电视连续剧或无线电广播剧的)一集",
+    "phrase": [],
+    "sentence": [
+      ["This is just I grew up in a small episode.",
+        "这不过是我成长中的一个小插曲。"],
+      ["The final episode will be shown next Sunday.",
+        "下周日将播出最后一集。"],
+      ["A 'case report' refers to an episode rather than a patient.",
+        "病例报告指一个片段不是病人。"],
+      ["Unfortunately it was a rather sordid episode of my life.",
+        "不幸的是，这是我人生中非常不光彩的一段经历。"]
+    ],
+    "relevant-word": []
+  },
+  "core": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "(苹果等的)果心，核儿;(物体的)中心部分;最重要的部分;核心;要点;精髓;最重要的;主要的;基本的;核心( 信念、价值、原则等);核心成员的;骨干的;去掉(水果)的果心;去(水果)的核儿",
+    "phrase": [
+      ["to the core", "直至核心；十足；透顶"],
+      ["core beliefs, values, principles, etc.", "核心（ 信念、价值、原则等）"]
+    ],
+    "sentence": [
+      ["For technology, it is dispatch and control core which realizes the system management, system fault tolerance, system monitoring etc. ",
+        "在技术上，它实现了系统管理、系统容错、系统监控等功能，是整个系统的调度和控制中心。"],
+      ["Economic impact problem has become the core issue with economic policy theory and economic academic cycle. ",
+        "经济冲击问题已经成为经济政策理论和经济周期理论的核心问题。"],
+      ["Olympic Image The core essence of the Olympic Games as it is found in the thoughts and emotions of people around the world.",
+        "奥运会形象奥运会形象是奥运会的精髓，也是全世界人民共同的思想和情感。"],
+      ["The effects of storage temperature on fruit postharvest quality, core browning, softening, and senescence of'Whangkeumbae'pears at-1.",
+        "贮藏温度对黄金梨采后品质和果心褐变以及软化、衰老等指标的影响。"],
+      ["The research revealed a powerful way to decipher the identity of the light elements in the core.",
+        "这个研究显示了一种强有力的方法来解密地核中的轻物质的身份。"],
+      ["The direction of magnetisation will change in core a only, thus storing a binary digit. ",
+        "磁化方向仅在磁心a中改变，因而存储一个二进制数字。"]
+    ],
+    "relevant-word": []
+  },
+  "come into being": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "形成；产生",
+    "phrase": [],
+    "sentence": [
+      ["When and why did it come into being?",
+        "什么时候和为什么这样做，是诞生？"],
+      ["A new rule will soon come into being. ",
+        "一个新规则很快就要出台了。"],
+      ["To meet the users 'new needs of more IP address space, better network performance and better security, the next genaration Internet protocol ( IPv6) has been come into being. ",
+        "为了满足人们对IP地址空间、网络性能以及安全性等方面的新需求，下一代Internet协议IPv6开始成型，IPv6的出现基本解决了目前IPv4所存在的一些问题。"],
+      ["How a marvel come into being? ",
+        "奇迹是怎样诞生的？"]
+    ],
+    "relevant-word": []
+  },
+  "rotate": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "(使)旋转，转动;(工作)由…轮值;(人员)轮换，轮值",
+    "phrase": [
+      ["rotate  (about/around sth)", "旋转，转动"]
+    ],
+    "sentence": [
+      ["The Earth rotates round the sun.",
+        "地球围绕太阳转。"],
+      ["The crank handle is rotated to lead a screw to rotate through an umbrella wheel. ",
+        "转动摇把，通过伞轮使螺杆转动。"],
+      ["Leaders may naturally emerge or this position might rotate throughout the course of the year. ",
+        "团队领袖往往会自然产生，然后就在一年间的不同项目上轮换。"],
+      ["The years also rotate through five elements gold, wood, water, fire and earth.",
+        "此外，各年份还围绕着“金、木、水、火、土”五大元素交替轮换。"]
+    ],
+    "relevant-word": ["rotary"]
+  },
+  "rotary": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "旋转的;绕轴转动的;转动的;旋转式机器;环行交叉路",
+    "phrase": [],
+    "sentence": [
+      ["When rotary kiln installation ends, need to rotary kiln commissioning and debugging. ",
+        "当回转窑安装完毕，需要对回转窑进行试运转和调试工作。"],
+      ["It is a new method to measure displacement with programmable logic controller, programmable terminal and rotary encoder. ",
+        "介绍了使用可编程控制器、可编程终端和旋转编码器测量位移的一种新方法。"]
+    ],
+    "relevant-word": ["rotate"]
+  },
+  "for that matter": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "就此而言，在这一问题上",
+    "phrase": [],
+    "sentence": [
+      ["I'm not interested in your offer, and for that matter would like you to leave.",
+        "我对你的提议不感兴趣，那件事就请你不要再提了。"]
+    ],
+    "relevant-word": []
+  },
+  "assessment": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "看法;评估;评定;核定;判定;核定的付款额",
+    "phrase": [],
+    "sentence": [
+      ["He is currently focusing on assessment and development.",
+        "他目前在关注评估和发展。"],
+      ["The Defense Secretary gave an upbeat assessment of the war so far.",
+        "国防部长对目前的战事给予了乐观的评价。"],
+      ["Where the CIF or FOB price can not be ascertained, the price for duty assessment shall be estimated and fixed by the customs.",
+        "到岸价格和离岸价格不能确定时，完税价格由海关估定。"],
+      ["We need a comprehensive assessment of the recombinant DNA issue, preferably under the auspices of the federal government. ",
+        "对于重组体dna问题，我们需要有一个全面的估价，而且最好由联邦政府主办。"]
+    ],
+    "relevant-word": []
+  },
+  "perceive": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "注意到;意识到;察觉到;将…理解为;将…视为;认为",
+    "phrase": [
+      ["perceive sb/sth (as sth)", "将…理解为；将…视为；认为"],
+      ["a perceive need/advantage/threat", "明显需求/优势/威胁"]
+    ],
+    "sentence": [
+      ["We have seen a number of fundamental shifts in the way software practitioners perceive software-intensive solutions.",
+        "我们已经看到了一系列的软件从业者理解的软件密集的解决方案的基本转变。"],
+      ["When you wake up in the morning, you might perceive that the Sun is just rising, hear a few birds chirping, and maybe even feel a flash of Happiness as the fresh morning air hits your face. ",
+        "清晨一觉醒来，你可能就已经意识到太阳刚刚升起，听到一些鸟儿在枝头欢快的鸣叫，甚至清新的空气轻拂你的面颊，你会感到一有幸福感。"],
+      ["You can see it, perceive it and acknowledge it but not allow it to influence you. ",
+        "你可以看到它，察觉它，认识它，但是不要让它影响你。"],
+      ["Did you perceive anyone come in?",
+        "你有没有发觉有人进来？"],
+      ["Stress is widely perceived as contributing to coronary heart disease.",
+        "压力被认为是导致冠心病的原因。"]
+    ],
+    "relevant-word": ["aware", "conceive"]
+  },
+  "brand-new": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "崭新的;簇新的",
+    "phrase": [],
+    "sentence": [
+      ["The earthquake, has let the whole world see a brand-new Chinese, one kind of adamant spirit.",
+        "地震，让全世界看到了一个全新的中国，一种坚强不屈的精神。"],
+      ["Session creates a brand-new desktop, and may have its own resolution, window manager, and state. ",
+        "会话创建一个全新的桌面，可能有它自己的分辨率、窗口管理器和状态。"],
+      ["This time I've got a brand-new change.",
+        "这一次，我有了一次崭新的改变。"]
+    ],
+    "relevant-word": []
+  },
+  "vicious": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "狂暴的;残酷的;凶猛危险的;充满仇恨的;严厉的",
+    "phrase": [],
+    "sentence": [
+      ["It's true that some social environments are vicious, but others are warm, accepting, loving. ",
+        "的确，有些社会环境是邪恶的，但是另一些社会环境确实温暖、接纳、温馨的。"],
+      ["Such a vicious lie could be nothing but a stab in the back.",
+        "这样一种恶毒的谎言简直是暗箭伤人。"],
+      ["With the development of network technology, the digital products transmitted through the Internet are easier to be modified or copied by vicious people at will without authorization.",
+        "网络技术的发展使得网络传输的数字产品在没有授权的情况下容易被有恶意的人们随意篡改、拷贝。"],
+      ["Linux Operating System's security have some side, vicious code infect was important composing part. ",
+        "Linux操作系统下的安全问题有许多方面，恶意代码的感染与防范是其中一个重要组成部分。"],
+      ["I'm fed up with getting mutilated by your vicious beast.",
+        "总是被你这凶猛的野兽给弄伤，我真是受够了。"]
+    ],
+    "relevant-word": ["vicious cycle"]
+  },
+  "vicious cycle": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "恶性循环",
+    "phrase": [],
+    "sentence": [
+      ["This wave of unilateral, competitive devaluations creates a vicious cycle that leads to trade and exchange rate protectionism. ",
+        "这股单边竞争性贬值的浪潮造成了一种恶性循环，从而导致了贸易与汇率保护主义。"],
+      ["Attempted tightening on this scale would dampen the economy and risk creating a vicious cycle of debt and deflation.",
+        "如此大规模的紧缩尝试将对经济构成打击，并可能会制造一个债务和通缩的恶性循环。"]
+    ],
+    "relevant-word": ["vicious"]
+  },
+  "perpetuate": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "使永久化;使持久化;使持续",
+    "phrase": [],
+    "sentence": [
+      ["Obese children suffer a number of physical and perceived physical barriers to living an active lifestyle, which can perpetuate a cycle of inactivity and poor health.",
+        "过度肥胖的儿童对于拥有一种积极的生活方式有大量身体和身体感知障碍，这样造成长期保持一种不积极、不健康的生活方式。"],
+      ["The dancers enjoy royal patronage, and preserve ancient folk and religious customs and perpetuate the ancient art of mask making.",
+        "舞者受到王室的赞助，致力于保护古老的民族和宗教的服装，使古老的面具制作工艺永存。带有不丹独特的建筑风格是一种堡垒，它被称作dzong。"],
+      ["Our films and TV plays are perpetuating the myth that women are fragile while men are tough. ",
+        "我们的电影和电视剧延续了这样一个神话：女人脆弱而男人坚强。"]
+    ],
+    "relevant-word": []
+  },
+  "ad infinitum": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "无止境地;无休止地",
+    "phrase": [],
+    "sentence": [
+      ["This cycle repeats itself ad infinitum. ",
+        "该循环周而复始，永无止境。"],
+      ["Newly generated assertions can generate still more complex assertions, ad infinitum.",
+        "新生成的断言仍可以生成更复杂的断言，并且可以无限地生成下去。"]
+    ],
+    "relevant-word": []
+  },
+  "guilt": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "内疚;悔恨;犯罪;罪行;有罪;罪责;责任;罪过",
+    "phrase": [
+      ["guilt (about sth)", "内疚；悔恨"]
+    ],
+    "sentence": [
+      ["I'll never accept parole because that entails me accepting guilt.",
+        "我决不会接受假释，因为这就等于我承认自己有罪。"],
+      ["This global warming fad trying to use a guilt trip about our carbon footprints is a fraud to squeeze more money out of us.",
+        "这全球变暖的时尚，试图使用有关我们碳足迹的犯罪之旅，是一项欺诈行为以从我们挤出更多钱。"],
+      ["Does that assuage your guilt?",
+        "这是不是缓和了你的罪恶感？"]
+    ],
+    "relevant-word": []
+  },
+  "most of all": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "尤其是",
+    "phrase": [],
+    "sentence": [
+      ["Most of all, joy is loving each other. ",
+        "最高境界的快乐，是彼此相爱！"],
+      ["Most of all, I see the strength of our alliance in all of you.",
+        "最重要的是，我们从你们大家身上看到了两国同盟的力量。"]
+    ],
+    "relevant-word": []
+  },
+  "put it best": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "极好地",
+    "phrase": [],
+    "sentence": [
+      ["CEO Tim Cook probably put it best, saying we screwed up.",
+        "苹果公司CEO蒂姆－库克可能做得最好，他说：我们搞砸了。"],
+      ["We should try to keep science under control and put it to the best use of mankind. ",
+        "We should try to keep science under control and put it to the best use of mankind. "],
+      ["Albert Einstein put it best when he said,“Everybody is a genius (天才). But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.\"",
+        "爱因斯坦说：“每个人都是天才。”。但是，如果你以一条鱼爬树的能力来判断它，它一生都会相信自己是愚蠢的。"]
+    ],
+    "relevant-word": []
+  },
+  "attribute": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "把…归因于;认为…是由于;认为是…所为(或说、写、作);属性;性质;特征",
+    "phrase": [
+      ["attribute sth to sth", "把…归因于；认为…是由于"],
+      ["attribute sth (to sb)", "认为是…所为（或说、写、作）"]
+    ],
+    "sentence": [
+      ["We may safely attribute these structures to inheritance. ",
+        "我们可以很稳当地认为这些构造是由遗传而来。"],
+      ["As the makers of achievements, the scientists should bear moral responsibility for them. However, it is neither fair nor realistic to attribute all the negative influences brought by science and technology to the scientists.",
+        "作为科学技术成果的制造者&科学家对其成果理应承担道德责任，但如把科学技术所带来的负面影响都归于科学家，这是不公正也是不现实的。"]
+    ],
+    "relevant-word": []
+  },
+  "advocate": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "拥护;支持;提倡;拥护者;支持者;提倡者;辩护律师;出庭辩护人",
+    "phrase": [
+      ["advocate (of/for sth/sb)", "拥护者；支持者；提倡者"]
+    ],
+    "sentence": [
+      ["He was an advocate of universal suffrage as a basis for social equality.",
+        "他提倡普选权，认为这是社会公平的基础。"],
+      ["An advocate of isolationism in international affairs.",
+        "在国际事务中，孤立主义的鼓吹者。"],
+      ["He was a strong advocate of free market policies and a multi-party system.",
+        "他是自由市场政策和多党派制度的坚决拥护者。"],
+      ["The Indian side attempted to advocate her claim by accusing China of violating the principles of acquiescence and estoppel and committing to aggression. ",
+        "印方试图以默认和禁反言等原则来为其主张辩护，还指责中国侵略。"],
+      ["He got the best advocate in town to defend him. ",
+        "他请城里最好的律师为他辩护。"],
+      ["An advocate of the policy of deliberate inflation achieved by increasing the supply of available currency and credit.",
+        "通货膨胀支持者支持通货膨胀政策的人，即主张有意增加可利用的货币量和信用量。"]
+    ],
+    "relevant-word": []
+  },
+  "buy into": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "相信;接受;收购，购买（公司或机构）的股份",
+    "phrase": [],
+    "sentence": [
+      ["It's a lot harder to get them to buy into 'someone stole my magic sword'.",
+        "让他们相信”有人偷了我的魔剑“要难得多。"],
+      ["For the program to work, you need to buy into using other Apple entertainment products. ",
+        "为了让该程序发挥作用，你得付费使用苹果的其他娱乐产品。"]
+    ],
+    "relevant-word": []
+  },
+  "disappointment": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "失望;沮丧;扫兴;使人失望的人(或事物);令人扫兴的人(或事物)",
+    "phrase": [
+      ["disappointment (to sb)", "使人失望的人（或事物）；令人扫兴的人（或事物）"]
+    ],
+    "sentence": [
+      ["Despite winning the title, their last campaign ended in great disappointment .",
+        "尽管赢得了冠军，但他们最后一役却令人大失所望。"],
+      ["The holiday was a disappointment because the weather was bad.",
+        "因为天气不好，假日过得令人扫兴。"],
+      ["Sometimes happy endings are sad, involve loss and disappointment, teach us that we can't control anyone or their behavior or show us that we are limited in our ability to heal or change others. ",
+        "有时快乐结局是令人悲伤的；可能也会令人遭受损失和失望；教会我们不能去控制别人和他们的行为；或是让我们知道我们去疗愈或改变他人的能力不足。"]
+    ],
+    "relevant-word": []
+  },
+  "hold onto": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "握住;抓牢;坚持不懈;稍等;等一下;保住，守住（有利因素）;保存;保留;坚持（信仰、信念、原则等）",
+    "phrase": [],
+    "sentence": [
+      ["People hold onto letters for years and years.",
+        "人们会将信件保存很多很多年。"],
+      ["I can't do my life unless I hold onto you.",
+        "我得留下你，不然我就没有现在的生活了。"],
+      ["But, friends, do not forget to hold onto a quiet heart.",
+        "但是，朋友，别忘了守住一颗宁静的心。"],
+      ["If I just follow you one more step then I'd probably hold onto you.",
+        "如果再跟著你走一步，那？我也许就会紧紧抱著你不放了。"]
+    ],
+    "relevant-word": []
+  },
+  "miserable": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "痛苦的;非常难受的;可怜的;使难受的;使不舒服的;令人不快的;乖戾的;脾气严峻",
+    "phrase": [],
+    "sentence": [
+      ["You may be stuck with a miserable existence for the rest of your life",
+        "你可能一辈子都要过着悲惨的生活。"],
+      ["Miserable jobs can be found in every industry and at every level.",
+        "令人痛苦的工作存在于每个行业、各个层次。"],
+      ["True, Tommy is a miserable coward and deserves to die. ",
+        "汤姆的确是个卑鄙的懦夫，死有余辜。"]
+    ],
+    "relevant-word": []
+  },
+  "debt": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "借款;欠款;债务;负债情况;人情债;情义;恩情",
+    "phrase": [
+      ["be in sb's debt", "欠某人的人情债；受某人的恩惠；感激某人"]
+    ],
+    "sentence": [
+      ["Shrinking economies mean falling tax revenues and more government debt. ",
+        "经济收缩意味着税收的减少和政府债务的增加。"],
+      ["Before going further, it may be useful to get some perspective on the national debt. ",
+        "在作进一步讨论前，先观察一下国内负债情况可能是有用的。"],
+      ["Rational Team Concert also provides for collaboration about the debt items and their remediations& this can be very useful and educational for all of the developers involved. ",
+        "Rational Team Concert也为过失项和它们的处理提供了合作：这可以对所有参入的开发员都变得十分有用且具有教育意义。"]
+    ],
+    "relevant-word": []
+  },
+  "for the sake of": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "为了……目的；为了……的利益",
+    "phrase": [],
+    "sentence": [
+      ["Let's assume for the sake of argument that we manage to build a satisfactory database.",
+        "为了便于讨论，不妨假定我们成功地建立了一个令人满意的数据库。"],
+      ["They expressed the hope that he would pursue a neutral and balanced policy for the sake of national concord.",
+        "他们希望，为了国家的和谐，他会奉行中立、不偏不倚的政策。"]
+    ],
+    "relevant-word": []
+  },
+  "put a cap on": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "限制，控制",
+    "phrase": [],
+    "sentence": [
+      ["We should do something to put a cap on prices.",
+        "我们想方设法把物价控制住。"],
+      ["The government is framing a new bill to put a cap on gambling. ",
+        "政府正在制定新的法案以对赌博加以限制。"]
+    ],
+    "relevant-word": []
+  },
+  "buy on credit": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "以赊欠方式购买",
+    "phrase": [],
+    "sentence": [
+      ["You can ask a dealer for a discount whether you pay cash or buy on credit. ",
+        "无论是付现还是赊购，都可以要求经销商打折。"],
+      ["If you don't have enough cash, why don't you make arrangements to buy the car on credit? ",
+        "假若你现金不够，为什么不作出安排，赊购这部汽车？"]
+    ],
+    "relevant-word": []
+  },
+  "contentment": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "满意;满足",
+    "phrase": [],
+    "sentence": [
+      ["I cannot describe the feeling of contentment that was with me at that time. ",
+        "我无法描述当时我满足的感觉。"],
+      ["A condition or feeling of pleasurable ease, well-being, and contentment.",
+        "愉快快乐轻松、安宁和满意的条件或感觉。"],
+      ["Contentment not only made me happy, but it transformed my life in many ways. ",
+        "知足不仅仅使我快乐，它还改变了我生活的方方面面。"],
+      ["Positive affect is defined as the experience of pleasurable emotions such as joy, happiness, excitement, enthusiasm and contentment. ",
+        "正面情绪指愉悦心情，比如高兴、幸福、兴奋、热情和心满意足。"]
+    ],
+    "relevant-word": []
+  },
+  "lasting": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "继续存在的;持久的;耐久的;持续;继续;延续;继续存在;持续起作用;持久;(在困境等中)坚持下去;超越(困境等)",
+    "phrase": [],
+    "sentence": [
+      ["Only the achievement of these goals will bring lasting peace.",
+        "只有达成这些目标才会带来持久的和平。"],
+      ["Fairness is the pursuit of lasting value of human society.",
+        "公平是人类社会恒久的价值追求。"],
+      ["I think the most long lasting is stainless steel. ",
+        "我认为最耐用的是不锈钢的。"],
+      ["And similarly, pleasures can be longer lasting, or more intense. ",
+        "类似地，快乐也可以，延续得更久或更加强烈。"],
+      ["Be gentle with this process; accepting people for who they are will help you attain lasting inner peace. ",
+        "慢慢地进行这个过程；接受人们真正的自我会帮助你的内心获得持续的平和。"]
+    ],
+    "relevant-word": []
+  },
+  "look back on": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "",
+    "phrase": [],
+    "sentence": [
+      ["I can look back on things with a clear conscience. I did everything I could. ",
+        "我可以问心无愧地回首过去，我已经尽力了。"],
+      ["They can look back on their endeavours with pride.",
+        "他们可以骄傲地回首过去付出的努力。"]
+    ],
+    "relevant-word": []
+  },
+  "berate": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "痛斥;严厉指责",
+    "phrase": [],
+    "sentence": [
+      ["But lately American leaders have shown signs of the inertia for which they used to berate Japan.",
+        "但最近，美国领导人对他们曾经痛斥日本已经表现出了惰性的迹象。"],
+      ["The questionnaire including communication, self reproach, justification, succorance, berate and isolation, the reliability and the structural validity are very good, It can be used as a measuring tool to measure coping style of the infants 'parents.",
+        "问卷包括沟通、自责、合理化、求助、训斥、隔离六个维度，问卷的信度效度较好，可以作为幼儿家长的应对方式的测量工具。"]
+    ],
+    "relevant-word": []
+  },
+  "flaunt": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "炫耀;夸示;夸耀;卖弄;(性感地)招摇过市",
+    "phrase": [
+      ["flaunt yourself", "（性感地）招摇过市"]
+    ],
+    "sentence": [
+      ["if you've got it, flaunt it.",
+        " 有什么能耐施出来瞧瞧。"],
+      ["Buying expensive services and products in order to flaunt your wealth.",
+        "购买昂贵的服务和商品以炫耀自己的财富。"],
+      ["Let me flaunt the banner of absolute sincerity, to capture your heart, I love you! ",
+        "让我张扬着赤诚的旗帜，往你的心攻占，我爱你！"],
+      ["One secret he learned very early on was not to flaunt his success.",
+        "他很早就学到的一个秘诀就是不要夸耀自己的成功。"]
+    ],
+    "relevant-word": []
+  },
+  "reserve": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "预订，预约(座位、席位、房间等);保留;贮备;拥有，保持，保留(某种权利);储备(量);储藏(量);(动植物)保护区;自然保护区;内向;寡言少语;矜持",
+    "phrase": [
+      ["reserve  sth (for sb/sth)", "预订，预约（座位、席位、房间等）;保留；贮备"],
+      ["in reserve", "储备；备用"]
+    ],
+    "sentence": [
+      ["China appears to have a new definition of reserve diversification. ",
+        "中国对外汇储备多元化似乎有了一个新的定义。"],
+      ["I will reserve my opinion at this time. ",
+        "这次，我要保留我的意见。"],
+      ["This nature reserve provides shelter for wildlife. ",
+        "自然保护区为动物提供了栖息地。"],
+      ["He ended up as a reserve, but still qualified for a team gold medal.",
+        "他最后成了替补队员，但仍有资格获得团体金牌。"],
+      ["Can I reserve a tennis court tomorrow morning? ",
+        "我能预约一个明天早上的网球场吗？"],
+      ["What can I reserve on the internet? ",
+        "我能在网上预订什么？"]
+    ],
+    "relevant-word": ["reverse","subscribe"]
+  },
+  "reverse": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "颠倒;彻底转变;使完全相反;撤销，废除(决定、法律等);使反转;使次序颠倒",
+    "phrase": [],
+    "sentence": [
+      ["For example, you can reverse all the items in a list or sort a list. ",
+        "例如，您可以反转list中的所有条目或排序list。"],
+      ["During this initial Elaboration phase we also reverse engineered the Ada code to yield a design model. ",
+        "在这一初始的精话阶段，我们还颠倒了Ada代码来生产一个设计模型。"],
+      ["To reverse the replace all operation in any open file, choose undo from the edit menu before saving that file.",
+        "若要撤消在任何打开的文件中执行的“全部替换”操作，请在保存该文件前选择“编辑”菜单中的“撤消”。"],
+      ["Isn't it about time for me to reverse the pattern? ",
+        "我是不是该推翻这种样式了呢？"],
+      ["Most cars have three forward gears and a reverse. ",
+        "大多数汽车有三个前进挡和一个倒退挡。"]
+    ],
+    "relevant-word": ["reserve"]
+  },
+  "celebrity": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "名人;名流;名望;名誉;著名",
+    "phrase": [],
+    "sentence": [
+      ["He was more than a footballing superstar, he was a celebrity.",
+        "他不仅仅是足球场上的巨星，也是一位社会名流。"],
+      ["What is most striking is her happy-go-lucky attitude to her own newfound celebrity. ",
+        "最引人注目的是她对自己新得到的名声有着随遇而安的态度。"],
+      ["If you are a celebrity, you are headline news.",
+        "如果你是名人，你就是头条新闻。"],
+      ["A celebrity himself, he will probably face another one. ",
+        "作为一个知名人士，他很可能与另一个人面对面竞争。"],
+      ["Celebrity, money and possessions are too often the touchstones for teenagers and yet these are not where happiness lies. ",
+        "名誉、金钱和财产常常成为青少年们衡量事物的标准，但这些东西都不是快乐的真谛。"]
+    ],
+    "relevant-word": []
+  },
+  "conspicuous": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "易见的;明显的;惹人注意的",
+    "phrase": [
+      ["conspicuous by your absence", "（本应在场）因缺席而招人注意"]
+    ],
+    "sentence": [
+      ["Today's most conspicuous example is China with its explosive growth.",
+        "现在最明显的一个例子当属爆炸式发展的中国。"],
+      ["The post-modern fiction, with conspicuous poetic complexity, falls into two main categories: experimental and popular novels.",
+        "后现代主义小说在诗学形态上具有显而易见的复杂性，可划分为后现代主义实验小说和通俗小说两大类。"]
+    ],
+    "relevant-word": []
+  },
+  "mansion": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "公馆;宅第;用于公寓楼名",
+    "phrase": [],
+    "sentence": [
+      ["One's own shack is better than other's mansion.",
+        "金窝银窝，不如（自己的）狗窝。"],
+      ["He showed me the miniature of the mansion. ",
+        "他给我显示了大厦的模型。"],
+      ["In contrast with our old house, the new one is a mansion. ",
+        "与旧房子相比，这所新房子简直是公馆"]
+    ],
+    "relevant-word": []
+  },
+  "trappings": {
+    "learn-day": "2020-03-16",
+    "ch-hans": "(与某一处境、职业或社会地位有关的)身外之物，标志，服装",
+    "phrase": [
+      ["trappings (of sth)", "(与某一处境、职业或社会地位有关的)身外之物，标志，服装"]
+    ],
+    "sentence": [
+      ["But all they had added was the trappings and panoply of applied science.",
+        "但是他们所增添的一切，不过是实用科学的装饰和甲胄罢了。"],
+      ["An ornamental covering for a horse or for its saddle or harness; trappings. ",
+        "为马或其鞍或挽具而备的一个装饰性的遮盖物；马饰。"],
+      ["Nation distributing and trappings have a character of solid. ",
+        "民族分布、服饰文化等都体现出一种立体状的特点。"]
+    ],
+    "relevant-word": []
+  },
+  "crucial":  {
+    "learn-day":"2020-03-17",
+    "ch-hans": "至关重要的;关键性的",
+    "phrase": [
+      ["crucial (to/for sth)", "至关重要的；关键性的"],
+      ["crucial (that…)", "至关重要的；关键性的"]
+    ],
+    "sentence": [
+      ["The foreign market was increasingly crucial.",
+        "国外市场越来越重要了。"],
+      ["The crisis is entering a crucial, critical phase.",
+        "目前危机正进入决定性的关键阶段。"],
+      ["Each of these cells makes a crucial decision.",
+        "这些细胞中的每一个都形成十字形的分裂。"]
+    ],
+    "relevant-word": ["vital"]
+  },
+  "repercussion":  {
+    "learn-day":"2020-03-17",
+    "ch-hans": "(间接的)影响，反响，恶果",
+    "phrase": [],
+    "sentence": [
+      ["After being put out, service has received very good market repercussion.",
+        "服务推出后收到了非常好的市场反响。"],
+      ["This is probably the biggest repercussion of the calculation. ",
+        "这大概是计算的最大影响。"]
+    ],
+    "relevant-word": ["consequences"]
+  },
+  "consequence":  {
+    "learn-day":"2020-03-17",
+    "ch-hans": "结果;后果;重要性",
+    "phrase": [
+      ["consequence (for sb/sth)", "结果；后果"],
+      ["in consequence (of sth)", "由于；作为…的结果"]
+    ],
+    "sentence": [
+      ["The consequence of comparison of the extension patterns of sentences in both English and Chinese languages to their mutual transformation has been discussed. ",
+        "分别论述了比较英汉两种语言在句型扩展形式上的差异对做好翻译工作的重要性。"],
+      ["The third principle, as a consequence of the two preceding. I would express as follows: Duty is the necessity of an action executed from respect for law. ",
+        "第三个原则是前面两个的结论，我可作如下表述：责任是出于尊重规律的行动的必然性。"],
+      ["If they were practicing iterative development, working code would be a natural consequence.",
+        "如果他们一直在实行迭代开发，那么代码将是一个很自然的成果。"],
+      ["Wastage was no doubt a necessary consequence of war.",
+        "巨大的损耗无疑是战争的必然结果。"],
+      ["Momentum conservation is a consequence of Newton's laws.",
+        "动量守恒是牛顿定律的一个推论。"]
+    ],
+    "relevant-word": ["repercussions"]
+  },
+  "risk":  {
+    "learn-day":"2020-03-17",
+    "ch-hans": "危险;风险;危险人物;会带来风险的事物;(风险很小或很大的)借款人，保险对象;使…冒风险(或面临危险);冒…的风险(或危险);冒险做;(明知结果而)大胆做",
+    "phrase": [
+      ["risk falling behind", "冒着落后的风险"],
+      ["risk (to sb/sth)", "危险；风险"],
+      ["risk of sth", "危险；风险"],
+      ["risk that...", "危险；风险"],
+      ["risk (to sth)", "危险人物；会带来风险的事物"]
+    ],
+    "sentence": [
+      ["If they have the virus they are putting patients at risk. ",
+        "如果他们有这种病毒，就会将病人置于危险境地。"],
+      ["We cannot possibly risk so many innocent lives.",
+        "我们绝不可能拿这么多无辜者的生命冒险。"],
+      ["By the reparations of pilfer be80% what press risk. ",
+        "被盗的赔款是按保险额的80%。"],
+      ["Your methods have long gone out of date; you will have to modernize or risk failure. ",
+        "你那套方法早已过时，你得用现代化方法，不然就要冒失败的危险。"],
+      ["It is beneficial for China's securities market to link with the international practice and at the same time more risk taking in the process of internationalization.",
+        "既有利于中国证券市场同国际接轨，又会使证券市场的国际化进程冒更大的风险。"]
+    ],
+    "relevant-word": []
+  },
+  "distraction":  {
+    "learn-day":"2020-03-17",
+    "ch-hans": "分散注意力的事;使人分心的事;娱乐;消遣",
+    "phrase": [
+      ["to distraction", "到心烦意乱（或激动、气愤）的地步"]
+    ],
+    "sentence": [
+      ["An illustration of periods of high, moderate, and low attention High attention has long periods of attending and short distraction periods.",
+        "高度、适度、低注意力的说明高度注意有较强的注意期和很短的注意力分散期。"],
+      ["And leave them with space to think deeply, invent their own game, create their own distraction.",
+        "给他们空间，让他们能够深入思考，发明自己的游戏，创造自己的娱乐。"],
+      ["Just a few years ago, business schools viewed social media as a distraction. ",
+        "就在几年前，商学院还只是把社交媒体看作消遣工具。"],
+      ["A very clingy child can drive a parent to distraction.",
+        "依赖性太强的孩子会逼得父母心烦意乱。"]
+    ],
+    "relevant-word": []
+  },
+  "literally":  {
+    "learn-day":"2020-03-17",
+    "ch-hans": "按字面;字面上;(强调事实可能令人惊讶)真正地，确实地;(加强即使字面意义并不真实的词语)简直",
+    "phrase": [],
+    "sentence": [
+      ["When I click another tab, the content literally glides to it. ",
+        "当我单击另一个选项卡时，内容便逐字地向其滑动。"],
+      ["Remember the monkey that, though consistent use of its finger, literally created a neural connection that drove it to continually flex it?",
+        "记得那只猴子吗？通过不停的扳动它的手指，确实产生了一条神经链，驱动猴子不断地弯曲手指头。"],
+      ["It literally changed the way I see things.",
+        "这真正地改变了我看待事物的方式。"],
+      ["But there are literally hundreds of plug-ins for everything from Web development to playing games within the Eclipse environment. ",
+        "但有差不多上千个插件，从Web开发的插件到在Eclipse环境中玩游戏的插件。"],
+      ["The views are literally breath-taking.",
+        "景色美得简直让人窒息。"]
+    ],
+    "relevant-word": []
+  },
+  "originate": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "起源;发源;发端于;创立;创建;发明",
+    "phrase": [],
+    "sentence": [
+      ["Where did the customs and traditions originate? ",
+        "这些习俗和传统起源于哪里？"],
+      ["This enables the organization to make the internal e-mail addresses appear to originate from another domain.",
+        "这样，组织可以使内部电子邮件地址看起来像来自另一个域。"],
+      ["But when messages originate on a different QMgr and arrive over a channel, the ID is authenticated remotely, if at all. ",
+        "但是，当另一个QMgr产生了一些消息，并且这些消息通过通道到达，如果确实需要进行身份验证，那么以远程的方式对这个ID进行身份验证。"],
+      ["I'll discuss in later chapters a few techniques for accessing data buffers that originate in user mode. ",
+        "在后面的章节中，我将讨论一些关于访问发生在用户模式中的数据缓冲器的一些技巧。"],
+      ["OA system originate from the traditional manual work, with the development of the enterprise, the originally mode of handling official business is out of time. ",
+        "办公自动化系统从传统手工办公开始，随着企业的不断的壮大和发展，原有的办公模式已经不再适合。"],
+      ["The use of the computer have originate many other reform. ",
+        "电脑的使用引起了其他许多的革新。"]
+    ],
+    "relevant-word": ["derive"]
+  },
+  "derivative": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "派生词; 衍生字 ;派生物;衍生物;模仿他人的;缺乏独创性的",
+    "phrase": [],
+    "sentence": [
+      ["A Quasilinear equation is one in which the highest-order derivative appears linearly.",
+        "最高阶导数线性地出现的那种方程是准线性方程。"],
+      ["The present work deals with oblique derivative problems for second order quasilinear elliptic equations with parabolic degeneracy. ",
+        "一类半线性椭圆方程解的存在性问题讨论了二阶拟线性退化椭圆型方程的斜微商问题。"],
+      ["A toxic white soluble crystalline acidic derivative of benzene; used in manufacturing and as a disinfectant and antiseptic. ",
+        "一种白色的有毒可溶性晶状酸，苯的衍生物，用于制造和作消毒剂和杀菌剂。"],
+      ["A derived data type is a derivative or structure of existing base types or other derived types.",
+        "派生数据类型是已有的基本类型或其他派生类型的一个派生物或结构。"],
+      ["In linguistics, rock is a derivative word.",
+        "在语言学中，“石头”属于派生词。"],
+      ["Rural left-behind children is the derivative of the special group in the urbanization process in our country. ",
+        "农村留守儿童是我国城镇化进程中衍生的特殊群体。"],
+      ["Based on the derivative kinematic equations of the six-bar linkage mecha-nism of a drawing press and with the evenest speed of the slider as an optimal criterion, this paper establishes a mathematical model of the optimization of the mechanism.",
+        "本文在导出拉延压力机六杆机构运动方程基础上，以滑块工作速度最均匀为优化设计准则，建立了该机构优化设计的数学模型。"]
+    ],
+    "relevant-word": []
+  },
+  "simulate": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "假装;冒充;装作;(用计算机或模型等)模拟;模仿",
+    "phrase": [],
+    "sentence": [
+      ["Design, simulate, and optimize the business processes.",
+        "设计、模拟和优化业务流程。"],
+      ["It can simulate network data and IP services and collect network performance information on Ajax applications in real time. ",
+        "它可以模仿网络数据和IP服务，并实时收集Ajax应用程序的网络性能信息。"],
+      ["There is no disguise which can hide love for long where it exists, or simulate it.",
+        "爱存在的地方，没有伪装能长时间隐藏它，也不能假装。"],
+      ["Some moths simulate dead leaves.",
+        "有些蛾拟态为枯叶。"],
+      ["Artificial intelligence refers to the ability of the computer to simulate human behavior. ",
+        "人工智能指的是计算机可以模仿人的行为。"],
+      ["Kate found it impossible to simulate grief. ",
+        "凯特发现想要假装悲伤是不可能的。"]
+    ],
+    "relevant-word": []
+  },
+  "subscribe": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "定期订购(或订阅等);定期交纳(会员费);定期(向慈善机构)捐款;定期捐助;认购(股份)",
+    "phrase": [
+      ["subscribe (to sth)", "定期订购（或订阅等）"],
+      ["subscribe (for sth)", "认购（股份）"],
+      ["subscribe to sth", "同意；赞成"]
+    ],
+    "sentence": [
+      ["Chinese regulators are also pressing big foreign banks and investors to subscribe to the listing.",
+        "中国监管机构还在敦促大型外资银行和投资机构认购农行上市。"],
+      ["A registered elector is entitled to subscribe only ONE nomination form.",
+        "每一位登记选民只可签署一份提名表格。"],
+      ["Will it support the publish and subscribe message model and message aggregation?",
+        "它将支持发布和订阅消息模型和消息聚合吗？"],
+      ["Because of the complexity of data quality validation, some companies subscribe to data validation services from third-party providers instead of developing in-house solutions. ",
+        "由于数据质量确认的复杂性，一些公司订购了由第三方提供的数据验证服务，而不是开发内部解决方案。"]
+    ],
+    "relevant-word": ["reserve"]
+  },
+  "curriculum": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "(学校等的)全部课程",
+    "phrase": [],
+    "sentence": [
+      ["He has completed all18 core courses of the ACI curriculum. ",
+        "他完成了亚洲经典学院的全部18套核心课程。"],
+      ["We have to build computers into the school curriculum.",
+        "我们必须把计算机纳入到学校的课程中。"]
+    ],
+    "relevant-word": []
+  },
+  "sufficient": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "足够的;充足的",
+    "phrase": [
+      ["sufficient (to do sth)", "足够的；充足的"],
+      ["sufficient for sth/sb", "足够的；充足的"]
+    ],
+    "sentence": [
+      ["Only when agriculture is fully developed can industry have sufficient materials and markets. ",
+        "只要双方都有足够的诚意，这种纠纷是没有理由解决不了的。"],
+      ["The system providing the information must have failsafe capabilities and sufficient resources.",
+        "提供信息的系统必须拥有故障保险能力，以及充足的资源。"],
+      ["Analyze requirements to ensure that they are necessary and sufficient.",
+        "分析需求以确认需求是必须和充分的。"]
+    ],
+    "relevant-word": []
+  },
+  "advent": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "(重要事件、人物、发明等的)出现，到来;将临节，基督降临节(圣诞节前的四个星期)",
+    "phrase": [
+      ["with the advent of sth", "随着某物的出现"],
+      ["the advent of sth/sb", "（重要事件、人物、发明等的）出现，到来"]
+    ],
+    "sentence": [
+      ["The advent of modern technology brings a substantial impact on the whole world. ",
+        "现代技术的出现对整个世界带来了实质性的影响。"],
+      ["The advent of the age of knowledge economy has changed the traditional value chain and capital composition. ",
+        "知识经济时代的到来改变了传统的价值链和资本构成。"],
+      ["GINGER BREAD HOUSE – Sunday the28th is the first Advent Sunday.",
+        "姜饼屋–28日星期日是第一个基督降临节。"]
+    ],
+    "relevant-word": []
+  },
+  "terms": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "(协议、合同等的)条件，条款;(交易的)条件;价钱;费用;表达方式;措辞;说法;把…称为;把…叫做",
+    "phrase": [
+      ["on friendly terms with sb", "（与某人）关系好（或友好、不好等）"],
+      ["come to terms (with sb)", "（与某人）达成协议，妥协"],
+      ["come to terms with sth", "迁就顺从；接受（令人不快的事物）；适应（困难的处境）"],
+      ["in terms of sth", "谈及；就…而言；在…方面"],
+      ["on sb's terms", "根据…的主张"],
+      ["a contradiction in terms", "矛盾词项；对立词项"],
+      ["in no uncertain terms", "明确有力地；毫不含糊地"]
+    ],
+    "sentence": [
+      ["They will sign the union treaty only on their terms.",
+        "只有同意他们的条件，他们才会在联盟条约上签字。"],
+      ["It would be more accurate to argue in favor of an advertisement that is attractive, seductive, and expressed in terms that respect the average level of taste and culture.",
+        "比较而言，较为正确的作法应该是提倡广告的吸引力、诱惑力和表达方式的大众化，即尊重普通人的审美和文化水平。"],
+      ["And the explanation of the latter is in terms of the former.",
+        "前者对后者在措辞上进行了解释。"],
+      ["A generous miser is a contradiction in terms. ",
+        "“慷慨的吝啬鬼”是一种语词矛盾的说法。"],
+      ["“慷慨的吝啬鬼”是一种语词矛盾的说法。",
+        "一些州和地方官员也受辖于任期限制。"],
+      ["There are two terms in our school year. ",
+        "一学年有两个学期。"]
+    ],
+    "relevant-word": []
+  },
+  "aware": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "知道;意识到;明白;察觉到;发觉;发现;对…有兴趣的;有…意识的",
+    "phrase": [
+      ["aware (of sth) ", "知道;意识到;明白;察觉到;"],
+      ["aware  (that…)", "发觉;发现;明白"]
+    ],
+    "sentence": [
+      ["This creates a vulnerability that some people may not be aware of& keystroke logging.",
+        "这产生了一个一些人可能没有意识到的的机器一些生效缺陷&击键记录。"],
+      ["And you are probably more aware of them than I.",
+        "你们可能比我知道的要多。"],
+      ["These things are explained in terms of cognitive systems that we're not aware of.",
+        "我们无法觉察到的认知系统，予以解释。"]
+    ],
+    "relevant-word": ["perceive"]
+  },
+  "ready-made ": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "预制的;已做好的;现成的",
+    "phrase": [],
+    "sentence": [
+      ["Those wishing to study urban development have a ready-made example on their doorstep.",
+        "那些想要研究城市发展的人眼下就有一个十分现成的范例。"],
+      ["The new man-made fibres are more hardwearing than natural fibres and greatly reduce mending, while good ready-made clothes are cheap and plentiful.",
+        "新的人造纤维比天然纤维耐磨，因此能大大减少修补工作，而且做好的衣服价廉物美，数量也多。"]
+    ],
+    "relevant-word": []
+  },
+  "conceive": {
+    "learn-day":"2020-03-17",
+    "ch-hans": "想出(主意、计划等);想象;构想;设想;怀孕;怀(胎)",
+    "phrase": [
+      ["conceive (of) sth (as sth)", "想出（主意、计划等）；想象；构想；设想"]
+    ],
+    "sentence": [
+      ["It is used to conceive and document the design of the software services.",
+        "它可用于构思和记录软件服务的设计。"],
+      ["I could not conceive of anybody using it for a title.",
+        "我不能想像这种事会再发生。"],
+      ["I cannot conceive of him as a genius.",
+        "我不能设想他会是一个天才。"],
+      ["Operations on prototypes are also demonstrated in order to conceive the reasoning mechanism in a prototype-based design system. ",
+        "同时对典型的操作也作了说明，以有助于考虑基于典型的设计系统的推理机制。"],
+      ["Women, he says, should give up alcohol before they plan to conceive.",
+        "他说女性在计划怀孕之前应该戒酒。"]
+    ],
+    "relevant-word": []
+  },
+  "organic": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "有机的;不使用化肥的;绿色的;有机物的;生物的;器官的;器质性的;官能的",
+    "phrase": [],
+    "sentence": [
+      ["The terrorist crime is one form of organic crimes and individual cannot be the subject of terrorist crime. ",
+        "恐怖主义犯罪是有组织犯罪的一种表现形式，个人不能成为恐怖主义犯罪的主体；"],
+      ["Chinese companies engage in internationalization by means of original equipment manufacturer, joint ventures, acquisition and organic international expansion.",
+        "中国企业通过创新生产模式、合资、并购或系统性的国际化扩张等途径进行国际化发展。"],
+      ["It is an important precondition and a base of ultrasound image diagnosis to effectively extract organic boundary from an ultrasound image. The diseases can be diagnosed by analyzing changes of both the boundary and inside contents of the organic boundary.",
+        "从超声图像中有效提取器官的边界，是超声图像诊断的重要前提与基础，通过对器官的边界和边界内部变化情况的分析，可以得出疾病诊断结果。"]
+    ],
+    "relevant-word": []
+  },
+  "resort": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "旅游胜地;度假胜地;诉诸;求助;采取;应急措施;可首先(或最后)采取的手段;求助，诉诸;常去;采取某手段或方法",
+    "phrase": [
+      ["resort to sth", "诉诸；求助；采取"],
+      ["the first/last/final resort", "应急措施；可首先（或最后）采取的手段"]
+    ],
+    "sentence": [
+      ["Here we can resort to the various agile software development methods.",
+        "在这里，我们可以求助于各种敏捷软件开发方法。"],
+      ["The final answer; a last resort; the net result.",
+        "最后的答案；最后的凭借；最终结果。"],
+      ["Resort to force is forbidden in this school.",
+        "在该学校之中诉诸武力是被禁止的。"],
+      ["Construction of the huge resort was opposed by the Sierra Club on the ground that the Forest Service had violated several federal statutes.",
+        "建设巨型娱乐场的计划遭到赛拉俱乐部的反对，理由是林业部违反了好几项联邦法规。"],
+      ["The resort is surrounded by extensive national and regional parklands.",
+        "那个度假胜地被广阔的国家和地区绿地所环绕。"]
+    ],
+    "relevant-word": []
+  },
+  "deck": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "甲板;舱面;(船或公共汽车的)一层，层面;(屋后供憩息的)木制平台;装饰;布置;打扮;用力击倒;打倒在地;揍趴下",
+    "phrase": [
+      ["clear the decks", "清除障碍准备行动"],
+      ["all hands on deck", "总动员；全体出动"],
+      ["hit the deck", "hit the deck"],
+      ["deck sb/sth (out) (in/with sth)", "装饰；布置；打扮"]
+    ],
+    "sentence": [
+      ["The cables tightened and he was lifted gradually from the deck. ",
+        "缆绳绷紧了，他被慢慢地吊离了甲板。"],
+      ["The construction technique of bridge deck mobile tower crane was introduced in this paper. ",
+        "介绍桥面移动塔吊施工工法，该工法采用移动塔吊与移动模架联合施工。"],
+      ["Lots of pubs like to deck themselves out with flowers in summer.",
+        "夏日里有许多酒吧喜欢用鲜花来装饰店面。"]
+    ],
+    "relevant-word": []
+  },
+  "tension": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "紧张局势(或关系、状况);矛盾;对立;(情绪上的)紧张，烦躁;(使金属线、帆等)拉紧，绷紧",
+    "phrase": [
+      ["tension  (between A and B)", "紧张局势;矛盾;对立"],
+      ["under the tension of", "在...的压力下"]
+    ],
+    "sentence": [
+      ["There's still an atmosphere of great hostility and tension in the city.",
+        "强烈的敌对和紧张气氛依然笼罩着这座城市。"],
+      ["That's the tension and this is the acceleration. ",
+        "此处有张力和加速度。"],
+      ["Adjust the damping and tension. ",
+        "调节阻尼和拉力。"],
+      ["In Chinese consumer culture, there is a constant tension between self-protection and displaying status. ",
+        "在中国人的消费文化中，一直存在着自我保护和彰显身份的矛盾。"]
+    ],
+    "relevant-word": ["tense"]
+  },
+  "tense": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "神经紧张的;担心的;不能松弛的;令人紧张的(或焦虑的、满腹愤懑的等);绷紧的;不松弛的",
+    "phrase": [
+      ["tense sth up", "tense sth up"],
+      ["be/get tensed up", "变得神经紧张"]
+    ],
+    "sentence": [
+      ["Utter with tense vocal chords. ",
+        "用拉紧的元音和音说出。"],
+      ["Where previously you were quite relaxed and focused, you now tense up and question your ability. ",
+        "之前你很放松、精力集中，现在却神经紧张、开始怀疑自己的能力。"],
+      ["We ask and answer questions using the present continuous tense like this. ",
+        "我们用现在进行时态像这样提问和回答问题。"]
+    ],
+    "relevant-word": ["tension"]
+  },
+  "wire": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "金属丝;金属线;一段金属丝(或线);电线;导线;金属丝编制的栅栏;铁丝网;金属丝;金属线;一段金属丝(或线);电线;导线;金属丝编制的栅栏;铁丝网",
+    "phrase": [
+      ["get your wires crossed", "误会"],
+      ["go down to the wire", "直到最后才见分晓"],
+      ["a live wire", "生龙活虎的人"],
+      ["wire sth up", "用导线给（建筑物、设备等）接通电源"],
+      ["wire sb/sth to sth", "将…连接到"]
+    ],
+    "sentence": [
+      ["An electrical pulse in a wire travels close to the speed of light ",
+        "电线里的电脉冲以接近光速的速度传输。"],
+      ["Record the length, tension, and linear density of the wire in the Data section. ",
+        "在数据区记录下金属丝的长度、张力和线密度。"],
+      ["We received a wire saying they arrived safely. ",
+        "我们收到一封电报说他们已经安全到达。"]
+    ],
+    "relevant-word": []
+  },
+  "routine": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "常规;正常顺序;生活乏味;无聊;(演出中的)一套动作，一系列笑话(等)",
+    "phrase": [],
+    "sentence": [
+      ["They get very excited about new ideas and projects, but may neglect the more routine aspects of life. ",
+        "他们感到很兴奋，新的想法和项目，但可能忽视了更多的常规方面的生活。"],
+      ["To alter a part of an instruction or routine. ",
+        "改变指令或例行程序中的某一部分。"],
+      ["In the individual event, a competition performs one routine, 60 to 90 seconds in length. ",
+        "在个人项目中，一套动作的作表演长度为60秒至90秒。"],
+      ["If this feels like yet one more piece of fairly routine code, then you're right& it is! ",
+        "如果感觉这像是一段相当普通的代码，那就对了，正是如此！"]
+    ],
+    "relevant-word": []
+  },
+  "tip": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "尖端;尖儿;端;(装在顶端的)小部件;指点;实用的提示;小费;(使)倾斜，翻覆;倒出;倾倒;倾覆;轻触;轻碰",
+    "phrase": [
+      ["tip (on/for doing sth)", "指点；实用的提示"],
+      ["leave a tip", "留小费"],
+      ["on the tip of your tongue", "话在嘴边上（却一时想不起来）"],
+      ["the tip of the iceberg", "（问题的）冰山一角"],
+      ["it is/was tipping (it) down", "大雨倾盆；大雨如注"],
+      ["tip the balance/scales", "使天平倾斜；使结果倾向某方；起决定性作用"],
+      ["tip your hand", "伸出手"],
+      ["tip the scales at sth", "重量为"],
+      ["tip the wink to sb", "给某人密送情报"],
+      ["tip sb↔off (about sth)", "暗中警告，私下告诫，密报（尤指非法的事情）"],
+      ["tip up/over", "跌倒，倾覆"]
+    ],
+    "sentence": [
+      ["It is usual to tip waiters, porters, guides and drivers.",
+        "给服务员、行李搬运工、导游和司机小费是惯例。"],
+      ["The other tip I'm going to give you is any time you see a chain molecule, by chain I just mean many different atoms written out in a row. ",
+        "我要告诉大家的另外一个小窍门是，每当你看到一个链状分子，链状的意思是说很多，不同的原子写成一行的形式。"],
+      ["The switch works by passing a pulse of current between the tip and the surface. ",
+        "那个开关通过在末梢和表面之间传输电流脉冲工作。"],
+      ["We don't have a tip culture in China. ",
+        "我们在中国并没有给小费的文化。"],
+      ["If the trial were evenly poised the newspapers might tip the balance against them.",
+        "如果选拔赛双方打平，报界可能会使形势朝着不利于他们的方向倾斜。"]
+    ],
+    "relevant-word": []
+  },
+  "occur": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "发生;出现;存在于;出现在",
+    "phrase": [
+      ["occur to sb", "被想到；出现在头脑中"]
+    ],
+    "sentence": [
+      ["The time when a solar eclipse will occur can be calculated. ",
+        "日食发生的时间可以推算出来。"],
+      ["If the climate gets drier, then the logical conclusion is that even more drought will occur.",
+        "如果气候变得更干燥，必然会出现更多旱情。"]
+    ],
+    "relevant-word": ["occurrence"]
+  },
+  "occurrence": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "发生的事情;存在的事物;发生;出现;存在",
+    "phrase": [
+      ["occurrence  (of sth)", "发生；出现；存在"]
+    ],
+    "sentence": [
+      ["The occurrence of such things is by no means fortuitous. ",
+        "出现这种问题绝不是偶然的。"],
+      ["We must prevent the occurrence of similar incidents. ",
+        "我们必须防止类似事件再次发生。"],
+      ["Designed or having the power to deter or prevent an anticipated situation or occurrence. ",
+        "意欲或有力量阻止或防止预期情形和事件的发生。"]
+    ],
+    "relevant-word": ["occur"]
+  },
+  "waterproof": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "不透水的;防水的;耐水的;雨衣",
+    "phrase": [],
+    "sentence": [
+      ["In the urbanization process the earth's surface of the city is hindered water material by building and concrete, etc hardened and covered progressively, These waterproof road surface brings the great negative effect to ecological environment of the city. ",
+        "在城市化进程中，城市的地表逐步被建筑物和混凝土等阻水材料硬化覆盖，这些不透水的路面给城市的生态环境带来极大的负面影响。"],
+      ["The study on the effect of the application of waterproof clothing used for drape during operation.",
+        "防水布在手术铺巾中应用效果研究"]
+    ],
+    "relevant-word": []
+  },
+  "delivery": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "传送;递送;交付;分娩;演讲方式;表演风格",
+    "phrase": [
+      ["cash on delivery", "货到付款；交货付现"]
+    ],
+    "sentence": [
+      ["In the end, it was an easy delivery: a fine baby boy.",
+        "分娩过程最终非常顺利，生了个健康的男婴。"],
+      ["Installs components required for event collection, notification generation, formatting, and delivery. ",
+        "安装收集事件、生成通知、设置格式和传送所必需的组件。"],
+      ["You can find the delivery of applications, can also be applied to the inside scoring.",
+        "你可以投递发现的应用程序，也可以为里面的应用打分。"],
+      ["This design has led to some delivery issues.",
+        "这种设计导致了一些交付问题。"],
+      ["The historic speech required but two minutes in delivery. ",
+        "这次历史性的讲演只需要两分钟。"]
+    ],
+    "relevant-word": []
+  },
+  "transmission": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "传送;传递;传达;传播;传染;(电子信号、信息或广播、电视节目的)播送，发射，发送，传输;(电台或电视)信息，广播",
+    "phrase": [
+      ["automatic transmission", "自动变速器"]
+    ],
+    "sentence": [
+      ["The car was fitted with automatic transmission. ",
+        "这辆车装配了自动变速器。"],
+      ["This switching structure supports both point-to-point and point-to-multi-points broadcasting transmission with superior capacity expansion performance. ",
+        "该交换结构支持点到点和点到多点广播两种传送方式，具有很好的容量扩充性能。"],
+      ["A break in transmission due to a technical fault.",
+        "由于技术故障造成的播送中断。"],
+      ["In this article we design and implement a secure and real-time voice transmission system. ",
+        "本文设计和实现了一个安全、实时的语音信息传输系统。"],
+      ["This creative thinking led onto the design of a transmission through positive and negative electrical charges. ",
+        "这种创造性的思想引发了如何设置某种通过正电荷与负电荷的传动装置。"]
+    ],
+    "relevant-word": ["transmit"]
+  },
+  "transmit": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "传送;输送;发射;播送;传播;传染;传(热、声等);透(光等);使通过",
+    "phrase": [
+      ["transmit (sth) (from…) (to…)", "传送；输送；发射；播送"]
+    ],
+    "sentence": [
+      ["Applications can now receive, transmit, store, and retrieve XML without intermediate conversions. ",
+        "应用程序现在不需进行中间的转换，就可以对XML进行接收、传输、存储和检索。"],
+      ["Joint transmit and receive antenna selection in mimo systems for maximize channel capacity.",
+        "MIMO系统中最大化信道容量的联合发射与接收天线选择算法"],
+      ["Normally, it will not transmit in the people group.",
+        "基本上不存在人与人之间传染。"],
+      ["Service where the data-communication channel is able to transmit signals, but is not equipped to receive signals. Research on Multi-Communication Data Repeater .",
+        "一种服务（站），此处数据通信信道能够发送信号，但不能接收信号。多通信方式的数据收集转发器的研究。"]
+    ],
+    "relevant-word": ["transmission"]
+  },
+  "consumption": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "(能量、食物或材料的)消耗，消耗量;消费;肺病;肺痨;肺结核",
+    "phrase": [],
+    "sentence": [
+      ["Energy consumption rises as countries industrialise.",
+        "随着各国实现工业化，能源消费增加了"],
+      ["Symptoms of consumption developed.",
+        "出现了肺病的征兆"]
+    ],
+    "relevant-word": ["consume"]
+  },
+  "consume": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "消耗，耗费(燃料、能量、时间等);吃;喝;饮;使充满(强烈的感情)",
+    "phrase": [
+      ["consume sb (with sth)", "使充满（强烈的感情）"]
+    ],
+    "sentence": [
+      ["They consume a large amount of I/ O and CPU resources. ",
+        "它们消耗大量I/O和CPU资源。"],
+      ["Key to understanding and using metadata are the concepts of supply and consume. ",
+        "理解和使用元数据的关键是供应和消费的概念。"],
+      ["Using the default GC policy, the IBM JVM will consume the entire heap before invoking garbage collection. ",
+        "在使用默认的GC策略的情况下，IBM JVM在耗尽所有堆之后才调用垃圾回收。"],
+      ["Do you think we'll help start a war that will consume the planet?",
+        "你认为我们会帮你引发战争去毁灭世界吗？"]
+    ],
+    "relevant-word": ["consumption"]
+  },
+  "counter": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "(商店、银行等的)柜台;(某些棋盘游戏的)筹码;(电子)计数器，计算器;反驳;驳斥;抵制;抵消;逆向地;相反地;反对地",
+    "phrase": [
+      ["over the counter", "（尤指购药）不凭处方"],
+      ["under the counter", "秘密地，暗地里，非法地"],
+      ["counter (sb/sth) (with sth)", "反驳；驳斥"],
+      ["counter to sth", "逆向地；相反地；反对地"]
+    ],
+    "sentence": [
+      ["To make this easy, I use a current timestamp instead of managing a counter.",
+        "为了简化，我使用了当前时间戳而不是管理一个计数器。"],
+      ["The shop assistant received me indifferently while leaning on a counter.",
+        "商店售货员靠在柜台上漫不经心地招呼我。"],
+      ["A small disk or counter used in poker and other games to represent money.",
+        "扑克和其它游戏中用来代替钱的小圆片或筹码。"],
+      ["There are counter arguments.",
+        "有人提出了相反的观点。"],
+      ["Fourth, the government should arrest and counter the recent erosion in key parameters of the market system. ",
+        "第四，对于近来市场体系关键参数遭到的侵蚀，政府应予以阻止和反击。"],
+      ["Its critics counter that the provisions are being applied more stringently than necessary. ",
+        "该政策的批评人士反驳称，条款的执行过于严格，超出了必要的范围。"]
+    ],
+    "relevant-word": []
+  },
+  "exception": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "一般情况以外的人(或事物);例外;规则的例外;例外的事物",
+    "phrase": [
+      ["the exception that proves the rule", "反证规律的例外；足以证明普遍性的例外"],
+      ["make an exception", "允许有例外；让…成为例外"],
+      ["take exception to sth", "（强烈地）反对；生…的气"],
+      ["with the exception of", "除…之外；不包括…在内"],
+      ["without exception", "一律；无一例外"]
+    ],
+    "sentence": [
+      ["Everyone should keep discipline and you are no exception. ",
+        "每个人都应该遵守纪律，你也毫无例外。"],
+      ["The design of this application follows the accepted paradigm, with the exception of the first JSP. ",
+        "该应用程序的设计遵从公认的范例，只有第一个JSP除外。"],
+      ["I particularly take exception to the phrase \"push your buttons\".",
+        "我尤其反对“按对按钮”这一词组。"],
+      ["We take exception to this question. ",
+        "我方对这个问题有异议。"]
+    ],
+    "relevant-word": []
+  },
+  "indicate": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "表明;显示;象征;暗示;间接提及;示意",
+    "phrase": [
+      ["indicate sth (to sb)", "暗示；间接提及；示意"],
+      ["indicate that...", "表明；说明"]
+    ],
+    "sentence": [
+      ["Testing results indicate that the calculation and analysis are right. ",
+        "实际的测试结果表明了计算分析的正确性。"],
+      ["A mark ($) written before a number to indicate that it stands for the number of dollars. ",
+        "写在一个数字前面标示这个数字代表的元数的记号（$）。"],
+      ["We added the NOT NULL flag to indicate that the fields must not be null.",
+        "我们添加了NOT NULL标志来指示字段必须不能为空。"],
+      ["And I have purposely made the arrow shorter to indicate that it has been slowed because we are going to argue its mass didn't change, so the only way to change its energy is to change its velocity. ",
+        "我已经故意将这个箭头弄短，用来象征它变慢了，因为我们将证明它的质量没有变，只有它的能量改变了，也就是它的速度变了。"],
+      ["Experimental results indicate that the new algorithms are efficient for finding community structures in complex networks. ",
+        "实验结果暗示这种新的算法在发现复杂网络社团上是有效的。"],
+      ["A process control alert may indicate unexpected changes in product or assay performance. ",
+        "工艺控制警戒可能预示产品或分析性能的意外变化。"]
+    ],
+    "relevant-word": []
+  },
+  "remove": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "移开;拿开;去掉;从…机构开除;脱去(衣服等);摘下;去除，排除(污渍、不愉快的事物等);使消失;距离;差距;间距",
+    "phrase": [
+      ["remove sth/sb (from sth/sb)", "移开；拿开；去掉；从…机构开除"]
+    ],
+    "sentence": [
+      ["You can use Device Manager to remove or disable devices and their drivers.",
+        "你可以使用设备管理去除或禁用设备和相关的驱动程序。"],
+      ["You're not in a position to remove me. The boot is now on the other foot.",
+        "你没有权力开除我。相反，我现在可以开除你。"],
+      ["Therefore, it is important to remove any tight clothing before the swelling occurs. ",
+        "因此，重要的是在肿胀发生之前脱掉任何紧身的衣物。"],
+      ["They will instead be escorted to a police station and asked to remove the veil there for identification.",
+        "相反地，违反禁令者会被送到警察局，在那里要求拿下面罩，以辨别身分。"],
+      ["Count or remove the central government selections, can make holding that skin owes area and decline.",
+        "中央政府的选点或迁移，能造皮该区域的盛与衰。"],
+      ["Since it allowed the nurse to remove her for emergency treatment.",
+        "自从她被容许离开去进行紧急救治。"],
+      ["His present position lets him stay at one remove from the neighbours.",
+        "他的现任职务使他与邻居的关系保持着一定的距离。"],
+      ["The RSS data are now imported, and you can remove the RSS file and restore the script. ",
+        "RSS数据现在引进来了。你可以移动RSS文件并且重新安装脚本。"]
+    ],
+    "relevant-word": []
+  },
+  "component": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "组成部分;成分;部件;成分的;组成的;合成的;构成的",
+    "phrase": [],
+    "sentence": [
+      ["Methods of system analysis, principal component analysis and graphical representation were employed. ",
+        "研究方法：系统分析法、主成分综合评价法和图示法。"],
+      ["And it's the same for each individual component. ",
+        "对每一个单独的组分也是一样的。"],
+      ["Each component is carefully checked before assembly. ",
+        "每个零件在装配前都经过仔细检查。"],
+      ["We will be creating an OrderProcessor component that provides a purchasing service to process purchase orders.",
+        "我们将创建一个OrderProcessor合成要素，为处理定购单提供一个购买服务。"],
+      ["The detailed information for each component of the resource group name is described in Table 4. ",
+        "表4中描述了资源组名中每个成分的详细信息。"]
+    ],
+    "relevant-word": []
+  },
+  "naked": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "裸体的;裸露的;不穿衣服的;无遮盖的;直白的;露骨的;毫不掩饰的",
+    "phrase": [],
+    "sentence": [
+      ["And I picked the one that I liked seeing naked.",
+        "我选择了我喜欢看她裸体的那个。"],
+      ["How many users have seen what a naked hard drive looks like ( far right)? ",
+        "有多少用户见过裸露的硬盘驱动器是什么样子（最右边）？"],
+      ["This is the naked truth. ",
+        "这是赤裸裸的事实。"],
+      ["WEEGEE lacked formal training, but he knew how to give people what they want: naked emotions, grisly details. ",
+        "维吉没有受过正规的训练，但他知道如何表现人们想看的东西：不加掩饰的情感、狰狞可怖的细节。"]
+    ],
+    "relevant-word": ["bare"]
+  },
+  "desperate": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "(因绝望而)不惜冒险的，不顾一切的，拼命的;绝望的;孤注一掷的;铤而走险的;非常需要;极想;渴望",
+    "phrase": [],
+    "sentence": [
+      ["The desperate condition of the world is that madness has always been here, and that it will remain so for all time. ",
+        "这个世界令人绝望的是，疯狂之事一直存在，而且将永远存在下去。"],
+      ["Exploitive styles must be conducted with great subtlety as very few counterparts are so desperate as to welcome or tolerate outright exploitation. ",
+        "使用利用型谈判方法必须非常巧妙，因为没有对手如此铤而走险的欢迎或容忍无条件被利用。"],
+      ["This desperate expedient, however, was no longer necessary.",
+        "当然，这孤注一掷的措施是没有必要了。"],
+      ["For some reason they are desperate for the boy to fail and I don't understand it.",
+        "出于某种原因，他们急切的希望这孩子失败。我不理解。"],
+      ["We know how to play the game of pretending to be successful and confident, of hiding our insecurity and desperate need for approval.",
+        "我们懂得如何来玩假装成功和自信的游戏，来玩隐藏不安全感、隐藏对赞扬极度渴望的游戏。"]
+    ],
+    "relevant-word": ["despair"]
+  },
+  "despair": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "绝望;失去希望;丧失信心",
+    "phrase": [
+      ["be the despair of sb", "令某人担心（或绝望）"],
+      ["a counsel of despair", "a counsel of despair"],
+      ["despair (of doing sth)", "绝望；失去希望；丧失信心"]
+    ],
+    "sentence": [
+      ["I would overcome any weakness, any despair, any fear. ",
+        "我要克服所有的软弱、绝望和恐惧。"]
+    ],
+    "relevant-word": ["desperate"]
+  },
+  "efficient": {
+    "learn-day": "2020-03-18",
+    "ch-hans":  "效率高的;有能力的",
+    "phrase": [],
+    "sentence": [
+      ["This is an efficient and effective suite of security tools, presented in a very user-friendly manner.",
+        "这是一个有效率的和有效的一整套安全工具，介绍了在一个非常方便用户的方式。"],
+      ["The fact of referee The goal of retrial procedure is to correct the mistake in an efficient verdict. ",
+        "设立再审程序的目的是为了纠正已生效裁判存在的错误。"],
+      ["He always takes pride in his work. he's very efficient",
+        "他总是以他的工作为荣。他是个很能干的人。"]
+    ],
+    "relevant-word": []
+  },
+  "admit": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "(常指勉强)承认;承认(过错、罪行);招认;招供;准许…进入(某处)",
+    "phrase": [
+      ["admit to sth/to doing sth", "承认"],
+      ["admin to sb", "（常指勉强）承认"],
+      ["admit sb/sth to/into sth", "准许…进入（某处）"],
+      ["admit of sth", "容许，有…可能（指解决办法、解释等）"]
+    ],
+    "sentence": [
+      ["I admit I was foxed for some time.",
+        "我承认我一度被难住了。"],
+      ["Will you admit to what you've done?",
+        "你会对你的过错供认不讳么？"],
+      ["The democrats are divided over whether to admit him into their group.",
+        "民主党人就是否允许他加入他们的组织意见不一。"],
+      ["It is very necessary to admit and protect this inherent value. Based on such morality, the best way is to admit that environmental law can regulate relation between mankind and environment. ",
+        "基于这样的环境伦理道德观念，用法律来确认和保护这种价值的最好方法是承认环境法可以调整人与环境的关系。"]
+    ],
+    "relevant-word": ["admission"]
+  },
+  "admission": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "(机构、组织等的)准许加入，加入权，进入权;(尤指对过错、罪行的)承认，招认，招供;入场费;门票费",
+    "phrase": [
+      ["admission to sth", "（机构、组织等的）准许加入，加入权，进入权"],
+      ["admission of sth", "（尤指对过错、罪行的）承认，招认，招供"]
+    ],
+    "sentence": [
+      ["By his own admission, he is not playing well",
+        "他自己承认表现欠佳。"],
+      ["I want an admission of guilt.",
+        "我想要一个自责的坦白。"],
+      ["You will have to pay a small admission charge. ",
+        "你将要付一小笔入场费。"]
+    ],
+    "relevant-word": ["admit"]
+  },
+  "funeral": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "葬礼;丧礼;出殡",
+    "phrase": [
+      ["it's your funeral", "这是你自作自受"]
+    ],
+    "sentence": [
+      ["Thousands of people attended the funeral.",
+        "数千人参加了葬礼。"],
+      ["But I was really moved by the way the Marine Corps conducted his funeral.",
+        "但海军陆战队为他举行葬礼的方式却深深地打动了我"]
+    ],
+    "relevant-word": []
+  },
+  "sophisticated": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "见多识广的;老练的;见过世面的;复杂巧妙的;先进的;精密的;水平高的;在行的",
+    "phrase": [],
+    "sentence": [
+      ["Some sign languages are very sophisticated means of communication.",
+        "有些手语可以表达非常复杂的内容。"],
+      ["As an example, here is a more sophisticated reworking of the ping/ listen example in Python.",
+        "作为一个示例，这里是用Python重新对ping/listen示例进行了更为精致的实现。"],
+      ["Over the past decades, China has begun to take a less confrontational, more sophisticated, confident and constructive approach toward regional and global affairs. ",
+        "在过去几十年来，中国已开始采取对地区和全球事务少对抗性的，更富有经验的，自信的，建设性的做法。"],
+      ["But what look like incredibly sophisticated strategies on the surface can still be very simple at heart. ",
+        "但表面上看来难以置信的深奥微妙的投资策略其核心依旧很简明。"]
+    ],
+    "relevant-word": []
+  },
+  "permission": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "准许;许可;批准;许可证;书面许可",
+    "phrase": [
+      ["permission for sth", "准许；许可；批准"],
+      ["permission to do sth", "准许；许可；批准"]
+    ],
+    "sentence": [
+      ["They used copyrighted music without permission.",
+        "他们未经允许使用了受版权保护的音乐。"],
+      ["The High Court has granted permission for the demolition work to continue.",
+        "高等法院批准拆除工作继续进行。"],
+      ["The more you give this permission, the more you free them, and the more you feel a sense of gratitude and support moving toward you and your life. ",
+        "你给予的“认可”越多，你释放他们的越多。这样你才感到感恩的心，和带领你的生命向前迈进。"]
+    ],
+    "relevant-word": []
+  },
+  "chamber": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "会议厅;(议会的)议院;(作特定用途的)房间，室",
+    "phrase": [],
+    "sentence": [
+      ["Based on this model, the effects of combustion chamber configuration upon combustion performance and engine performance were studied.",
+        "在此基础上研究了主要结构参数&燃烧室形状对燃烧特性和整机性能的影响。"],
+      ["I obeyed, so far as to quit the chamber.",
+        "我服从了，就离开了这间卧室。"],
+      ["The Speaker is preceded by the mace-bearer upon his entry to the chamber. ",
+        "当议长走进议事厅的时候，前面由执议长权标的人开路。"]
+    ],
+    "relevant-word": []
+  },
+  "fence": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "栅栏;篱笆;围栏;(障碍赛马中的)障碍物;买卖赃物者;销赃犯",
+    "phrase": [
+      ["mend (your) fences (with sb)", "解决纷争；消除隔阂"],
+      ["on the other side of the fence", "与自己所处情况不同的一面；事物的另一面"],
+      ["sit on the fence", "骑墙；持观望态度"],
+      ["fence sb/sth↔in", "围住，关住"],
+      ["fence sth↔off", "（用栅栏、篱笆、围栏）隔开"]
+    ],
+    "sentence": [
+      ["The exhibition hall reared above me behind a high fence.",
+        "高高的围墙后面，展览大厅耸立在我面前。"],
+      ["I can fence much better than you, though.",
+        "可是，我的剑术要比你的好。"],
+      ["The influence of fence about air values flow features to the water hammer.",
+        "文中通过数值计算分析了这种局部管材突变对水锤防护的影响。"]
+    ],
+    "relevant-word": []
+  },
+  "signal": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "信号;暗号;标志;预示;(尤指铁路和公路上的)指示灯，信号灯，红绿灯",
+    "phrase": [],
+    "sentence": [
+      ["The signal will be converted into digital code.",
+        "信号会被转变为数字代码。"],
+      ["Good idea. how's this for a signal? ",
+        "好主意，这个作暗号怎么样？"],
+      ["Omen Signal Analysis That the Financial Report Practices Fraud.",
+        "财务报告舞弊的预兆分析研究。"],
+      ["Convulsions are a sign that your baby is far from well, they are a danger signal.",
+        "惊厥意味着你的孩子身体极不健康，它是一个危险的征象。"],
+      ["The wage cut was the signal for the workers to strike.",
+        "减少工资是工人罢工的导火线。"],
+      ["Such hormone alterations could, in turn, signal the brain to suppress FSH and LH production.",
+        "这样荷尔蒙的改变可能依次的向大脑发信号，来抑制FSH和LH的产生。"],
+      ["Wait for my signal to attack.",
+        "等我发信号才攻击。"]
+    ],
+    "relevant-word": []
+  },
+  "subsequent": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "随后的;后来的;之后的;接后的",
+    "phrase": [
+      ["subsequent to...", "在...之后"],
+      ["in subsequent years", "随后几年"]
+    ],
+    "sentence": [
+      ["He made numerous errors of fact and was torn to pieces during the subsequent question time.",
+        "他犯了数不清的事实错误，并在随后的答疑时间中被批得体无完肤。"],
+      ["This process of obtaining content from a previous response to be used in subsequent requests is called data correlation. ",
+        "这个从以前的响应中获得内容的过程被用在后来的被称为数据关联的请求中。"]
+    ],
+    "relevant-word": []
+  },
+  "represent": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "代表;作为…的代言人;维护…的利益;等于;相当于;意味着",
+    "phrase": [
+      ["represent sb/sth", "展示；描绘"],
+      ["represent sb (as sth)", "(尤指不公平地)展现，描述，表现"],
+      ["represent sth (to sb)", "正式提出（意见、抗议等）"]
+    ],
+    "sentence": [
+      ["ParseTree, as already mentioned, offers a format to represent Ruby source code.",
+        "前面已经提到的分析树，提供了一种表现Ruby源代码的格式。"],
+      ["Roles represent the developers performing the actual work.",
+        "角色象征了执行实际工作的开发者。"],
+      ["Their behaviour was an insult to the people they represent.",
+        "他们的行为是对他们代表的人民的一种侮辱。"],
+      ["China representative: Looking for a company to represent our product and services in China.",
+        "中国代表：寻找能在中国代理该公司产品和服务的公司。"],
+      ["Since the recent economic reforming and open door policy, the national group companies have experienced formation and early development stages, and starts to represent more significant force in the national economic growth.",
+        "我国的企业集团自改革开放以来，已经历了形成和初步发展阶段，并在国民经济中扮演着日益重要的角色。"],
+      ["I intend to represent your case with complete dignity.",
+        "我要对你的案子提出异议。"]
+    ],
+    "relevant-word": ["representative"]
+  },
+  "representative": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "代表;销售代表;销售代理;代销人;代表他人者",
+    "phrase": [
+      ["representative of sb/sth", "代表"],
+      ["representative of sb/sth", "典型的；有代表性的"]
+    ],
+    "sentence": [
+      ["We get a very representative mix of people. ",
+        "我们现在有了非常具有代表性的一群人。"],
+      ["The newly elected state representative is an up-and-coming young man who is expected to go far in politics. ",
+        "那位新选的州议员是位雄心勃勃的青年，被认为在政治上是大有可为的。"],
+      ["The Trust is assisting developing countries with preparing, packaging and transporting their representative seeds to the Arctic. ",
+        "该基金正在帮助发展中国家准备、包装和运送其有代表性的种子到北极。"],
+      ["These sets of GQMs are representative and typical, but they are far from exhaustive. ",
+        "这些GQM集合是典型的和有代表性的，但他们并不是完全没有遗漏的。"],
+      ["The fourth part analyzes deficiencies of the western representative System and proposals to complete Chinese representative system.",
+        "第四部分分析了中西代议制的不足以及完善我国代议制的建议。"]
+    ],
+    "relevant-word": ["represent"]
+  },
+  "modest": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "些许的;不太大(或太贵、太重要等)的;谦虚的;谦逊的;庄重的;朴素的;不性感的",
+    "phrase": [],
+    "sentence": [
+      ["Parents told us that we would study from others in a modest attitude.",
+        "父母叮嘱我们要以谦虚的态度向别人学习。"],
+      ["Such an empire might have satisfied a man of modest ambition.",
+        "对于一个野心适度的人来说，这样的一个帝国是可以满足他的。"],
+      ["This ideal code of conduct and modest dress are required from both men and women. ",
+        "完美的行为操守和端庄的服饰对男女双方都是必需的。"],
+      ["She was so modest, so expressive, she had looked so soft in her thin white gown that he felt he had acted stupidly. ",
+        "她是那样的羞怯，那样的富有情感，她穿着那件薄薄的白色袍子，看上去是那样的温柔，他感到他刚才没有挑选她是太愚蠢了。"]
+    ],
+    "relevant-word": []
+  },
+  "regulate": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "(用规则条例)约束，控制，管理;调节，控制(速度、压力、温度等)",
+    "phrase": [],
+    "sentence": [
+      ["And some help regulate the activities of other cells in the immune system. ",
+        "还有一些细胞帮助调节免疫系统中其他细胞的活动。"],
+      ["Do you know someone you would like to change and regulate and improve? ",
+        "你愿意你认识的人有所改变、调整和改进吗？"],
+      ["In order to solve this problem, we designed a calendar clock which can automatically regulate and adjust its run rate. ",
+        "为了解决这一问题，我们设计了能够自动校准和调整运行速度的日历时钟。"],
+      ["They adopt personal standards, and monitors and regulate their actions by self-reactive influence. ",
+        "他们具有个人行为的准则和监督机制，并通过自我反应的影响来控制自己的行为。"],
+      ["Digital natives are strengthening brain cells that regulate specific activities. ",
+        "数字原生代强化了管理特定活动的脑细胞。"]
+    ],
+    "relevant-word": []
+  },
+  "distinct": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "清晰的;清楚的;明白的;明显的;截然不同的;有区别的;不同种类的;确定无疑的;确实的;确切的",
+    "phrase": [
+      ["distinct from sth", "截然不同的"]
+    ],
+    "sentence": [
+      ["The performance of applications can be described in terms of two distinct properties: throughput and response time. ",
+        "应用程序的性能可以用两个明显的属性来描述：吞吐量和响应时间。"],
+      ["There is a distinct split between the transport code and the rest of the SOAP engine. ",
+        "在传输代码和SOAP引擎的其他部分实现了清楚的分离。"],
+      ["Fitting method of deformed parameter with distinct period and its application to processing of fault deformation data .",
+        "畸形参数附带卓越周期拟合法在断层形变数据处理中的应用"],
+      ["Enhanced with photo-editing software, the sky became a deep red and the sun took on a more distinct halo. ",
+        "通过图片编辑软件的修饰后，天空变得映满了朝霞并且太阳呈现出不寻常的光晕。"],
+      ["The two are distinct, soul being as it were the middle term between body and spirit, or the bond between the two. ",
+        "精神和灵魂是有区别的，灵魂好像是肉体与精神之间的中介，或者两者之间的联系。"],
+      ["A word in practical applications does not exist in isolation and it has a distinct meaning in contexts.",
+        "词汇在实际应用中并不是孤立存在的，它的确切含义与它所在的语境密不可分。"]
+    ],
+    "relevant-word": ["distinction", "extinct", "instinct"]
+  },
+  "distinction": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "差别;区别;对比;优秀;杰出;卓越;特质;特点;不同凡响",
+    "phrase": [
+      ["distinction between A and B", "差别；区别；对比"]
+    ],
+    "sentence": [
+      ["He is fair to us without distinction. ",
+        "他对我们一视同仁，毫无区别。"],
+      ["He richly merits such a distinction. ",
+        "他完全配得上这一荣誉。"],
+      ["The national spirits collectively manifested in them have always been exerting influences upon Chinese people's character and sentiments, as well as the cultural tradition and thinking distinction. ",
+        "其中所凝聚的民族精神影响着中国人民的性格与情操，影响着中国几千年的文化传统和思维特质。"],
+      ["But it can hardly be said that they have achieved distinction in more recent years. ",
+        "但也很难认为最近几年它们取得了什么卓越的成绩。"]
+    ],
+    "relevant-word": ["distinct"]
+  },
+  "crash": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "撞车;碰撞;相撞;(倒下、破碎等突然的)碰撞声，破裂声，碎裂声;暴跌;倒闭;破产;失败",
+    "phrase": [
+      ["crash sth into sth", "碰撞；撞击"],
+      ["crash out", "入睡；（在不常睡觉的地方）睡觉"],
+      ["a crashing bore", "讨厌透顶的人"],
+      ["crash out (of sth)", "被淘汰"]
+    ],
+    "sentence": [
+      ["The interference signal of abnormal acceleration that often appeared in crash tests for a car were analyzed and studied. ",
+        "针对某型汽车在碰撞试验中多次出现的异常加速度干扰信号进行了分析和研究。"],
+      ["The crash in the stock market has also sapped consumer confidence.",
+        "股市的暴跌也打击了消费者信心。"],
+      ["I think we're just gonna go back to the motel and crash.",
+        "我想我们会回汽车旅馆睡觉。"],
+      ["I recently lost all my data after a harddisk crash. ",
+        "最近，我失去了我的所有数据后，硬盘崩溃。"],
+      ["A sonic boom is the loud crash and shaking that happens when a jet plane goes faster than the speed of sound. ",
+        "声爆是当喷气式飞机超音速行驶时产生的巨大碰撞和摇动声。"],
+      ["In crash recovery, transactions that are not committed will be rolled back while committed data will be flushed to disk.",
+        "在应急恢复中，把提交的数据刷新到磁盘时，将回滚没有提交的事务。"],
+      ["If you feel you need a crash course on Java, turn to Appendix A of my book or the Education section of the developerWorks Java zone. ",
+        "如果您觉得需要一个Java速成课程，请转至拙作的附录A或者developerWorks Java区的“教学”部分。"]
+    ],
+    "relevant-word": ["collision"]
+  },
+  "consciousness": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "清醒状态;知觉;觉察;感觉;意识;观念;看法",
+    "phrase": [],
+    "sentence": [
+      ["This is almost our conscious and consciousness of the individual life and face must face up to the picture. ",
+        "这几乎是我们有意识和知觉的生命个体要正视和直面的图画。"],
+      ["The internal factors consist chiefly of our strength and the degree of our political consciousness. ",
+        "国内的因素主要是我们的力量和觉悟程度。"],
+      ["Men's social existence determines their consciousness. ",
+        "人们的社会存在决定人们的意识。"],
+      ["This attitude combines a lack of class consciousness, a somewhat jaunty optimism and an inquisitiveness. ",
+        "这种态度包括等级观念不强，得意洋洋的乐观劲儿和刨根问底的好奇心。"],
+      ["His worship of money is bound up with his consciousness of inward defeat. ",
+        "他对金钱的崇拜和他内心失败的感觉结合在一起。"]
+    ],
+    "relevant-word": ["conscious"]
+  },
+  "conscious": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "意识到;注意到;神志清醒的;有知觉的;有意识的;慎重的;有意的;刻意的",
+    "phrase": [
+      ["conscious of doing sth", "意识到；注意到"]
+    ],
+    "sentence": [
+      ["Not all body language is conscious.",
+        "并不是所有的身体语言都是有意识的。"],
+      ["The Planck institute scientists proved that the scans of \"lucid dreamers\" dreams looked the same as scans of their brain when they do the same thing while conscious.",
+        "普朗克研究所的科学家证明到，“清醒梦者”做梦时的脑部扫描与神志清醒时候的脑部扫描是相同的。"],
+      ["It is by choice and by conscious effort. ",
+        "这是选择和自觉的努力。"],
+      ["There is still prejudice, even if it is not always conscious. ",
+        "现在仍有偏见存在，尽管这种偏见未必总是有意的。"]
+    ],
+    "relevant-word": ["consciousness", "conscience"]
+  },
+  "absolute": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "完全的;全部的;绝对的;(英语口语中尤用以强调)道地的，确实的，十足的;肯定的;无疑的;明确的",
+    "phrase": [],
+    "sentence": [
+      ["It seems political expediency, rather than absolute economic need, will determine who gains from the conflict .",
+        "看来是政治上的权宜之计，而不是绝对的经济需求，将决定谁会从这场冲突中获益。"],
+      ["Consequently, she gave me absolute freedom of choice.",
+        "结果她给了我完全的选择自由。"],
+      ["The belligerence of the contradictions is absolute and unconditional. We have to innovate the legal system and solve the social conflict so that the harmonious social dream of the social development and prosperity shared by all human beings could be realized.",
+        "矛盾的斗争性是无条件的、绝对的，只有不断创新法律制度，解决社会现实矛盾，才能实现全人类共享发展繁荣的和谐社会理想。"],
+      ["In the endless flow of absolute truth there are innumerable relative truths.",
+        "在绝对真理的长河中有无数相对真理。"],
+      ["Absolute value as objectivity is a problem of fact, meanwhile the meaning or value of existence of thing determines the fact of categorical essence of thing as well as the relation as Li among things. ",
+        "绝对价值作为客观性就是事实问题，同时事物存在的意义或价值决定事物的类本质及事物之间关系的理这一事实。"]
+    ],
+    "relevant-word": []
+  },
+  "transfer": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "(使)转移，搬迁;(使)调动;转职;转学;改变(环境);转移(感情);传染(疾病);让与，转让(权力等)",
+    "phrase": [
+      ["transfer (sth/sb) (from…) (to…)", "（使）转移，搬迁"],
+      ["transfer  (sb) (from…) (to…)", "（使）调动；转职；转学；改变（环境）"]
+    ],
+    "sentence": [
+      ["If there is a cost to make the transfer, the Member will pay it – so that other Members do not have to bear that expense. ",
+        "如果有一个成本，使转移，会员将支付它让其他成员不须承担有关费用。"],
+      ["It also makes transfer of images from your camera easier by automatically creating folders and sub-folders based on date or description. ",
+        "它并且使调动图象从您的照相机容易由自动地创造文件夹和次级文件夹根据日期或描述。"],
+      ["It can speed up the progress of technical transfer and adjustment of industrial structures. ",
+        "它能加速技术转让和产业结构调整的进程。"],
+      ["With your permission, I should like to put in for a transfer. ",
+        "如果您允许，我想申请转学。"],
+      ["Transfer times, transfer point choice and the travel cost are taken into consideration in the new algorithm.",
+        "新算法考虑了公交换乘次数、换乘点选择以及出行总成本对求解最优路径的综合影响。"]
+    ],
+    "relevant-word": []
+  },
+  "temporary": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "短暂的;暂时的;临时的;临时工;临时雇员",
+    "phrase": [],
+    "sentence": [
+      ["The quake led to a temporary cut of telecommunications and damaged roads to the airport. ",
+        "地震造成了短暂的电信中断并毁坏了通往机场的道路。"],
+      ["The story was a temporary expedient. ",
+        "这个借口是临时的应急之法。"],
+      ["Fear of rapid social change made temporary acquiescence in slavery tolerable in the South. ",
+        "对飞速的社会变革的恐惧使得南部对奴隶制暂时的默许变得可以忍受。"],
+      ["A two-tier labour market provides flexibility, but on the back of an underclass of temporary workers. ",
+        "“能屈能伸”的市场提供了柔韧性，但是在牺牲了临时工利益的前提下。"]
+    ],
+    "relevant-word": []
+  },
+  "treaty": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "(国家之间的)条约，协定",
+    "phrase": [],
+    "sentence": [
+      ["Both countries are signatories to the Nuclear Non-Proliferation Treaty.",
+        "两个国家都是《核不扩散条约》的签约国。"],
+      ["For all practical purposes the treaty has already ceased to exist.",
+        "实际上协议已经不复存在。"],
+      ["First, the United States will deep all of its treaty commitments. ",
+        "首先，将会深入所有的谈判条约。"]
+    ],
+    "relevant-word": []
+  },
+  "treat": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "以…态度对待;以…方式对待;把…看作;把…视为;处理;讨论;治疗;乐事;乐趣;款待",
+    "phrase": [
+      ["treat sb/sth (with/as/like sth)", "以…态度对待；以…方式对待"],
+      ["treat sth as sth", "把…看作；把…视为"],
+      ["treat sb (for sth) (with sth)", "医疗；医治"],
+      ["treat sth (with sth)", "（利用化学物质或反应）处理，保护，保存"],
+      ["treat sb/yourself (to sth)", "招待；款待；请（客）；买（可享受的东西）"],
+      ["treat sb like dirt", "视某人如粪土；把…视为草芥；蔑视"],
+      ["treat sb to sth", "用…招待；以…款待"],
+      ["a treat", "极为有效；棒极了"],
+      ["trick or treat", "是请吃糖，还是想遭殃"]
+    ],
+    "sentence": [
+      ["We knock on people's doors and shout'trick or treat '. ",
+        "我们敲着别人家的门，而且喊着“不招待就使坏”。"],
+      ["This is a treat for you. ",
+        "这一次的款待，是为你而设的。"],
+      ["What a treat to get into the peace and quiet of the country. ",
+        "进入这乡间和平和宁静的环境是难得的乐事。"],
+      ["No one knew how to treat this dreaded disease. ",
+        "没人知道如何治疗这种可怕的疾病。"],
+      ["None of us knew how to treat her.",
+        "我们没有人知道该如何对待她。"],
+      ["It was many years before the city began to treat its sewage. ",
+        "很多年以后这个城市才开始处理污水。"]
+    ],
+    "relevant-word": []
+  },
+  "tissue": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "(人、动植物细胞的)组织;(尤指用作手帕的)纸巾，手巾纸;(用于包装易碎物品的)薄纸，绵纸",
+    "phrase": [
+      ["a tissue of lies", "一派谎言"]
+    ],
+    "sentence": [
+      ["The shop assistant wrapped the glasses carefully in tissue in order to protect them. ",
+        "为了起到保护作用，营业员用薄纸仔细地包好镜片。"],
+      ["Oranges in tissue paper packed in crates. ",
+        "桔子是用棉纸包好装在柳条篓里。"],
+      ["As we age we lose muscle tissue ",
+        "肌肉组织会随着我们日趋衰老而萎缩。"]
+    ],
+    "relevant-word": []
+  },
+  "conscience": {
+    "learn-day": "2020-03-20",
+    "ch-hans": "良心;良知;内疚;愧疚;凭良心",
+    "phrase": [
+      ["in (all/good) conscience", "公正地，公平地，凭良心"],
+      ["on your conscience", "使人内疚；良心不安"],
+      ["prick your conscience", "唤醒良心；受到良心谴责"]
+    ],
+    "sentence": [
+      ["He had been unwise and it preyed on his conscience. ",
+        "他做得不太明智，这一直让他良心不安。"],
+      ["Commercial morality is composed of a duty, objective, skill, conscience, reputation, and style. ",
+        "商业道德由众多要素组成：目标、责任、技巧、道德心、声誉和形式。"]
+    ],
+    "relevant-word": ["conscious"]
+  },
+  "superior": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "(在品质上)更好的;占优势;更胜一筹;(在级别、重要性或职位上)更高的;有优越感的;高傲的",
+    "phrase": [
+      ["superior to sb/sth", "（在品质上）更好的；占优势；更胜一筹"],
+      ["superior to sb", "（在级别、重要性或职位上）更高的"]
+    ],
+    "sentence": [
+      ["The Linux operating system offers superior security, reliability, and uptime on par with other UNIX-like operating systems. ",
+        "Linux操作系统提供了较高的安全性、可靠性同时保证象UNIX等操作系统能提供的正常运行时间。"],
+      ["In addition to simplifying memory configuration, this new, adaptive self-tuning memory feature improves performance by providing a superior configuration that is dynamic and responsive to significant changes in workload. ",
+        "除了简化内存配置外，这种新的、自适应的自调优内存特性可以提供较好的配置，这种配置是动态的，可以根据工作负载的重大变化及时作出响应，从而可以提高性能。"],
+      ["They are in no way a part of the superior Chinese civilization, which the west consider a cultural threat to their civilization. ",
+        "他们根本不可能是被西方人看做文化威胁的上等中国文明的一部分。"],
+      ["Enter the label of the new functional location and the label of the superior location. ",
+        "输入新功能位置和上级位置的标签。"],
+      ["From the traditional price competition to quality competition, and then to current brand competition, consumers always reasoningly choose competitive and superior brand. ",
+        "从传统的价格竞争到质量竞争，再到今天的品牌竞争，消费者更加理性的选择品牌竞争的优胜者。"]
+    ],
+    "relevant-word": []
+  },
+  "invasion": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "武装入侵;侵略;侵犯;(尤指烦扰的)涌入;干预",
+    "phrase": [],
+    "sentence": [
+      ["Studies of the Expression of VEGF-B in Invasion and Metastasis of Choriocarcinoma.",
+        "VEGF-B在人绒毛膜癌侵袭转移中作用的研究。"],
+      ["An armada of U.S. Navy ships participated in the invasion.",
+        "美国海军舰队参加了入侵行动。"]
+    ],
+    "relevant-word": []
+  },
+  "grant": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "(尤指正式地或法律上)同意，准予，允许;(勉强)承认，同意;(政府、机构的)拨款",
+    "phrase": [
+      ["grant sth to sb/sth ", "同意，准予，允许"],
+      ["take it for granted", "认为…理所当然"],
+      ["take sb/sth for granted", "（因习以为常）对…不予重视；（因视为当然而）不把…当回事"],
+      ["grant (to do sth)", "(政府、机构的)拨款"]
+    ],
+    "sentence": [
+      ["This eliminates the problem of having to explicitly grant application code administrative authority, but raises a new issue. ",
+        "这样就消除了必须显式授予应用程序代码管理权限的问题，但是又出现了一个新问题。"],
+      ["I had to grant the reasonableness of his argument. ",
+        "我不得不承认他的论点的合理性。"],
+      ["She won a grant to develop her own business.",
+        "她赢得了一笔拨款，用以扩展自己的企业。"],
+      ["Please state why you wish to apply for this grant.",
+        "请说明一下你为什么申请这项补助金。"]
+    ],
+    "relevant-word": []
+  },
+  "assume": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "假定;假设;认为;承担(责任);就(职);取得(权力);呈现(外观、样子);显露(特征)",
+    "phrase": [],
+    "sentence": [
+      ["I made a mistake and I will assume responsibility for it.",
+        "我犯了一个错误，自将为此承担责任。"],
+      ["A quantity that can assume any of a set of values. ",
+        "可以呈现某组数值中任何一个数值的数量。"],
+      ["Let's assume for the sake of argument that we manage to build a satisfactory database.",
+        "为了便于讨论，不妨假定我们成功地建立了一个令人满意的数据库。"],
+      ["Most scientists who can present evidence of an environmental threat can reasonably assume that a pressure group will take up the issue.",
+        "能够提供环境威胁证据的大多数科学家都有理由认为，环保团体不会放过这个问题。"],
+      ["He tried hard to assume a natural expression. ",
+        "他用尽全力在脸上装出一副坦然的表情来。"]
+    ],
+    "relevant-word": []
+  },
+  "bare": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "裸体的;裸露的;(树木)光秃秃的;(土地)荒芜的;无遮盖的;没有保护的",
+    "phrase": [
+      ["the bare bones (of sth)", "梗概；概要"],
+      ["with your bare hands", "赤手空拳；徒手"],
+      ["lay sth bare", "暴露；揭露"],
+      ["the cupboard is bare", "（指没钱购买）"],
+      ["bare your soul (to sb)", "（向某人）打开心扉，倾诉衷肠"],
+      ["bare your teeth", "（凶狠地）龇牙咧嘴"]
+    ],
+    "sentence": [
+      ["The hills above the valley are bare rock.",
+        "山谷上方的小山全是光秃秃的石头。"],
+      ["His bare feet were smooth on top and rough-skinned underneath.",
+        "他赤裸的双脚脚面很光滑，脚底却很粗糙。"],
+      ["The YUI library, for example, allows you to load the bare minimal framework by default and then choose which libraries you need to load on top of it. ",
+        "例如，YUI库，可让您默认加载最小的空的框架，然后由您选择在此基础上加载哪些库。"],
+      ["Within the walls of the hospital, the truth is stripped bare. ",
+        "在医院的围墙内，真相被赤裸裸的揭开。"]
+    ],
+    "relevant-word": ["naked"]
+  },
+  "appreciate": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "欣赏;赏识;重视;感激;感谢;欢迎;理解;意识到;领会",
+    "phrase": [],
+    "sentence": [
+      ["I appreciate your comment.",
+        "我欣赏你的意见。"],
+      ["They obviously appreciate you very much.",
+        "他们显然对你十分感激。"],
+      ["Using a familiar problem domain makes it easier to to appreciate the differences and commonalities between systems.",
+        "使用一个熟悉的问题域，更易于领会系统间的差异和共同点。"],
+      ["Learning and mastering these artistic law can help us enjoy and appreciate the art of classical ballet and it plays an important role in improving our artistic quality and artistic accomplishment. ",
+        "了解、掌握它的这些艺术规律，能够帮助我们欣赏和鉴别古典芭蕾舞艺术，对提高艺术素质和艺术修养有着重要意义。"],
+      ["They also own art and cars that they hope will appreciate in value.",
+        "此外，他们还拥有一些艺术品和汽车，期待其增值。"],
+      ["Whatever initially tends to improve the trade balance will tend to appreciate the home currency..",
+        "凡开始会改善贸易差额的，都会使本国货币涨价。"]
+    ],
+    "relevant-word": []
+  },
+  "palm": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "手掌;手心;棕榈树",
+    "phrase": [
+      ["have sb in the palm of your hand", "完全控制某人；把某人攥在手心里"],
+      ["cross sb's palm with silver", "为得到好处而给某人钱；（尤指）付钱请人算命"],
+      ["grease sb's palm", "向某人行贿；用金钱收买"],
+      ["palm sb↔off (with sth)", "欺骗搪塞某人，骗过某人"],
+      ["palm sth off as sth", "推销假货；以假乱真"]
+    ],
+    "sentence": [
+      ["He wiped his sweaty palm. ",
+        "他擦了擦满是汗水的手掌。"],
+      ["He cupped her chin in the palm of his hand.",
+        "他用手心托着她的下巴。"]
+    ],
+    "relevant-word": []
+  },
+  "cabin": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "(轮船上工作或生活的)隔间;(飞机的)座舱;(通常为木制的)小屋，小棚屋",
+    "phrase": [],
+    "sentence": [
+      ["Because the air is so cold and thin, the cabin has to be air-conditioned.",
+        "由于空气又冷又稀薄客舱必须进行空气调节。"],
+      ["I spent the rest of our vacation cooped up in the cabin. ",
+        "假期剩下的时间我都把自己关在小屋里。"],
+      ["You can sleep in the cabin near the river. ",
+        "你可以住在河边的小屋里。"]
+    ],
+    "relevant-word": []
+  },
+  "reveal": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "揭示;显示;透露;显出;露出;展示",
+    "phrase": [
+      ["reveal to sb", "揭示；显示；透露"]
+    ],
+    "sentence": [
+      ["Combining the data from these two plug-ins can reveal more about the issue than users are prepared to explain. ",
+        "与用户的解释相比，组合来自这两个插件的数据可以揭露问题的更多信息。"],
+      ["You made me reveal what you wanted to know. ",
+        "你使我泄露了你所想要知道的秘密。"],
+      ["Only great sorrow or great joy can reveal your truth. ",
+        "只有深哀和极乐才能显露你的真实。"],
+      ["I think maybe success doesn't change you as much as reveal you.",
+        "我想，也许登月成功带来的变化，并没有它给予的启示多。"],
+      ["The painter meticulously drew the facial expression of the figure to reveal his personality. ",
+        "画家对老农面部作了极为精细的刻画，展现了他的个性。"]
+    ],
+    "relevant-word": []
+  },
+  "sake": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "缘故，理由，目的;利益",
+    "phrase": [
+      ["for sth's sake", "鉴于某事本身的价值"],
+      ["for the sake of sb/sth", "因某人（或某事）的缘故"],
+      ["for old times' sake", "看在旧日的情分上"]
+    ],
+    "sentence": [
+      ["I wish for your sake they were right. ",
+        "为了你的缘故，我但愿他们是对的。"],
+      ["Also note that I don't agree with many of the decisions that were made in the ASDI project, but I wrote them into the article for the sake of demonstrating and developing different ideas. ",
+        "也要注意我不同意在ASDI项目中被做的许多决定，但是我将他们写入到文章中的目的是为了演示和开发不同的思想。"]
+    ],
+    "relevant-word": []
+  },
+  "horizon": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "地平线;(欲望、知识或兴趣的)范围，眼界",
+    "phrase": [
+      ["on the horizon", "很可能即将发生；已露端倪"]
+    ],
+    "sentence": [
+      ["A few scattered lights shone on the horizon. ",
+        "地平线上闪耀着几处星星点点的灯光。"],
+      ["You would think that beyond the horizon, therefore, nothing is different.",
+        "因此，你认为在视野范围内，没有什么不同。"],
+      ["You have to join group discussions with your classmates or friends to gain more information about the topic you want to talk about, it will give you more knowledge and broaden your horizon. ",
+        "你应该和同学或朋友们参加群组讨论来获得你想讨论的话题信息，这将给你更多的知识并且拓宽你的眼界。"]
+    ],
+    "relevant-word": []
+  },
+  "roll": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "卷;卷轴;一管;小面包条;小圆面包;翻滚，滚动;(使)原地转圈，原地打转;",
+    "phrase": [
+      ["roll of sth", "卷轴;一管;隆隆声；持续的轰鸣声"],
+      ["be on a roll", "接连获胜；连续交好运"],
+      ["be rolling in money/it", "非常富有；财源滚滚"],
+      ["let's roll", "咱们动身吧"],
+      ["rolled into one", "融为一体；集于一身"],
+      ["rolling in the aisles", "大笑；笑声不断"],
+      ["roll around", "大笑不止"],
+      ["roll up your sleeves", "捋起袖子"],
+      ["roll with the punches", "使自己适应艰苦环境"],
+      ["ready to roll", "准备开始"],
+      ["roll up", "到达"]
+    ],
+    "sentence": [
+      ["So then we have skidding and we have slipping and then we don't have the pure roll situation. ",
+        "所以这里是滑移和滑动，而不是纯滚动的情况。"],
+      ["Analyse the technical characteristics of cold roll forming of medium carbon steel and introduce the quality features of product. ",
+        "分析中碳钢冷摆辗成形的技术特点，介绍产品质量特征。"],
+      ["With roll breathing, you focus on the rhythm of your breathing.",
+        "进行翻滚呼吸法时，你要关注呼吸的节奏。"],
+      ["An interesting approach was used to roll out the service-the so called \"dark launch\"",
+        "启动这项服务的方式也比较有意思&利用所谓的“摸黑启动（dark launch）”"],
+      ["Since the beginning of the middle school year, every year I received the high honor roll award. ",
+        "从中学起，每年我都得到了最高荣誉名册奖。"]
+    ],
+    "relevant-word": ["roller"]
+  },
+  "roller": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "滚筒;滚轴;碾轧机;碾子;滚柱",
+    "phrase": [],
+    "sentence": [
+      ["Roller and Skate Wheel Conveyors. ",
+        "滚筒和溜冰鞋轮子运送装置。"],
+      ["Development of wheel tyre retaining ring roller mills for locomotives",
+        "机车轮箍扣环滚压机的研制。"]
+    ],
+    "relevant-word": ["roll"]
+  },
+  "utility": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "公用事业;实用;效用;有用;实用程序;公用程序;多用途的;多效用的;多功能的",
+    "phrase": [],
+    "sentence": [
+      ["With grid computing, you can provision computing resources as a utility that can be turned on or off. ",
+        "通过网格计算，可以把计算资源作为能够开启关闭的公用事业来提供。"],
+      ["The popularity of the Internet results from its great utility. ",
+        "互联网能够快速普及是因为它具有巨大的功用。"],
+      ["This session pointed out the differences between a traditional application development approach and a utility computing mindset.",
+        "这段演讲指出了传统应用开发方式和效用计算思维方式的区别。"]
+    ],
+    "relevant-word": []
+  },
+  "classification": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "分类;归类;分级;类别;等级;门类;(动植物等的)分类学，分类法",
+    "phrase": [],
+    "sentence": [
+      ["This article discussed two data mining algorithms: the classification tree and clustering. ",
+        "本文讨论了两种数据挖掘算法：分类树和群集。"],
+      ["Based on the analysis of the intension of software trustworthiness, a layered software trustworthiness classification model is proposed.",
+        "在分析软件可信内涵的基础上，提出了一种分层的软件可信分级模型。"],
+      ["Schemas provide a logical classification of objects in the database.",
+        "模式提供了数据库中对象的逻辑类别。"],
+      ["Ontology plays a more and more important role as a tool of classification in the Artificial Intelligence, Computer Language and the theory of Database. ",
+        "本体作为一种分类学的研究工具在人工智能、计算机语言以及数据库理论中扮演着越来越重要的作用。"]
+    ],
+    "relevant-word": []
+  },
+  "anchor": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "锚;给以安全感的人(或物);精神支柱;顶梁柱;抛锚;下锚;使固定;扣牢;系牢;使扎根;使基于",
+    "phrase": [],
+    "sentence": [
+      ["Finally they got the anchor up and set sail. ",
+        "最后他们起了锚，扬帆出发了。"],
+      ["She was my anchor when things were difficult for me. ",
+        "当我处于困境的时候，她是我的靠山。"],
+      ["The car that I rent drop anchor after five kilometers are driven. ",
+        "我租的车行驶五公里后抛锚了。"],
+      ["The anchor construct in JBI is the service container object, which supports plug-ins communicating through message routers. ",
+        "JBI之中的固定构筑是服务容器对象，它通过信息路由器来支持插件之间的交流。"]
+    ],
+    "relevant-word": []
+  },
+  "reliable": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "可信赖的;可依靠的;真实可信的;可靠的",
+    "phrase": [],
+    "sentence": [
+      ["Statistical analysis is a means of arriving at a fairly reliable forecast.",
+        "统计分析是一种相当可靠的预测方法。"],
+      ["Providing a stable, reliable platform of infrastructure and common services for the ongoing operation and development of systems.",
+        "为正在进行中的操作和系统开发提供一个稳定的、可信赖的基础设施平台和公用服务"],
+      ["The management and statistical analysis of data from clinical trial are very important in assuring the real and reliable conclusion of the trial.",
+        "试验的数据管理与统计分析是使结果真实可信的重要保证。"]
+    ],
+    "relevant-word": []
+  },
+  "reliability": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "可靠;可靠性",
+    "phrase": [],
+    "sentence": [
+      ["The result is high speed, high fault tolerance and high reliability. ",
+        "得到的结果是高速度、高容错和高可靠。"],
+      ["High responsibility, high quality, high efficiency, high reliability and high security are our promises for customers. ",
+        "高品质，高效率，可信赖，保安全是我们对客户的承诺。"]
+    ],
+    "relevant-word": []
+  },
+  "architecture": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "建筑学;建筑设计;建筑风格;体系结构;(总体、层次)结构",
+    "phrase": [],
+    "sentence": [
+      ["Landscape architecture is today recognized as one of the fine arts.",
+        "园林建筑学现今被公认是美术的一种。"],
+      ["At its peak in the Thirties, Underground design and architecture was all of a piece .",
+        "在30年代的顶峰时期，地铁的设计和建筑风格都一模一样。"],
+      ["System architects use this tool for system architecture and design.",
+        "系统架构师可以使用此工具来确定系统体系结构和进行设计。"],
+      ["This paper shows the role an ESB plays in an application integration and Service-Oriented Architecture.",
+        "本文说明了ESB在应用程序集成和面向服务的体系结构中所扮演的角色。"]
+    ],
+    "relevant-word": []
+  },
+  "string": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "细绳;线;带子;一串;一系列;一连串;一批;弦乐器的;线织的;",
+    "phrase": [
+      ["string sb along", "哄；愚弄"],
+      ["string along (with sb)", "跟随；伴随"],
+      ["string sth out", "延长；拖长时间"],
+      ["string sth together", "把（单词或短语）联成句子"],
+      ["string sb up", "(尤指非法地)吊死某人"]
+    ],
+    "sentence": [
+      ["The report name and path should be specified as an additional parameter in the URL string. ",
+        "报表名和路径应该作为参数附加到URL串中。"],
+      ["This piece of string is too short. Join another piece on to it.",
+        "这条绳子太短，再续上一截儿吧。"],
+      ["This program also uses the string module.",
+        "这个程序还使用了字符串模块。"]
+    ],
+    "relevant-word": []
+  },
+  "portrait": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "肖像;半身画像;半身照;详细的描述;描绘;肖像;半身画像;半身照;详细的描述;描绘",
+    "phrase": [],
+    "sentence": [
+      ["Today his picture goes on show at the National Portrait Gallery",
+        "今天他的画作在国家肖像美术馆展出。"],
+      ["The best moments of his often charming portrait are the encounters with people most travellers would never meet. ",
+        "在他往往十分迷人的人物描写中，最美妙的时刻是与他人相遇，这些人大部分是永远不会再碰到的旅客。"]
+    ],
+    "relevant-word": []
+  },
+  "shell": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "(蛋、坚果、某些种子和某些动物的)壳;壳状物;炮弹",
+    "phrase": [],
+    "sentence": [
+      ["So I wrote a shell with a VB program, drag the file to achieve automatic formatting feature.",
+        "所以我用VB写了个外壳程序，实现了文件拖动自动格式化功能。"],
+      ["A shell [ An arrow] whizzed past.",
+        "一枚炮弹[一支箭]嗖地飞过。"]
+    ],
+    "relevant-word": []
+  },
+  "bear": {
+    "learn-day": "2020-03-23",
+    "ch-hans": "承受;忍受;不适于某事(或做某事);承担责任;熊;(在证券市场等)卖空的人",
+    "phrase": [
+      ["not bear sth/doing sth", "不适于某事/做某事"],
+      ["bear sth(against/towards sb)", "心怀(感情，尤指坏心情)"],
+      ["bear arms", "当兵；打仗"],
+      ["bear fruit", "成功；取得成果"],
+      ["bear hard on sb", "使为难；使受苦；压迫"],
+      ["be borne in on sb", "逐渐被某人认识到"],
+      ["bring sth to bear (on sb/sth)", "把精力用于；对…施加压力"],
+      ["bear, take, etc. the brunt of sth", "首当其冲"],
+      ["bear/keep sb/sth in mind", "将…记在心中"],
+      ["bear/give witness", "为…作证；证明"],
+      ["bear down on sb/sth", "冲向；咄咄逼近"],
+      ["bear on sth", "和（某事物）有关；涉及"],
+      ["bear sb/sth out", "证实；为…作证"],
+      ["bear up", "保持振作；承受；挺住"],
+      ["bear with sb/sth", "耐心对待；容忍"]
+    ],
+    "sentence": [
+      ["He could not bear to lay too much responsibility for the unhappiness of his later years on his own shoulders.",
+        "为自己晚景凄凉承担这么多责任，他接受不了。"],
+      ["They will have to bear the misery of living in constant fear of war.",
+        "他们不得不忍受长期生活在战争恐惧中的痛苦。"],
+      ["Despite the tragic loss of their dear ones, the survivors are determined to bear up bravely. ",
+        "虽然有失去至亲的悲痛，生还者仍决心勇敢支撑下去。"],
+      ["The bear's chest is hairy. ",
+        "那只熊的胸部毛茸茸的。"],
+      ["People are encouraged to bear children.",
+        "人们被鼓励生育孩子。"],
+      ["These are matters that bear on the welfare of the masses.",
+        "这些都是与群众福利有关的问题。"]
+    ],
+    "relevant-word": []
+  },
+  "charity": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "慈善机构(或组织);慈善;赈济;施舍;仁爱;宽容;宽厚",
+    "phrase": [
+      ["charity begins at home",  "博爱始于自家"]
+    ],
+    "sentence": [
+      ["The National Trust is a registered charity.",
+        "全国托管协会是个已注册的慈善机构。"],
+      ["Dying charity is a poor substitute for living benevolence.",
+        "渐渐冷淡了的爱心可悲地取代了活泼的施舍。"],
+      ["We also realize the truth of that old saying: Charity begins at home.",
+        "我们也明白了那句老话的道理：仁爱始于家庭。"]
+    ],
+    "relevant-word": []
+  },
+  "as opposed to": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "而不是",
+    "phrase": [],
+    "sentence": [
+      ["This is a heated debate which involves materialist as opposed to idealist views. ",
+        "这是一场唯物主义与唯心主义的大论战。"],
+      ["We ate in the restaurant, as opposed to the bistro. ",
+        "我们是在餐厅吃的饭，而不是在小饭馆。"]
+    ],
+    "relevant-word": []
+  },
+  "correlate": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "相互关联影响;相互依赖;显示(两个或多个事实或数字等)的紧密联系",
+    "phrase": [],
+    "sentence": [
+      ["I cannot correlate the two sets of figures.",
+        "我看不出这两组数字有什么联系。"],
+      ["You might find gaps in a less obvious method or in trace entries that don't seem to correlate at all. ",
+        "您可能会在较为不明显的方法或看起来完全不相关的跟踪条目中发现差距。"]
+    ],
+    "relevant-word": []
+  },
+  "anti-": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "反;反对;对立;对立面;防;防止",
+    "phrase": [],
+    "sentence": [
+      ["Anti-corruption is a big issue of practice and theory. ",
+        "反腐有效性是重要的实践和理论问题。"],
+      ["Generally speaking, they might make some contribution to the anti-imperialist struggle. ",
+        "一般说来，他们对反帝斗争是可以做出一些贡献的。"]
+    ],
+    "relevant-word": []
+  },
+  "pro-": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "拥护;支持;亲",
+    "phrase": [],
+    "sentence": [
+      ["Some congressmen is uneasy about the government's pro-russian tilt in foreign policy.",
+        "有些国会议员对政府外交政策上的亲俄倾向感到不安。"]
+    ],
+    "relevant-word": []
+  },
+  "impact": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "巨大影响;强大作用;撞击;冲撞;冲击力",
+    "phrase": [
+      ["impact of/on", "巨大影响；强大作用"]
+    ],
+    "sentence": [
+      ["The collapse of the Iron Curtain had immediate impact on the lives of everyone in Germany.",
+        "铁幕的崩溃对每个德国人的生活都产生了直接的影响。"],
+      ["Impact dynamics of multi-rigid-body systems with joint friction was considered.",
+        "研究了含铰摩擦的多刚体系统的碰撞动力学问题。"],
+      ["Economic impact problem has become the core issue with economic policy theory and economic academic cycle. ",
+        "经济冲击问题已经成为经济政策理论和经济周期理论的核心问题。"],
+      ["This type of computerised dealing exploits the millisecond gaps between news events and their impact on the markets. ",
+        "这种计算机化交易利用了从新闻事件发生到它们对市场产生影响之间的毫秒之差。"]
+    ],
+    "relevant-word": []
+  },
+  "put in place": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "实施；实现；做到",
+    "phrase": [],
+    "sentence": [
+      ["On the reforms front, China has put in place the basic structure for a market economy.",
+        "在改革方面，中国已经实施了市场经济的基本框架。"],
+      ["And that will not happen until they have put in place a system of government that gives a far wider degree of participation than before.",
+        "而这一切，没有一个广泛参与制的政府系统是不可能实现的。"],
+      ["How many of them have you put in place? ",
+        "对照一下，哪些是你已经做到的？"]
+    ],
+    "relevant-word": []
+  },
+  "clarity": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "清晰;清楚;明确;清晰的思维(或理解)能力;(画面、物质或声音的)清晰，清澈",
+    "phrase": [],
+    "sentence": [
+      ["This is not a security issue, but rather an issue with project file clarity and transparency. ",
+        "这不是安全问题，而是项目文件的清晰度和透明度的问题。"],
+      ["At this session we have had confrontation, thus attaining clarity and thoroughness in our thinking. ",
+        "在这一次会议上，我们就在思想上交锋了，有明确性了，有彻底性了。"],
+      ["The style is marked by simplicity, clarity, and candor. ",
+        "这种风格的特点是简洁、清楚、直截了当。"]
+    ],
+    "relevant-word": []
+  },
+  "proficiency": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "熟练;精通",
+    "phrase": [],
+    "sentence": [
+      ["Evidence of basic proficiency in English is part of the admission requirement.",
+        "英语基本熟练是入学条件之一。"],
+      ["Groups of proficiency in various programming languages and development tools can work together. ",
+        "精通不同编程语言和开发工具的小组可以协同工作。"]
+    ],
+    "relevant-word": []
+  },
+  "instinct": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "本能;天性;直觉",
+    "phrase": [
+      ["instinct for sth/for doing sth", "本能；天性"],
+      ["instinct to dp sth", "本能；天性"],
+      ["instinct that", "直觉"]
+    ],
+    "sentence": [
+      ["It is a primitive instinct to flee a place of danger. ",
+        "逃离危险的地方是一种原始本能。"],
+      ["This is a natural instinct, a maternal and paternal instinct that comes with humans.",
+        "这是人类的天性，是母性、父性使然。"],
+      ["We are thinking animals, so it only matters that much more that we try to be moral and not completely act on instinct. ",
+        "我们是有思想能力的动物，所以对我们来说更为重要的是我们需要对自己的行为选择做些道德考虑，不能只考虑原始的冲动与需求。"],
+      ["He had little academic training but a very sure musical instinct.",
+        "他没有受过什么专门训练，但确实有音乐天才。"]
+    ],
+    "relevant-word": ["extinct", "distinct"]
+  },
+  "extinct": {
+    "learn-day": "2020-03-24",
+    "ch-hans": "不再存在的;已灭绝的;绝种的;绝迹的;消亡了的;废除了的;不再活跃的;死的",
+    "phrase": [],
+    "sentence": [
+      ["The idea of cloning extinct life forms still belongs to science fiction.",
+        "克隆已经灭绝的生物的想法仍旧只限于科幻小说中。"],
+      ["But did those extinct ones really lose their chance to last, forever?",
+        "但这些绝种的生物真的永远失去生存机会了吗？"]
+    ],
+    "relevant-word": ["instinct", "distinct"]
   }
-
-
 }

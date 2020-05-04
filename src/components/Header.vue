@@ -18,41 +18,66 @@
   <div class="area">
         <nav class="main-menu" id="menu">
             <ul>
-                <li v-for="ele in navList">
-                    <router-link :to="ele['link']">
-                        <i
-                        :class="ele['img']"
-                        :style="iconStyle"
-                        ></i>
-                        <span class="nav-text">
-                            {{ ele['text'] }}
-                        </span>
-                    </router-link>
+
+                <!-- <li v-show="!this.getUserInfo.isLogin">
+                  <router-link to="/login">
+                  <i class="el-icon-lollipop" :style="iconStyle"></i>
+                  <span class="nav-text">登录</span>
+                  </router-link>
+                </li> -->
+
+                <li v-for="(ele) in this.navList" :key="ele.link">
+                  <router-link :to="ele['link']" class="waves-effect">
+                    <i
+                    :class="ele['img']"
+                    :style="iconStyle"
+                    ></i>
+                  </router-link>
                 </li>
+
+                <el-dropdown>
+                  <li>
+                    <router-link to="">
+                      <span class="el-dropdown-link">
+                        <i
+                          class="el-icon-more"
+                          :style="iconStyle"
+                        ></i>
+                      </span>
+                    </router-link>
+
+                    <el-dropdown-menu>
+                      <el-dropdown-item
+                        v-for="item in moreProject"
+                        :key="item.text"
+                        :icon="item.img"
+                        class="waves-effect">
+                        <router-link :to="item.link" class="more">
+                          {{ item.text }}
+                        </router-link>
+                      </el-dropdown-item>
+                    </el-dropdown-menu>
+
+                  </li>
+                </el-dropdown>
             </ul>
         </nav>
     </div>
+
 </template>
 
 <script>
 
 export default {
   name: "pageHead",
-  props: ["navList"],
+  // props: ["navList"],
   data () {
     return {
       iconStyle: {
             "display": "table-cell",
             "vertical-align": "middle",
             "font-size": "1.3em",
-        },
-
-      // navList: [
-      //   {"首页": '/'},
-      //   {"心理设备": '/mental_equip'},
-      //   {"关于": '/about'},
-      // ],
-
+      },
 
       listStyleObj: {
         "height": "auto",
@@ -63,15 +88,27 @@ export default {
         "font-size": "1.4em",
         "padding": "1.5em 1.2em",
       },
-
-
     }
   },
-
+  methods: {
+    adjustScreen: function(){
+      let width = document.body.clientWidth;
+      if(width <= 500){
+        let el = this.navList.pop();
+        this.moreProject.push(el);
+        console.log(this.moreProject)
+        this.$forceUpdate()
+      }
+    },
+  },
+  mounted(){
+    this.adjustScreen();
+    ;
+  }
 }
 
 </script>
-<style src="../assets/css/nav.css"></style>
+<style src="../assets/css/nav.css" scoped></style>
 <style scoped>
   /* #pageHead {
     overflow: hidden;
@@ -105,7 +142,6 @@ export default {
   transition: all .5s;
   color: black;
   border-radius: 20px;
-  font-family: "宋体";
   font-size: 1em;
   font-weight: bold;
 }

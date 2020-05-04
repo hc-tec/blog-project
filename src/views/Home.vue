@@ -1,36 +1,28 @@
 <template>
   <div id="home">
-    {{ greet() }}
-    <div id="leftCol">
-      <carousel />
+    <login />
+    <div id="home-2">
+      <div id="leftCol">
+
+        <carousel />
+      </div>
+      <div id="rightCol">
+        <words />
+      </div>
     </div>
-    <div id="rightCol">
-      <words />
-    </div>
+
   </div>
 </template>
 
 <script>
-
+import login from '../components/login_horizon'
 import carousel from '../components/carousel'
 import words from '../components/wordsColumn'
 export default {
-  data(){
-    return {
-
-    }
-  },
-  methods: {
-    greet: function(){
-      this.$message({
-        message: "欢迎来到我的博客",
-        type: 'success',
-      })
-    }
-  },
   components: {
     carousel,
     words,
+    login,
   }
 }
 </script>
@@ -38,18 +30,26 @@ export default {
 <style>
 #home {
   overflow: hidden;
-  display: flex;
   margin: 0 0 1% 5%;
   padding-top: 2%;
 }
+#home-2 {
+  display: flex;
+  justify-content: space-between;
+}
 #leftCol {
-  width: 70%;
+  width: 850px;
 }
 #rightCol {
-  width: 25%;
-  margin: 0 3% 1% 1%;
+  width: 350px;
   background-color: #fff;
   padding: 3% 2%;
-  border: 1px ridge #ddd;
+  margin-right: 50px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+@media screen and (max-width: 800px){
+  #rightCol {
+    display: none;
+  }
 }
 </style>

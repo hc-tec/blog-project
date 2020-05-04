@@ -10,8 +10,13 @@
 
 <script>
 export default {
+  data(){
+    return {
+      se: null,
+    }
+  },
   methods: {
-    single: () => {
+    single() {
       function $(id){
         return document.getElementById(id)
       }
@@ -19,15 +24,18 @@ export default {
       $("error").innerHTML = ""
 
       var i = 0
-      var se = setInterval(() => {
+      this.se = setInterval(() => {
         $("error").innerHTML = sourInfo.slice(0, i) + '|'
         i++
         if(i === sourInfo.length){
           $("error").innerHTML = sourInfo
-          clearInterval(se)
+          clearInterval(this.se)
         }
       }, 40)
     }
+  },
+  beforeDestroy(){
+    clearInterval(this.se);
   },
   mounted(){
     this.$nextTick(() => {
