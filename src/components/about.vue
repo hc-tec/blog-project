@@ -1,44 +1,6 @@
 <template>
   <div id="about">
 
-    <!-- <div id="info">
-      <div class="img-content">
-        <router-link
-          to="/admin"
-          :style="this.getUserInfo.power.viewVistorStatus ? '':notToAdmin">
-          <img :src="content['img']" width="100%" height="100%"/>
-        </router-link>
-      </div>
-      <el-collapse v-model="activeName" class="info-content" accordion>
-        <el-collapse-item
-          style="white-space: pre-wrap;"
-          v-for="(info,anal) in content['content']"
-          :key="info"
-          :title="anal"
-          >{{ info }}
-        </el-collapse-item>
-      </el-collapse>
-
-      <div class="about">
-        <a class="bg_links social portfolio"
-            :href="this.getUserInfo.ugithub"
-            target="_blank"
-            title="Github">
-            <span class="icon"></span>
-        </a>
-        <a class="bg_links social dribbble"
-            href="javascript:void(0)"
-            :title="'QQ Number:' + this.getUserInfo.uqq">
-            <span class="icon"></span>
-        </a>
-        <a class="bg_links logo"></a>
-      </div>
-
-    </div>
-    <div class="night" id="night">
-      <div class="shooting_star" v-for="i in 20" :key="i"></div>
-    </div> -->
-
     <div class="info-content">
 
       <div class="out-info">

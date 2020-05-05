@@ -18,6 +18,7 @@
     <div class="feed-text">
       如果你喜欢这个知识分享网站或者认为能从中受益的话，请您别忘了多多支持这个刚刚大一而无任何经济来源的站主喔。
     </div>
+
     <div class="pay-img">
       <div>
         <img src="http://39.100.22.224/static/b9035556-d9de-4a5c-bca0-4794eb182c52.jpg"/>
@@ -28,6 +29,7 @@
         <p class="weixin">微信</p>
       </div>
     </div>
+
   </div>
 </template>
 

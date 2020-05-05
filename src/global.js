@@ -2,7 +2,7 @@ export default {
   install(Vue, options) {
     // localhost:8000
     // 39.100.22.224
-    Vue.prototype.host = 'localhost:8001';
+    Vue.prototype.host = '39.100.22.224';
 
     Vue.prototype.getUserInfo = {
       uid: 1,
@@ -41,13 +41,7 @@ export default {
       })
     },
 
-    Vue.prototype.notify = function(title, msg, type) {
-      this.$notify({
-        title: title,
-        message: msg,
-        type: type
-      });
-    }
+
 
     Vue.prototype.ajax = function(url, params={}, resolve, reject){
       this.axios.get(url, {params:params})

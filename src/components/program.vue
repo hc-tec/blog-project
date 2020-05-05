@@ -1,24 +1,25 @@
 <template>
   <div id="program">
-
+    <!-- 博文缩略页组件 -->
+    <!-- 页面左侧信息：几篇文章的缩略展示 -->
     <div class="article-content">
       <div id="part">
         <div class="content" v-for="(essay,index) in data" :key="essay['title']">
           <div class="program-content">
-
+              <!-- 头像 -->
               <div id="avatar">
                 <img :src="essay['avatar']"/>
               </div>
-
+              <!-- 评论数量 -->
               <span
                 class="comment_num"
                 title="评论数">
                 <i class="el-icon-chat-line-square"> </i>
                 {{ essay['comment_num'] }}
               </span>
-
+              <!-- 标题 -->
               <p class="title">{{ essay['title'] }}</p>
-
+              <!-- 文章信息：创作时间、类别、阅览数、标签 -->
               <div class="article-info">
                 <span
                   title="创作时间">
@@ -47,9 +48,9 @@
                   {{ tag }}
                 </span>
               </div>
-
+              <!-- 文章内容 -->
               <div v-html="mark(essay['content'])" class="markdown"></div>
-
+              <!-- 文章左上侧的创作者名称 -->
               <div class="tagGroup">
                 <span
                   id="creator"
@@ -58,7 +59,7 @@
                   {{ essay['creator']['user_name'] }}
                 </span>
               </div>
-
+              <!-- 文章操作：编辑、删除 -->
               <el-dropdown
                 class="work-btn"
                 v-if="getUserInfo.power.isLogin">
@@ -86,7 +87,7 @@
 
                 </el-dropdown-menu>
               </el-dropdown>
-
+              <!-- 查看更多按钮 -->
               <div
                 class="lookmore waves-effect waves-float"
                 @click="toArticle(essay.id)">
@@ -100,6 +101,7 @@
             </div>
           </div>
         </div>
+        <!-- 分页 -->
         <el-pagination
           background
           layout="prev, pager, next"
@@ -109,8 +111,9 @@
         </el-pagination>
     </div>
 
+    <!-- 页面右侧信息：类别、标签等 -->
     <div class="article-class">
-
+      <!-- 类别 -->
       <div class="article-category">
         <h3>类别</h3>
         <div class="category">
@@ -123,7 +126,7 @@
           </p>
         </div>
       </div>
-
+      <!-- 标签 -->
       <div class="article-tags">
         <h3>标签</h3>
         <div class="tag">
@@ -138,7 +141,7 @@
           </el-button>
         </div>
       </div>
-
+      <!-- 最近更新文章 -->
       <div class="article-update" v-if="this.update_or_modify_articles">
         <h3>最近修改文章：</h3>
         <div class="update_modify">
@@ -153,7 +156,7 @@
           </div>
         </div>
       </div>
-
+      <!-- 邮箱订阅 -->
       <div id="subscribe">
         <el-button
           class="waves-effect"
@@ -273,9 +276,9 @@ export default {
     subscribeSuccess: function(res){
       let data = res.data;
       if(299 === data['code']){
-        this.postMsg(data['msg'], 'success');
+        postMsg(data['msg'], 'success');
       } else {
-        this.postMsg(data['msg'], 'danger');
+        postMsg(data['msg'], 'danger');
       }
     },
     updateMathJax: function(){
@@ -348,9 +351,9 @@ export default {
       let msg = data['msg'];
       if(281 === code){
         this.data.splice(index, 1);
-        this.postMsg(msg, 'success');
+        postMsg(msg, 'success');
       } else {
-        this.postMsg(msg, 'error');
+        postMsg(msg, 'error');
       }
     },
     modiPara: (para) => {
@@ -394,7 +397,7 @@ export default {
         this.articles.tags = res.data['data'];
       }else{
         let msg = res.data['msg'];
-        this.postMsg(msg, 'error');
+        postMsg(msg, 'error');
       }
     },
     initGetUpdateOrModifyArticle: function(){

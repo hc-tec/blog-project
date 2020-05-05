@@ -1,10 +1,11 @@
 <template>
   <div id="regis">
+    <!-- 注册组件 -->
     <el-card>
     <div id="regis-content">
 
       <div class="el-upload__text">将<em>头像</em>拖至下方框内</div>
-
+        <!-- 头像上传 -->
         <el-upload
           action="http://39.100.22.224/api/fileLoader"
           :on-success="handleAvatarSuccess"
@@ -14,7 +15,7 @@
           drag>
           <img v-if="imageUrl" :src="imageUrl" class="avatar" width="100%">
         </el-upload>
-
+        <!-- 信息表单 -->
         <el-form
           :model="regisData"
           :rules="rules"
@@ -44,7 +45,6 @@
               maxlength="10"
               show-word-limit></el-input>
           </el-form-item>
-
 
           <el-form-item label="性别" prop="gender">
             <el-radio-group v-model="regisData.gender">
@@ -82,7 +82,7 @@
           <el-form-item label="激活码(选填)" v-if="false">
             <el-input v-model="regisData.friend_card"></el-input>
           </el-form-item>
-
+          <!-- 立即创建按钮 -->
           <el-form-item>
             <el-button
               class="waves-effect"
@@ -100,6 +100,7 @@
 
 <script>
 import {Card, Form, FormItem, Button, Input, Upload, Radio, RadioGroup} from 'element-ui';
+import { postMsg } from '../elem_compo_encap';
 export default {
   components: {
     "el-card": Card,
@@ -173,12 +174,12 @@ export default {
           let code = response.data['code'];
           let msg = response.data['msg'];
           if(271 === code){
-            this.postMsg(msg, 'success');
+            postMsg(msg, 'success');
             setTimeout(() => {
               this.$router.push('/login');
             }, 1000)
           } else {
-            this.postMsg(msg, 'error');
+            postMsg(msg, 'error');
           }
         }).catch(e => (console.log(e)))
     },

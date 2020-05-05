@@ -1,14 +1,18 @@
 <template>
   <div id="image-admin">
+    <!-- Admin 中图片管理组件 -->
     <h1>图片管理</h1>
     <div>
     <div class="img" v-for="(img,index) in img_list" :key="img">
 
       <div class="img-content">
+        <!-- 懒加载 -->
         <el-image :src="img" lazy></el-image>
+        <!-- 鼠标移至图片上显示的灰色图层 -->
         <div class="layer"></div>
       </div>
       <span v-if="false">{{ name(img) }}</span>
+      <!-- 图片操作:查看、删除、首页轮播图 -->
       <div class="operate">
         <span><a :href="img" target="_blank" style="color:white;"><i class="el-icon-search"></i></a></span>
         <span><i class="el-icon-delete" @click="initConfirmDelImg(index)"></i></span>

@@ -1,10 +1,13 @@
 <template>
   <div id="vistor-IP">
+    <!-- Admin中访客IP等信息组件 -->
     <h2>访客信息</h2>
     <el-table
       :data="vistorData"
       style="width: 800px;margin: 0 auto;"
       height="400">
+
+      <!-- IP -->
       <el-table-column
         prop="ip"
         label="IP"
@@ -15,6 +18,7 @@
         </template>
       </el-table-column>
 
+      <!-- 访问次数 -->
       <el-table-column
         prop="count"
         label="访问次数"
@@ -25,6 +29,7 @@
         </template>
       </el-table-column>
 
+      <!-- 访问时间 -->
       <el-table-column
         prop="vis_time"
         label="访问时间"
@@ -35,21 +40,22 @@
         </template>
       </el-table-column>
 
-
+      <!-- 还未开发 -->
       <el-table-column
-      fixed="right"
-      label="操作"
-      width="120">
-      <template slot-scope="scope">
-        <el-button
-          @click.native.prevent="deleteRow(scope.$index, vistorData)"
-          type="danger"
-          size="small"
-          disabled>
-          移除
-        </el-button>
-      </template>
-    </el-table-column>
+        fixed="right"
+        label="操作"
+        width="120">
+        <template slot-scope="scope">
+          <el-button
+            @click.native.prevent="deleteRow(scope.$index, vistorData)"
+            type="danger"
+            size="small"
+            disabled>
+            移除
+          </el-button>
+        </template>
+      </el-table-column>
+
     </el-table>
 
   </div>

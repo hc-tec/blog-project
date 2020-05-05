@@ -1,42 +1,49 @@
 <template>
   <div class="area">
-        <nav class="main-menu" id="menu">
-            <ul>
-                <li v-for="(ele) in this.navList" :key="ele.link">
-                  <router-link :to="ele['link']" class="waves-effect">
-                    <i
-                    :class="ele['img']"
-                    :style="iconStyle"
-                    ></i>
-                  </router-link>
-                </li>
-                <el-dropdown>
-                  <li>
-                    <router-link to="">
-                      <span class="el-dropdown-link">
-                        <i
-                          class="el-icon-more"
-                          :style="iconStyle"
-                        ></i>
-                      </span>
-                    </router-link>
+    <!-- 导航栏 -->
+    <nav class="main-menu" id="menu">
 
-                    <el-dropdown-menu>
-                      <el-dropdown-item
-                        v-for="item in moreProject"
-                        :key="item.text"
-                        :icon="item.img"
-                        class="waves-effect">
-                        <router-link :to="item.link" class="more">
-                          {{ item.text }}
-                        </router-link>
-                      </el-dropdown-item>
-                    </el-dropdown-menu>
+      <ul>
+        <!-- navList 为全局变量，global.js 文件中 -->
+        <li v-for="(ele) in this.navList" :key="ele.link">
+          <router-link :to="ele['link']" class="waves-effect">
+            <i
+            :class="ele['img']"
+            :style="iconStyle"
+            ></i>
+          </router-link>
+        </li>
+        <el-dropdown>
+          <li>
+            <!-- 主体部分导航 -->
+            <router-link to="">
+              <span class="el-dropdown-link">
+                <i
+                  class="el-icon-more"
+                  :style="iconStyle"
+                ></i>
+              </span>
+            </router-link>
 
-                  </li>
-                </el-dropdown>
-            </ul>
-        </nav>
+            <!-- 更多部分导航 -->
+            <el-dropdown-menu>
+              <!-- moreProject 为全局变量，global.js 文件中 -->
+              <el-dropdown-item
+                v-for="item in moreProject"
+                :key="item.text"
+                :icon="item.img"
+                class="waves-effect">
+                <router-link :to="item.link" class="more">
+                  {{ item.text }}
+                </router-link>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+
+          </li>
+        </el-dropdown>
+      </ul>
+
+    </nav>
     </div>
 
 </template>

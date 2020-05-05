@@ -1,23 +1,29 @@
 <template>
   <div id="pageFoot">
+
     <div class="foot_font">
+
       <div id="foot_about">
         <h3>关于本站</h3>
         <p>
           本站原先是个人博客网站，但为了更方便地编写博文，更新其他相关内容，站主于是顺便做了些后端开发，将其改造成一个技术分享平台。2020-03-02日正式开发，主要致力于技术知识分享。愿我们能共同努力，完善自我。
         </p>
       </div>
+
       <div id="foot_friend">
         <h3>友情链接</h3>
         <ul>
           <a v-for="(info,friend) in divine_spirit" :key="info[2]" :href="info[2]" target="_blank" :title="info[0]">{{ friend }}</a>
         </ul>
       </div>
+
     </div>
+
     <div id="foot_bottom">
       <p>Copyright © 2020 · <router-link to="/" class="foot_a">Titto</router-link> · All Rights Reserved.</p>
       <p id="time"></p>
     </div>
+
   </div>
 </template>
 

@@ -1,11 +1,12 @@
 <template>
   <div class="todoList">
-
+    <!-- 任务展示组件 -->
     <div id="addTodoList" v-if="this.getUserInfo.power.isLogin">
 
       <h2>添加任务</h2>
 
       <el-form label-width="100px" class="demo-ruleForm" :model="addTaskObj">
+
         <el-form-item label="任务"  required>
           <el-input v-model="addTaskObj.task_name" placeholder="立个flag"></el-input>
         </el-form-item>
@@ -59,7 +60,11 @@
 
         </el-form-item>
 
-        <el-button type="primary" class="submit_btn waves-effect" @click="initAddTask()">创建任务</el-button>
+        <el-button
+          type="primary"
+          class="submit_btn waves-effect"
+          @click="initAddTask()">创建任务
+        </el-button>
 
       </el-form>
     </div>
@@ -72,7 +77,7 @@
         class="rolldown-list"
         height="300"
         >
-
+        <!-- 序号 -->
         <el-table-column
           type="index"
           label="序号"
@@ -80,6 +85,7 @@
           >
         </el-table-column>
 
+        <!-- 待办事项 -->
         <el-table-column
           label="待办事项"
           width="300"
@@ -90,6 +96,7 @@
           </template>
         </el-table-column>
 
+        <!-- 标签 -->
         <el-table-column
           label="标签"
           width="100"
@@ -103,6 +110,7 @@
           </template>
         </el-table-column>
 
+        <!-- 起始日期 -->
         <el-table-column
           label="起始日期"
           width="150">
@@ -112,6 +120,7 @@
           </template>
         </el-table-column>
 
+        <!-- 终止日期 -->
         <el-table-column
           label="终止日期"
           width="150">
@@ -121,6 +130,7 @@
           </template>
         </el-table-column>
 
+        <!-- 持续天数 -->
         <el-table-column
           label="持续天数"
           width="100"
@@ -132,6 +142,7 @@
           </template>
         </el-table-column>
 
+        <!-- 剩余天数 -->
         <el-table-column
           label="剩余天数"
           width="100"
@@ -143,7 +154,7 @@
           </template>
         </el-table-column>
 
-
+        <!-- 操作按钮：完成，删除(未完成) -->
         <el-table-column
           fixed="right"
           label="操作">
@@ -181,7 +192,6 @@
             </el-tooltip>
           </div>
         </el-table-column>
-
 
       </el-table>
     </ul>

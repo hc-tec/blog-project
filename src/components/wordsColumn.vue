@@ -1,5 +1,6 @@
 <template>
   <div id="words">
+    <!-- 单词录入 -->
     <div id="word-record">
       <router-link to="/recordWord">
         <i class="el-icon-star-off"></i>
@@ -8,10 +9,12 @@
       </router-link>
     </div>
     <p>English Words</p>
+    <!-- 单词数量 -->
     <div class="words_num">
       <span>单词总数：</span>
       <span>{{ wordsNum }}</span>
     </div>
+    <!-- 总单词 -->
     <div id="words_content">
       <div>
         <p>Word</p>

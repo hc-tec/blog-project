@@ -1,5 +1,6 @@
 <template>
   <div id="record">
+    <!-- 单词录入组件 -->
     <div id="record-content">
       <h1>单词录入</h1>
       <div class="arti_cont" v-for="(eng, hans) in info" :key="eng">

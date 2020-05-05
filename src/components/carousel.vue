@@ -17,7 +17,7 @@
 
 <script>
 import { Carousel,CarouselItem } from 'element-ui';
-import { elconfirm, ajaxGet } from '../elem_compo_encap'
+import { elconfirm, ajaxGet, ajaxDel } from '../elem_compo_encap'
 export default {
   components: {
     "el-carousel": Carousel,
@@ -46,7 +46,10 @@ export default {
     succDelCarousel: function(args){
       let [index, id, ..._] = arguments
       this.carou_img.splice(index, 1);
-      this.axios.delete(`http://${this.host}/main/carousel/${id}/`);
+      ajaxDel(
+        `http://${this.host}/main/carousel/${id}/`,{},
+        ()=>{}, ()=>{}
+      )
     },
     initGetCarousle:function(){
       ajaxGet(

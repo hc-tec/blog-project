@@ -18,6 +18,7 @@
 import pageHead from './components/Header'
 import pageFoot from './components/footer'
 import backTop from './components/backToTop'
+import { ajaxGet, ajaxPost } from './elem_compo_encap'
 export default {
   data(){
     return {
@@ -28,12 +29,10 @@ export default {
   },
   methods: {
     getIP: function(){
-      this.axios
-        .get("http://47.115.147.39/get_IP.php")
-        .then(response => {
-          let code = response.data['code'];
-          //let msg = response.data['msg'];
-        })
+      ajaxGet(
+        "http://47.115.147.39/get_IP.php", {},
+        ()=>{}, ()=>{}
+      )
     },
     getCookie: (name) => {
         var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
@@ -45,41 +44,47 @@ export default {
     autoLogin: function() {
       let token = this.getCookie('token');
       if(token){
-        this.axios.post(`http://${this.host}/api/autoLogin`, `token=${token}`)
-          .then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          let info = 'error';
-          //状态码 270 表示登录成功
-          if(270 == code){
-            info = 'success';
-            let user_info = response.data['data'][0];
-            // 读取信息
-            this.getUserInfo.uid = user_info['id'];
-            this.getUserInfo.uuser_name = user_info['user_name'];
-            this.getUserInfo.ugender = user_info['gender'];
-            this.getUserInfo.uqq = user_info['qq'];
-            this.getUserInfo.uavatar = user_info['avatar'];
-            this.getUserInfo.friend_card = user_info['friend_card'];
-            this.getUserInfo.uhobby = user_info['hobby'];
-            this.getUserInfo.ugithub = user_info['github'];
-            this.getUserInfo.uprofile = user_info['profile'];
-            this.getUserInfo.uisSubscribe = user_info['isSubscribe'];
-            this.getUserInfo.uregis_time = user_info['regis_time'];
-            this.getUserInfo.uarticle_num = user_info['article_num'];
+        let data = {
+          token: token
+        }
+        ajaxPost(
+          `http://${this.host}/api/autoLogin`, data,
+          this.succAutoLogin, ()=>{}
+        )
+      }
+    },
+    succAutoLogin: function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      let info = 'error';
+      //状态码 270 表示登录成功
+      if(270 == code){
+        info = 'success';
+        let user_info = res.data['data'][0];
+        // 读取信息
+        this.getUserInfo.uid = user_info['id'];
+        this.getUserInfo.uuser_name = user_info['user_name'];
+        this.getUserInfo.ugender = user_info['gender'];
+        this.getUserInfo.uqq = user_info['qq'];
+        this.getUserInfo.uavatar = user_info['avatar'];
+        this.getUserInfo.friend_card = user_info['friend_card'];
+        this.getUserInfo.uhobby = user_info['hobby'];
+        this.getUserInfo.ugithub = user_info['github'];
+        this.getUserInfo.uprofile = user_info['profile'];
+        this.getUserInfo.uisSubscribe = user_info['isSubscribe'];
+        this.getUserInfo.uregis_time = user_info['regis_time'];
+        this.getUserInfo.uarticle_num = user_info['article_num'];
 
 
-            this.getUserInfo.power.isLogin = true;
-            // 获取用户类型
-            if("超级管理员" === user_info['user_type']){
-              // 获取所有权限
-              this.getUserInfo.user_name = user_info['user_name'];
-              Object.keys(this.getUserInfo.power).forEach(el => {
-                this.$set(this.getUserInfo.power, el, true);
-              })
-            }
-          }
-        })
+        this.getUserInfo.power.isLogin = true;
+        // 获取用户类型
+        if("超级管理员" === user_info['user_type']){
+          // 获取所有权限
+          this.getUserInfo.user_name = user_info['user_name'];
+          Object.keys(this.getUserInfo.power).forEach(el => {
+            this.$set(this.getUserInfo.power, el, true);
+          })
+        }
       }
     }
   },

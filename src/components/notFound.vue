@@ -1,5 +1,6 @@
 <template>
   <div class="notFound">
+    <!-- 404 组件 -->
     <h1>404</h1>
     <div id="error">
       <p>The <span>Url</span> You Linked Is <span>Not Founded!</span><br />

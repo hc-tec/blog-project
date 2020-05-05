@@ -1,6 +1,7 @@
 <template>
   <div id="writer">
     <div id="article">
+        <!-- 预览 -->
         <div id="pre_bg" ref="pre_bg" @click="cancelPre()"></div>
         <div ref="pre_arti" id="pre_arti">
             <p></p>
@@ -10,7 +11,9 @@
 
         <div style="width:100%;" id="workSpace">
           <h1>Write It Down!</h1>
+          <!-- 未登录 -->
           <p v-if="!this.getUserInfo.power.isLogin" style="color:red;">需要先登录才能写文章哦</p>
+
           <el-form :model="article" class="form">
 
             <el-form-item label="标题">
@@ -96,7 +99,7 @@
 
             </el-form-item>
 
-
+            <!-- 预览、提交按钮 -->
             <div id="btn_group" v-if="this.getUserInfo.power.isLogin">
                 <a class="sub_btn" @click="submit()">{{ this.editArticleDetail.isEdit ? 'Edit!' : 'Create!' }}</a>
                 <a class="sub_btn" @click="pre()">Preview</a>
@@ -181,13 +184,13 @@ export default {
                 if(282 === code){
                   this.fileList.unshift({name: file.name, url: `${msg}`});
                 } else {
-                  this.postMsg(msg, 'error');
+                  postMsg(msg, 'error');
                 }
               }).catch(e => (console.log(e)))
 
 
           } else {
-            this.postMsg("图片过大了哦，压缩或者换张吧", "error");
+            postMsg("图片过大了哦，压缩或者换张吧", "error");
           }
 
         },
@@ -242,7 +245,7 @@ export default {
             this.articles.tags = res.data['data'];
           }else{
             let msg = res.data['msg'];
-            this.postMsg(msg, 'error');
+            postMsg(msg, 'error');
           }
         },
 
@@ -259,7 +262,7 @@ export default {
             this.articles.category = res.data['data'];
           }else{
             let msg = res.data['msg'];
-            this.postMsg(msg, 'error');
+            postMsg(msg, 'error');
           }
         },
 
@@ -322,7 +325,7 @@ export default {
           if(276 == code){
             info = 'success';
           }
-          this.postMsg(msg, info);
+          postMsg(msg, info);
         },
         failAddCategory: function(e){
           console.log(e);
@@ -355,9 +358,9 @@ export default {
               let code = data['code'];
               let msg = data['msg'];
               if(code == successCode){
-                this.postMsg(msg, 'success');
+                postMsg(msg, 'success');
               } else {
-                this.postMsg(msg, 'error');
+                postMsg(msg, 'error');
               }
             })
         },
@@ -412,7 +415,7 @@ export default {
             }, 500);
 
           } else {
-            this.postMsg('您需登录后才能发表文章哦', 'error');
+            postMsg('您需登录后才能发表文章哦', 'error');
           }
         },
         canGetTags: function(){

@@ -1,16 +1,24 @@
 <template>
   <div class="article" id="article-life">
+    <!-- 文章详细 -->
     <article>
+      <!-- 标题 -->
       <p class="title">{{ article['title']}}</p>
+      <!-- 创作者 -->
       <p @click="slide" class="author"><i class="el-icon-user"></i> 创作者: {{ article['creator']['user_name'] }}</p>
+      <!-- 创作时间 -->
       <p><i class="el-icon-date"></i> 创作时间: {{ article['create_time'] }} </p>
+      <!-- 阅览次数 -->
       <p><i class="el-icon-view"></i> 阅读次数: {{ article['click_num'] }} </p>
 
       <!-- <div class="para">{{ article['content'] }}</div> -->
+      <!-- 文章内容 -->
       <div class="para" v-html="mark(article['content'])"></div>
+      <!-- 分割线 -->
       <el-divider></el-divider>
     </article>
 
+    <!-- 文章目录 -->
     <div class="catalog">
       <el-popover
         placement="left"
@@ -58,6 +66,7 @@
       </ul>
     </div>
 
+    <!-- 页面处文章信息：类别、标签 -->
     <div id="article-info">
       <p><i class="el-icon-data-analysis"></i> 类别: {{ article['category'] }}</p>
       <span><i class="el-icon-price-tag"></i> 标签:</span>
@@ -69,34 +78,43 @@
       </span>
     </div>
 
+    <!-- 创作者信息，点击右侧蓝色展开按钮可打开 -->
     <div class="creator-info">
-
+      <!-- 创作者展开按钮 -->
       <div class="creator-info-button" @click="slide">
         <span id="uarrow">«</span>
         <!-- «» -->
       </div>
+      <!-- 创作者信息 -->
       <div class="info">
         <p>Author-Info</p>
+        <!-- 头像 -->
         <div class="cimg-content">
           <img :src="authorInfo['avatar']" />
         </div>
+        <!-- 名称 -->
         <p>{{ authorInfo['user_name']}}</p>
+        <!-- 具体细节 -->
         <div class="details">
+          <!-- QQ -->
           <div class="qq">
             <p>QQ</p>
             <p>{{ authorInfo['qq'] }}</p>
           </div>
+          <!-- Hobby -->
           <div class="hobby">
             <p>Hobby</p>
             <p v-html="authorInfo['hobby']"></p>
           </div>
+          <!-- 个人简介 -->
           <div class="profile">
             <p>Profile</p>
             <p v-html="authorInfo['profile']"></p>
           </div>
         </div>
+        <!-- 分割线 -->
         <el-divider></el-divider>
-
+        <!-- Github -->
         <div class="link-icon">
           <div>
             <a :href="authorInfo['github']"><img
@@ -108,43 +126,53 @@
 
       </div>
     </div>
-
+    <!-- 评论 -->
     <div class="comments-container" id="container">
       <div class="comment-input-area">
+        <!-- 根据是否登录进行页面切换 -->
         <template v-if="this.getUserInfo.power.isLogin">
           <p style="color:#00a1d6;" v-show="reply">
             {{ replied_user_name ? `@${replied_user_name}` : '' }}
             <i class="el-icon-circle-close" @click="cancelReply"></i>
           </p>
+          <!-- 这个组件用来发送 emoji 表情  -->
           <twemoji-textarea
             :emojiData="emojiDataAll()"
             :emojiGroups="emojiGroups()"
             @enterKey="onEnterKey"
             style="width: 80%;float: left;">
           </twemoji-textarea>
+          <!-- 发布评论按钮 -->
           <button
             class="waves-effect"
             @click="initSubmitComment($event)">发布评论</button>
         </template>
+        <!-- 用户未登录 -->
         <p v-else>
           <router-link to="/login" style="color:red;">登录</router-link>
           后才可发表评论喔
         </p>
       </div>
+      <!-- 如果有评论 -->
       <template v-if="total">
         <ul id="comments-list" class="comments-list">
-
+          <!-- 评论列表 -->
           <li v-for="com in comment" :key="com.id">
             <div class="comment-main-level">
+              <!-- 头像 -->
               <div class="comment-avatar">
                 <img :src="com.user.avatar" alt="avatar"></div>
+              <!-- 评论主体 -->
               <div class="comment-box">
                 <div class="comment-head">
+                  <!-- 名称 -->
                   <h6
                     :class="['comment-name', com.user.name === article.creator.user_name ? 'by-author' : '']">
                     <a>{{ com.user.name }}</a>
                   </h6>
+                  <!-- 评论时间 -->
                   <span>{{ com.create_time }}</span>
+                  <!-- 回复按钮 -->
                   <i
                     class="el-icon-s-fold"
                     title="回复"
@@ -152,27 +180,31 @@
                     @click="getCommentId($event)">
                   </i>
                 </div>
+                <!-- 评论内容，需要进行v-html解析 -->
                 <div class="comment-content" v-html="com.message">
                 </div>
               </div>
             </div>
+            <!-- 回复列表 -->
             <ul class="comments-list reply-list">
               <li v-for="comm in com.reply" :key="comm.id">
-
+                <!-- 头像 -->
                 <div class="comment-avatar">
                   <img :src="comm.user.avatar" alt="avatar">
                 </div>
-
+                <!-- 评论主体 -->
                 <div class="comment-box">
                   <div class="comment-head">
+                    <!-- 名称 -->
                     <h6
                       :class="['comment-name', comm.user.name === article.creator.user_name ? 'by-author' : '']">
                       <a>{{ comm.user.name }}</a>
                     </h6>
+                    <!-- 评论时间 -->
                     <span>{{ comm.create_time }}</span>
-                    <i class="fa fa-reply"></i>
-                    <i class="fa fa-heart"></i>
+                    <!-- 暂未设置二级评论回复功能 -->
                   </div>
+                  <!-- 评论内容 -->
                   <div class="comment-content" v-html="comm.message">
                   </div>
                 </div>
@@ -180,7 +212,7 @@
             </ul>
           </li>
         </ul>
-
+        <!-- 评论分页 -->
         <el-pagination
             background
             style="text-align:center;"
@@ -191,6 +223,7 @@
         </el-pagination>
 
       </template>
+      <!-- 无评论时显示的内容 -->
       <p style="text-align:center;" v-else>还没有人评论，来抢个沙发吧</p>
 	  </div>
 

@@ -1,6 +1,8 @@
 <template>
   <div id="word">
+    <!-- 单词页组件 -->
     <div>
+      <!-- 单词 -->
       <h2>{{ copyWord }}</h2>
       <span>中文翻译：</span><br />
       <p>{{ word['ch-hans'] }}</p>

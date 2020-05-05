@@ -1,19 +1,24 @@
 <template>
   <div id="login-horizon">
+    <!-- 首页上方的登录注册等文字链接组件 -->
+
+    <!-- 如果没有登录 -->
     <div v-if="!isLogin" id="unLogin">
       <el-link
         type="primary"
         icon='el-icon-lollipop'
         @click="gotologin">登录</el-link>
     </div>
+    <!-- 如果已经登录 -->
     <div v-else id="login">
 
       <el-link
         type="primary"
         icon="el-icon-user"
         @click="gotoAbout">
-        {{this.getUserInfo.uuser_name}}
+        {{ this.getUserInfo.uuser_name }}
       </el-link>
+
       <el-link
         type="danger"
         icon="el-icon-s-release"

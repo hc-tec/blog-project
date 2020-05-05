@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import { ajaxGet } from '../elem_compo_encap';
 export default {
   data(){
     return {

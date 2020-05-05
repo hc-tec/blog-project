@@ -4,7 +4,7 @@
     <div class="comment-info">
     <h1>留言</h1>
 
-    <div class="arti_cont" v-for="(eng, hans) in info" :key="eng" v-if="show[hans]">
+    <div class="arti_cont" v-for="(eng, hans) in info" :key="eng" v-show="show[hans]">
       <span class="title" ref="title">{{ eng }}</span>
       <label>{{ hans }}</label>
       <el-input
@@ -55,16 +55,6 @@
       </div>
 
       <div class="btn_group" v-if="showWorkBtn">
-        <!-- <el-tooltip class="item" effect="dark" content="编辑" placement="top">
-          <el-button
-            type="primary"
-            icon="el-icon-edit"
-            circle
-            :style="edit_btn"
-            plain
-            @click="editMsg($event)"></el-button>
-        </el-tooltip> -->
-
         <el-tooltip class="item" effect="dark" content="删除" placement="top">
           <el-button
           type="danger"
@@ -148,16 +138,16 @@ export default {
         }
     },
     initSubmit: function() {
-        let data = {
-          "name": this.getUserInfo.uuser_name === 'annoy' ? this.content["名称"] : this.getUserInfo.uuser_name,
-          "url": this.getUserInfo.uuser_name === 'annoy' ? this.content["个人网站"] : this.getUserInfo.ugithub,
-          "text": this.content["留言内容"],
-          "portrait": this.getUserInfo.uuser_name === 'annoy' ? this.content["头像网址"] : this.getUserInfo.uavatar
-        };
-        ajaxPost(
-          "http://47.115.147.39/add_message.php", data,
-          this.succSubmitComment, (e)=>(console.log(e))
-        )
+      let data = {
+        "name": this.getUserInfo.uuser_name === 'annoy' ? this.content["名称"] : this.getUserInfo.uuser_name,
+        "url": this.getUserInfo.uuser_name === 'annoy' ? this.content["个人网站"] : this.getUserInfo.ugithub,
+        "text": this.content["留言内容"],
+        "portrait": this.getUserInfo.uuser_name === 'annoy' ? this.content["头像网址"] : this.getUserInfo.uavatar
+      };
+      ajaxPost(
+        "http://47.115.147.39/add_message.php", data,
+        this.succSubmitComment, (e)=>(console.log(e))
+      )
     },
     succSubmitComment: function(res){
       let code = res.data['code'];
@@ -184,9 +174,6 @@ export default {
     },
     succGetMessage: function(req){
       this.messages = req.data['comment'];
-    },
-    editMsg(el){
-
     },
     initDelMsg(el){
       let ele = el.currentTarget;

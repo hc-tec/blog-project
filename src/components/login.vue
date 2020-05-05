@@ -1,8 +1,10 @@
 <template>
 
   <div id="login">
+    <!-- 登录页组件 -->
     <el-card class="login">
       <h1>登录</h1>
+      <!-- 用户名、密码输入框 -->
       <div class="arti_cont" v-for="(eng, hans) in info" :key="eng">
         <span class="title" ref="title">{{ eng }}</span>
         <label>{{ hans }}</label>
@@ -17,6 +19,7 @@
             >
         </el-input>
       </div>
+      <!-- 登录注册按钮 -->
       <div class="btn-group">
         <el-button
           type="primary"

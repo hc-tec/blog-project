@@ -20,7 +20,8 @@
 </template>
 
 <script>
-import {Input} from 'element-ui'
+import { Input } from 'element-ui'
+import { postMsg } from '../elem_compo_encap'
 import Qs from 'qs'
 export default {
   components: {
@@ -89,7 +90,7 @@ export default {
             }
           }
 
-          this.postMsg(msg, info);
+          postMsg(msg, info);
         }).catch(e => console.log(e))
     }
   }
