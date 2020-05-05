@@ -15,7 +15,7 @@
           v-model="content[hans]"
           @focus="titMove($event)"
           @blur="titDown($event)"
-          @keyup.enter.native="submit()"
+          @keyup.enter.native="initSubmit()"
           >
       </el-input>
     </div>
@@ -25,7 +25,7 @@
     class="waves-effect"
     type="primary"
     id="submit"
-    @click="submit()"
+    @click="initSubmit()"
     round>提交
   </el-button>
   </div>
@@ -72,7 +72,7 @@
           circle
           :style="del_btn"
           plain
-          @click="delMsg($event)"
+          @click="initDelMsg($event)"
           :class="message['id']"></el-button>
         </el-tooltip>
       </div>
@@ -86,6 +86,7 @@
 import { Tooltip, Input, Button } from 'element-ui';
 import { postMsg } from '../elem_compo_encap'
 import Qs from 'qs'
+import { ajaxPost, ajaxGet } from '../elem_compo_encap'
 export default {
   components: {
     "el-tooltip": Tooltip,
@@ -146,71 +147,70 @@ export default {
           span.style.opacity = ".5";
         }
     },
-    submit: function() {
+    initSubmit: function() {
         let data = {
           "name": this.getUserInfo.uuser_name === 'annoy' ? this.content["名称"] : this.getUserInfo.uuser_name,
           "url": this.getUserInfo.uuser_name === 'annoy' ? this.content["个人网站"] : this.getUserInfo.ugithub,
           "text": this.content["留言内容"],
           "portrait": this.getUserInfo.uuser_name === 'annoy' ? this.content["头像网址"] : this.getUserInfo.uavatar
         };
-        this.axios(
-          {
-            method: 'post',
-            url: "http://47.115.147.39/add_message.php",
-            data: Qs.stringify(data)
-          }
-        ).then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          let info = 'error';
-          if(230 == code){
-            info = 'success';
-            Object.keys(this.content).forEach(ele => {
-              this.content[ele] = "";
-            });
-
-            let input = document.getElementsByTagName("textarea");
-            for(let el of input){
-              this.titDown(el);
-            }
-          }
-          this.get_messages();
-          postMsg(msg, info);
-        }).catch(e => console.log(e))
+        ajaxPost(
+          "http://47.115.147.39/add_message.php", data,
+          this.succSubmitComment, (e)=>(console.log(e))
+        )
     },
-    get_messages(){
-      this.axios
-        .get('http://47.115.147.39/message.php')
-        .then(response => {
-          this.messages = response.data['comment'];
-        })
+    succSubmitComment: function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      let info = 'error';
+      if(230 == code){
+        info = 'success';
+        Object.keys(this.content).forEach(ele => {
+          this.content[ele] = "";
+        });
+        let input = document.getElementsByTagName("textarea");
+        for(let el of input){
+          this.titDown(el);
+        }
+      }
+      this.getMessages();
+      postMsg(msg, info);
+    },
+    getMessages(){
+      ajaxGet(
+        'http://47.115.147.39/message.php', {},
+        this.succGetMessage, (e)=>{console.log(e)}
+      )
+    },
+    succGetMessage: function(req){
+      this.messages = req.data['comment'];
     },
     editMsg(el){
 
     },
-    delMsg(el){
+    initDelMsg(el){
       let ele = el.currentTarget;
       let classes = ele.getAttribute('class');
       let regex = /\d+/;
       let id = classes.match(regex)[0];
-      this.axios.post("http://47.115.147.39/del_message.php", `id=${id}`)
-        .then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          let info = 'success';
-          if(340 == code){
-            info = 'error';
-          }
-          this.get_messages();
-          postMsg(msg, info);
-        })
+      ajaxPost(
+        "http://47.115.147.39/del_message.php", {id:id},
+        this.succDelMsg, (e)=>(console.log(e))
+      )
+    },
+    succDelMsg: function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      let info = 'success';
+      if(340 == code){
+        info = 'error';
+      }
+      this.getMessages();
+      postMsg(msg, info);
     }
   },
   mounted(){
-    this.get_messages();
-    // var se = setInterval(() => {
-    //   this.get_messages();
-    // }, 5000);
+    this.getMessages();
   }
 }
 </script>

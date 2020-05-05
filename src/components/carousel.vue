@@ -9,7 +9,7 @@
         :key="img['id']"
         class="carousel-content">
         <img :src="img['img']" class="img">
-        <span v-if="getUserInfo.power.modifyCarousel" @click="delCarousel(index,img['id'])"><i class="el-icon-delete"></i></span>
+        <span v-if="getUserInfo.power.modifyCarousel" @click="initDelCarousel(index,img['id'])"><i class="el-icon-delete"></i></span>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -17,7 +17,7 @@
 
 <script>
 import { Carousel,CarouselItem } from 'element-ui';
-
+import { elconfirm, ajaxGet } from '../elem_compo_encap'
 export default {
   components: {
     "el-carousel": Carousel,
@@ -35,25 +35,31 @@ export default {
       let width = document.body.clientWidth;
       return document.body.clientWidth > 500 ? this.pc : this.mobile;
     },
-    delCarousel: function(index,id){
-      this.$confirm("确定取消运用此图片，是否继续？", "轮播图框框", {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'info'
-        }).then(() => {
-          this.carou_img.splice(index, 1);
-          this.axios.delete(`http://${this.host}/main/carousel/${id}/`);
-        })
+    initDelCarousel: function(index,id){
+      const title = "轮播图框框";
+      const tip_text = "确定取消运用此图片，是否继续？";
+      elconfirm(
+          title, tip_text, arguments,
+          this.succDelCarousel, ()=>{},
+      )
     },
-    getCarousle:function(){
-      this.axios.get(`http://${this.host}/main/carousel/`)
-        .then(response => {
-          this.carou_img = response.data;
-        })
+    succDelCarousel: function(args){
+      let [index, id, ..._] = arguments
+      this.carou_img.splice(index, 1);
+      this.axios.delete(`http://${this.host}/main/carousel/${id}/`);
+    },
+    initGetCarousle:function(){
+      ajaxGet(
+        `http://${this.host}/main/carousel/`, {},
+        this.succGetCarousel, (e)=>(console.log(e))
+      )
+    },
+    succGetCarousel: function(res){
+      this.carou_img = res.data;
     }
   },
   mounted(){
-    this.getCarousle();
+    this.initGetCarousle();
   }
 }
 </script>

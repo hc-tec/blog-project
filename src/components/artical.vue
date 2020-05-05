@@ -25,7 +25,7 @@
     </div>
     <div id="bf-artical">
       <p>美文鉴赏</p>
-      <div v-for="bfArt in otherArt">
+      <div v-for="bfArt in otherArt" :key="bfArt['title']">
         <div>
           <div class="img-content">
             <router-link

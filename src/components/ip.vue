@@ -56,7 +56,8 @@
 </template>
 
 <script>
-import {Table, TableColumn, Button} from 'element-ui';
+import { Table, TableColumn, Button } from 'element-ui';
+import { ajaxPost, postMsg } from '../elem_compo_encap'
 export default {
   components: {
     "el-table": Table,
@@ -73,24 +74,27 @@ export default {
     deleteRow(index, rows) {
       rows.splice(index, 1);
     },
-    getUserIp: function(){
-      this.axios.post("http://47.115.147.39/visIP.php", "user_type=SUPER_USER")
-        .then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          msg = `管理员，${msg}`;
-          let info = "error";
-          if(280 == code){
-            info = "success";
-            this.totalVisCount = response.data['sum'];
-            this.vistorData = response.data['data'];
-          }
-          this.postMsg(msg, info);
-        })
+    initGetUserIp: function(){
+      ajaxPost(
+        "http://47.115.147.39/visIP.php", {user_type:"SUPER_USER"},
+        this.succGetUserIp, (e)=>(console.log(e))
+      )
+    },
+    succGetUserIp: function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      msg = `管理员，${msg}`;
+      let info = "error";
+      if(280 == code){
+        info = "success";
+        this.totalVisCount = res.data['sum'];
+        this.vistorData = res.data['data'];
+      }
+      postMsg(msg, info);
     }
   },
   mounted(){
-    this.getUserIp();
+    this.initGetUserIp();
   }
 }
 </script>

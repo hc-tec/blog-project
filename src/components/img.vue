@@ -11,7 +11,7 @@
       <span v-if="false">{{ name(img) }}</span>
       <div class="operate">
         <span><a :href="img" target="_blank" style="color:white;"><i class="el-icon-search"></i></a></span>
-        <span><i class="el-icon-delete" @click="delImg(index)"></i></span>
+        <span><i class="el-icon-delete" @click="initConfirmDelImg(index)"></i></span>
         <span><i class="el-icon-upload2" @click="loadCarousel(index)"></i></span>
       </div>
 
@@ -21,7 +21,8 @@
 </template>
 
 <script>
-import {Image} from 'element-ui';
+import { Image } from 'element-ui';
+import { ajaxGet, ajaxDel, elconfirm, postMsg, ajaxPost } from '../elem_compo_encap';
 export default {
   components: {
     "el-image": Image,
@@ -32,62 +33,73 @@ export default {
     }
   },
   methods: {
-    delImg: function(index){
-      this.$confirm("此操作将永久删除此图片，是否继续？", "删除框框", {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      }).then(() => {
-        let img_name = this.name(this.img_list[index])
-        this.img_list.splice(index,1);
-        this.axios
-          .delete(`http://${this.host}/api/files`,{
-            params: {
-              file_name: img_name
-            }
-          })
-          .then(response => {
-            let code = response.data['code'];
-            let msg = response.data['msg'];
-            this.postMsg(msg)
-          })
-      }).catch((e) => console.log(e))
+    initConfirmDelImg: function(index){
+      const title = "删除框框";
+      const tip_text = "此操作将永久删除此图片，是否继续？";
+      elconfirm(
+        title, tip_text,
+        arguments, this.initDelImg,
+        (e)=>(console.log(e))
+      )
     },
-    getImg: function(){
-      this.axios
-        .get(`http://${this.host}/api/files`)
-        .then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          if(284 === code){
-            this.img_list = response.data['data'];
-          } else {
-            this.postMsg(msg)
-          }
-        })
+    initDelImg: function(){
+      let index = arguments[0];
+      let img_name = this.name(this.img_list[index])
+      ajaxDel(
+        `http://${this.host}/api/files`, {file_name: img_name},
+        this.succDelImg, (e)=>{console.log(e)}
+      )
+      this.img_list.splice(index,1);
+    },
+    succDelImg: function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      postMsg(msg)
+    },
+    initGetImg: function(){
+      ajaxGet(
+        `http://${this.host}/api/files`,{},
+        this.succGetImg, (e)=>(console.log(e))
+      )
+    },
+    succGetImg: function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      if(284 === code){
+        this.img_list = res.data['data'];
+      } else {
+        postMsg(msg)
+      }
     },
     name: (url) => {
       let img_split = url.split('/');
       return img_split[img_split.length-1];
     },
     loadCarousel: function(index){
-      this.$confirm("确定运用此图片至首页轮播图，是否继续？", "轮播图框框", {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'info'
-    }).then(() => {
+      const title = "轮播图框框";
+      const tip_text = "确定运用此图片至首页轮播图，是否继续？";
+      elconfirm(
+        title, tip_text,
+        arguments, this.initLoadCarousel,
+        (e)=>(console.log(e))
+      )
+    },
+    initLoadCarousel: function(){
+      let index = arguments[0];
       let img = this.img_list[index];
-      this.axios.post(`http://${this.host}/main/carousel/`, `img=${img}`)
-        .then(response => {
-          if(response.data['img'] === img){
-            this.postMsg('成功运用至轮播图', 'success');
-          }
-        })
-    })
-  },
+      ajaxPost(
+        `http://${this.host}/main/carousel/`, {img:img},
+        this.succLoadCarousel, (e)=>(console.log(e))
+      )
+    },
+    succLoadCarousel: function(res){
+      if(res.data['img']){
+        postMsg('成功运用至轮播图', 'success');
+      }
+    }
   },
   mounted(){
-    this.getImg();
+    this.initGetImg();
   }
 }
 </script>

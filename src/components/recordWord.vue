@@ -88,7 +88,8 @@
 </template>
 
 <script>
-import {Input, Form, FormItem, Button} from 'element-ui';
+import { Input, Form, FormItem, Button } from 'element-ui';
+import { postMsg } from '../elem_compo_encap'
 export default {
   components: {
     "el-input": Input,
@@ -149,7 +150,7 @@ export default {
           if(210 === code){
             info = 'success';
           }
-          this.postMsg(msg, info);
+          postMsg(msg, info);
           this.phrase.phraseList = [];
           this.sentence.sentenceList = [];
           Object.keys(this.content).forEach(el => {
@@ -163,12 +164,6 @@ export default {
 
         }).catch(e => console.log(e))
 
-    },
-    postMsg: function(msg, info) {
-        this.$message({
-            message: msg,
-            type: info,
-        })
     },
     addSentence: function(){
       this.sentence.sentenceList.push({

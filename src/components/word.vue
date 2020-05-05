@@ -65,6 +65,8 @@
 </template>
 
 <script>
+import { ajaxGet } from '../elem_compo_encap'
+import {mergeDict} from '../func'
 export default {
   data(){
     return {
@@ -88,31 +90,33 @@ export default {
     },
   },
   methods: {
-    init: function(url){
-      this.axios
-        .get(url)
-        .then(response => {
-          let wordsList = Object.keys(response.data);
-          let index = wordsList.indexOf(this.copyWord);
-          this.words.wordsList = [...this.words.wordsList, ...wordsList];
-          this.words.words = this.mergeDict(this.tmpDict, response.data);
-          if(index === -1){
-            this.init('http://47.115.147.39/words.php');
-            return ;
-          }
-          this.word = response.data[this.copyWord];
-          this.getPrev = wordsList[index-1] || "";
-          this.getNext = wordsList[index+1] || "";
-        })
+    initGetWords: function(url){
+      ajaxGet(
+        url, {},
+        this.succGetWords, (e)=>(console.log(e))
+      )
+    },
+    succGetWords: function(res){
+      let wordsList = Object.keys(res.data);
+      let index = wordsList.indexOf(this.copyWord);
+      this.words.wordsList = [...this.words.wordsList, ...wordsList];
+      this.words.words = mergeDict(this.tmpDict, res.data);
+      if(index === -1){
+        this.initGetWords('http://47.115.147.39/words.php');
+        return ;
+      }
+      this.word = res.data[this.copyWord];
+      this.getPrev = wordsList[index-1] || "";
+      this.getNext = wordsList[index+1] || "";
     },
     getWordByGlobalVary: function(){
       if(null === this.words.words){
-        this.init('../json/words.json');
+        this.initGetWords('../json/words.json');
       } else {
         let index = this.obsGetIndex(this.words.wordsList, this.copyWord);
         this.word = this.words.words[this.copyWord];
         if(!this.word){
-          this.init('http://47.115.147.39/words.php');
+          this.initGetWords('http://47.115.147.39/words.php');
         }
         this.getPrev = this.words.wordsList[index-1] || "";
         this.getNext = this.words.wordsList[index+1] || "";

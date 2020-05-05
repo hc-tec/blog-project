@@ -138,7 +138,7 @@ marked.setOptions({
 import { Form, FormItem, Input, Select, Option,
          Button, CheckboxGroup, CheckboxButton } from 'element-ui';
 
-import postMsg from '../elem_compo_encap';
+import { postMsg, ajaxPost, ajaxGet, elprompt, elconfirm } from '../elem_compo_encap';
 
 export default {
     components: {
@@ -173,6 +173,7 @@ export default {
             let config = {
               headers: {'Content-Type': 'multypart/form-data'}
             };
+
             this.axios.post(`http://${this.host}/api/fileLoader`, param, config)
               .then(response => {
                 let code = response.data['code'];
@@ -183,13 +184,15 @@ export default {
                   this.postMsg(msg, 'error');
                 }
               }).catch(e => (console.log(e)))
+
+
           } else {
             this.postMsg("图片过大了哦，压缩或者换张吧", "error");
           }
 
         },
         insert: function(fileUrl){
-          let url = `![](${fileUrl})`;
+          let url = `![imgHere](${fileUrl})`;
           this.insertText('content', url);
         },
         insertText: (id, str) => {
@@ -225,92 +228,107 @@ export default {
         mark: (para) => {
           return marked(para || '')
         },
-        getTag: function(){
-          this.axios
-            .get(`http://${this.host}/api/tags`)
-            .then(response => {
-              let code = response.data['code'];
-              if(277 == code){
-                this.tags = response.data['data'];
-                this.articles.tags = response.data['data'];
-              }else{
-                let msg = response.data['msg'];
-                this.postMsg(msg, 'error');
-              }
-            }).catch(e => console.log(e));
+
+        initGetTag: function(){
+          ajaxGet(
+            `http://${this.host}/api/tags`, {},
+            this.succGetTag, (e)=>(console.log(e))
+          )
         },
+        succGetTag: function(res){
+          let code = res.data['code'];
+          if(277 == code){
+            this.tags = res.data['data'];
+            this.articles.tags = res.data['data'];
+          }else{
+            let msg = res.data['msg'];
+            this.postMsg(msg, 'error');
+          }
+        },
+
         getCategory: function(){
-          this.axios
-            .get(`http://${this.host}/api/category`)
-            .then(response => {
-              let code = response.data['code'];
-              if(278 == code){
-                this.category = response.data['data'];
-                this.articles.category = response.data['data'];
-              }else{
-                let msg = response.data['msg'];
-                this.postMsg(msg, 'error');
-              }
-            }).catch(e => console.log(e));
+          ajaxGet(
+            `http://${this.host}/api/category`, {},
+            this.succGetCategory, (e)=>(console.log(e))
+          )
         },
+        succGetCategory: function(res){
+          let code = res.data['code'];
+          if(278 == code){
+            this.category = res.data['data'];
+            this.articles.category = res.data['data'];
+          }else{
+            let msg = res.data['msg'];
+            this.postMsg(msg, 'error');
+          }
+        },
+
         addTag: function(){
-          this.$prompt("请输入需添加的标签", "标签框框", {
-            confirmButtonText: '就决定是你了！',
-            cancelButtonText: '要不，换个吧',
-          }).then(({value}) => {
-            this.asynAddTag(value);
-            this.articles.tags.push(value);
-          }).catch((e) => {
-            console.log(e)
-            this.postMsg("下次一定", 'info');
-          })
+          const title = "标签框框";
+          const tip_text = "请输入需添加的标签";
+          elprompt(
+            title, tip_text,
+            this.initAddTag, ()=>{},
+            false, {
+              confirmButtonText: '就决定是你了！',
+              cancelButtonText: '就先不添加了',
+            }
+          )
         },
+        initAddTag: function(name){
+          ajaxGet(
+            `http://${this.host}/api/newTag`,{name: name},
+            this.succAddTag, this.failAddTag
+          )
+          this.articles.tags.push(name);
+        },
+        succAddTag: function(res){
+          let code = res.data['code'];
+          let msg = res.data['msg'];
+          let info = 'error';
+          if(275 == code){
+            info = 'success';
+          }
+          postMsg(msg, info);
+        },
+        failAddTag: function(e){
+          console.log(e);
+          postMsg("标签添加失败",'danger');
+        },
+
         addCategory: function(){
-          this.$prompt("请输入需添加的类别", "类别框框", {
-            confirmButtonText: '就决定是你了！',
-            cancelButtonText: '要不，换个吧',
-          }).then(({value}) => {
-            this.asynAddCategory(value);
-            this.articles.category.push(value);
-          }).catch((e) => {
-            console.log(e)
-            this.postMsg("下次一定", 'info');
-          })
+          const title = "类别框框";
+          const tip_text = "请输入需添加的类别";
+          elprompt(
+            title, tip_text,
+            this.initAddCategory,()=>{},
+            false, {
+              confirmButtonText: '就决定是你了！',
+              cancelButtonText: '要不，换个吧',
+            }
+          )
         },
-        asynAddCategory: function(name){
-          this.axios
-            .get(`http://${this.host}/api/newCategory`,{
-              params: {
-                name: name
-              }
-            }).then(response => {
-              let code = response.data['code'];
-              let msg = response.data['msg'];
-              let info = 'error';
-              if(276 == code){
-                info = 'success';
-              }
-              this.postMsg(msg, info);
-            }).catch(e => console.log(e))
+        initAddCategory: function(name){
+          ajaxGet(
+            `http://${this.host}/api/newCategory`,{name:name},
+            this.succAddCategory, this.failAddCategory
+          )
+          this.articles.category.push(name);
+        },
+        succAddCategory: function(res){
+          let code = res.data['code'];
+          let msg = res.data['msg'];
+          let info = 'error';
+          if(276 == code){
+            info = 'success';
+          }
+          this.postMsg(msg, info);
+        },
+        failAddCategory: function(e){
+          console.log(e);
+          postMsg("类别添加失败", 'danger');
+        },
 
-        },
-        asynAddTag: function(name){
-          this.axios
-            .get(`http://${this.host}/api/newTag`,{
-              params: {
-                name: name
-              }
-            }).then(response => {
-              let code = response.data['code'];
-              let msg = response.data['msg'];
-              let info = 'error';
-              if(275 == code){
-                info = 'success';
-              }
-              this.postMsg(msg, info);
-            }).catch(e => console.log(e))
-
-        },
         pre: function() {
             let article = this.$refs.pre_arti.children;
             let bg = this.$refs.pre_bg;
@@ -344,58 +362,62 @@ export default {
             })
         },
         submit: function() {
-            this.$confirm("请确定是否提交文章？",{
+          const title = "";
+          const tip_text = "请确定是否提交文章？";
+          elconfirm(
+            title, tip_text,
+            "", this.initSubmit, ()=>{},
+            false, {
                 confirmButtonText: "确定",
                 cancelButtenText: "取消",
                 center: true,
-            }).then(() => {
-              let user_name = this.getUserInfo.uuser_name;
-              if(user_name && user_name !== 'annoy'){
-                let data = "";
-                let article = JSON.parse(JSON.stringify(this.article));
+            }
+          )
+        },
+        initSubmit: function(){
+          let user_name = this.getUserInfo.uuser_name;
+          if(user_name && user_name !== 'annoy'){
+            let data = "";
+            let article = JSON.parse(JSON.stringify(this.article));
 
-                // 将文章内容格式转化，防范特殊符号问题
-                article['content'] = encodeURIComponent(article['content']);
-                article['title'] = encodeURIComponent(article['title']);
-                article['tag'] = encodeURIComponent(article['tag']);
-                let keyList = Object.keys(article);
-                keyList.forEach(el => {
-                  data += `${el}=${article[el]}&`;
-                })
+            // 将文章内容格式转化，防范特殊符号问题
+            article['content'] = encodeURIComponent(article['content']);
+            article['title'] = encodeURIComponent(article['title']);
+            article['tag'] = encodeURIComponent(article['tag']);
+            let keyList = Object.keys(article);
+            keyList.forEach(el => {
+              data += `${el}=${article[el]}&`;
+            })
 
-                // 是否为编辑模式
-                if(this.editArticleDetail.isEdit){
-                  data += `creator=${this.editArticleDetail.creator.user_name}`;
-                  // 附加值--id
-                  data = data + `&id=${this.editArticleDetail.id}`;
-                  this.asynPost(`http://${this.host}/api/editArticle`, data, 283);
-                  // 全局变量 -- 编辑文章细节恢复为空值
-                  Object.keys(this.editArticleDetail).forEach(key => {
-                    this.editArticleDetail[key] = "";
-                  })
-                  // 特殊空值处理，必须为数组，否则会出错
-                  this.editArticleDetail.tags = [];
-                } else {
-                  data += `creator=${user_name}`;
-                  this.asynPost(`http://${this.host}/api/writeArticle`, data, 273);
+            // 是否为编辑模式
+            if(this.editArticleDetail.isEdit){
+              data += `creator=${this.editArticleDetail.creator.user_name}`;
+              // 附加值--id
+              data = data + `&id=${this.editArticleDetail.id}`;
+              this.asynPost(`http://${this.host}/api/editArticle`, data, 283);
+              // 全局变量 -- 编辑文章细节恢复为空值
+              Object.keys(this.editArticleDetail).forEach(key => {
+                this.editArticleDetail[key] = "";
+              })
+              // 特殊空值处理，必须为数组，否则会出错
+              this.editArticleDetail.tags = [];
+            } else {
+              data += `creator=${user_name}`;
+              this.asynPost(`http://${this.host}/api/writeArticle`, data, 273);
 
-                }
-                this.articles.isWrite = true;
-                setTimeout(() => {
-                  this.$router.push('/web');
-                }, 500);
+            }
+            this.articles.isWrite = true;
+            setTimeout(() => {
+              this.$router.push('/web');
+            }, 500);
 
-              } else {
-                this.postMsg('您需登录后才能发表文章哦', 'error');
-              }
-            }).catch((e) => {
-                this.postMsg("取消提交", "info");
-                console.log(e);
-            });
+          } else {
+            this.postMsg('您需登录后才能发表文章哦', 'error');
+          }
         },
         canGetTags: function(){
           if(null === this.articles.tags){
-            this.getTag();
+            this.initGetTag();
           } else {
             this.tags = this.articles.tags;
           }
@@ -415,7 +437,9 @@ export default {
       this.canGetCategory();
       this.canGetTags();
       this.$nextTick(function() {
+        setTimeout(() => {
         window.MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }, 2000)
       });
     },
 }

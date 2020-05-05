@@ -2,7 +2,7 @@ export default {
   install(Vue, options) {
     // localhost:8000
     // 39.100.22.224
-    Vue.prototype.host = '39.100.22.224';
+    Vue.prototype.host = 'localhost:8001';
 
     Vue.prototype.getUserInfo = {
       uid: 1,
@@ -61,15 +61,7 @@ export default {
         .catch(e => reject(e))
     }
 
-    // 字典合并
-    Vue.prototype.mergeDict = function(dict_1, dict_2){
-      let mergeList = [...Object.keys(dict_1), ...Object.keys(dict_2)];
-      let mergeObject = {};
-      for(let el of mergeList){
-        mergeObject[el] = dict_1[el] || dict_2[el];
-      }
-      return mergeObject;
-    },
+
 
 
     Vue.prototype.navList = [

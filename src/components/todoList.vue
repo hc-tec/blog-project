@@ -24,7 +24,7 @@
             v-if="this.getUserInfo.power.isLogin"
             icon="el-icon-plus"
             style="margin-left: 20px;"
-            @click="addTag()">
+            @click="confirmAddTag()">
           </el-button>
 
         </el-form-item>
@@ -59,7 +59,7 @@
 
         </el-form-item>
 
-        <el-button type="primary" class="submit_btn waves-effect" @click="addTask()">创建任务</el-button>
+        <el-button type="primary" class="submit_btn waves-effect" @click="initAddTask()">创建任务</el-button>
 
       </el-form>
     </div>
@@ -191,8 +191,9 @@
 </template>
 
 <script>
-import {Input, Form, FormItem, Button, Select, Option,
-         Col, DatePicker, Table, TableColumn, Tooltip, Tag} from 'element-ui';
+import { Input, Form, FormItem, Button, Select, Option,
+         Col, DatePicker, Table, TableColumn, Tooltip, Tag } from 'element-ui';
+import { elprompt, ajaxGet, postMsg, elconfirm, ajaxPost } from '../elem_compo_encap'
 export default {
   components: {
     "el-input": Input,
@@ -227,137 +228,161 @@ export default {
     }
   },
   methods: {
-    addTag: function(){
-        this.$prompt("请输入需添加的标签", "标签框框", {
+
+    confirmAddTag: function(){
+      const title = "标签框框";
+      const tip_text = "请输入需添加的标签";
+      elprompt(
+        title, tip_text,
+        this.initAddTag, (e)=>(console.log(e), false, {
           confirmButtonText: '就决定是你了！',
           cancelButtonText: '要不，换个吧',
-        }).then(({value}) => {
-          this.asynAddTag(value);
-          let id = (this.taskTags[this.taskTags.length-1]['id'] + 1) || 1;
-          this.taskTags.push({'id':id,'name':value});
-        }).catch((e) => {
-          console.log(e)
-          this.postMsg("下次一定", 'info');
         })
-      },
-    asynAddTag: function(name){
-      this.axios
-        .get(`http://${this.host}/api/newTaskTag`,{
-          params: {
-            name: name
-          }
-        }).then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          let info = 'error';
-          if(296 == code){
-            info = 'success';
-          }
-          this.postMsg(msg, info);
-        }).catch(e => console.log(e))
+      )
     },
+    initAddTag: function(name){
+      ajaxGet(
+        `http://${this.host}/api/newTaskTag`, {name: name},
+        this.succAddTag, (e)=>(console.log(e))
+      )
+      let id = (this.taskTags[this.taskTags.length-1]['id'] + 1) || 1;
+      this.taskTags.push({'id':id,'name':name});
+    },
+    succAddTag: function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      let info = 'error';
+      if(296 == code){
+        info = 'success';
+      }
+      postMsg(msg, info);
+    },
+
     getTaskTag: function(){
-      this.axios.get(`http://${this.host}/api/showTaskTag`)
-        .then(response => {
-          this.taskTags = response.data;
-        })
+      ajaxGet(
+        `http://${this.host}/api/showTaskTag`, {},
+        this.succGetTaskTag, (e)=>(console.log(e))
+      )
     },
-    addTask() {
-      this.axios.get(`http://${this.host}/api/newTask`, {
-        params: {
+    succGetTaskTag: function(res){
+      this.taskTags = res.data;
+    },
+
+    initAddTask: function() {
+      ajaxGet(
+        `http://${this.host}/api/newTask`, {
           user: this.getUserInfo.uid,
           task_name: this.addTaskObj.task_name,
           tag: this.addTaskObj.tag,
           startDay: this.addTaskObj.startDay,
           endDay: this.addTaskObj.endDay
-        }
-      }).then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          let info = 'error';
-          if(290 == code){
-            info = 'success';
-            this.getAsny();
-            Object.keys(this.addTaskObj).forEach(key => {
-              this.addTaskObj[key] = "";
-            })
-          }
-          this.postMsg(msg, info);
-        })
+        }, this.succAddTask, this.failAddTask
+      )
     },
+    succAddTask: function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      let info = 'error';
+      if(290 == code){
+        info = 'success';
+        this.initGetTask();
+        Object.keys(this.addTaskObj).forEach(key => {
+          this.addTaskObj[key] = "";
+        })
+      }
+      postMsg(msg, info);
+    },
+    failAddTask: function(e){
+      console.log(e)
+      postMsg('任务提交失败', 'danger');
+    },
+
     getIdByParent(el) {
       let parent = el.currentTarget.parentNode;
       return parent.getAttribute('id');
     },
     deleteTask(index, rows, el) {
       if(this.getUserInfo.power.isLogin){
-      let id = this.getIdByParent(el);
-      this.$prompt("删归删，说点抛弃我的理由吧", "抛弃框框", {
-        confirmButtonText: "抛弃",
-        cancelButtonText: "还可以挽留",
-      }).then((value) => {
-        this.axios
-          .get('http://47.115.147.39/api/task/abandonTask.php', {
-            params: {
-              id: id,
-              reason: value
-            }
+        let id = this.getIdByParent(el);
+        this.$prompt("删归删，说点抛弃我的理由吧", "抛弃框框", {
+          confirmButtonText: "抛弃",
+          cancelButtonText: "还可以挽留",
+        }).then((value) => {
+          this.axios
+            .get('http://47.115.147.39/api/task/abandonTask.php', {
+              params: {
+                id: id,
+                reason: value
+              }
+            })
+            .then(response => {
+              let code = response.data['code'];
+              let msg = response.data['msg'];
+              let info = 'error';
+              if(293 == code){
+                info = 'success';
+                rows.splice(index, 1);
+              }
+              postMsg(msg, info);
+            })
+        }).catch(() => {
+          this.$message({
+            type: 'success',
+            message: '不打算抛弃我了?太好了!'
           })
-          .then(response => {
-            let code = response.data['code'];
-            let msg = response.data['msg'];
-            let info = 'error';
-            if(293 == code){
-              info = 'success';
-              rows.splice(index, 1);
-            }
-            this.postMsg(msg, info);
-          })
-      }).catch(() => {
-        this.$message({
-          type: 'success',
-          message: '不打算抛弃我了?太好了!'
         })
-      })
       }else{
-        this.postMsg('登录后才能进行相应操作喔', 'info');
+        postMsg('登录后才能进行相应操作喔', 'info');
       }
     },
+
     finishTask(index, rows, el) {
       if(this.getUserInfo.power.isLogin){
-      let id = this.getIdByParent(el);
-      this.$confirm('再点一个按钮，你离成功又更进一步喽，再接再厉!', '走向成功', {
-        confirmButtonText: '完成了，所向披靡',
-        cancelButtonText: '再让我鸽下，没准就完成了',
-        type: 'success'
-      }).then(() => {
-        this.axios
-          .get(`http://${this.host}/api/finishTask`, {
-            params: {
-              id: id
-            }
-          })
-          .then(response => {
-            let code = response.data['code'];
-            let msg = response.data['msg'];
-            let info = 'error';
-            if(291 == code){
-              info = 'success';
-              rows.splice(index, 1);
-            }
-            this.postMsg(msg, info);
-          })
-      }).catch(() => {
-        this.$message({
-          type: 'warning',
-          message: '别灰心，再战又如何'
-        })
-      })
+        let id = this.getIdByParent(el);
+        const title = '走向成功';
+        const tip_text = '再点一个按钮，你离成功又更进一步喽，再接再厉!';
+        elconfirm(
+          title, tip_text,
+          [id, index, rows], this.initFinishTask, this.cancelFinishTask,
+          false, {
+            confirmButtonText: '完成了，所向披靡',
+            cancelButtonText: '再让我鸽下，没准就完成了',
+            type: 'success'
+          }
+        )
       }else{
-        this.postMsg('登录后才能进行相应操作喔', 'info');
+        postMsg('登录后才能进行相应操作喔', 'info');
       }
 
     },
+    cancelFinishTask: function(e){
+      console.log(e);
+      postMsg("别灰心，再战又如何");
+    },
+    initFinishTask: function(){
+      let [id, index, rows, ..._] = arguments;
+      ajaxGet(
+        `http://${this.host}/api/finishTask`, {id: id},
+        this.succFinishTask, this.failFinishTask, [index, rows]
+      )
+    },
+    succFinishTask: function(res){
+      let index = arguments[1],
+          rows = arguments[2]
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      let info = 'error';
+      if(291 == code){
+        info = 'success';
+        rows.splice(index, 1);
+      }
+      postMsg(msg, info);
+    },
+    failFinishTask: function(e){
+      console.log(e);
+      postMsg("任务完成失败")
+    },
+
     update: () => {
       function $(className){
         return document.getElementsByClassName(className)
@@ -396,60 +421,38 @@ export default {
     //   const formatDay = day < 10 ? `0${day}` : day;
     //   return `${year}-${formatMonth}-${formatDay}`
     // }
-    getAsny: function(){
-      this.axios
-        .get(`http://${this.host}/api/task`,{
-          params: {
-            id: this.getUserInfo.uid
-          }
-        })
-        .then(response => {
-          this.todoListData = response.data['data'] || null;
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          let info = 'error';
-          if(292 === code){
-            info = 'success';
-          }
-          if(630 === code){
-            info = '';
-          }
-          this.postMsg(msg, info);
-        })
+
+    initGetTask: function(){
+      ajaxGet(
+        `http://${this.host}/api/task`,{id: this.getUserInfo.uid},
+        this.succGetTask, this.failGetTask
+      )
+    },
+    succGetTask: function(res){
+      this.todoListData = res.data['data'] || null;
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      let info = 'error';
+      if(292 === code){
+        info = 'success';
+      }
+      if(630 === code){
+        info = '';
+      }
+      postMsg(msg, info);
+    },
+    failGetTask: function(e){
+      console.log(e);
+      postMsg('获取任务失败','danger');
     }
+
   },
   mounted(){
     this.$nextTick(() => {
       this.update()
     });
-    this.getAsny();
+    this.initGetTask();
     this.getTaskTag();
-    // this.axios
-    //   .get('../json/todoList.json')
-    //   .then(response => {
-    //     let todoList = response.data;
-    //     // todoList.forEach(el => {
-
-    //     //   // 将字符串日期解析为时间
-    //     //   let endDay = this.parseStringDate(el['endDate']);
-    //     //   let startDay = this.parseStringDate(el['startDate']);
-    //     //   let now = this.parseStringDate(this.formatDate(new Date()));
-
-    //     //   // 持续时间的时间戳
-    //     //   let duringTimestamp = endDay - startDay;
-    //     //   // 剩余时间的时间戳
-    //     //   let leftTimestamp = endDay - now;
-
-    //     //   // 持续时间天数
-    //     //   let duringDay = parseInt(duringTimestamp / (1000 * 60 * 60 * 24));
-    //     //   // 剩余时间天数
-    //     //   let leftDay = parseInt(leftTimestamp / (1000 * 60 * 60 * 24));
-    //     //   todoList['duringDay'] = duringDay;
-    //     //   todoList['leftDay'] = leftDay;
-    //     // })
-    //     this.todoListData = todoList;
-    //   })
-    //   .catch(e => (console.log(e)))
   }
 }
 </script>

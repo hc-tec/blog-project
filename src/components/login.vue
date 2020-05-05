@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import {Card, Button, Input} from 'element-ui';
-
+import { Card, Button, Input } from 'element-ui';
+import { postMsg, ajaxPost } from '../elem_compo_encap'
 export default {
   components: {
     "el-card": Card,
@@ -82,52 +82,58 @@ export default {
         document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/";
     },
     login: function() {
-      this.axios.post(`http://${this.host}/api/login`, `user_name=${this.content['名称']}&password=${this.content['密码']}`)
-        .then(response => {
-        let code = response.data['code'];
-        let msg = response.data['msg'];
-        let info = 'error';
-        //状态码 270 表示登录成功
-        if(270 == code){
-          info = 'success';
-          // 将 Token 读入 cookie 中
-          let token = response.data['token'];
-          this.setCookie('token', token);
+      ajaxPost(
+        `http://${this.host}/api/login`, {
+          user_name: this.content['名称'],
+          password: this.content['密码']
+        },
+        this.succLogin, (e)=>(console.log(e))
+      )
+    },
+    succLogin:  function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      let info = 'error';
+      //状态码 270 表示登录成功
+      if(270 == code){
+        info = 'success';
+        // 将 Token 读入 cookie 中
+        let token = res.data['token'];
+        this.setCookie('token', token);
 
-          let user_info = response.data['data'];
-          // 读取信息
-          this.getUserInfo.uid = user_info['id'];
-          this.getUserInfo.uuser_name = user_info['user_name'];
-          this.getUserInfo.ugender = user_info['gender'];
-          this.getUserInfo.uqq = user_info['qq'];
-          this.getUserInfo.uavatar = user_info['avatar'];
-          this.getUserInfo.friend_card = user_info['friend_card'];
-          this.getUserInfo.uhobby = user_info['hobby'];
-          this.getUserInfo.ugithub = user_info['github'];
-          this.getUserInfo.uprofile = user_info['profile'];
-          this.getUserInfo.uisSubscribe = user_info['isSubscribe'];
-          this.getUserInfo.uregis_time = user_info['regis_time'];
-          this.getUserInfo.uarticle_num = user_info['article_num'];
+        let user_info = res.data['data'];
+        // 读取信息
+        this.getUserInfo.uid = user_info['id'];
+        this.getUserInfo.uuser_name = user_info['user_name'];
+        this.getUserInfo.ugender = user_info['gender'];
+        this.getUserInfo.uqq = user_info['qq'];
+        this.getUserInfo.uavatar = user_info['avatar'];
+        this.getUserInfo.friend_card = user_info['friend_card'];
+        this.getUserInfo.uhobby = user_info['hobby'];
+        this.getUserInfo.ugithub = user_info['github'];
+        this.getUserInfo.uprofile = user_info['profile'];
+        this.getUserInfo.uisSubscribe = user_info['isSubscribe'];
+        this.getUserInfo.uregis_time = user_info['regis_time'];
+        this.getUserInfo.uarticle_num = user_info['article_num'];
 
 
-          this.getUserInfo.power.isLogin = true
-          // 获取用户类型
-          if("超级管理员" === user_info['user_type']){
-            // 获取所有权限
-            this.getUserInfo.user_name = user_info['user_name'];
-            Object.keys(this.getUserInfo.power).forEach(el => {
-              this.$set(this.getUserInfo.power, el, true);
+        this.getUserInfo.power.isLogin = true
+        // 获取用户类型
+        if("超级管理员" === user_info['user_type']){
+          // 获取所有权限
+          this.getUserInfo.user_name = user_info['user_name'];
+          Object.keys(this.getUserInfo.power).forEach(el => {
+            this.$set(this.getUserInfo.power, el, true);
 
-            })
-          }
-          // 登录成功后，延迟 0.5s 回到主页
-          setTimeout(() => {
-          this.$router.push({ path: '/' });
-          }, 500);
+          })
         }
-        // 发送提示消息
-        this.postMsg(msg, info);
-      }).catch(e => console.log(e))
+        // 登录成功后，延迟 0.5s 回到主页
+        setTimeout(() => {
+        this.$router.push({ path: '/' });
+        }, 500);
+      }
+      // 发送提示消息
+      postMsg(msg, info);
     },
     regis: function(){
       this.$router.push('/register/');

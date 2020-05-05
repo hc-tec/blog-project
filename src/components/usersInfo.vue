@@ -88,6 +88,7 @@
 
 <script>
 import { Table, TableColumn } from 'element-ui';
+import { ajaxPost, postMsg } from '../elem_compo_encap'
 export default {
   components: {
     "el-table": Table,
@@ -100,16 +101,22 @@ export default {
   },
   methods: {
     getUsersInfo: function(){
-      this.axios
-        .post(`http://${this.host}/api/usersInfo`)
-        .then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          if(286 === code){
-            this.usersInfo = response.data['data'];
-          }
-          this.postMsg(msg)
-        })
+      ajaxPost(
+        `http://${this.host}/api/usersInfo`,{},
+        this.succGetUserInfo, this.failGetUserInfo
+      )
+    },
+    succGetUserInfo: function(res){
+      let code = res.data['code'];
+      let msg = res.data['msg'];
+      if(286 === code){
+        this.usersInfo = res.data['data'];
+      }
+      this.postMsg(msg)
+    },
+    failGetUserInfo: function(e){
+      console.log(e);
+      postMsg('信息获取失败', 'danger');
     }
   },
   mounted(){

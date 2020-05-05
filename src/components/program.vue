@@ -133,7 +133,7 @@
             v-for="(tag,index) in tags"
             :key="tag"
 
-            @click="getArticleByTag(index)">
+            @click="initGetArticleByTag(index)">
             {{ tag }}
           </el-button>
         </div>
@@ -175,7 +175,8 @@
 
 
 <script>
-import {Dropdown, DropdownMenu, DropdownItem, Button, Pagination} from 'element-ui';
+import { Dropdown, DropdownMenu, DropdownItem, Button, Pagination } from 'element-ui';
+import { ajaxPost, ajaxGet, elconfirm, elprompt, postMsg } from '../elem_compo_encap'
 let marked = require('marked');
 let hljs = require('highlight.js');
 import 'highlight.js/styles/default.css';
@@ -233,36 +234,49 @@ export default {
     subscribe: function(){
       // 若为登录用户
       if(this.getUserInfo.power.isLogin){
-        this.$confirm('确定订阅以了解博文更新消息吗？', '订阅框框', {
-          confirmButtonText: '确定订阅',
-          cancelButtonText: '取消订阅',
-        }).then(() => {
-          this.ajax(`http://${this.host}/api/subscribe`,
-                  {'email':`${this.getUserInfo.uqq}@qq.com`},
-                  this.subscribeSuccess, this.subscribeError)
-        })
+        const title = '订阅框框';
+        const tip_text = '确定订阅以了解博文更新消息吗？';
+        elconfirm(
+          title, tip_text,
+          "", this.initSubscribe,
+          (e)=>{}
+        )
       } else {
-        this.$prompt('订阅有助于您及时了解博文更新消息，输入邮箱即可订阅', '订阅框框', {
-          confirmButtonText: '确定订阅',
-          cancelButtonText: '取消订阅',
-          inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
-          inputErrorMessage: '邮箱格式不正确'
-        }).then(({value}) => {
-          this.ajax(`http://${this.host}/api/subscribe`,
-                    params={'email':value},
-                    this.subscribeSuccess, this.subscribeError)
-        })
+        const title = '订阅框框';
+        const tip_text = '订阅有助于您及时了解博文更新消息，输入邮箱即可订阅';
+        elprompt(
+          title, tip_text,
+          this.initAnnoySubscribe, (e)=>(console.log(e)),
+          false, {
+            confirmButtonText: '确定订阅',
+            cancelButtonText: '取消订阅',
+            inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+            inputErrorMessage: '邮箱格式不正确'
+          }
+        )
       }
     },
-    subscribeSuccess: function(data){
+    initSubscribe: function(){
+      ajaxGet(
+        `http://${this.host}/api/subscribe`, {
+          'email':`${this.getUserInfo.uqq}@qq.com`
+        },
+        this.subscribeSuccess, (e)=>(console.log(e))
+      )
+    },
+    initAnnoySubscribe: function(value){
+      ajaxGet(
+        `http://${this.host}/api/subscribe`, {'email':value},
+        this.subscribeSuccess, this.subscribeError
+      )
+    },
+    subscribeSuccess: function(res){
+      let data = res.data;
       if(299 === data['code']){
         this.postMsg(data['msg'], 'success');
       } else {
         this.postMsg(data['msg'], 'danger');
       }
-    },
-    subscribeError: function(e){
-      console.log(e);
     },
     updateMathJax: function(){
       setTimeout(() => {
@@ -270,29 +284,27 @@ export default {
       },2000)
     },
     getAllArticlesByCategory: function(){
-      this.getArticle(1);
+      this.initGetArticle(1);
     },
     getArticleByCategory: function(index){
       let name = this.category[index];
-      this.axios
-        .get(`http://${this.host}/api/categoryArticle`,{
-          params: {
-            name: name
-          }
-        }).then(response => {
-          this.data = response.data['data'] || null;
-        }).catch(e => console.log(e))
+      ajaxGet(
+        `http://${this.host}/api/categoryArticle`,{name: name},
+        this.succGetArticleByCategory, (e)=>(console.log(e))
+      )
     },
-    getArticleByTag: function(index){
+    succGetArticleByCategory: function(res){
+      this.data = res.data['data'] || null;
+    },
+    initGetArticleByTag: function(index){
       let name = this.tags[index];
-      this.axios
-        .get(`http://${this.host}/api/tagArticle`,{
-          params: {
-            name: name
-          }
-        }).then(response => {
-          this.data = response.data['data'] || null;
-        }).catch(e => console.log(e))
+      ajaxGet(
+        `http://${this.host}/api/tagArticle`,{name: name},
+        this.succGetArticleByCategory, (e)=>(console.log(e))
+      )
+    },
+    succGetArticleByTag: function(res){
+      this.data = response.data['data'] || null;
     },
     mark: (para) => {
       return marked((para.slice(0, 140) + '......') || '')
@@ -309,28 +321,37 @@ export default {
     delArticle: function(el){
       let [index,id] = el.currentTarget.parentNode.parentNode.children[0].getAttribute('id').split('-');
       this.delArticleId = id;
-      this.$confirm('真的要把我删掉 mia ？, 是否继续?', '删除框框', {
-        confirmButtonText: '狠心',
-        cancelButtonText: '取消',
-        type: 'danger'
-      }).then(() => {
-        this.axios
-          .get(`http://${this.host}/api/delArticle`,{
-            params: {
-              id: this.delArticleId
-            }
-          }).then(response => {
-            let data = response.data;
-            let code = data['code'];
-            let msg = data['msg'];
-            if(281 === code){
-              this.data.splice(index, 1);
-              this.postMsg(msg, 'success');
-            } else {
-              this.postMsg(msg, 'error');
-            }
-          })
-      })
+
+      const title = '删除框框';
+      const tip_text = '真的要把我删掉 mia ？, 是否继续?';
+      elconfirm(
+        title, tip_text,
+        [index], this.initDelArticle,
+        (e)=>(console.log(e),
+        false, {
+          confirmButtonText: '狠心',
+          cancelButtonText: '取消',
+          type: 'danger'
+        })
+      )
+    },
+    initDelArticle: function(){
+      ajaxGet(
+        `http://${this.host}/api/delArticle`,{id: this.delArticleId},
+        this.succDelArticle, (e)=>(console.log(e)), arguments
+      )
+    },
+    succDelArticle: function(res){
+      let index = arguments[1];
+      let data = res.data;
+      let code = data['code'];
+      let msg = data['msg'];
+      if(281 === code){
+        this.data.splice(index, 1);
+        this.postMsg(msg, 'success');
+      } else {
+        this.postMsg(msg, 'error');
+      }
     },
     modiPara: (para) => {
       return para.slice(0, 100) + "......"
@@ -341,150 +362,77 @@ export default {
       else
         return `<span class="other">${sour}</span>`
     },
-    moveEnter: (el) => {
-      let childList = el.currentTarget.children
-      let len = childList.length
-      let a = childList[len-1]
-      a.style.top = 0
-    },
-    moveLeave: (el) => {
-      let childList = el.currentTarget.children
-      let len = childList.length
-      let a = childList[len-1]
-      a.style.top = "-100px"
-    },
-    navModi: (el) => {
-      let ele = el.currentTarget
-      ele.children[0].classList.add("activeSpan")
-    },
-    navCut: (el) => {
-      let ele = el.currentTarget
-      ele.children[0].classList.remove("activeSpan")
-    },
-    navGetLink: (el) => {
-      let ele = el.currentTarget
-      let archorId = ele.getAttribute('class')
-      document.getElementById(archorId).scrollIntoView()
-      // ele.classList.add("active")
-      // ele.children[0].classList.add("activeSpan")
-      // //兄弟节点清楚样式
-      // var p = ele.parentNode.children
-      // for(var i =0,pl= p.length;i<pl;i++) {
-      //   if(p[i] !== ele) {
-      //     p[i].classList.remove("active")
-      //     p[i].children[0].classList.remove('activeSpan')
-      //   }
-      // }
-    },
-    scroll: function(){
-      if(this.flag){
-        this.flag = false
-        var liFlag = false
-        var eleFlag = null
-        let divParent = document.getElementById("part")
-
-        let childList = divParent.querySelectorAll("p")
-        let ulParent = document.getElementsByClassName("navUl")
-        let lichildList = ulParent[0].children
-        let pList = []
-        let bodyTop = window
-        //获取所有匹配的 p 元素
-        for(let j=0;j<childList.length;j++){
-          let id = childList[j].getAttribute("id")
-          if(id !== null)
-            pList.push(childList[j])
-        }
-        let currentScrollPosition = window.pageYOffset
-        for(let p of pList){
-          if(30 >= (p.offsetTop-currentScrollPosition)){
-            let className = p.id
-            let li = document.getElementsByClassName(className)
-
-            li[0].classList.add("active")
-            li[0].children[0].classList.add("activeSpan")
-            liFlag = true
-            eleFlag = li[0]
-          }
-          if(liFlag){
-            for(let li of lichildList){
-              if(li !== eleFlag){
-                li.classList.remove("active")
-                li.children[0].classList.remove("activeSpan")
-              }
-            }
-          }
-        }
-        var se = setInterval(() => {
-          this.flag = true
-          clearInterval(se)
-        }, 0);
-      }
-    },
     pageChange: function(page){
-      this.getArticle(page);
+      this.initGetArticle(page);
     },
-    getArticle: function(page){
-      this.axios
-        .get(`http://${this.host}/api/articles`, {
-          params: {
-            page: page
-          }
-        })
-        .then(response => {
-          this.total = response.data['count'] || 0;
-          this.data = response.data['results'] || {};
-          this.next = response.data['next'] || null;
-          this.prev = response.data['previous'] || null;
-          response.data['current_page'] = page;
-          this.articles.articles = response.data || null;
-        })
+    initGetArticle: function(page){
+      ajaxGet(
+        `http://${this.host}/api/articles`,{page: page},
+        this.succGetArticle, (e)=>(console.log(e)), arguments
+      )
       window.scrollTo(0, 0);
     },
-    getTag: function(){
-      this.axios
-        .get(`http://${this.host}/api/tags`)
-        .then(response => {
-          let code = response.data['code'];
-          if(277 == code){
-            this.tags = response.data['data'];
-            this.articles.tags = response.data['data'];
-          }else{
-            let msg = response.data['msg'];
-            this.postMsg(msg, 'error');
-          }
-        }).catch(e => console.log(e));
+    succGetArticle: function(res){
+      let page = arguments[1];
+      this.total = res.data['count'] || 0;
+      this.data = res.data['results'] || {};
+      this.next = res.data['next'] || null;
+      this.prev = res.data['previous'] || null;
+      res.data['current_page'] = page;
+      this.articles.articles = res.data || null;
     },
-    getUpdateOrModifyArticle: function(){
-      this.axios.get(`http://${this.host}/api/updateArticle`)
-        .then(response => {
-          this.update_or_modify_articles = response.data.data;
-          this.$forceUpdate();
-        })
+    initGetTag: function(){
+      ajaxGet(
+        `http://${this.host}/api/tags`, {},
+        this.succGetTag, (e)=>(console.log(e))
+      )
     },
-    getCategory: function(){
-      this.axios
-        .get(`http://${this.host}/api/category`)
-        .then(response => {
-          let code = response.data['code'];
-          if(278 == code){
-            this.category = response.data['data'];
-            this.articles.category = response.data['data'];
-          }else{
-            let msg = response.data['msg'];
-            this.postMsg(msg, 'error');
-          }
-        }).catch(e => console.log(e));
+    succGetTag: function(res){
+      let code = res.data['code'];
+      if(277 == code){
+        this.tags = res.data['data'];
+        this.articles.tags = res.data['data'];
+      }else{
+        let msg = res.data['msg'];
+        this.postMsg(msg, 'error');
+      }
+    },
+    initGetUpdateOrModifyArticle: function(){
+      ajaxGet(
+        `http://${this.host}/api/updateArticle`, {},
+        this.succGetUpdateOrModifyArticle, (e)=>(console.log(e))
+      )
+    },
+    succGetUpdateOrModifyArticle: function(res){
+      this.update_or_modify_articles = res.data.data;
+      this.$forceUpdate();
+    },
+    initGetCategory: function(){
+      ajaxGet(
+        `http://${this.host}/api/category`, {},
+        this.succGetCategory, (e)=>(console.log(e))
+      )
+    },
+    succGetCategory: function(res){
+      let code = res.data['code'];
+      if(278 == code){
+        this.category = res.data['data'];
+        this.articles.category = res.data['data'];
+      }else{
+        let msg = res.data['msg'];
+        postMsg(msg, 'error');
+      }
     },
     canGetTags: function(){
       if(null === this.articles.tags){
-        this.getTag();
+        this.initGetTag();
       } else {
         this.tags = this.articles.tags;
       }
     },
     canGetCategory: function(){
       if(null === this.articles.category){
-        this.getCategory();
+        this.initGetCategory();
       } else {
         this.category = this.articles.category;
       }
@@ -492,7 +440,7 @@ export default {
   },
   mounted(){
     if(this.articles.articles === null || this.articles.isWrite){
-      this.getArticle(1);
+      this.initGetArticle(1);
       this.articles.isWrite = false;
     } else {
       this.total = this.articles.articles['count'] || 0;
@@ -503,7 +451,7 @@ export default {
     }
     this.canGetCategory();
     this.canGetTags();
-    this.getUpdateOrModifyArticle();
+    this.initGetUpdateOrModifyArticle();
   },
 }
 </script>

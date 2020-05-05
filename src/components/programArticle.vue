@@ -199,7 +199,7 @@
 
 <script>
 import { Divider, Popover, Button, Pagination } from 'element-ui';
-
+import { ajaxGet, ajaxPost, postMsg } from '../elem_compo_encap';
 import {
   TwemojiTextarea
 } from '@kevinfaguiar/vue-twemoji-picker';
@@ -276,6 +276,7 @@ export default {
       return EmojiGroups;
     },
     custormAnchor(id){
+      // 锚点的函数实现
       let el = document.getElementById(id);
       el.scrollIntoView();
     },
@@ -437,9 +438,36 @@ export default {
       // 滑动至评论组件
       document.getElementById('container').scrollIntoView()
     },
-    submitComment: function(data){
+
+    initSubmitComment: function(){
+      let message = document.getElementById('twemoji-textarea').innerHTML;
+      message = message.replace(/alt=\"\s*\S*\"/g, '');
+      if(!this.reply){
+        ajaxGet(
+          `http://${this.host}/api/addComment`, {
+            user: this.getUserInfo.uid,
+            blog: Number(this.id),
+            message: message
+          }, this.succSubmitComment, this.failSubmitComment
+        )
+      } else {
+        let data = {
+          user: this.getUserInfo.uid,
+          replied_comment: this.replied_comment_id,
+          message: message
+        }
+        ajaxPost(
+          `http://${this.host}/api/addComment`, data,
+          this.succSubmitComment, this.failSubmitComment
+        )
+        // let data = `user=${this.getUserInfo.uid}&replied_comment=${this.replied_comment_id}&message=${message}`;
+        // this.post(`http://${this.host}/api/addComment`, data, this.succSubmitComment, this.failSubmitComment);
+      }
+    },
+    succSubmitComment: function(res){
+      let data = res.data;
       if(data.code === 1200){
-        this.postMsg('评论发表成功', 'success');
+        postMsg('评论发表成功', 'success');
         if(this.reply) {
           this.pageChange(this.current_page);
           // 取消回复模式
@@ -451,39 +479,27 @@ export default {
         // 清空输入框
         document.getElementById('twemoji-textarea').innerHTML = "";
       } else {
-        this.postMsg(data.msg, 'danger')
+        postMsg(data.msg, 'danger')
       }
     },
     failSubmitComment(e){
-      this.postMsg('评论失败', "danger")
+      postMsg('评论失败', "danger")
       console.log(e)
     },
-    initSubmitComment: function(){
-      let message = document.getElementById('twemoji-textarea').innerHTML;
-      message = message.replace(/alt=\"\s*\S*\"/g, '');
-      if(!this.reply){
-        this.ajax(`http://${this.host}/api/addComment`,{
-          user: this.getUserInfo.uid,
-          blog: Number(this.id),
-          message: message
-        }, this.submitComment, this.failSubmitComment)
-      } else {
-        let data = `user=${this.getUserInfo.uid}&replied_comment=${this.replied_comment_id}&message=${message}`;
-        this.post(`http://${this.host}/api/addComment`, data, this.submitComment, this.failSubmitComment);
-      }
+
+    ajaxInitComment: function(page){
+      ajaxGet(
+        `http://${this.host}/api/showArticleComment/${this.id}`, {
+          page: page
+        }, this.succGetComment, (e)=>(console.log(e))
+      )
     },
-    getComment: function(data){
+    succGetComment: function(res){
+      let data = res.data;
       this.total = data.count;
       this.comment = data.results;
     },
-    failGetComment: function(e){
-      console.log(e);
-    },
-    ajaxInitComment: function(page){
-      this.ajax(`http://${this.host}/api/showArticleComment/${this.id}`,{
-        page: page
-      }, this.getComment, this.failGetComment)
-    },
+
     slide: function(){
       let info_column = document.getElementsByClassName("info")[0];
       let span_arrow = document.getElementById('uarrow');
@@ -500,38 +516,38 @@ export default {
         this.canSlideOut = true;
       }
     },
+
     getAuthorInfoAjax: function(){
       let params = {'user_name':this.article.creator.user_name};
-      this.ajax(`http://${this.host}/api/userInfo`,params, this.getAuthorInfo, this.failToGetAuthorInfo)
+      ajaxGet(
+        `http://${this.host}/api/userInfo`,params,
+        this.succGetAuthorInfo, (e)=>(console.log(e))
+      )
     },
-    getAuthorInfo: function(data){
-      this.authorInfo = data.data[0];
+    succGetAuthorInfo: function(res){
+      this.authorInfo = res.data.data[0];
     },
-    failToGetAuthorInfo: function(e){
-      console.log(e);
-    },
+
     mark: function(para) {
       return marked(para || '');
     },
     getArticle: function(){
-      this.axios
-      .get(`http://${this.host}/api/article`,{
-        params: {
-          id: this.id
-        }
-      })
-      .then(response => {
-        let data = response.data;
-        let code = data['code'];
-        let msg = data['msg'];
-        if(279 === code){
-          this.article = data['data'];
-        } else {
-          this.postMsg(msg, 'error');
-        }
-      })
-      .catch(e => console.log(e))
+      ajaxGet(
+        `http://${this.host}/api/article`,{id: this.id},
+        this.succGetArticle, (e)=>(console.log(e))
+      )
     },
+    succGetArticle: function(res){
+      let data = res.data;
+      let code = data['code'];
+      let msg = data['msg'];
+      if(279 === code){
+        this.article = data['data'];
+      } else {
+        postMsg(msg, 'error');
+      }
+    },
+
     initGet: function(){
       if(null === this.articles.articles){
       this.getArticle();
@@ -550,9 +566,10 @@ export default {
       }
     },
     updateClickNum: function(){
-      this.ajax(`http://${this.host}/api/clickNum`,{
-        id: this.id,
-      }, ()=>{}, (e)=>{console.log(e)})
+      ajaxGet(
+        `http://${this.host}/api/clickNum`,{id: this.id},
+        ()=>{}, (e)=>{console.log(e)}
+      )
     }
   },
   mounted(){

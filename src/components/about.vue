@@ -52,7 +52,6 @@
           篇博文
           <i class="el-icon-folder-checked"></i>
         </div>
-
       </div>
 
       <div class="figure">

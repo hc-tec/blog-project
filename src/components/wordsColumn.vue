@@ -29,6 +29,7 @@
   </div>
 </template>
 <script>
+import { mergeDict } from '../func'
 export default {
   data(){
     return {
@@ -72,7 +73,7 @@ export default {
       this.axios
         .get('./json/words.json')
         .then(response => {
-          this.tmpDict = this.mergeDict(this.tmpDict, response.data);
+          this.tmpDict = mergeDict(this.tmpDict, response.data);
           this.init(response.data);
         })
         .catch(function(e){
@@ -81,7 +82,7 @@ export default {
       this.axios
         .get("http://47.115.147.39/words.php")
         .then(response => {
-          this.tmpDict = this.mergeDict(this.tmpDict, response.data);
+          this.tmpDict = mergeDict(this.tmpDict, response.data);
           this.init(response.data);
         })
         .catch(e => console.log(e))

@@ -24,7 +24,8 @@
 </template>
 
 <script>
-import {Link} from 'element-ui';
+import { Link } from 'element-ui';
+import { postMsg } from '../elem_compo_encap'
 export default {
   components: {
     "el-link": Link
@@ -74,7 +75,7 @@ export default {
       Object.keys(this.getUserInfo.power).forEach(el => {
         this.$set(this.getUserInfo.power, el, false);
       })
-      this.postMsg('已退出登录状态', 'success');
+      postMsg('已退出登录状态', 'success');
     }
   }
 }
