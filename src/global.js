@@ -2,7 +2,7 @@ export default {
   install(Vue, options) {
     // localhost:8000
     // 39.100.22.224
-    Vue.prototype.host = '39.100.22.224';
+    Vue.prototype.host = 'localhost:8001';
 
     Vue.prototype.getUserInfo = {
       uid: 1,
