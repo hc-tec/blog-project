@@ -1,31 +1,7 @@
 <template>
-  <!-- <div id="pageHead">
-    <div id="nav">
-        <ul>
-          <li style="padding:.6% 0 0 10%;margin-right:10%;">
-            <router-link id="img" to="/">
-               <img src="../assets/img/person_img.jpg" width="50" />
-            </router-link>
-          </li>
-          <li v-for="item in navList">
-            <template v-for="site,name in item">
-              <router-link :to="site" v-html="name"></router-link>
-            </template>
-          </li>
-        </ul>
-    </div>
-  </div> -->
   <div class="area">
         <nav class="main-menu" id="menu">
             <ul>
-
-                <!-- <li v-show="!this.getUserInfo.isLogin">
-                  <router-link to="/login">
-                  <i class="el-icon-lollipop" :style="iconStyle"></i>
-                  <span class="nav-text">登录</span>
-                  </router-link>
-                </li> -->
-
                 <li v-for="(ele) in this.navList" :key="ele.link">
                   <router-link :to="ele['link']" class="waves-effect">
                     <i
@@ -34,7 +10,6 @@
                     ></i>
                   </router-link>
                 </li>
-
                 <el-dropdown>
                   <li>
                     <router-link to="">
@@ -67,10 +42,15 @@
 </template>
 
 <script>
+import {Dropdown, DropdownMenu, DropdownItem} from 'element-ui';
 
 export default {
+  components: {
+    "el-dropdown": Dropdown,
+    "el-dropdown-menu": DropdownMenu,
+    "el-dropdown-item": DropdownItem,
+  },
   name: "pageHead",
-  // props: ["navList"],
   data () {
     return {
       iconStyle: {

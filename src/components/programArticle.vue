@@ -22,7 +22,8 @@
           slot="reference"
           icon="el-icon-warning-outline"
           @click="unshowCatalog"
-          circle></el-button>
+          circle>
+        </el-button>
       </el-popover>
       <ul class="catalog-list">
         <li v-for="(h1v,h1k) in catalog_tree" :key="h1k">
@@ -197,6 +198,7 @@
 </template>
 
 <script>
+import { Divider, Popover, Button, Pagination } from 'element-ui';
 
 import {
   TwemojiTextarea
@@ -228,6 +230,9 @@ marked.setOptions({
       }
   });
 
+
+
+
 export default {
   data(){
     return {
@@ -254,7 +259,11 @@ export default {
     }
   },
   components: {
-    'twemoji-textarea': TwemojiTextarea
+    'twemoji-textarea': TwemojiTextarea,
+    "el-divider": Divider,
+    "el-popover": Popover,
+    "el-button": Button,
+    "el-pagination": Pagination,
   },
   methods: {
     onEnterKey(e) {

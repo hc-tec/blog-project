@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { Tabs, TabPane } from 'element-ui'
 import ip from '../components/ip'
 import img_admin from '../components/img'
 import users from '../components/usersInfo'
@@ -20,6 +21,8 @@ export default {
     ip,
     img_admin,
     users,
+    "el-tabs": Tabs,
+    "el-tab-pane": TabPane,
   }
 }
 </script>

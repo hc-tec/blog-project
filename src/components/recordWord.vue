@@ -88,7 +88,14 @@
 </template>
 
 <script>
+import {Input, Form, FormItem, Button} from 'element-ui';
 export default {
+  components: {
+    "el-input": Input,
+    "el-form": Form,
+    "el-form-item": FormItem,
+    "el-button": Button,
+  },
   data(){
     return {
       phrase: {

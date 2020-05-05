@@ -99,7 +99,18 @@
 </template>
 
 <script>
+import {Card, Form, FormItem, Button, Input, Upload, Radio, RadioGroup} from 'element-ui';
 export default {
+  components: {
+    "el-card": Card,
+    "el-form": Form,
+    "el-form-item": FormItem,
+    "el-button": Button,
+    "el-input": Input,
+    "el-upload": Upload,
+    "el-radio": Radio,
+    "el-radio-group": RadioGroup
+  },
   data() {
     return {
       imageUrl: "",

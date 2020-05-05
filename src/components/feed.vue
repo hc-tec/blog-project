@@ -31,12 +31,6 @@
   </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
 .feed {
   line-height: 1.75;

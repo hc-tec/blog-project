@@ -13,6 +13,17 @@
   </el-backtop>
 </template>
 
+<script>
+import { Backtop, Icon } from 'element-ui';
+
+export default {
+  components: {
+    "el-backtop": Backtop,
+    "el-icon": Icon,
+  }
+}
+</script>
+
 <style>
 .el-icon-caret-top {
   height: auto;

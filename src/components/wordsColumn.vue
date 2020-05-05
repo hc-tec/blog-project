@@ -17,7 +17,7 @@
         <p>Word</p>
         <p>Time</p>
       </div>
-      <div v-for="index in displayWordNum">
+      <div v-for="index in displayWordNum" :key="index">
         <router-link :to="'word/'+wordsList[wordsNum-index]">
           <p :style="clear">{{ wordsList[wordsNum-index] }}</p>
         </router-link>

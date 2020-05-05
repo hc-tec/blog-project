@@ -191,7 +191,23 @@
 </template>
 
 <script>
+import {Input, Form, FormItem, Button, Select, Option,
+         Col, DatePicker, Table, TableColumn, Tooltip, Tag} from 'element-ui';
 export default {
+  components: {
+    "el-input": Input,
+    "el-form": Form,
+    "el-form-item": FormItem,
+    "el-button": Button,
+    "el-select": Select,
+    "el-option": Option,
+    "el-col": Col,
+    "el-date-picker": DatePicker,
+    "el-table": Table,
+    "el-table-column": TableColumn,
+    "el-tooltip": Tooltip,
+    "el-tag": Tag,
+  },
   data(){
     return {
       todoListData: null,

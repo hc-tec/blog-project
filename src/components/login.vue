@@ -34,8 +34,14 @@
 </template>
 
 <script>
-import Qs from 'qs'
+import {Card, Button, Input} from 'element-ui';
+
 export default {
+  components: {
+    "el-card": Card,
+    "el-button": Button,
+    "el-input": Input,
+  },
   data(){
     return {
       info: {

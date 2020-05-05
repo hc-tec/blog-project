@@ -26,7 +26,15 @@
 </template>
 
 <script>
+import {Timeline, TimelineItem, Card, RadioGroup, Radio} from 'element-ui';
 export default {
+  components: {
+    "el-timeline": Timeline,
+    "el-timeline-item": TimelineItem,
+    "el-card": Card,
+    "el-radio-group": RadioGroup,
+    "el-radio": Radio
+  },
   data(){
     return {
       reverse: false,

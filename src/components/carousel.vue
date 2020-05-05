@@ -16,8 +16,13 @@
 </template>
 
 <script>
+import { Carousel,CarouselItem } from 'element-ui';
+
 export default {
-  props: [""],
+  components: {
+    "el-carousel": Carousel,
+    "el-carousel-item": CarouselItem,
+  },
   data(){
     return {
       carou_img: null,

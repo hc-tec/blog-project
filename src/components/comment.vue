@@ -26,7 +26,8 @@
     type="primary"
     id="submit"
     @click="submit()"
-    round>提交</el-button>
+    round>提交
+  </el-button>
   </div>
 
     <div class="comment" v-for="message in messages" :key="message['id']">
@@ -82,8 +83,15 @@
 </template>
 
 <script>
+import { Tooltip, Input, Button } from 'element-ui';
+import { postMsg } from '../elem_compo_encap'
 import Qs from 'qs'
 export default {
+  components: {
+    "el-tooltip": Tooltip,
+    "el-input": Input,
+    "el-button": Button,
+  },
   data(){
     return {
       info: {
@@ -138,12 +146,6 @@ export default {
           span.style.opacity = ".5";
         }
     },
-    postMsg: function(msg, info) {
-        this.$message({
-            message: msg,
-            type: info,
-        })
-    },
     submit: function() {
         let data = {
           "name": this.getUserInfo.uuser_name === 'annoy' ? this.content["名称"] : this.getUserInfo.uuser_name,
@@ -173,7 +175,7 @@ export default {
             }
           }
           this.get_messages();
-          this.postMsg(msg, info);
+          postMsg(msg, info);
         }).catch(e => console.log(e))
     },
     get_messages(){
@@ -181,12 +183,6 @@ export default {
         .get('http://47.115.147.39/message.php')
         .then(response => {
           this.messages = response.data['comment'];
-        })
-    },
-    postMsg: function(msg, info) {
-        this.$message({
-            message: msg,
-            type: info,
         })
     },
     editMsg(el){
@@ -206,7 +202,7 @@ export default {
             info = 'error';
           }
           this.get_messages();
-          this.postMsg(msg, info);
+          postMsg(msg, info);
         })
     }
   },

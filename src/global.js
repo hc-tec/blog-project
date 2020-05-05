@@ -3,6 +3,7 @@ export default {
     // localhost:8000
     // 39.100.22.224
     Vue.prototype.host = '39.100.22.224';
+
     Vue.prototype.getUserInfo = {
       uid: 1,
       uuser_name: "annoy",
@@ -40,6 +41,26 @@ export default {
       })
     },
 
+    Vue.prototype.notify = function(title, msg, type) {
+      this.$notify({
+        title: title,
+        message: msg,
+        type: type
+      });
+    }
+
+    Vue.prototype.ajax = function(url, params={}, resolve, reject){
+      this.axios.get(url, {params:params})
+        .then(response => resolve(response.data))
+        .catch(e => reject(e))
+    }
+
+    Vue.prototype.post = function(url, data, resolve, reject){
+      this.axios.post(url, data)
+        .then(response => resolve(response.data))
+        .catch(e => reject(e))
+    }
+
     // 字典合并
     Vue.prototype.mergeDict = function(dict_1, dict_2){
       let mergeList = [...Object.keys(dict_1), ...Object.keys(dict_2)];
@@ -49,6 +70,7 @@ export default {
       }
       return mergeObject;
     },
+
 
     Vue.prototype.navList = [
       {

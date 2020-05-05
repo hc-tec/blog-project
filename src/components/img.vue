@@ -21,7 +21,11 @@
 </template>
 
 <script>
+import {Image} from 'element-ui';
 export default {
+  components: {
+    "el-image": Image,
+  },
   data(){
     return {
       img_list: [],

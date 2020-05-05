@@ -87,7 +87,12 @@
 </template>
 
 <script>
+import { Table, TableColumn } from 'element-ui';
 export default {
+  components: {
+    "el-table": Table,
+    "el-table-column": TableColumn,
+  },
   data(){
     return {
       usersInfo: [],

@@ -56,7 +56,13 @@
 </template>
 
 <script>
+import {Table, TableColumn, Button} from 'element-ui';
 export default {
+  components: {
+    "el-table": Table,
+    "el-table-column": TableColumn,
+    "el-button": Button,
+  },
   data(){
     return {
       vistorData: null,

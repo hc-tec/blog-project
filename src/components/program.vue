@@ -175,7 +175,7 @@
 
 
 <script>
-
+import {Dropdown, DropdownMenu, DropdownItem, Button, Pagination} from 'element-ui';
 let marked = require('marked');
 let hljs = require('highlight.js');
 import 'highlight.js/styles/default.css';
@@ -199,6 +199,13 @@ marked.setOptions({
   });
 
 export default {
+  components: {
+    "el-dropdown": Dropdown,
+    "el-dropdown-menu": DropdownMenu,
+    "el-dropdown-item": DropdownItem,
+    "el-button": Button,
+    "el-pagination": Pagination
+  },
   data(){
     return {
 
@@ -224,6 +231,7 @@ export default {
       this.$router.push(`/web/${id}`);
     },
     subscribe: function(){
+      // 若为登录用户
       if(this.getUserInfo.power.isLogin){
         this.$confirm('确定订阅以了解博文更新消息吗？', '订阅框框', {
           confirmButtonText: '确定订阅',

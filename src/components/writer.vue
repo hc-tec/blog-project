@@ -114,7 +114,6 @@
 </template>
 
 <script>
-import Qs from 'qs'
 let marked = require('marked');
 let hljs = require('highlight.js');
 import 'highlight.js/styles/default.css';
@@ -136,8 +135,22 @@ marked.setOptions({
           }
       }
   });
+import { Form, FormItem, Input, Select, Option,
+         Button, CheckboxGroup, CheckboxButton } from 'element-ui';
+
+import postMsg from '../elem_compo_encap';
 
 export default {
+    components: {
+      "el-form": Form,
+      "el-form-item": FormItem,
+      "el-input": Input,
+      "el-select": Select,
+      "el-option": Option,
+      "el-button": Button,
+      "el-checkbox-group": CheckboxGroup,
+      "el-checkbox-button": CheckboxButton,
+    },
     data(){
         return {
             article: {

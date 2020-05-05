@@ -1,7 +1,7 @@
 <template>
   <div class="comment-info">
     <h1>留言</h1>
-    <div class="arti_cont" v-for="eng, hans in info">
+    <div class="arti_cont" v-for="(eng, hans) in info" :key="eng">
       <span class="title" ref="title">{{ eng }}</span>
       <label>{{ hans }}</label>
       <el-input
@@ -20,8 +20,12 @@
 </template>
 
 <script>
+import {Input} from 'element-ui'
 import Qs from 'qs'
 export default {
+  components: {
+    "el-input": Input,
+  },
   data(){
     return {
         info: {
@@ -55,12 +59,6 @@ export default {
           span.style.top = "6px";
           span.style.opacity = ".5";
         }
-    },
-    postMsg: function(msg, info) {
-        this.$message({
-            message: msg,
-            type: info,
-        })
     },
     submit: function() {
         let data = {

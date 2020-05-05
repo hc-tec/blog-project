@@ -24,7 +24,11 @@
 </template>
 
 <script>
+import {Link} from 'element-ui';
 export default {
+  components: {
+    "el-link": Link
+  },
   data(){
     return {
       isLogin: this.getUserInfo.power.isLogin
