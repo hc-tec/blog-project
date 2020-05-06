@@ -4,103 +4,18 @@
     <!-- 页面左侧信息：几篇文章的缩略展示 -->
     <div class="article-content">
       <div id="part">
-        <div class="content" v-for="(essay,index) in data" :key="essay['title']">
-          <div class="program-content">
-              <!-- 头像 -->
-              <div id="avatar">
-                <img :src="essay['avatar']"/>
-              </div>
-              <!-- 评论数量 -->
-              <span
-                class="comment_num"
-                title="评论数">
-                <i class="el-icon-chat-line-square"> </i>
-                {{ essay['comment_num'] }}
-              </span>
-              <!-- 标题 -->
-              <p class="title">{{ essay['title'] }}</p>
-              <!-- 文章信息：创作时间、类别、阅览数、标签 -->
-              <div class="article-info">
-                <span
-                  title="创作时间">
-                  <i class="el-icon-date"></i>
-                  {{ essay['create_time'] }} •
-                </span>
+        <!-- 文章展示 -->
+        <article-display
+          v-for="(essay,index) in data"
+          :key="essay['title']"
+          :essay="essay"
+          :index="index"
+          @mark="mark($event)"
+          @toArticle="toArticle($event)"
+          @delArticle="delArticle($event)"
+          @editArticle="editArticle($event)">
+        </article-display>
 
-                <span
-                  style="font-family:Constantia, 华文中宋, 宋体, serif!important;"
-                  :title="'类别:'+essay['category']">
-                  <i class="el-icon-data-analysis"></i>
-                  {{ essay['category'] }} •
-                </span>
-
-                <span
-                  title="阅读次数">
-                  <i class="el-icon-view"></i>
-                  {{ essay['click_num'] }}
-                </span>
-
-                <span
-                  v-for="(tag) in essay['tags']"
-                  :key="tag"
-                  :title="tag">
-                  • <i class="el-icon-price-tag"></i>
-                  {{ tag }}
-                </span>
-              </div>
-              <!-- 文章内容 -->
-              <div v-html="mark(essay['content'])" class="markdown"></div>
-              <!-- 文章左上侧的创作者名称 -->
-              <div class="tagGroup">
-                <span
-                  id="creator"
-                  title="创作者">
-                  <i class="el-icon-user"></i>
-                  {{ essay['creator']['user_name'] }}
-                </span>
-              </div>
-              <!-- 文章操作：编辑、删除 -->
-              <el-dropdown
-                class="work-btn"
-                v-if="getUserInfo.power.isLogin">
-                <span class="el-dropdown-link">
-                  <i class="el-icon-more"></i>
-                </span>
-                <el-dropdown-menu>
-
-                  <el-dropdown-item :id="index+'-'+essay['id']" class="waves-effect">
-                    <span
-                      @click="editArticle($event)"
-                      style="color: #409eff;">
-                      <i class="el-icon-edit"> 编辑</i>
-                    </span>
-                  </el-dropdown-item>
-
-                  <el-dropdown-item class="waves-effect">
-                    <span
-                      @click="delArticle($event)"
-                      style="color: red;"
-                      v-if="getUserInfo.power.delArticle">
-                      <i class="el-icon-delete"> 删除</i>
-                    </span>
-                  </el-dropdown-item>
-
-                </el-dropdown-menu>
-              </el-dropdown>
-              <!-- 查看更多按钮 -->
-              <div
-                class="lookmore waves-effect waves-float"
-                @click="toArticle(essay.id)">
-                查看更多<i class="el-icon-d-arrow-right"></i>
-                <!-- <router-link :to="'/web/'+essay['id']">
-
-                </router-link> -->
-              </div>
-
-
-            </div>
-          </div>
-        </div>
         <!-- 分页 -->
         <el-pagination
           background
@@ -109,6 +24,7 @@
           @current-change="pageChange"
           :current-page.sync="current_page">
         </el-pagination>
+      </div>
     </div>
 
     <!-- 页面右侧信息：类别、标签等 -->
@@ -178,29 +94,10 @@
 
 
 <script>
+import articleDisplay from './article-display';
 import { Dropdown, DropdownMenu, DropdownItem, Button, Pagination } from 'element-ui';
 import { ajaxPost, ajaxGet, elconfirm, elprompt, postMsg } from '../elem_compo_encap'
-let marked = require('marked');
-let hljs = require('highlight.js');
-import 'highlight.js/styles/default.css';
 
-marked.setOptions({
-    renderer: new marked.Renderer(),
-    gfm: true,
-    tables: true,
-    breaks: false,
-    pedantic: false,
-    sanitize: false,
-    smartLists: true,
-    smartypants: false,
-    highlight: function (code, lang) {
-          if (lang && hljs.getLanguage(lang)) {
-            return hljs.highlight(lang, code, true).value;
-          } else {
-            return hljs.highlightAuto(code).value;
-          }
-      }
-  });
 
 export default {
   components: {
@@ -208,7 +105,8 @@ export default {
     "el-dropdown-menu": DropdownMenu,
     "el-dropdown-item": DropdownItem,
     "el-button": Button,
-    "el-pagination": Pagination
+    "el-pagination": Pagination,
+    "article-display": articleDisplay,
   },
   data(){
     return {
@@ -308,9 +206,6 @@ export default {
     },
     succGetArticleByTag: function(res){
       this.data = response.data['data'] || null;
-    },
-    mark: (para) => {
-      return marked((para.slice(0, 140) + '......') || '')
     },
     editArticle: function(el){
       let index = el.currentTarget.parentNode.getAttribute('id').split('-')[0];
@@ -483,50 +378,7 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 80%;
-
 }
-#program .content {
-  margin-bottom: 80px;
-  position: relative;
-  background-color: #fff;
-  border-radius: 10px;
-}
-#program .content > p:nth-child(1) {
-  font-size: 2em;
-  font-family: Georgia, serif;
-  font-style: italic;
-  margin-bottom: 5%;
-}
-#program .title {
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 3%;
-  margin-top: 30px;
-  font-weight: bold;
-}
-#program .program-content {
-  padding: 30px 30px;
-  position: relative;
-  transition: all .8s;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-}
-
-#program .lookmore {
-  text-align: center;
-  width: 150px;
-  margin: 0 auto;
-  background: #97dffd;
-  color: #fff;
-  font-size: 1.2em;
-  padding: 1px 15px;
-  border-radius: 5px;
-  line-height: 2;
-  transition: all .3s;
-}
-
-/* #program .program-content > div > a:hover {
-  color: #000;
-} */
 
 #program .tagGroup {
   display: flex;
@@ -534,10 +386,7 @@ export default {
 #program .tagGroup > span {
   margin-right: 10px;
 }
-#program .markdown {
-  margin: 10px;
-  white-space: pre-wrap;
-}
+
 #program .article-class {
   width: 25%;
   border-radius: 5px;
@@ -584,66 +433,7 @@ export default {
   margin-left: 0;
   margin-bottom: 5px;
 }
-#program .content .markdown img {
-  display: flex;
-  margin: 0.5rem auto;
-  max-width: 92%;
-  max-height: 500px;
-  border-radius: 0.2rem;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.12);
-  transition: 0.4s;
-}
-#program .markdown pre {
-  margin: 1.4em 0;
-  padding: .88889em;
-  font-size: 1.2em;
-  word-break: normal;
-  word-wrap: normal;
-  white-space: pre;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  background: #f6f6f6;
-  border-radius: 4px;
-}
-#program .markdown blockquote {
-  margin-left: 10px;
-  border-left: 7px solid #787f8857;
-  background-color: #e1e7e891;
-  padding-left: 20px;
-  color: gray;
-  font-size: 0.9em;
-}
-#program .markdown h1,
-#program .markdown h2,
-#program .markdown h3,
-#program .markdown h4,
-#program .markdown h5,
-#program .markdown h6 {
-  position: relative;
-  border-bottom: 1px dotted rgba(153,153,153,0.5);
-}
 
-#program .markdown h1::before,
-#program .markdown h2::before,
-#program .markdown h3::before,
-#program .markdown h4::before,
-#program .markdown h5::before,
-#program .markdown h6::before {
-  content: '';
-  position: absolute;
-  width: 5px;
-  height: 100%;
-  top: 0;
-  left: -10px;
-  background: #27e6f3;
-}
-#program .markdown ol,
-#program .markdown ul {
-    background: #dbde1f7a;
-    padding: 20px 40px;
-    border-radius: 4px;
-    color: #291c1c;
-}
 #program .update_modify {
   padding: 0 10px;
 }
@@ -655,88 +445,19 @@ export default {
   left: 50%;
   transform: translateX(-50%);
 }
-#avatar {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
 
-}
-#avatar > img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-  padding: 4px;
-  background-color: #fff;
-}
-#program #creator {
-  position: absolute;
-  left: -16px;
-  top: 30px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-  background-color: #97dffd;
-  margin: 5px 0 15px 2px;
-  font-size: 14px;
-  border-radius: 0 4px 4px 0;
-  display: inline-block;
-  padding: 7px 11px 7px 32px;
-  line-height: 1;
-}
-#program #creator::after {
-  position: absolute;
-  content: "";
-  top: 100%;
-  left: 0;
-  border-top: 0 solid transparent;
-  border-right-width: 1em;
-  border-right-color: #2b2525;
-  border-right-style: solid;
-  border-bottom: 1em solid transparent;
-  border-left: 0 solid transparent;
-  width: 0;
-  height: 0;
-}
-#program .article-info {
-  text-align: center;
-  margin-bottom: 50px;
-}
-#program .article-info span {
-  color: red;
-}
-#program .article-info span:nth-child(1) {
-  color: #00a7e0;
-}
-#program .article-info span:nth-child(2) {
-  color: black;
-}
-#program .article-info span:nth-child(3) {
-  color: #67C23A;
-}
-#program .el-dropdown-link {
-  font-size: 2em;
-}
-#program .comment_num {
-  position: absolute;
-  bottom: 10px;
-  right: 30px;
-}
 @media screen and (max-width: 800px){
   .article-class {
     display: none;
   }
-  #program .article-content,
   #program #part {
     width: 100%;
   }
   #program .article-content {
-    padding-bottom: 100px;
+    width: 100%;
   }
-  #program .content {
-    margin-left: 20px;
-    margin-right: 20px;
+  #program .article-content {
+    padding-bottom: 100px;
   }
 }
 </style>

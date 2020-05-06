@@ -127,9 +127,13 @@ export default {
       }
       return -1;
     },
-    initMakeCatalog(){
+    initMakeCatalog(alternate){
       // let parent = document.getElementsByClassName(el)[0];
       let parent = this.parent;
+      if(!parent){
+        // 备用方案
+        parent = document.getElementsByClassName(alternate)[0];
+      }
       this.h_ele_list = this.h_elementList(parent);
       let row_list = []; // 储存着每层的字典
       let row = 1;       // 初始化极层数
@@ -169,13 +173,13 @@ export default {
     },
     unshowCatalog(){
       let catalog = document.getElementsByClassName('catalog-list')[0];
-      catalog.style.visibility = this.catalog_visibility ? "visible" : "hidden";
+      catalog.style.display = this.catalog_visibility ? "block" : "none";
       this.catalog_visibility = !this.catalog_visibility;
     },
   },
   mounted(){
     setTimeout(() => {
-      this.initMakeCatalog();
+      this.initMakeCatalog('markdown');
     }, 2000);
   }
 }
