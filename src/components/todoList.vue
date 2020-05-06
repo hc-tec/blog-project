@@ -1,233 +1,40 @@
 <template>
   <div class="todoList">
+
+    <!-- 任务添加组件 -->
+    <task-adder
+      :addTaskObj="addTaskObj"
+      :taskTags="taskTags"
+      @initAddTask="initAddTask($event)"
+      @confirmAddTag="confirmAddTag">
+    </task-adder>
+
+
     <!-- 任务展示组件 -->
-    <div id="addTodoList" v-if="this.getUserInfo.power.isLogin">
 
-      <h2>添加任务</h2>
-
-      <el-form label-width="100px" class="demo-ruleForm" :model="addTaskObj">
-
-        <el-form-item label="任务"  required>
-          <el-input v-model="addTaskObj.task_name" placeholder="立个flag"></el-input>
-        </el-form-item>
-
-        <el-form-item label="标签" required>
-          <el-select placeholder="啥类型的flag呢？" v-model="addTaskObj.tag">
-            <el-option
-              v-for="(tag) in taskTags"
-              :key="tag['name']"
-              :label="tag['name']"
-              :value="tag['name']">
-            </el-option>
-          </el-select>
-
-          <el-button
-            v-if="this.getUserInfo.power.isLogin"
-            icon="el-icon-plus"
-            style="margin-left: 20px;"
-            @click="confirmAddTag()">
-          </el-button>
-
-        </el-form-item>
-
-        <el-form-item label="任务时间" required>
-
-          <el-col :span="11">
-            <el-form-item>
-              <el-date-picker
-                type="date"
-                placeholder="从这天开始吧"
-                style="width: 100%;"
-                value-format="yyyy-MM-dd"
-                v-model="addTaskObj.startDay">
-              </el-date-picker>
-            </el-form-item>
-          </el-col>
-
-          <el-col class="line" :span="2" style="text-align: center;">-</el-col>
-
-          <el-col :span="11">
-            <el-form-item>
-              <el-date-picker
-                type="date"
-                placeholder="冲冲冲！"
-                style="width: 100%;"
-                value-format="yyyy-MM-dd"
-                v-model="addTaskObj.endDay">
-              </el-date-picker>
-            </el-form-item>
-          </el-col>
-
-        </el-form-item>
-
-        <el-button
-          type="primary"
-          class="submit_btn waves-effect"
-          @click="initAddTask()">创建任务
-        </el-button>
-
-      </el-form>
-    </div>
-
-
-    <p>Target</p>
-    <ul class="rolldown-list" id="List">
-      <el-table
-        :data="todoListData"
-        class="rolldown-list"
-        height="300"
-        >
-        <!-- 序号 -->
-        <el-table-column
-          type="index"
-          label="序号"
-          width="80"
-          >
-        </el-table-column>
-
-        <!-- 待办事项 -->
-        <el-table-column
-          label="待办事项"
-          width="300"
-          >
-          <template slot-scope="scope">
-            <i class="el-icon-edit-outline"></i>
-            <span style="margin-left: 10px">{{ scope.row.task_name }}</span>
-          </template>
-        </el-table-column>
-
-        <!-- 标签 -->
-        <el-table-column
-          label="标签"
-          width="100"
-          >
-          <template slot-scope="scope">
-            <el-tag
-              v-for="(tag) in scope.row.tags"
-              :key="tag"
-              :type="tag === '作业' ? 'primary' : 'success'"
-              disable-transitions>{{ tag }}</el-tag>
-          </template>
-        </el-table-column>
-
-        <!-- 起始日期 -->
-        <el-table-column
-          label="起始日期"
-          width="150">
-          <template slot-scope="scope">
-            <i class="el-icon-time"></i>
-            <span style="margin-left: 10px">{{ scope.row.startDay }}</span>
-          </template>
-        </el-table-column>
-
-        <!-- 终止日期 -->
-        <el-table-column
-          label="终止日期"
-          width="150">
-          <template slot-scope="scope">
-            <i class="el-icon-time"></i>
-            <span style="margin-left: 10px">{{ scope.row.endDay }}</span>
-          </template>
-        </el-table-column>
-
-        <!-- 持续天数 -->
-        <el-table-column
-          label="持续天数"
-          width="100"
-          >
-          <template slot-scope="scope">
-            <span style="color:#409eff;">
-              <i class="el-icon-data-analysis"></i> {{ scope.row.interval }}
-            </span>
-          </template>
-        </el-table-column>
-
-        <!-- 剩余天数 -->
-        <el-table-column
-          label="剩余天数"
-          width="100"
-          >
-          <template slot-scope="scope">
-            <span :style="[(scope.row.leftDay <= 3) ? warning : secuery]">
-              <i class="el-icon-sort-down"></i> {{ scope.row.leftDay }}
-            </span>
-          </template>
-        </el-table-column>
-
-        <!-- 操作按钮：完成，删除(未完成) -->
-        <el-table-column
-          fixed="right"
-          label="操作">
-          <div
-            slot-scope="scope"
-            :id="scope.row.id"
-            class="work"
-            >
-            <el-tooltip
-              effect="dark"
-              content="完成"
-              placement="right"
-              >
-              <el-button
-                class="waves-effect"
-                @click.native.prevent="finishTask(scope.$index, todoListData, $event)"
-                type="primary"
-                size="small"
-                icon="el-icon-check"
-                >
-              </el-button>
-            </el-tooltip>
-            <el-tooltip
-              effect="dark"
-              content="删除"
-              placement="right"
-              >
-              <el-button
-                class="waves-effect"
-                @click.native.prevent="deleteTask(scope.$index, todoListData, $event)"
-                type="danger"
-                size="small"
-                icon="el-icon-delete">
-              </el-button>
-            </el-tooltip>
-          </div>
-        </el-table-column>
-
-      </el-table>
-    </ul>
+    <task-displayer
+      :todoListData="todoListData"
+      @finishTask="finishTask"
+      @deleteTask="deleteTask">
+    </task-displayer>
 
 
   </div>
 </template>
 
 <script>
-import { Input, Form, FormItem, Button, Select, Option,
-         Col, DatePicker, Table, TableColumn, Tooltip, Tag } from 'element-ui';
 import { elprompt, ajaxGet, postMsg, elconfirm, ajaxPost } from '../elem_compo_encap'
+import taskAdder from './task-adder'
+import taskDisplayer from './task-displayer'
 export default {
   components: {
-    "el-input": Input,
-    "el-form": Form,
-    "el-form-item": FormItem,
-    "el-button": Button,
-    "el-select": Select,
-    "el-option": Option,
-    "el-col": Col,
-    "el-date-picker": DatePicker,
-    "el-table": Table,
-    "el-table-column": TableColumn,
-    "el-tooltip": Tooltip,
-    "el-tag": Tag,
+    "task-adder": taskAdder,
+    "task-displayer": taskDisplayer
   },
   data(){
     return {
       todoListData: null,
-      warning: {
-        "color": "red"
-      },
-      secuery: {
-        "color": "#67c23a"
-      },
+
       addTaskObj: {
         task_name: "",
         tag: "",
@@ -278,14 +85,14 @@ export default {
       this.taskTags = res.data;
     },
 
-    initAddTask: function() {
+    initAddTask: function(task) {
       ajaxGet(
         `http://${this.host}/api/newTask`, {
           user: this.getUserInfo.uid,
-          task_name: this.addTaskObj.task_name,
-          tag: this.addTaskObj.tag,
-          startDay: this.addTaskObj.startDay,
-          endDay: this.addTaskObj.endDay
+          task_name: task.task_name,
+          tag: task.tag,
+          startDay: task.startDay,
+          endDay: task.endDay
         }, this.succAddTask, this.failAddTask
       )
     },
@@ -369,6 +176,7 @@ export default {
       console.log(e);
       postMsg("别灰心，再战又如何");
     },
+
     initFinishTask: function(){
       let [id, index, rows, ..._] = arguments;
       ajaxGet(
@@ -467,20 +275,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .todoList {
   padding: 0 15%;
-}
-.todoList > p {
-  text-align: center;
-  font-size: 2em;
-  font-family:'Times New Roman', Times, serif;
-  width: 30%;
-  margin: 0 auto;
-  background-color: rgb(249,227,141);
-  padding: 20px;
-  margin-bottom: 0.5em;
-  border-radius: 40px;
 }
 .rolldown-list * {
   visibility: hidden;
@@ -509,38 +306,24 @@ export default {
     transform: rotateX(0deg);
   }
 }
-#addTodoList {
-  width: 750px;
-  margin: 0 auto;
-  margin-bottom: 5%;
-  background-color: #fff;
-  padding: 30px 45px 30px 15px;
-}
-#addTodoList > h2 {
-  text-align: center;
-  margin-bottom: 3%;
-}
-.submit_btn {
+
+.todoList .submit_btn {
   width: 40%;
   margin-left: 30%;
 }
-.work {
+.todoList .work {
   display: flex;
   flex-direction: column;
 }
-.el-button+.el-button {
+.todoList .el-button+.el-button {
   margin-left: 0;
 }
-.el-button--primary {
+.todoList .el-button--primary {
   margin-bottom: 10px;
 }
 @media screen and (max-width: 800px){
   .todoList {
     padding: 0;
-  }
-  #addTodoList {
-    width: 100%;
-    padding: 30px 0;
   }
 }
 </style>

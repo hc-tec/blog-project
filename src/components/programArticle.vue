@@ -52,6 +52,7 @@ export default {
       authorInfo: {},
       hasGetInfo: false,
 
+      // 评论组件信息
       comment: {},
       reply: false,
       replied_comment_id: '-1',
