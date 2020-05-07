@@ -33,28 +33,34 @@
       <div class="article-category">
         <h3>类别</h3>
         <div class="category">
-          <p @click="getAllArticlesByCategory">> 第一页</p>
+          <p @click="getAllArticlesByCategory">总数
+            <el-tag> {{ total }}</el-tag>
+          </p>
           <p
             v-for="(cat,index) in category"
-            :key="cat"
-            @click="getArticleByCategory(index)">
-            > {{ cat }}
+            :key="cat.name"
+            @click="initGetArticleByCategory(index)">
+            {{ cat.name }}
+            <el-tag> {{ cat.num }}</el-tag>
           </p>
         </div>
       </div>
       <!-- 标签 -->
       <div class="article-tags">
         <h3>标签</h3>
-        <div class="tag">
-          <el-button
-            class="waves-effect"
-            size="mini"
-            v-for="(tag,index) in tags"
-            :key="tag"
-
-            @click="initGetArticleByTag(index)">
-            {{ tag }}
-          </el-button>
+          <div
+            class="tag">
+            <div
+              v-for="(tag,index) in tags"
+              :key="tag.name">
+              <el-button
+                class="waves-effect"
+                size="mini"
+                @click="initGetArticleByTag(index)">
+                {{ tag.name }}
+              </el-button>
+              <el-tag type="info">{{ tag.num }}</el-tag>
+            </div>
         </div>
       </div>
       <!-- 最近更新文章 -->
@@ -95,7 +101,7 @@
 
 <script>
 import articleDisplay from './article-display';
-import { Dropdown, DropdownMenu, DropdownItem, Button, Pagination } from 'element-ui';
+import { Dropdown, DropdownMenu, DropdownItem, Button, Pagination, Tag } from 'element-ui';
 import { ajaxPost, ajaxGet, elconfirm, elprompt, postMsg } from '../elem_compo_encap'
 
 
@@ -107,6 +113,7 @@ export default {
     "el-button": Button,
     "el-pagination": Pagination,
     "article-display": articleDisplay,
+    "el-tag": Tag
   },
   data(){
     return {
@@ -187,8 +194,8 @@ export default {
     getAllArticlesByCategory: function(){
       this.initGetArticle(1);
     },
-    getArticleByCategory: function(index){
-      let name = this.category[index];
+    initGetArticleByCategory: function(index){
+      let name = this.category[index].name;
       ajaxGet(
         `http://${this.host}/api/categoryArticle`,{name: name},
         this.succGetArticleByCategory, (e)=>(console.log(e))
@@ -198,7 +205,7 @@ export default {
       this.data = res.data['data'] || null;
     },
     initGetArticleByTag: function(index){
-      let name = this.tags[index];
+      let name = this.tags[index].name;
       ajaxGet(
         `http://${this.host}/api/tagArticle`,{name: name},
         this.succGetArticleByCategory, (e)=>(console.log(e))
@@ -426,14 +433,18 @@ export default {
 #program .tag {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-#program .tag > button {
-  width: 30%;
+#program .tag > div {
+  width: 40%;
   margin-left: 0;
   margin-bottom: 5px;
+  display: flex;
+  justify-content: end;
 }
+#program .tag > span {
 
+}
 #program .update_modify {
   padding: 0 10px;
 }
@@ -444,6 +455,9 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+#program .el-pagination {
+  text-align: center;
 }
 
 @media screen and (max-width: 800px){

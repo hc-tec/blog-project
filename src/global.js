@@ -56,7 +56,7 @@ export default {
     }
 
 
-
+    Vue.prototype.fileArticle = null
 
     Vue.prototype.navList = [
       {
@@ -68,6 +68,11 @@ export default {
         "link": '/web',
         "img": "el-icon-monitor",
         "text": "技术坛",
+      },
+      {
+        "link": '/file',
+        "img": "el-icon-data-line",
+        "text": "归档"
       },
       // {
       //   "link": '/word',
@@ -95,6 +100,8 @@ export default {
         text: "创作你的创作"
       },
     ],
+
+
 
     Vue.prototype.moreProject = [
       {

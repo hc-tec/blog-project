@@ -1,13 +1,13 @@
 <template>
   <div id="writer">
     <div id="article">
+
+
         <!-- 预览 -->
-        <div id="pre_bg" ref="pre_bg" @click="cancelPre()"></div>
-        <div ref="pre_arti" id="pre_arti">
-            <p></p>
-            <hr />
-            <div class="preArticle"></div>
-        </div>
+        <preview
+          ref="preview"
+          :article="article">
+        </preview>
 
         <div style="width:100%;" id="workSpace">
           <h1>Write It Down!</h1>
@@ -111,33 +111,13 @@
         </div>
 
 
-
     </div>
   </div>
 </template>
 
 <script>
-let marked = require('marked');
-let hljs = require('highlight.js');
-import 'highlight.js/styles/default.css';
+import preview from './preview'
 
-marked.setOptions({
-    renderer: new marked.Renderer(),
-    gfm: true,
-    tables: true,
-    breaks: false,
-    pedantic: false,
-    sanitize: false,
-    smartLists: true,
-    smartypants: false,
-    highlight: function (code, lang) {
-          if (lang && hljs.getLanguage(lang)) {
-            return hljs.highlight(lang, code, true).value;
-          } else {
-            return hljs.highlightAuto(code).value;
-          }
-      }
-  });
 import { Form, FormItem, Input, Select, Option,
          Button, CheckboxGroup, CheckboxButton } from 'element-ui';
 
@@ -153,6 +133,7 @@ export default {
       "el-button": Button,
       "el-checkbox-group": CheckboxGroup,
       "el-checkbox-button": CheckboxButton,
+      preview
     },
     data(){
         return {
@@ -333,21 +314,11 @@ export default {
         },
 
         pre: function() {
-            let article = this.$refs.pre_arti.children;
-            let bg = this.$refs.pre_bg;
-            this.$refs.pre_arti.style.visibility = "visible";
-            bg.style.visibility = "visible";
-            this.$refs.pre_arti.style.transform = "translate(-50%, 0)";
-            article[0].innerHTML = this.article.title;
-            article[2].innerHTML = this.mark(this.article.content || '');
+            this.$refs.preview.pre();
             window.MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         },
         cancelPre: function() {
-            let article = this.$refs.pre_arti.children;
-            let bg = this.$refs.pre_bg;
-            this.$refs.pre_arti.style.visibility = "hidden";
-            bg.style.visibility = "hidden";
-            this.$refs.pre_arti.style.transform = "translate(-50%, -200%)";
+            this.$refs.preview.cancelPre();
         },
         asynPost: function(url, data, successCode){
           this.axios.post(
@@ -531,49 +502,7 @@ export default {
     background-color: rgb(193,199,208);
 }
 
-#pre_bg {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    background-color: rgb(132,143,160);
-    opacity: .5;
-    visibility: hidden;
-    transition: all .3;
-}
 
-#pre_arti {
-    position: fixed;
-    z-index: 110;
-    width: 600px;
-    margin:30px auto;
-    background-color: white;
-    color: black;
-    box-shadow: 0 3px 9px rgba(0,0,0,.5);
-    transform: translate(-50%, -200%);
-    left: 50%;
-    top: 10%;
-    max-height: 70%;
-    white-space: pre-wrap;
-    overflow: auto;
-    border-radius: 6px;
-    visibility: hidden;
-    transition: all .5s ease-out;
-    text-indent: 0;
-}
-
-#pre_arti > p {
-    font-size: 18px;
-    padding: 15px;
-    text-align: center;
-}
-#pre_arti > div {
-    padding: 15px;
-}
 .imgFiles {
   width: 80%;
   display: flex;
@@ -595,98 +524,6 @@ export default {
   position: absolute;
   right: 30px;
   top: 30%;
-}
-.preArticle img {
-  display: flex;
-  margin: 0.5rem auto;
-  max-width: 92%;
-  max-height: 500px;
-  border-radius: 0.2rem;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.12);
-  transition: 0.4s;
-}
-.preArticle table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 14px;
-  overflow: auto;
-}
-.preArticle th {
-  padding-bottom: 10px;
-  font-weight: 700;
-}
-.preArticle th,
-.preArticle td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
-  vertical-align: middle;
-  font-weight: normal;
-}
-.preArticle table > tbody > tr:nth-of-type(odd) {
-  background-color: #fafafa;
-}
-.preArticle table > tbody > tr:hover {
-  background-color: rgb(245,245,245);
-}
-
-.preArticle pre {
-  padding: .88889em;
-  font-size: 1.2em;
-  word-break: normal;
-  word-wrap: normal;
-  white-space: pre;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  background: #f6f6f6;
-  border-radius: 4px;
-}
-.preArticle ol,
-.preArticle ul {
-  background: #dbde1f7a;
-  padding: 20px 40px;
-  border-radius: 4px;
-  color: #291c1c;
-  font-size: .9em;
-}
-.preArticle blockquote {
-  margin-left: 10px;
-  border-left: 7px solid #787f8857;
-  background-color: #e1e7e891;
-  padding-left: 20px;
-  color: gray;
-  font-size: 0.9em;
-}
-.preArticle h1,
-.preArticle h2,
-.preArticle h3,
-.preArticle h4,
-.preArticle h5,
-.preArticle h6 {
-  position: relative;
-  border-bottom: 1px dotted rgba(153,153,153,0.5);
-}
-.preArticle h1::before,
-.preArticle h2::before,
-.preArticle h3::before,
-.preArticle h4::before,
-.preArticle h5::before,
-.preArticle h6::before {
-  content: '';
-  position: absolute;
-  width: 5px;
-  height: 100%;
-  top: 0;
-  left: -10px;
-  background: #27e6f3;
-}
-.preArticle a {
-  color: #0065ff;
-}
-.preArticle a:hover {
-  color: #0747A6;
-  text-decoration: underline;
 }
 .file-box{
   display: inline-block;
@@ -722,9 +559,5 @@ export default {
   #workSpace h1 {
     margin-left: 0;
   }
-  #pre_arti {
-    width: 100%;
-  }
-
 }
 </style>

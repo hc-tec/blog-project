@@ -17,6 +17,7 @@ Vue.config.productionTip = false
 
 // 使用 user_info
 Vue.use(user_info)
+Vue.prototype.global = user_info;
 //使用 axiox 组件
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 Vue.use(vueAxios, axios)
@@ -28,6 +29,8 @@ Vue.prototype.$confirm = MessageBox.confirm;
 Vue.prototype.$prompt = MessageBox.prompt;
 Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
+
+Vue.prototype.fileArticle = null
 
 // 每次更换页面，视图自动滚动到顶部
 router.afterEach(() => {

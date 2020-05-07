@@ -83,7 +83,8 @@ export default {
       if(width <= 500){
         let el = this.navList.pop();
         this.moreProject.push(el);
-        console.log(this.moreProject)
+        el = this.navList.pop();
+        this.moreProject.push(el);
         this.$forceUpdate()
       }
     },

@@ -1,51 +1,51 @@
 <template>
   <div class="creator-info">
-      <!-- 创作者展开按钮 -->
-      <div class="creator-info-button" @click="slide">
-        <span id="uarrow">«</span>
-        <!-- «» -->
-      </div>
-      <!-- 创作者信息 -->
-      <div class="info">
-        <p>Author-Info</p>
-        <!-- 头像 -->
-        <div class="cimg-content">
-          <img :src="authorInfo['avatar']" />
-        </div>
-        <!-- 名称 -->
-        <p>{{ authorInfo['user_name']}}</p>
-        <!-- 具体细节 -->
-        <div class="details">
-          <!-- QQ -->
-          <div class="qq">
-            <p>QQ</p>
-            <p>{{ authorInfo['qq'] }}</p>
-          </div>
-          <!-- Hobby -->
-          <div class="hobby">
-            <p>Hobby</p>
-            <p v-html="authorInfo['hobby']"></p>
-          </div>
-          <!-- 个人简介 -->
-          <div class="profile">
-            <p>Profile</p>
-            <p v-html="authorInfo['profile']"></p>
-          </div>
-        </div>
-        <!-- 分割线 -->
-        <el-divider></el-divider>
-        <!-- Github -->
-        <div class="link-icon">
-          <div>
-            <a :href="authorInfo['github']"><img
-              src="/jsonImg\artical-img/github.png"
-              width="100%" height="100%">
-            </a>
-          </div>
-        </div>
-
-      </div>
+    <!-- 创作者展开按钮 -->
+    <div class="creator-info-button" @click="slide">
+      <span id="uarrow">«</span>
+      <!-- «» -->
     </div>
+    <!-- 创作者信息 -->
+    <div class="info">
+      <p>Author-Info</p>
+      <!-- 头像 -->
+      <div class="cimg-content">
+        <img :src="authorInfo['avatar']" />
+      </div>
+      <!-- 名称 -->
+      <p>{{ authorInfo['user_name']}}</p>
+      <!-- 具体细节 -->
+      <div class="details">
+        <!-- QQ -->
+        <div class="qq">
+          <p>QQ</p>
+          <p>{{ authorInfo['qq'] }}</p>
+        </div>
+        <!-- Hobby -->
+        <div class="hobby">
+          <p>Hobby</p>
+          <p v-html="authorInfo['hobby']"></p>
+        </div>
+        <!-- 个人简介 -->
+        <div class="profile">
+          <p>Profile</p>
+          <p v-html="authorInfo['profile']"></p>
+        </div>
+      </div>
+      <!-- 分割线 -->
+      <el-divider></el-divider>
+      <!-- Github -->
+      <div class="link-icon">
+        <div>
+          <a :href="authorInfo['github']"><img
+            src="/jsonImg\artical-img/github.png"
+            width="100%" height="100%">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </template>
 
 <script>

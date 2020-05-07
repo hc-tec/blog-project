@@ -9,7 +9,7 @@ const routes = [
     name: 'Home',
     meta: {index: 1},
     components: {
-      default: () => import('../views/Home'),
+      default: () => import(/* webpackChunkName: "Home" */ '../views/Home'),
     }
   },
   {
@@ -17,7 +17,7 @@ const routes = [
     name: 'login',
     meta: {index: 13},
     components: {
-      default: () => import('../components/login'),
+      default: () => import(/* webpackChunkName: "login" */ '../components/login'),
 
     }
   },
@@ -26,7 +26,15 @@ const routes = [
     name: 'register',
     meta: {index: 17},
     components: {
-      default: () => import('../components/register'),
+      default: () => import(/* webpackChunkName: "register" */ '../components/register'),
+    }
+  },
+  {
+    path: '/file',
+    name: 'file',
+    meta: {index: 18},
+    components: {
+      default: () => import(/* webpackChunkName: "file" */ '../views/file'),
     }
   },
   {
@@ -34,7 +42,7 @@ const routes = [
     name: 'recordWord',
     meta: {index: 14},
     components: {
-      default: () => import('../components/recordWord'),
+      default: () => import(/* webpackChunkName: "record" */ '../components/recordWord'),
     }
   },
   {
@@ -42,7 +50,7 @@ const routes = [
     name: 'admin',
     meta: {index: 15},
     components: {
-      default: () => import('../views/admin')
+      default: () => import(/* webpackChunkName: "admin" */ '../views/admin')
     }
   },
   {
@@ -50,7 +58,7 @@ const routes = [
     name: 'write',
     meta: {index: 16},
     components: {
-      default: () => import('../components/writer')
+      default: () => import(/* webpackChunkName: "writer" */ '../components/writer')
     }
   },
   {
@@ -58,7 +66,7 @@ const routes = [
     name: 'web',
     meta: {index: 2},
     components: {
-      default: () => import('../views/program'),
+      default: () => import(/* webpackChunkName: "program" */ '../views/program'),
     }
   },
   {
@@ -66,7 +74,7 @@ const routes = [
     name: 'webArticle',
     meta: {index: 3},
     components: {
-      default: () => import('../components/programArticle')
+      default: () => import(/* webpackChunkName: "article" */ '../components/programArticle')
     }
   },
   {
@@ -74,31 +82,15 @@ const routes = [
     name: 'todoList',
     meta: {index: 4},
     components: {
-      default: () => import('../views/todoList'),
+      default: () => import(/* webpackChunkName: "todoList" */ '../views/todoList'),
     }
   },
-  // {
-  //   path: '/note',
-  //   name: 'note',
-  //   meta: {index: 5},
-  //   components: {
-  //     default: () => import('../views/note'),
-  //   }
-  // },
-  // {
-  //   path: '/noteInfo/:noteInfo',
-  //   name: 'noteInfo',
-  //   meta: {index: 12},
-  //   components: {
-  //     default: () => import('../views/noteInfo'),
-  //   }
-  // },
   {
     path: '/message',
     name: 'message',
     meta: {index: 6},
     components: {
-      default: () => import('../views/comment'),
+      default: () => import(/* webpackChunkName: "message" */ '../views/comment'),
     }
   },
   {
@@ -107,7 +99,7 @@ const routes = [
     meta: {index: 7},
     // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
     components: {
-      default: () => import('../views/About')
+      default: () => import(/* webpackChunkName: "about" */ '../views/About')
     }
   },
   {
@@ -115,7 +107,7 @@ const routes = [
     name: 'words',
     meta: {index: 8},
     components: {
-      default: () => import('../views/CET4'),
+      default: () => import(/* webpackChunkName: "word" */ '../views/CET4'),
     },
   },
   {
@@ -123,30 +115,22 @@ const routes = [
     name: 'word',
     meta: {index: 9},
     components: {
-      default: () => import('../views/word')
+      default: () => import(/* webpackChunkName: "words" */ '../views/word')
     },
   },
-  // {
-  //   path: '/reading/:read',
-  //   name: 'read',
-  //   meta: {index: 10},
-  //   components: {
-  //     default: () => import('../views/essay'),
-  //   },
-  // },
   {
     path: '/feed',
     name: 'feed',
     meta: {index: 10},
     components: {
-      default: () => import('../components/feed.vue'),
+      default: () => import(/* webpackChunkName: "feed" */ '../components/feed.vue'),
     }
   },
   {
     path: '*',
     meta: {index: 11},
     components: {
-      default: () => import('../views/404'),
+      default: () => import(/* webpackChunkName: "404" */ '../views/404'),
     }
   }
 ]
