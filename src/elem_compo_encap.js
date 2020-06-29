@@ -55,6 +55,13 @@ const ajaxGet = (url, params={}, resolve, reject, args) => {
     .catch(e => reject(e))
 }
 
+const ajaxPatch = (url, params = {}, resolve, reject, args) => {
+  args = args || []
+  axios.patch(url, postDataFormat(params))
+    .then(response => resolve(response, ...args))
+    .catch(e => reject(e))
+}
+
 const ajaxPost = (url, data, resolve, reject) => {
   axios.post(url, postDataFormat(data))
     .then(response => resolve(response))
@@ -73,7 +80,9 @@ export {
   ajaxGet,
   ajaxPost,
   ajaxDel,
+  ajaxPatch,
   elconfirm,
   elprompt,
+
 }
 

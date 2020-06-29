@@ -57,6 +57,12 @@
             <i class="el-icon-user"></i>
             {{ essay['creator']['user_name'] }}
           </span>
+          <span
+            v-if="essay.weight"
+            id="isSticky"
+            title="置顶">
+            <i class="el-icon-map-location"></i> pinned
+          </span>
         </div>
         <!-- 文章操作：编辑、删除 -->
         <el-dropdown
@@ -66,6 +72,8 @@
             <i class="el-icon-more"></i>
           </span>
           <el-dropdown-menu>
+
+
 
             <el-dropdown-item :id="index+'-'+essay['id']" class="waves-effect">
               <span
@@ -77,9 +85,19 @@
 
             <el-dropdown-item class="waves-effect">
               <span
+                @click="stickyArticle($event, essay.weight)"
+                v-if="getUserInfo.power.delArticle"
+                style="color: var(--success-color);">
+                <i class="el-icon-upload2" v-if="!essay.weight"> 置顶</i>
+                <i class="el-icon-download" v-else> 取消置顶</i>
+              </span>
+            </el-dropdown-item>
+
+            <el-dropdown-item class="waves-effect">
+              <span
                 @click="delArticle($event)"
                 style="color: red;"
-                v-if="getUserInfo.power.delArticle">
+                v-if="getUserInfo.power.delArticle || getUserInfo.uid === essay.creator.id">
                 <i class="el-icon-delete"> 删除</i>
               </span>
             </el-dropdown-item>
@@ -124,6 +142,9 @@ export default {
     editArticle: function(id){
       this.$emit("editArticle", id);
     },
+    stickyArticle: function(id, weight) {
+      this.$emit('stickyArticle', id, weight);
+    }
   }
 }
 </script>
@@ -184,7 +205,8 @@ export default {
   padding: 4px;
   background-color: #fff;
 }
-#displayer #creator {
+#displayer #creator,
+#displayer #isSticky {
   position: absolute;
   left: -16px;
   top: 30px;
@@ -197,7 +219,13 @@ export default {
   padding: 7px 11px 7px 32px;
   line-height: 1;
 }
-#displayer #creator::after {
+#displayer #isSticky {
+  background-color: #4a00ff69;
+  color: white;
+  top: -18px;
+}
+#displayer #creator::after,
+#displayer #isSticky::after {
   position: absolute;
   content: "";
   top: 100%;

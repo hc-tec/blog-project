@@ -13,7 +13,8 @@
           @mark="mark($event)"
           @toArticle="toArticle($event)"
           @delArticle="delArticle($event)"
-          @editArticle="editArticle($event)">
+          @editArticle="editArticle($event)"
+          @stickyArticle="stickyArticle">
         </article-display>
 
         <!-- 分页 -->
@@ -63,6 +64,15 @@
             </div>
         </div>
       </div>
+      <!-- 标签云 -->
+      <div class="tag-cloud-2">
+        <h3>标签云  <a @click="startCloud()" id="refresh-tag-cloud">刷新标签云</a></h3>
+        <tag-cloud
+          ref="cloud"
+          :tags="tags"
+          @initGetArticleByTag="initGetArticleByTag($event)">
+        </tag-cloud>
+      </div>
       <!-- 最近更新文章 -->
       <div class="article-update" v-if="this.update_or_modify_articles">
         <h3>最近修改文章：</h3>
@@ -75,6 +85,7 @@
               {{ article.title }}
             </router-link>
             <span style="float:right">{{ article.modify_time }}</span>
+            <br /><br />
           </div>
         </div>
       </div>
@@ -101,10 +112,11 @@
 
 <script>
 import articleDisplay from './article-display';
+import tagCloud from './tagCloud';
 import { Dropdown, DropdownMenu, DropdownItem, Button, Pagination, Tag } from 'element-ui';
-import { ajaxPost, ajaxGet, elconfirm, elprompt, postMsg } from '../elem_compo_encap'
-
-
+import { ajaxPost, ajaxGet, elconfirm, elprompt, postMsg, ajaxPatch, ajaxDel } from '../elem_compo_encap'
+import { STICKY_ARTICLE } from '../api'
+import { genericError } from '../func'
 export default {
   components: {
     "el-dropdown": Dropdown,
@@ -113,7 +125,8 @@ export default {
     "el-button": Button,
     "el-pagination": Pagination,
     "article-display": articleDisplay,
-    "el-tag": Tag
+    "el-tag": Tag,
+    "tag-cloud": tagCloud,
   },
   data(){
     return {
@@ -136,6 +149,9 @@ export default {
     }
   },
   methods: {
+    startCloud: function(){
+      this.$refs.cloud.startCloud()
+    },
     toArticle: function(id){
       this.$router.push(`/web/${id}`);
     },
@@ -341,6 +357,37 @@ export default {
       } else {
         this.category = this.articles.category;
       }
+    },
+    stickyArticle: function(el, weight){
+      let [_, id] = el.currentTarget.parentNode.parentNode.children[0].getAttribute('id').split('-');
+      if(weight) {
+        const request = () => {
+          ajaxDel(
+            STICKY_ARTICLE(id), {},
+            response, genericError
+          )
+        }
+        const response = (res) => {
+          if(res.data.code === 288) postMsg('取消置顶成功', 'success');
+          else postMsg('取消置顶失败', 'danger');
+          this.initGetArticle(this.current_page)
+        }
+        request()
+      } else {
+        const request = () => {
+          ajaxPatch(
+            STICKY_ARTICLE(id), {},
+            response, genericError
+          )
+        }
+        const response = (res) => {
+          if(res.data.code === 287) postMsg('置顶成功', 'success');
+          else postMsg('置顶失败', 'danger');
+          this.initGetArticle(this.current_page)
+        }
+        request()
+      }
+
     }
   },
   mounted(){
@@ -458,6 +505,12 @@ export default {
 }
 #program .el-pagination {
   text-align: center;
+}
+#refresh-tag-cloud {
+  font-size: 0.8em;
+  float: right;
+  color: gray;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px){

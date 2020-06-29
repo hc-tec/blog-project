@@ -6,6 +6,7 @@
     <meta name='viewport' content='width=device-width,initial-scale=1,user-scale=no' />
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="css/waves.min.css?v=0.7.2">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <title>NCUTEAM</title>
     <style>
       * {
@@ -78,6 +79,7 @@
         tex2jax: {inlineMath: [['$','$']]}
       });
     </script>
+    <script type="text/javascript" src="js/tagcanvas.min.js"></script>
     <script type="text/javascript" src="js/waves.min.js"></script>
     <script type="text/javascript">
       Waves.init();
@@ -87,6 +89,22 @@
       window.onload = function(){
         Waves.attach('.drag-ripple', 'waves-block', true);
         Waves.attach('#bg-pattern', null, true);
+
+        // tag-cloud
+        // try {
+        //   TagCanvas.Start('tag-cloud', 'cloud', {
+        //     textColour: '#66ccff',
+        //     outlineColour: '#66ccff',
+        //     reverse: true,
+        //     maxSpeed: 0.1,
+        //     weight: true,
+        //     weightMode: 'both',
+        //   });
+        // } catch(e) {
+        //   console.log(e)
+        //   document.getElementById('tag-cloud').style.display = 'none';
+        // }
+        
       }
     </script>
 </body>

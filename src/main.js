@@ -6,14 +6,20 @@ import { MessageBox,
          Message,
          Notification,
          Icon } from 'element-ui'
+import neumorphic from 'neumorphic-ui-vue'
 import 'element-ui/lib/theme-chalk/index.css'
 //导入 axios 组件
 import vueAxios from "vue-axios"
 import axios from 'axios'
 // 获取用户信息
 import user_info from "./global"
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 Vue.config.productionTip = false
+// use mavon editor
+Vue.use(mavonEditor)
+Vue.use(neumorphic)
 
 // 使用 user_info
 Vue.use(user_info)
@@ -34,7 +40,9 @@ Vue.prototype.fileArticle = null
 
 // 每次更换页面，视图自动滚动到顶部
 router.afterEach(() => {
-  window.scrollTo(0, 0)
+  setTimeout(() => {
+    window.scrollTo(0, 0)
+  }, 100)
 })
 
 new Vue({

@@ -127,6 +127,14 @@ const routes = [
     }
   },
   {
+    path: '/chat',
+    name: 'chat',
+    meta: {index: 20},
+    components: {
+      default: () => import(/* webpackChunkName: "chat" */ '../views/chat'),
+    }
+  },
+  {
     path: '*',
     meta: {index: 11},
     components: {

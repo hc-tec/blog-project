@@ -4,36 +4,48 @@
 
     <!-- 如果没有登录 -->
     <div v-if="!isLogin" id="unLogin">
-      <el-link
+      <el-button
+        class="operate-btn"
         type="primary"
-        icon='el-icon-lollipop'
-        @click="gotologin">登录</el-link>
+        size="small"
+        icon="el-icon-lollipop"
+        @click="gotologin">登录
+      </el-button>
     </div>
     <!-- 如果已经登录 -->
     <div v-else id="login">
 
-      <el-link
-        type="primary"
-        icon="el-icon-user"
-        @click="gotoAbout">
-        {{ this.getUserInfo.uuser_name }}
-      </el-link>
+      <el-button-group>
+        <el-button
+          class="operate-btn"
+          icon="el-icon-user"
+          type="success"
+          size="small"
+          @click="gotoAbout">
+          {{ this.getUserInfo.uuser_name }}
+        </el-button>
+        <el-button
+          class="operate-btn"
+          icon="el-icon-s-release"
+          type="danger"
+          size="small"
+          @click="logout">
+          注销
+        </el-button>
+      </el-button-group>
 
-      <el-link
-        type="danger"
-        icon="el-icon-s-release"
-        @click="logout">注销
-      </el-link>
     </div>
   </div>
 </template>
 
 <script>
-import { Link } from 'element-ui';
+import { Link, Button, ButtonGroup } from 'element-ui';
 import { postMsg } from '../elem_compo_encap'
 export default {
   components: {
-    "el-link": Link
+    "el-link": Link,
+    "el-button": Button,
+    "el-button-group": ButtonGroup
   },
   data(){
     return {
@@ -96,5 +108,12 @@ export default {
 
 #unLogin {
   text-align :center;
+}
+.operate-btn {
+  opacity: .5;
+  transition: .2s;
+}
+.operate-btn:hover {
+  opacity: 1;
 }
 </style>

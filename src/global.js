@@ -1,8 +1,8 @@
+import {  HOST } from './api'
 export default {
   install(Vue, options) {
-    // localhost:8000
-    // 39.100.22.224
-    Vue.prototype.host = '39.100.22.224';
+
+    Vue.prototype.host = HOST;
 
     Vue.prototype.getUserInfo = {
       uid: 1,
@@ -17,7 +17,7 @@ export default {
       uprofile: "自高考后暑假接触第一本Python电子书时，我对编程的热爱便没有了尽头。\n之后无意间接触到了Web开发，于是跟着Web部大佬学习Web技术，努力成为一名优秀的Web攻城狮。目前已习得前端三件套，Vue框架与Django框架。",
       uisSubscribe: false,
       uregis_time: "2020-03-26",
-      uarticle_num: 10,
+      uarticle_num: '∞',
       power: {
         isLogin: false,
         addWords: false,
@@ -104,6 +104,11 @@ export default {
 
 
     Vue.prototype.moreProject = [
+      {
+        img: "el-icon-crop",
+        link: "/chat",
+        text: "实时聊天"
+      },
       {
         img: "el-icon-lollipop",
         link: "/feed",

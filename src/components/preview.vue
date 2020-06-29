@@ -47,7 +47,7 @@ export default {
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 2020;
     background-color: rgb(132,143,160);
     opacity: .5;
     visibility: hidden;
@@ -56,7 +56,7 @@ export default {
 
 #pre_arti {
     position: fixed;
-    z-index: 110;
+    z-index: 2021;
     width: 600px;
     margin:30px auto;
     background-color: white;

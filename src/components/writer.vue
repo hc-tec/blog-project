@@ -10,7 +10,6 @@
         </preview>
 
         <div style="width:100%;" id="workSpace">
-          <h1>Write It Down!</h1>
           <!-- 未登录 -->
           <p v-if="!this.getUserInfo.power.isLogin" style="color:red;">需要先登录才能写文章哦</p>
 
@@ -19,8 +18,8 @@
             <el-form-item label="标题">
                 <el-input
                     placeholder="Place your title Here"
-                    style="width:80%;"
                     type="text"
+                    style="width:95%"
                     clearable
                     v-model="article.title"
                     id="title_in"
@@ -29,14 +28,23 @@
                 </el-input>
             </el-form-item>
 
+            <el-form-item label="文章 (支持 MarkDown 语法喔！)">
+                <br />
+                <mavon-editor
+                  ref="editor"
+                  class="markdown"
+                  v-model="article.content"
+                  @imgAdd="imgInsert"
+                />
+            </el-form-item>
 
             <el-form-item label="类别" id="category">
               <el-select v-model="article.category" placeholder="Please select category" :disabled="!this.getUserInfo.power.isLogin">
                 <el-option
                   v-for="(cate) in category"
-                  :label="cate"
-                  :value="cate"
-                  :key="cate"></el-option>
+                  :label="cate.name"
+                  :value="cate.name"
+                  :key="cate.name"></el-option>
               </el-select>
 
               <el-button
@@ -47,46 +55,12 @@
 
             </el-form-item>
 
-
-            <el-form-item label="文章 (支持 MarkDown 语法喔！)">
-                <el-input
-                    :disabled="!this.getUserInfo.power.isLogin"
-                    placeholder="Write Something..."
-                    style="width:80%;display:block;font-family: Constantia, 华文中宋, 宋体, serif !important;"
-                    type="textarea"
-                    :autosize="{ minRows: 10, maxRows: 12}"
-                    v-model="article.content"
-                    id="content">
-                </el-input>
-
-                <div class="file-box">
-                  <input
-                    v-if="this.getUserInfo.power.isLogin"
-                    class="file-btn"
-                    type="file"
-                    @change="load($event)"
-                    accept="image/png,image/gif,image/jpeg,image/bmp,image/jpg,image/tif,image/svg,image/webp" />
-                    上传图片
-                </div>
-
-                <ul class="imgFiles">
-                  <li v-for="(file) in fileList" :key="file.name">
-                    <img :src="file.url" width="100" height="100">
-                    <span>{{ file.name }}</span>
-                    <el-button @click="insert(file.url)">Insert</el-button>
-                  </li>
-                </ul>
-
-            </el-form-item>
-
-
-
-            <el-form-item label="标签" style="width:80%">
+            <el-form-item label="标签">
                 <el-checkbox-group v-model="article.tag" style="display: inline;" :disabled="!this.getUserInfo.power.isLogin">
                   <el-checkbox-button
                     v-for="(tag) in tags"
-                    :key="tag"
-                    :label="tag">
+                    :key="tag.name"
+                    :label="tag.name">
                   </el-checkbox-button>
                 </el-checkbox-group>
 
@@ -104,13 +78,8 @@
                 <a class="sub_btn" @click="submit()">{{ this.editArticleDetail.isEdit ? 'Edit!' : 'Create!' }}</a>
                 <a class="sub_btn" @click="pre()">Preview</a>
             </div>
-
-
           </el-form>
-
         </div>
-
-
     </div>
   </div>
 </template>
@@ -149,51 +118,26 @@ export default {
         }
     },
     methods: {
-        load: function(el){
-          let file = el.target.files[0];
+        imgInsert: function(pos, file) {
           if(this.fileSize(file.size)){
             let param = new FormData();
             param.append('file', file, file.name);
             let config = {
               headers: {'Content-Type': 'multypart/form-data'}
             };
-
             this.axios.post(`http://${this.host}/api/fileLoader`, param, config)
               .then(response => {
                 let code = response.data['code'];
                 let msg = response.data['msg'];
                 if(282 === code){
-                  this.fileList.unshift({name: file.name, url: `${msg}`});
+                  // this.fileList.unshift({name: file.name, url: `${msg}`});
+                  this.$refs.editor.$img2Url(pos, msg)
                 } else {
                   postMsg(msg, 'error');
                 }
               }).catch(e => (console.log(e)))
-
-
           } else {
             postMsg("图片过大了哦，压缩或者换张吧", "error");
-          }
-
-        },
-        insert: function(fileUrl){
-          let url = `![imgHere](${fileUrl})`;
-          this.insertText('content', url);
-        },
-        insertText: (id, str) => {
-          let obj = document.getElementById(id);
-          obj.focus();
-          if (document.selection) {
-            var sel = document.selection.createRange();
-            sel.text = str;
-          } else if (typeof obj.selectionStart == 'number'
-              && typeof obj.selectionEnd == 'number') {
-            var startPos = obj.selectionStart, endPos = obj.selectionEnd, cursorPos = startPos, tmpStr = obj.value;
-            obj.value = tmpStr.substring(0, startPos) + str
-                + tmpStr.substring(endPos, tmpStr.length);
-            cursorPos += str.length;
-            obj.selectionStart = obj.selectionEnd = cursorPos;
-          } else {
-            obj.value += str;
           }
         },
         copyHandle(content){
@@ -264,6 +208,10 @@ export default {
             `http://${this.host}/api/newTag`,{name: name},
             this.succAddTag, this.failAddTag
           )
+          name = {
+            name,
+            num: 0
+          }
           this.articles.tags.push(name);
         },
         succAddTag: function(res){
@@ -297,6 +245,10 @@ export default {
             `http://${this.host}/api/newCategory`,{name:name},
             this.succAddCategory, this.failAddCategory
           )
+          name = {
+            name,
+            num: 0
+          }
           this.articles.category.push(name);
         },
         succAddCategory: function(res){
@@ -420,25 +372,47 @@ export default {
 </script>
 
 <style>
+#writer .v-note-wrapper {
+  min-height: 500px;
+  max-height: 80vh;
+}
+#writer .auto-textarea-block,
+#writer .auto-textarea-input {
+  max-width: 500px;
+}
 #category {
   margin-bottom: 0;
+}
+.auto-textarea-wrapper .auto-textarea-input,
+#writer .markdown .v-note-show  * {
+  margin: 5px !important;
+  font-family: Constantia, 华文中宋, 宋体, serif !important;
+  white-space: normal;
 }
 .form {
   display: flex;
   flex-wrap: wrap;
+  opacity: .7;
   flex-direction: column;
 }
+.el-form-item__label {
+  color: white;
+}
 #writer {
-  padding: 5% 0 150px 15%;
+  padding: 20px 0 15% 0;
+  margin: 0 auto;
   background-color: white;
+  background-image: url('http://39.100.22.224/static/cc817057-541b-4017-a8dd-11fa175fd52e.jpg');
 }
 #workSpace h1{
   margin: 0 0 5% 35%;
 }
 #article {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .arti_cont {

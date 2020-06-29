@@ -1,5 +1,6 @@
 <template>
   <section class="timeline">
+    <h2 id="dream-start"><i class="el-icon-s-flag"></i> 梦开始的地方</h2>
     <ul>
       <li v-for="article in file" :key="article.title">
         <div>
@@ -17,6 +18,7 @@
         </div>
       </li>
     </ul>
+    <h1 ><i class="el-icon-s-promotion"></i> 梦仍在继续</h1>
   </section>
 </template>
 
@@ -66,7 +68,17 @@ export default {
   background: linear-gradient(54deg, #9164ff, #8bfff4);
   color: #3c3f64;
   overflow-x: hidden;
-  padding: 200px 0;
+  padding: 100px 0;
+}
+
+.timeline > h1,
+.timeline > h2 {
+  text-align: center;
+  font-size: 3em;
+}
+
+.timeline ul {
+  margin: 50px 0;
 }
 
 .timeline ul li {
@@ -102,6 +114,7 @@ export default {
 .timeline ul li div time {
   position: absolute;
   background: #f5af19;
+  color: white;
   width: 150px;
   height: 30px;
   top: -15px;
@@ -162,10 +175,6 @@ export default {
   }
 }
 @media screen and (max-width: 600px) {
-  body {
-    background: #8bfff4;
-  }
-
   .timeline ul li {
     margin-left: 20px;
   }

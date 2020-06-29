@@ -48,34 +48,49 @@ export default {
   margin: 10px;
   white-space: pre-wrap;
 }
+
+
+.markdown a {
+  color: #409eff !important;
+}
+.markdown a:hover {
+  border-bottom: 1px solid !important;
+}
+.markdown strong {
+  color: red !important;
+}
 .markdown img {
-  display: flex;
-  margin: 0.5rem auto;
-  max-width: 92%;
-  max-height: 500px;
-  border-radius: 0.2rem;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.12);
-  transition: 0.4s;
+  display: flex !important;
+  margin: 0.5rem auto !important;
+  max-width: 92% !important;
+  max-height: 500px !important;
+  border-radius: 0.2rem !important;
+  transition: 0.4s !important;
+  padding: 8px !important;
+  margin: auto !important;
+  box-shadow: 0 2px 2px rgba(10,16,20,.24), 0 0 2px rgba(10,16,20,.12) !important;
+  border-radius: 4px !important;
+  background-color: #fff !important;
 }
 .markdown pre {
-  margin: 1.4em 0;
-  padding: .88889em;
-  font-size: 1.2em;
-  word-break: normal;
-  word-wrap: normal;
-  white-space: pre;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  background: #f6f6f6;
-  border-radius: 4px;
+  margin: 1.4em 0 !important;
+  padding: .88889em !important;
+  font-size: 1.2em !important;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  white-space: pre !important;
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  background: #f6f6f6 !important;
+  border-radius: 4px !important;
 }
 .markdown blockquote {
-  margin-left: 10px;
-  border-left: 7px solid #787f8857;
-  background-color: #e1e7e891;
-  padding-left: 20px;
-  color: gray;
-  font-size: 0.9em;
+  margin-left: 10px !important;
+  border-left: 7px solid #787f8857 !important;
+  background-color: #e1e7e891 !important;
+  padding: 20px !important;
+  color: gray !important;
+  font-size: 0.9em !important;
 }
 .markdown h1,
 .markdown h2,
@@ -83,8 +98,8 @@ export default {
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  position: relative;
-  border-bottom: 1px dotted rgba(153,153,153,0.5);
+  position: relative !important;
+  border-bottom: 1px dotted rgba(153,153,153,0.5) !important;
 }
 
 .markdown h1::before,
@@ -103,9 +118,27 @@ export default {
 }
 .markdown ol,
 .markdown ul {
-    background: #dbde1f7a;
-    padding: 20px 40px;
-    border-radius: 4px;
-    color: #291c1c;
+    background: #dbde1f7a !important;
+    padding: 20px 40px !important;
+    border-radius: 4px !important;
+    color: #291c1c !important;
+}
+.markdown table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  overflow: auto !important;
+  line-height: 1.8 !important;
+}
+.markdown table th {
+  font-size: 1.2em !important;
+  font-weight: 700 !important;
+}
+.markdown table th,
+.markdown table td {
+  border: 1px solid #ccc !important;
+}
+.markdown table tr:hover {
+  background-color: rgb(245,245,245) !important;
 }
 </style>
