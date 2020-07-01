@@ -16,7 +16,7 @@ import briefDetails from './article-brief-details'
 export default {
 
   components: {
-    briefDetails,
+    briefDetails
   },
 
   props: {
@@ -24,8 +24,7 @@ export default {
       type: Array,
       default: []
     }
-  },
-
+  }
 
 }
 </script>

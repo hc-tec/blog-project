@@ -30,25 +30,26 @@
 <script>
 import '../assets/js/footer'
 export default {
-  data() {
+  data () {
     return {
       divine_spirit: {
-        "sketch plane"  			: ["南昌大学Olink队队长" 											, ""												, "http://www.sketchplane.top/"		],
-        "离怀秋"   					: ["南昌大学Olink队队长"											, ""												, "https://lihuaiqiu.github.io/"	],
-        "dimpurr"					: ["北邮大三生，知名前端博主，建立了 BYRIO 开源社区。"				,"北邮大三生，知名前端博主，建立了 BYRIO 开源社区。"		, "http://blog.dimpurr.com/"		],
-        "diygod"        			: ["知名前端博主，过气网红，先后在 哔哩哔哩 、 丁香园供职"			,"知名前端博主，过气网红，先后在 哔哩哔哩 、 丁香园供职" , "https://diygod.me/"				],
-        "清华大学 TUNA 协会博客" 		: ["萌新慎点〒▽〒"												, ""												, "https://tuna.moe/blog/"			],
-        "统计之都"					: ["喜欢统计学的来"												, "统计学"											, "https://cosx.org/"				],
-        "一休儿的哲学博客"			: ["哲学--欢迎精心阅读"											, ""												, "https://yixiuer.me/"				],
-        "Littleor"     			 	: ["重庆邮电的大一新生，是个极客"									,"重庆邮电的大一新生，是个极客"						, "https://blog.sixming.com/"		],
-        "折影轻梦"       			: ["厉害的高中生"													, "厉害的高中生"										, "https://nexmoe.com/"				],
-        "TonyHe"					: ["也是厉害的高中生"												, "厉害的高中生"										, "https://hjyl.org/"				],
-        "图月志" 					: ["UI 设计师"													, "UI 设计师"										, "http://iconmoon.com/"			],
-        "guyskk"					: ["家园工作室的前辈"												, "家园工作室的前辈"									, "http://blog.guyskk.com/"			],
-        "余果"						: ["一个设计总监"													, "一个设计总监"										, "https://yuguo.us/"				],
-        "北邮人博客圈"				: ["BYRIO"														, "北邮人博客圈"										, "https://planet.byr.moe/"			],
-        "张哲夫学长" 				: ["大神的博客"													, ""												, "https://fumeboy.github.io"		]
-      },
+        'sketch plane': ['南昌大学Olink队队长', '', 'http://www.sketchplane.top/'],
+        离怀秋: ['南昌大学Olink队队长', '', 'https://lihuaiqiu.github.io/'],
+        dimpurr: ['北邮大三生，知名前端博主，建立了 BYRIO 开源社区。', '北邮大三生，知名前端博主，建立了 BYRIO 开源社区。', 'http://blog.dimpurr.com/'],
+        diygod: ['知名前端博主，过气网红，先后在 哔哩哔哩 、 丁香园供职', '知名前端博主，过气网红，先后在 哔哩哔哩 、 丁香园供职', 'https://diygod.me/'],
+        '清华大学 TUNA 协会博客': ['萌新慎点〒▽〒', '', 'https://tuna.moe/blog/'],
+        统计之都: ['喜欢统计学的来', '统计学', 'https://cosx.org/'],
+        一休儿的哲学博客: ['哲学--欢迎精心阅读', '', 'https://yixiuer.me/'],
+        Littleor: ['重庆邮电的大一新生，是个极客', '重庆邮电的大一新生，是个极客', 'https://blog.sixming.com/'],
+        折影轻梦: ['厉害的高中生', '厉害的高中生', 'https://nexmoe.com/'],
+        TonyHe: ['也是厉害的高中生', '厉害的高中生', 'https://hjyl.org/'],
+        图月志: ['UI 设计师', 'UI 设计师', 'http://iconmoon.com/'],
+        guyskk: ['家园工作室的前辈', '家园工作室的前辈', 'http://blog.guyskk.com/'],
+        余果: ['一个设计总监', '一个设计总监', 'https://yuguo.us/'],
+        北邮人博客圈: ['BYRIO', '北邮人博客圈', 'https://planet.byr.moe/'],
+        张哲夫学长: ['大神的博客', '', 'https://fumeboy.github.io'],
+        海瑞: ['研发部小伙伴', '', 'http://www.xyh-kino.xyz/']
+      }
     }
   }
 }

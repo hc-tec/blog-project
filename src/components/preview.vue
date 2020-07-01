@@ -12,27 +12,27 @@
 </template>
 
 <script>
-import markdownInterpreter from  './markdown-interpreter'
+import markdownInterpreter from './markdown-interpreter'
 export default {
   props: {
     article: Object
   },
   components: {
-    "markdown-interpreter": markdownInterpreter,
+    'markdown-interpreter': markdownInterpreter
   },
   methods: {
-    pre: function() {
-        let bg = this.$refs.pre_bg;
-        this.$refs.pre_arti.style.visibility = "visible";
-        bg.style.visibility = "visible";
-        this.$refs.pre_arti.style.transform = "translate(-50%, 0)";
+    pre: function () {
+      const bg = this.$refs.pre_bg
+      this.$refs.pre_arti.style.visibility = 'visible'
+      bg.style.visibility = 'visible'
+      this.$refs.pre_arti.style.transform = 'translate(-50%, 0)'
     },
-    cancelPre: function() {
-        let bg = this.$refs.pre_bg;
-        this.$refs.pre_arti.style.visibility = "hidden";
-        bg.style.visibility = "hidden";
-        this.$refs.pre_arti.style.transform = "translate(-50%, -200%)";
-    },
+    cancelPre: function () {
+      const bg = this.$refs.pre_bg
+      this.$refs.pre_arti.style.visibility = 'hidden'
+      bg.style.visibility = 'hidden'
+      this.$refs.pre_arti.style.transform = 'translate(-50%, -200%)'
+    }
   }
 
 }

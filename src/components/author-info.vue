@@ -57,11 +57,11 @@ export default {
     }
   },
   components: {
-    "el-divider": Divider,
+    'el-divider': Divider
   },
   methods: {
-    slide: function(){
-      this.$emit("slide")
+    slide: function () {
+      this.$emit('slide')
     }
   }
 }

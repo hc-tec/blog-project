@@ -30,35 +30,35 @@ export default {
     }
   },
   methods: {
-    isElementInViewport(el) {
-      let rect = el.getBoundingClientRect();
+    isElementInViewport (el) {
+      const rect = el.getBoundingClientRect()
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
+      )
     },
-    callbackFunc() {
-      let items = document.querySelectorAll(".timeline li");
+    callbackFunc () {
+      const items = document.querySelectorAll('.timeline li')
       for (let i = 0; i < items.length; i++) {
         if (this.isElementInViewport(items[i])) {
-          if(!items[i].classList.contains("in-view")){
-            items[i].classList.add("in-view");
+          if (!items[i].classList.contains('in-view')) {
+            items[i].classList.add('in-view')
           }
-        } else if(items[i].classList.contains("in-view")) {
-            items[i].classList.remove("in-view");
+        } else if (items[i].classList.contains('in-view')) {
+          items[i].classList.remove('in-view')
         }
       }
     }
   },
-  mounted(){
-    window.addEventListener("load", this.callbackFunc);
-    window.addEventListener("scroll", this.callbackFunc);
+  mounted () {
+    window.addEventListener('load', this.callbackFunc)
+    window.addEventListener('scroll', this.callbackFunc)
   },
-  beforeDestroy(){
-    window.removeEventListener("load", this.callbackFunc);
-    window.removeEventListener("scroll", this.callbackFunc);
+  beforeDestroy () {
+    window.removeEventListener('load', this.callbackFunc)
+    window.removeEventListener('scroll', this.callbackFunc)
   }
 }
 </script>

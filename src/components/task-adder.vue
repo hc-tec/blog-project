@@ -70,33 +70,34 @@
 <script>
 import {
   Form, FormItem, Input, Select,
-  Option, Button, DatePicker, Col } from 'element-ui'
+  Option, Button, DatePicker, Col
+} from 'element-ui'
 export default {
   props: {
     taskTags: Array,
-    addTaskObj: Object,
+    addTaskObj: Object
   },
-  data(){
+  data () {
     return {
 
     }
   },
-  components:  {
-    "el-input": Input,
-    "el-form": Form,
-    "el-form-item": FormItem,
-    "el-button": Button,
-    "el-select": Select,
-    "el-option": Option,
-    "el-col": Col,
-    "el-date-picker": DatePicker,
+  components: {
+    'el-input': Input,
+    'el-form': Form,
+    'el-form-item': FormItem,
+    'el-button': Button,
+    'el-select': Select,
+    'el-option': Option,
+    'el-col': Col,
+    'el-date-picker': DatePicker
   },
   methods: {
-    initAddTask: function(){
-      this.$emit("initAddTask", this.addTaskObj);
+    initAddTask: function () {
+      this.$emit('initAddTask', this.addTaskObj)
     },
-    confirmAddTag: function(){
-      this.$emit("confirmAddTag");
+    confirmAddTag: function () {
+      this.$emit('confirmAddTag')
     }
   }
 }

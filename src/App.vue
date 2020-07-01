@@ -14,7 +14,6 @@
 </template>
 
 <script>
-
 import pageHead from './components/Header'
 import pageFoot from './components/footer'
 import backTop from './components/backToTop'
@@ -74,8 +73,7 @@ export default {
         this.getUserInfo.uisSubscribe = user_info['isSubscribe'];
         this.getUserInfo.uregis_time = user_info['regis_time'];
         this.getUserInfo.uarticle_num = user_info['article_num'];
-
-
+        this.getUserInfo.ubgImage = user_info['bgImage'];
         this.getUserInfo.power.isLogin = true;
         // 获取用户类型
         if("超级管理员" === user_info['user_type']){

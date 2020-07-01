@@ -62,45 +62,45 @@
 </template>
 
 <script>
-import { Table, TableColumn, Button } from 'element-ui';
+import { Table, TableColumn, Button } from 'element-ui'
 import { ajaxPost, postMsg } from '../elem_compo_encap'
 export default {
   components: {
-    "el-table": Table,
-    "el-table-column": TableColumn,
-    "el-button": Button,
+    'el-table': Table,
+    'el-table-column': TableColumn,
+    'el-button': Button
   },
-  data(){
+  data () {
     return {
       vistorData: null,
-      totalVisCount: 0,
+      totalVisCount: 0
     }
   },
   methods: {
-    deleteRow(index, rows) {
-      rows.splice(index, 1);
+    deleteRow (index, rows) {
+      rows.splice(index, 1)
     },
-    initGetUserIp: function(){
+    initGetUserIp: function () {
       ajaxPost(
-        "http://47.115.147.39/visIP.php", {user_type:"SUPER_USER"},
-        this.succGetUserIp, (e)=>(console.log(e))
+        'http://47.115.147.39/visIP.php', { user_type: 'SUPER_USER' },
+        this.succGetUserIp, (e) => (console.log(e))
       )
     },
-    succGetUserIp: function(res){
-      let code = res.data['code'];
-      let msg = res.data['msg'];
-      msg = `管理员，${msg}`;
-      let info = "error";
-      if(280 == code){
-        info = "success";
-        this.totalVisCount = res.data['sum'];
-        this.vistorData = res.data['data'];
+    succGetUserIp: function (res) {
+      const code = res.data.code
+      let msg = res.data.msg
+      msg = `管理员，${msg}`
+      let info = 'error'
+      if (code == 280) {
+        info = 'success'
+        this.totalVisCount = res.data.sum
+        this.vistorData = res.data.data
       }
-      postMsg(msg, info);
+      postMsg(msg, info)
     }
   },
-  mounted(){
-    this.initGetUserIp();
+  mounted () {
+    this.initGetUserIp()
   }
 }
 </script>

@@ -99,22 +99,22 @@
 </template>
 
 <script>
-import {Card, Form, FormItem, Button, Input, Upload, Radio, RadioGroup} from 'element-ui';
-import { postMsg } from '../elem_compo_encap';
+import { Card, Form, FormItem, Button, Input, Upload, Radio, RadioGroup } from 'element-ui'
+import { postMsg } from '../elem_compo_encap'
 export default {
   components: {
-    "el-card": Card,
-    "el-form": Form,
-    "el-form-item": FormItem,
-    "el-button": Button,
-    "el-input": Input,
-    "el-upload": Upload,
-    "el-radio": Radio,
-    "el-radio-group": RadioGroup
+    'el-card': Card,
+    'el-form': Form,
+    'el-form-item': FormItem,
+    'el-button': Button,
+    'el-input': Input,
+    'el-upload': Upload,
+    'el-radio': Radio,
+    'el-radio-group': RadioGroup
   },
-  data() {
+  data () {
     return {
-      imageUrl: "",
+      imageUrl: '',
       regisData: {
         user_name: '',
         password: '',
@@ -124,7 +124,7 @@ export default {
         github: '',
         avatar: '',
         hobby: '',
-        profile: '',
+        profile: ''
       },
       rules: {
         user_name: [
@@ -157,42 +157,42 @@ export default {
     }
   },
   methods: {
-    register: function(ref){
-      let data = this.$refs[ref].model
-      let param = new FormData();
+    register: function (ref) {
+      const data = this.$refs[ref].model
+      const param = new FormData()
       Object.keys(data).forEach(key => {
-        param.append(key, data[key]);
-      });
-      let config = {
-        headers: {'Content-Type': 'multypart/form-data'}
-      };
-      this.asynPost(`http://${this.host}/api/register`, param, config);
+        param.append(key, data[key])
+      })
+      const config = {
+        headers: { 'Content-Type': 'multypart/form-data' }
+      }
+      this.asynPost(`http://${this.host}/api/register`, param, config)
     },
-    asynPost: function(url, data, config){
-      this.axios.post(url,  data, config)
+    asynPost: function (url, data, config) {
+      this.axios.post(url, data, config)
         .then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          if(271 === code){
-            postMsg(msg, 'success');
+          const code = response.data.code
+          const msg = response.data.msg
+          if (code === 271) {
+            postMsg(msg, 'success')
             setTimeout(() => {
-              this.$router.push('/login');
+              this.$router.push('/login')
             }, 1000)
           } else {
-            postMsg(msg, 'error');
+            postMsg(msg, 'error')
           }
         }).catch(e => (console.log(e)))
     },
-    beforeAvatarUpload: function(file){
-      const isLt2M = file.size / 1024 / 1024 < 3;
+    beforeAvatarUpload: function (file) {
+      const isLt2M = file.size / 1024 / 1024 < 3
       if (!isLt2M) {
-        this.$message.error('上传头像图片大小不能超过 3MB!');
+        this.$message.error('上传头像图片大小不能超过 3MB!')
       }
-      return isLt2M;
+      return isLt2M
     },
-    handleAvatarSuccess: function(res){
-      this.imageUrl = res['msg'];
-      this.regisData.avatar = res['msg'] || "http://p0.qhimg.com/bdm/384_237_0/t01b30dd1843479c87c.jpg";
+    handleAvatarSuccess: function (res) {
+      this.imageUrl = res.msg
+      this.regisData.avatar = res.msg || 'http://p0.qhimg.com/bdm/384_237_0/t01b30dd1843479c87c.jpg'
     }
   }
 }

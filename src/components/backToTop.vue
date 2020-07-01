@@ -5,27 +5,27 @@
 </template>
 
 <script>
-import { Backtop, Icon } from 'element-ui';
+import { Backtop, Icon } from 'element-ui'
 
 export default {
   components: {
-    "el-backtop": Backtop,
-    "el-icon": Icon,
+    'el-backtop': Backtop,
+    'el-icon': Icon
   },
-  data(){
+  data () {
     return {
       myStyle: {
-        "background-color": "#0ff",
-        "box-shadow": "0 0 6px rgba(255, 255, 255, 0.74)",
-        "background-image": "linear-gradient(355deg, #8EC5FC, #E0C3FC)",
-        color: "#000",
-        width: "80px",
-        height: "40px",
-        "border-radius": "5px",
-        "font-size": "1.5em",
+        'background-color': '#0ff',
+        'box-shadow': '0 0 6px rgba(255, 255, 255, 0.74)',
+        'background-image': 'linear-gradient(355deg, #8EC5FC, #E0C3FC)',
+        color: '#000',
+        width: '80px',
+        height: '40px',
+        'border-radius': '5px',
+        'font-size': '1.5em'
       },
       // 是否更换为默认样式
-      defaultStyle: false,
+      defaultStyle: false
     }
   }
 }

@@ -129,35 +129,35 @@
 </template>
 
 <script>
-import {  Button, Table, TableColumn, Tooltip, Tag } from 'element-ui';
+import { Button, Table, TableColumn, Tooltip, Tag } from 'element-ui'
 export default {
   props: {
     todoListData: Array
   },
-  data(){
+  data () {
     return {
       warning: {
-        "color": "red"
+        color: 'red'
       },
       secuery: {
-        "color": "#67c23a"
-      },
+        color: '#67c23a'
+      }
     }
   },
   components: {
-    "el-button": Button,
-    "el-table": Table,
-    "el-table-column": TableColumn,
-    "el-tooltip": Tooltip,
-    "el-tag": Tag,
+    'el-button': Button,
+    'el-table': Table,
+    'el-table-column': TableColumn,
+    'el-tooltip': Tooltip,
+    'el-tag': Tag
   },
   methods: {
-    finishTask(index, todoListData, event){
-      this.$emit("finishTask", index, todoListData, event)
+    finishTask (index, todoListData, event) {
+      this.$emit('finishTask', index, todoListData, event)
     },
-    deleteTask(index, todoListData, event){
-      this.$emit("finishTask", index, todoListData, event)
-    },
+    deleteTask (index, todoListData, event) {
+      this.$emit('finishTask', index, todoListData, event)
+    }
   }
 
 }

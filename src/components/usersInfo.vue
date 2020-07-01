@@ -94,40 +94,40 @@
 </template>
 
 <script>
-import { Table, TableColumn } from 'element-ui';
+import { Table, TableColumn } from 'element-ui'
 import { ajaxPost, postMsg } from '../elem_compo_encap'
 export default {
   components: {
-    "el-table": Table,
-    "el-table-column": TableColumn,
+    'el-table': Table,
+    'el-table-column': TableColumn
   },
-  data(){
+  data () {
     return {
-      usersInfo: [],
+      usersInfo: []
     }
   },
   methods: {
-    getUsersInfo: function(){
+    getUsersInfo: function () {
       ajaxPost(
-        `http://${this.host}/api/usersInfo`,{},
+        `http://${this.host}/api/usersInfo`, {},
         this.succGetUserInfo, this.failGetUserInfo
       )
     },
-    succGetUserInfo: function(res){
-      let code = res.data['code'];
-      let msg = res.data['msg'];
-      if(286 === code){
-        this.usersInfo = res.data['data'];
+    succGetUserInfo: function (res) {
+      const code = res.data.code
+      const msg = res.data.msg
+      if (code === 286) {
+        this.usersInfo = res.data.data
       }
       postMsg(msg)
     },
-    failGetUserInfo: function(e){
-      console.log(e);
-      postMsg('信息获取失败', 'danger');
+    failGetUserInfo: function (e) {
+      console.log(e)
+      postMsg('信息获取失败', 'danger')
     }
   },
-  mounted(){
-    this.getUsersInfo();
+  mounted () {
+    this.getUsersInfo()
   }
 }
 </script>

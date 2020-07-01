@@ -16,53 +16,53 @@
 </template>
 
 <script>
-import { Carousel,CarouselItem } from 'element-ui';
+import { Carousel, CarouselItem } from 'element-ui'
 import { elconfirm, ajaxGet, ajaxDel } from '../elem_compo_encap'
 export default {
   components: {
-    "el-carousel": Carousel,
-    "el-carousel-item": CarouselItem,
+    'el-carousel': Carousel,
+    'el-carousel-item': CarouselItem
   },
-  data(){
+  data () {
     return {
       carou_img: null,
-      pc: "500px",
-      mobile: '300px',
+      pc: '500px',
+      mobile: '300px'
     }
   },
   methods: {
-    adjustScreen: function(){
-      let width = document.body.clientWidth;
-      return document.body.clientWidth > 500 ? this.pc : this.mobile;
+    adjustScreen: function () {
+      const width = document.body.clientWidth
+      return document.body.clientWidth > 500 ? this.pc : this.mobile
     },
-    initDelCarousel: function(index,id){
-      const title = "轮播图框框";
-      const tip_text = "确定取消运用此图片，是否继续？";
+    initDelCarousel: function (index, id) {
+      const title = '轮播图框框'
+      const tip_text = '确定取消运用此图片，是否继续？'
       elconfirm(
-          title, tip_text, arguments,
-          this.succDelCarousel, ()=>{},
+        title, tip_text, arguments,
+        this.succDelCarousel, () => {}
       )
     },
-    succDelCarousel: function(args){
-      let [index, id, ..._] = arguments
-      this.carou_img.splice(index, 1);
+    succDelCarousel: function (args) {
+      const [index, id, ..._] = arguments
+      this.carou_img.splice(index, 1)
       ajaxDel(
-        `http://${this.host}/main/carousel/${id}/`,{},
-        ()=>{}, ()=>{}
+        `http://${this.host}/main/carousel/${id}/`, {},
+        () => {}, () => {}
       )
     },
-    initGetCarousle:function(){
+    initGetCarousle: function () {
       ajaxGet(
         `http://${this.host}/main/carousel/`, {},
-        this.succGetCarousel, (e)=>(console.log(e))
+        this.succGetCarousel, (e) => (console.log(e))
       )
     },
-    succGetCarousel: function(res){
-      this.carou_img = res.data;
+    succGetCarousel: function (res) {
+      this.carou_img = res.data
     }
   },
-  mounted(){
-    this.initGetCarousle();
+  mounted () {
+    this.initGetCarousle()
   }
 }
 </script>

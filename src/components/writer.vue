@@ -2,7 +2,6 @@
   <div id="writer">
     <div id="article">
 
-
         <!-- 预览 -->
         <preview
           ref="preview"
@@ -15,17 +14,20 @@
 
           <el-form :model="article" class="form">
 
-            <el-form-item label="标题">
+            <el-form-item label="标题" class="title-operation">
                 <el-input
-                    placeholder="Place your title Here"
-                    type="text"
-                    style="width:95%"
-                    clearable
-                    v-model="article.title"
-                    id="title_in"
-                    :disabled="!this.getUserInfo.power.isLogin"
-                    >
+                  placeholder="Place your title Here"
+                  type="text"
+                  clearable
+                  v-model="article.title"
+                  id="title_in"
+                  :disabled="!this.getUserInfo.power.isLogin"
+                >
                 </el-input>
+                <neu-button @click="storeArticle">保存草稿</neu-button>
+                <neu-button
+                  @click="importArticle"
+                  v-if="showImportArticleFromLocalStorage">引入草稿</neu-button>
             </el-form-item>
 
             <el-form-item label="文章 (支持 MarkDown 语法喔！)">
@@ -35,6 +37,8 @@
                   class="markdown"
                   v-model="article.content"
                   @imgAdd="imgInsert"
+                  @imgDel="imgDelete"
+                  @save="storeArticle"
                 />
             </el-form-item>
 
@@ -87,287 +91,319 @@
 <script>
 import preview from './preview'
 
-import { Form, FormItem, Input, Select, Option,
-         Button, CheckboxGroup, CheckboxButton } from 'element-ui';
+import {
+  Form, FormItem, Input, Select, Option,
+  Button, CheckboxGroup, CheckboxButton
+} from 'element-ui'
 
-import { postMsg, ajaxPost, ajaxGet, elprompt, elconfirm } from '../elem_compo_encap';
-
+import { postMsg, ajaxPost, ajaxGet, elprompt, elconfirm, ajaxDel } from '../elem_compo_encap'
+import Message from '../Message'
+import { IMAGE } from '../api'
+import { genericError } from '../func'
 export default {
-    components: {
-      "el-form": Form,
-      "el-form-item": FormItem,
-      "el-input": Input,
-      "el-select": Select,
-      "el-option": Option,
-      "el-button": Button,
-      "el-checkbox-group": CheckboxGroup,
-      "el-checkbox-button": CheckboxButton,
-      preview
-    },
-    data(){
-        return {
-            article: {
-              title: this.editArticleDetail.title,
-              content: this.editArticleDetail.content,
-              category: this.editArticleDetail.category,
-              tag: this.editArticleDetail.tags,
-            },
-            category: [],
-            tags: [],
-            fileList: [],
+  components: {
+    'el-form': Form,
+    'el-form-item': FormItem,
+    'el-input': Input,
+    'el-select': Select,
+    'el-option': Option,
+    'el-button': Button,
+    'el-checkbox-group': CheckboxGroup,
+    'el-checkbox-button': CheckboxButton,
+    preview
+  },
+  data () {
+    return {
+      showImportArticleFromLocalStorage: !!localStorage.getItem('article'),
+      article: {
+        title: this.editArticleDetail.title,
+        content: this.editArticleDetail.content,
+        category: this.editArticleDetail.category,
+        tag: this.editArticleDetail.tags
+      },
+      category: [],
+      tags: [],
+      fileList: []
+    }
+  },
+  methods: {
+    imgInsert: function (pos, file) {
+      if (this.fileSize(file.size)) {
+        const param = new FormData()
+        param.append('file', file, file.name)
+        const config = {
+          headers: { 'Content-Type': 'multypart/form-data' }
         }
-    },
-    methods: {
-        imgInsert: function(pos, file) {
-          if(this.fileSize(file.size)){
-            let param = new FormData();
-            param.append('file', file, file.name);
-            let config = {
-              headers: {'Content-Type': 'multypart/form-data'}
-            };
-            this.axios.post(`http://${this.host}/api/fileLoader`, param, config)
-              .then(response => {
-                let code = response.data['code'];
-                let msg = response.data['msg'];
-                if(282 === code){
-                  // this.fileList.unshift({name: file.name, url: `${msg}`});
-                  this.$refs.editor.$img2Url(pos, msg)
-                } else {
-                  postMsg(msg, 'error');
-                }
-              }).catch(e => (console.log(e)))
-          } else {
-            postMsg("图片过大了哦，压缩或者换张吧", "error");
-          }
-        },
-        copyHandle(content){
-          let copy = (e)=>{
-              e.preventDefault()
-              e.clipboardData.setData('text/plain',content)
-              document.removeEventListener('copy',copy)
-          }
-          document.addEventListener('copy',copy)
-          document.execCommand("Copy");
-        },
-        fileSize: (size) => {
-          const isLt2M = (size / 1024 / 1024);
-          return isLt2M <= 3;
-        },
-        mark: (para) => {
-          return marked(para || '')
-        },
-
-        initGetTag: function(){
-          ajaxGet(
-            `http://${this.host}/api/tags`, {},
-            this.succGetTag, (e)=>(console.log(e))
-          )
-        },
-        succGetTag: function(res){
-          let code = res.data['code'];
-          if(277 == code){
-            this.tags = res.data['data'];
-            this.articles.tags = res.data['data'];
-          }else{
-            let msg = res.data['msg'];
-            postMsg(msg, 'error');
-          }
-        },
-
-        getCategory: function(){
-          ajaxGet(
-            `http://${this.host}/api/category`, {},
-            this.succGetCategory, (e)=>(console.log(e))
-          )
-        },
-        succGetCategory: function(res){
-          let code = res.data['code'];
-          if(278 == code){
-            this.category = res.data['data'];
-            this.articles.category = res.data['data'];
-          }else{
-            let msg = res.data['msg'];
-            postMsg(msg, 'error');
-          }
-        },
-
-        addTag: function(){
-          const title = "标签框框";
-          const tip_text = "请输入需添加的标签";
-          elprompt(
-            title, tip_text,
-            this.initAddTag, ()=>{},
-            false, {
-              confirmButtonText: '就决定是你了！',
-              cancelButtonText: '就先不添加了',
-            }
-          )
-        },
-        initAddTag: function(name){
-          ajaxGet(
-            `http://${this.host}/api/newTag`,{name: name},
-            this.succAddTag, this.failAddTag
-          )
-          name = {
-            name,
-            num: 0
-          }
-          this.articles.tags.push(name);
-        },
-        succAddTag: function(res){
-          let code = res.data['code'];
-          let msg = res.data['msg'];
-          let info = 'error';
-          if(275 == code){
-            info = 'success';
-          }
-          postMsg(msg, info);
-        },
-        failAddTag: function(e){
-          console.log(e);
-          postMsg("标签添加失败",'danger');
-        },
-
-        addCategory: function(){
-          const title = "类别框框";
-          const tip_text = "请输入需添加的类别";
-          elprompt(
-            title, tip_text,
-            this.initAddCategory,()=>{},
-            false, {
-              confirmButtonText: '就决定是你了！',
-              cancelButtonText: '要不，换个吧',
-            }
-          )
-        },
-        initAddCategory: function(name){
-          ajaxGet(
-            `http://${this.host}/api/newCategory`,{name:name},
-            this.succAddCategory, this.failAddCategory
-          )
-          name = {
-            name,
-            num: 0
-          }
-          this.articles.category.push(name);
-        },
-        succAddCategory: function(res){
-          let code = res.data['code'];
-          let msg = res.data['msg'];
-          let info = 'error';
-          if(276 == code){
-            info = 'success';
-          }
-          postMsg(msg, info);
-        },
-        failAddCategory: function(e){
-          console.log(e);
-          postMsg("类别添加失败", 'danger');
-        },
-
-        pre: function() {
-            this.$refs.preview.pre();
-            window.MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        },
-        cancelPre: function() {
-            this.$refs.preview.cancelPre();
-        },
-        asynPost: function(url, data, successCode){
-          this.axios.post(
-            url,
-            data
-          ).then(response => {
-              let data = response.data;
-              let code = data['code'];
-              let msg = data['msg'];
-              if(code == successCode){
-                postMsg(msg, 'success');
-              } else {
-                postMsg(msg, 'error');
-              }
-            })
-        },
-        submit: function() {
-          const title = "";
-          const tip_text = "请确定是否提交文章？";
-          elconfirm(
-            title, tip_text,
-            "", this.initSubmit, ()=>{},
-            false, {
-                confirmButtonText: "确定",
-                cancelButtenText: "取消",
-                center: true,
-            }
-          )
-        },
-        initSubmit: function(){
-          let user_name = this.getUserInfo.uuser_name;
-          if(user_name && user_name !== 'annoy'){
-            let data = "";
-            let article = JSON.parse(JSON.stringify(this.article));
-
-            // 将文章内容格式转化，防范特殊符号问题
-            article['content'] = encodeURIComponent(article['content']);
-            article['title'] = encodeURIComponent(article['title']);
-            article['tag'] = encodeURIComponent(article['tag']);
-            let keyList = Object.keys(article);
-            keyList.forEach(el => {
-              data += `${el}=${article[el]}&`;
-            })
-
-            // 是否为编辑模式
-            if(this.editArticleDetail.isEdit){
-              data += `creator=${this.editArticleDetail.creator.user_name}`;
-              // 附加值--id
-              data = data + `&id=${this.editArticleDetail.id}`;
-              this.asynPost(`http://${this.host}/api/editArticle`, data, 283);
-              // 全局变量 -- 编辑文章细节恢复为空值
-              Object.keys(this.editArticleDetail).forEach(key => {
-                this.editArticleDetail[key] = "";
-              })
-              // 特殊空值处理，必须为数组，否则会出错
-              this.editArticleDetail.tags = [];
+        this.axios.post(`http://${this.host}/api/fileLoader`, param, config)
+          .then(response => {
+            const code = response.data.code
+            const msg = response.data.msg
+            if (code === 282) {
+              // this.fileList.unshift({name: file.name, url: `${msg}`});
+              this.$refs.editor.$img2Url(pos, msg)
             } else {
-              data += `creator=${user_name}`;
-              this.asynPost(`http://${this.host}/api/writeArticle`, data, 273);
-
+              postMsg(msg, 'error')
             }
-            this.articles.isWrite = true;
-            setTimeout(() => {
-              this.$router.push('/web');
-            }, 500);
-
-          } else {
-            postMsg('您需登录后才能发表文章哦', 'error');
-          }
-        },
-        canGetTags: function(){
-          if(null === this.articles.tags){
-            this.initGetTag();
-          } else {
-            this.tags = this.articles.tags;
-          }
-        },
-        canGetCategory: function(){
-          if(null === this.articles.category){
-            this.getCategory();
-          } else {
-            this.category = this.articles.category;
-          }
+          }).catch(e => (console.log(e)))
+      } else {
+        postMsg('图片过大了哦，压缩或者换张吧', 'error')
+      }
+    },
+    imgDelete: function(img) {
+      const formatName = (url) => {
+        const img_split = url.split('/')
+        return img_split[img_split.length - 1]
+      }
+      const request = () => {
+        ajaxDel(
+          IMAGE, { file_name: formatName(img[0]) },
+          response, genericError
+        )
+      }
+      const response = (res) => {
+        if(res.data.code === 285) {
+          console.log("图片已删除");
         }
+      }
+      request()
     },
-    beforeDestroy(){
-      this.editArticleInit();
+    copyHandle (content) {
+      const copy = (e) => {
+        e.preventDefault()
+        e.clipboardData.setData('text/plain', content)
+        document.removeEventListener('copy', copy)
+      }
+      document.addEventListener('copy', copy)
+      document.execCommand('Copy')
     },
-    mounted(){
-      this.canGetCategory();
-      this.canGetTags();
-      this.$nextTick(function() {
+    fileSize: (size) => {
+      const isLt2M = (size / 1024 / 1024)
+      return isLt2M <= 3
+    },
+    mark: (para) => {
+      return marked(para || '')
+    },
+
+    initGetTag: function () {
+      ajaxGet(
+            `http://${this.host}/api/tags`, {},
+            this.succGetTag, (e) => (console.log(e))
+      )
+    },
+    succGetTag: function (res) {
+      const code = res.data.code
+      if (code == 277) {
+        this.tags = res.data.data
+        this.articles.tags = res.data.data
+      } else {
+        const msg = res.data.msg
+        postMsg(msg, 'error')
+      }
+    },
+
+    getCategory: function () {
+      ajaxGet(
+            `http://${this.host}/api/category`, {},
+            this.succGetCategory, (e) => (console.log(e))
+      )
+    },
+    succGetCategory: function (res) {
+      const code = res.data.code
+      if (code == 278) {
+        this.category = res.data.data
+        this.articles.category = res.data.data
+      } else {
+        const msg = res.data.msg
+        postMsg(msg, 'error')
+      }
+    },
+
+    addTag: function () {
+      const title = '标签框框'
+      const tip_text = '请输入需添加的标签'
+      elprompt(
+        title, tip_text,
+        this.initAddTag, () => {},
+        false, {
+          confirmButtonText: '就决定是你了！',
+          cancelButtonText: '就先不添加了'
+        }
+      )
+    },
+    initAddTag: function (name) {
+      ajaxGet(
+            `http://${this.host}/api/newTag`, { name: name },
+            this.succAddTag, this.failAddTag
+      )
+      name = {
+        name,
+        num: 0
+      }
+      this.articles.tags.push(name)
+    },
+    succAddTag: function (res) {
+      const code = res.data.code
+      const msg = res.data.msg
+      let info = 'error'
+      if (code == 275) {
+        info = 'success'
+      }
+      postMsg(msg, info)
+    },
+    failAddTag: function (e) {
+      console.log(e)
+      postMsg('标签添加失败', 'danger')
+    },
+
+    addCategory: function () {
+      const title = '类别框框'
+      const tip_text = '请输入需添加的类别'
+      elprompt(
+        title, tip_text,
+        this.initAddCategory, () => {},
+        false, {
+          confirmButtonText: '就决定是你了！',
+          cancelButtonText: '要不，换个吧'
+        }
+      )
+    },
+    initAddCategory: function (name) {
+      ajaxGet(
+            `http://${this.host}/api/newCategory`, { name: name },
+            this.succAddCategory, this.failAddCategory
+      )
+      name = {
+        name,
+        num: 0
+      }
+      this.articles.category.push(name)
+    },
+    succAddCategory: function (res) {
+      const code = res.data.code
+      const msg = res.data.msg
+      let info = 'error'
+      if (code == 276) {
+        info = 'success'
+      }
+      postMsg(msg, info)
+    },
+    failAddCategory: function (e) {
+      console.log(e)
+      postMsg('类别添加失败', 'danger')
+    },
+
+    pre: function () {
+      this.$refs.preview.pre()
+      window.MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+    },
+    cancelPre: function () {
+      this.$refs.preview.cancelPre()
+    },
+    asynPost: function (url, data, successCode) {
+      this.axios.post(
+        url,
+        data
+      ).then(response => {
+        const data = response.data
+        const code = data.code
+        const msg = data.msg
+        if (code == successCode) {
+          postMsg(msg, 'success')
+        } else {
+          postMsg(msg, 'error')
+        }
+      })
+    },
+    submit: function () {
+      const title = ''
+      const tip_text = '请确定是否提交文章？'
+      elconfirm(
+        title, tip_text,
+        '', this.initSubmit, () => {},
+        false, {
+          confirmButtonText: '确定',
+          cancelButtenText: '取消',
+          center: true
+        }
+      )
+    },
+    initSubmit: function () {
+      const user_name = this.getUserInfo.uuser_name
+      if (user_name && user_name !== 'annoy') {
+        let data = ''
+        const article = JSON.parse(JSON.stringify(this.article))
+
+        // 将文章内容格式转化，防范特殊符号问题
+        article.content = encodeURIComponent(article.content)
+        article.title = encodeURIComponent(article.title)
+        article.tag = encodeURIComponent(article.tag)
+        const keyList = Object.keys(article)
+        keyList.forEach(el => {
+          data += `${el}=${article[el]}&`
+        })
+
+        // 是否为编辑模式
+        if (this.editArticleDetail.isEdit) {
+          data += `creator=${this.editArticleDetail.creator.user_name}`
+          // 附加值--id
+          data = data + `&id=${this.editArticleDetail.id}`
+          this.asynPost(`http://${this.host}/api/editArticle`, data, 283)
+          // 全局变量 -- 编辑文章细节恢复为空值
+          Object.keys(this.editArticleDetail).forEach(key => {
+            this.editArticleDetail[key] = ''
+          })
+          // 特殊空值处理，必须为数组，否则会出错
+          this.editArticleDetail.tags = []
+        } else {
+          data += `creator=${user_name}`
+          this.asynPost(`http://${this.host}/api/writeArticle`, data, 273)
+        }
+        this.articles.isWrite = true
         setTimeout(() => {
-        window.MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }, 2000)
-      });
+          this.$router.push('/web')
+        }, 500)
+      } else {
+        postMsg('您需登录后才能发表文章哦', 'error')
+      }
     },
+    canGetTags: function () {
+      if (this.articles.tags === null) {
+        this.initGetTag()
+      } else {
+        this.tags = this.articles.tags
+      }
+    },
+    canGetCategory: function () {
+      if (this.articles.category === null) {
+        this.getCategory()
+      } else {
+        this.category = this.articles.category
+      }
+    },
+    storeArticle() {
+      localStorage.setItem('article', JSON.stringify(this.article));
+      Message.send({
+        message: '草稿已保存至本地存储',
+        type: 'success'
+      })
+      this.showImportArticleFromLocalStorage = !!localStorage.getItem('article').length;
+    },
+    importArticle() {
+      this.article = JSON.parse(localStorage.getItem('article'));
+    }
+  },
+  beforeDestroy () {
+    this.editArticleInit();
+  },
+  mounted () {
+    this.canGetCategory()
+    this.canGetTags()
+    this.$nextTick(function () {
+      setTimeout(() => {
+        window.MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+      }, 2000)
+    })
+  }
 }
 </script>
 
@@ -432,8 +468,6 @@ export default {
     transition: all .3s;
 } */
 
-
-
 #btn_group {
     margin-right: 15%;
     overflow: hidden;
@@ -475,7 +509,6 @@ export default {
 .sub_btn:nth-child(2):active {
     background-color: rgb(193,199,208);
 }
-
 
 .imgFiles {
   width: 80%;
@@ -523,6 +556,26 @@ export default {
   -khtml-opacity: 0;
   opacity: 0;
   cursor: pointer;
+}
+.title-operation > div > * {
+  display: inline;
+  margin-right: 10px;
+}
+.title-operation > div > div:nth-child(1) > input {
+  width: 60%;
+}
+.title-operation > div > button {
+  width: 15%;
+  background-color: #fff;
+}
+.title-operation {
+  display: inline-flex;
+}
+.title-operation .el-form-item__content {
+  width: 90%;
+}
+.neumorphic-messagebox > div {
+  background-color: #fff;
 }
 @media screen and (max-width: 800px){
   #writer {

@@ -7,11 +7,11 @@
 
 <script>
 import about from '../components/about'
-//import timeLine from '../components/timeLine'
+// import timeLine from '../components/timeLine'
 export default {
   components: {
-    about,
-    //timeLine,
+    about
+    // timeLine,
   }
 }
 </script>

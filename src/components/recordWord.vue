@@ -50,7 +50,6 @@
         </el-form-item>
       </el-form>
 
-
       <h2>句子</h2>
       <el-form :model="sentence">
         <el-form-item
@@ -89,16 +88,16 @@
 </template>
 
 <script>
-import { Input, Form, FormItem, Button } from 'element-ui';
+import { Input, Form, FormItem, Button } from 'element-ui'
 import { postMsg } from '../elem_compo_encap'
 export default {
   components: {
-    "el-input": Input,
-    "el-form": Form,
-    "el-form-item": FormItem,
-    "el-button": Button,
+    'el-input': Input,
+    'el-form': Form,
+    'el-form-item': FormItem,
+    'el-button': Button
   },
-  data(){
+  data () {
     return {
       phrase: {
         phraseList: []
@@ -107,179 +106,173 @@ export default {
         sentenceList: []
       },
       info: {
-        "单词": "Word",
-        "汉语": "Hans",
-        "相近词汇": "Relevant(单词以逗号分隔)"
+        单词: 'Word',
+        汉语: 'Hans',
+        相近词汇: 'Relevant(单词以逗号分隔)'
       },
       content: {
-        "单词": "",
-        "汉语": "",
-        "相近词汇": ""
+        单词: '',
+        汉语: '',
+        相近词汇: ''
       }
     }
   },
   methods: {
-    replaceAll: function(str){
-      return str.replace(/\\n/g," ");
+    replaceAll: function (str) {
+      return str.replace(/\\n/g, ' ')
     },
-    submitWord: function(){
-      let params = `word=${this.content['单词']}&hans=${this.content['汉语']}&relevant=${this.content['相近词汇']}`;
+    submitWord: function () {
+      let params = `word=${this.content['单词']}&hans=${this.content['汉语']}&relevant=${this.content['相近词汇']}`
 
-      let count = 1;
-      let copyPhraseList = JSON.parse(JSON.stringify(this.phrase.phraseList));
-      for(let ele of copyPhraseList){
-        ele['eng'] = this.replaceAll(ele['eng']);
-        ele['hans'] = this.replaceAll(ele['hans']);
-        params = params + `&phrase_${count}_eng=${ele['eng']}&phrase_${count}_hans=${ele['hans']}`;
-        count++;
+      let count = 1
+      const copyPhraseList = JSON.parse(JSON.stringify(this.phrase.phraseList))
+      for (const ele of copyPhraseList) {
+        ele.eng = this.replaceAll(ele.eng)
+        ele.hans = this.replaceAll(ele.hans)
+        params = params + `&phrase_${count}_eng=${ele.eng}&phrase_${count}_hans=${ele.hans}`
+        count++
       }
 
       count = 1
-      let copySentenceList = JSON.parse(JSON.stringify(this.sentence.sentenceList));
-      for(let ele of copySentenceList){
-        ele['eng'] = this.replaceAll(ele['eng']);
-        ele['hans'] = this.replaceAll(ele['hans']);
-        params = params + `&sentence_${count}_eng=${ele['eng']}&sentence_${count}_hans=${ele['hans']}`;
-        count++;
+      const copySentenceList = JSON.parse(JSON.stringify(this.sentence.sentenceList))
+      for (const ele of copySentenceList) {
+        ele.eng = this.replaceAll(ele.eng)
+        ele.hans = this.replaceAll(ele.hans)
+        params = params + `&sentence_${count}_eng=${ele.eng}&sentence_${count}_hans=${ele.hans}`
+        count++
       }
 
-      this.axios.post("http://47.115.147.39/add_word.php", params)
+      this.axios.post('http://47.115.147.39/add_word.php', params)
         .then(response => {
-          let code = response.data['code'];
-          let msg = response.data['msg'];
-          let info = 'error';
-          if(210 === code){
-            info = 'success';
+          const code = response.data.code
+          const msg = response.data.msg
+          let info = 'error'
+          if (code === 210) {
+            info = 'success'
           }
-          postMsg(msg, info);
-          this.phrase.phraseList = [];
-          this.sentence.sentenceList = [];
+          postMsg(msg, info)
+          this.phrase.phraseList = []
+          this.sentence.sentenceList = []
           Object.keys(this.content).forEach(el => {
-            this.content[el] = "";
+            this.content[el] = ''
           })
 
-          let inputList = document.getElementsByTagName('input');
-          for(let el of inputList){
-            this.titDown(el);
+          const inputList = document.getElementsByTagName('input')
+          for (const el of inputList) {
+            this.titDown(el)
           }
-
         }).catch(e => console.log(e))
-
     },
-    addSentence: function(){
+    addSentence: function () {
       this.sentence.sentenceList.push({
-        eng: "",
-        hans: ""
-      });
+        eng: '',
+        hans: ''
+      })
     },
-    removeSentence: function(sentence){
-      let index = this.sentence.sentenceList.indexOf(sentence);
-      if(index !== -1){
-        this.sentence.sentenceList.splice(index, 1);
+    removeSentence: function (sentence) {
+      const index = this.sentence.sentenceList.indexOf(sentence)
+      if (index !== -1) {
+        this.sentence.sentenceList.splice(index, 1)
       }
     },
-    addPhrase: function(){
+    addPhrase: function () {
       this.phrase.phraseList.push({
-        eng: "",
-        hans: ""
-      });
+        eng: '',
+        hans: ''
+      })
     },
-    removePhrase: function(phrase){
-      let index = this.phrase.phraseList.indexOf(phrase);
-      if(index !== -1){
-        this.phrase.phraseList.splice(index, 1);
+    removePhrase: function (phrase) {
+      const index = this.phrase.phraseList.indexOf(phrase)
+      if (index !== -1) {
+        this.phrase.phraseList.splice(index, 1)
       }
     },
-    titMove: function(el) {
-        let ele = el.currentTarget;
-        let parent = ele.parentNode.parentNode;
-        let span = parent.children[0];
-        span.style.top = "0px";
-        span.style.opacity = "1";
+    titMove: function (el) {
+      const ele = el.currentTarget
+      const parent = ele.parentNode.parentNode
+      const span = parent.children[0]
+      span.style.top = '0px'
+      span.style.opacity = '1'
     },
-    titDown: function(el) {
-        let ele = el.currentTarget || el;
-        let parent = ele.parentNode.parentNode;
-        let span = parent.children[0];
-        let label = parent.children[1].innerText;
-        if("" === this.content[label]){
-          span.style.top = "16px";
-          span.style.opacity = ".5";
+    titDown: function (el) {
+      const ele = el.currentTarget || el
+      const parent = ele.parentNode.parentNode
+      const span = parent.children[0]
+      const label = parent.children[1].innerText
+      if (this.content[label] === '') {
+        span.style.top = '16px'
+        span.style.opacity = '.5'
+      }
+    },
+    postMsg: function (msg, info) {
+      this.$message({
+        message: msg,
+        type: info
+      })
+    },
+    phraseMove: function (el) {
+      const ele = el.currentTarget
+      const childrenList = ele.parentNode.parentNode.children
+      let span
+      let count = 0
+      for (const tag of childrenList) {
+        if (tag === ele.parentNode) {
+          span = childrenList[count + 1]
+          break
         }
+        count++
+      }
+      span.style.top = '0px'
+      span.style.opacity = '1'
     },
-    postMsg: function(msg, info) {
-        this.$message({
-            message: msg,
-            type: info,
-        })
-    },
-    phraseMove: function(el) {
-      let ele = el.currentTarget;
-      let childrenList  = ele.parentNode.parentNode.children;
-      let span;
-      let count = 0;
-      for(let tag of childrenList){
-        if(tag === ele.parentNode){
-          span = childrenList[count+1];
-          break;
+    phraseHansMove: function (el) {
+      const ele = el.currentTarget
+      const childrenList = ele.parentNode.parentNode.children
+      let span
+      let count = 0
+      for (const tag of childrenList) {
+        if (tag === ele.parentNode) {
+          span = childrenList[count + 1]
+          break
         }
-        count++;
+        count++
       }
-      span.style.top = "0px";
-      span.style.opacity = "1";
-
+      span.style.top = '62px'
+      span.style.opacity = '1'
     },
-    phraseHansMove: function(el) {
-      let ele = el.currentTarget;
-      let childrenList  = ele.parentNode.parentNode.children;
-      let span;
-      let count = 0;
-      for(let tag of childrenList){
-        if(tag === ele.parentNode){
-          span = childrenList[count+1];
-          break;
+    phraseDown: function (el) {
+      const ele = el.currentTarget
+      const childrenList = ele.parentNode.parentNode.children
+      let span
+      let count = 0
+      for (const tag of childrenList) {
+        if (tag === ele.parentNode) {
+          span = childrenList[count + 1]
+          break
         }
-        count++;
+        count++
       }
-      span.style.top = "62px";
-      span.style.opacity = "1";
-
+      if (ele.value === '') {
+        span.style.top = '20px'
+        span.style.opacity = '.5'
+      }
     },
-    phraseDown: function(el) {
-      let ele = el.currentTarget;
-      let childrenList  = ele.parentNode.parentNode.children;
-      let span;
-      let count = 0;
-      for(let tag of childrenList){
-        if(tag === ele.parentNode){
-          span = childrenList[count+1];
-          break;
+    phraseHansDown: function (el) {
+      const ele = el.currentTarget
+      const childrenList = ele.parentNode.parentNode.children
+      let span
+      let count = 0
+      for (const tag of childrenList) {
+        if (tag === ele.parentNode) {
+          span = childrenList[count + 1]
+          break
         }
-        count++;
+        count++
       }
-      if("" === ele.value){
-        span.style.top = "20px";
-        span.style.opacity = ".5";
+      if (ele.value === '') {
+        span.style.top = '80px'
+        span.style.opacity = '.5'
       }
-
-    },
-    phraseHansDown: function(el) {
-      let ele = el.currentTarget;
-      let childrenList  = ele.parentNode.parentNode.children;
-      let span;
-      let count = 0;
-      for(let tag of childrenList){
-        if(tag === ele.parentNode){
-          span = childrenList[count+1];
-          break;
-        }
-        count++;
-      }
-      if("" === ele.value){
-        span.style.top = "80px";
-        span.style.opacity = ".5";
-      }
-
     }
   }
 }

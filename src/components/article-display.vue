@@ -73,8 +73,6 @@
           </span>
           <el-dropdown-menu>
 
-
-
             <el-dropdown-item :id="index+'-'+essay['id']" class="waves-effect">
               <span
                 @click="editArticle($event)"
@@ -115,7 +113,7 @@
 </template>
 
 <script>
-import { Dropdown, DropdownMenu, DropdownItem } from 'element-ui';
+import { Dropdown, DropdownMenu, DropdownItem } from 'element-ui'
 import markdownInterpreter from './markdown-interpreter'
 export default {
   props: {
@@ -127,23 +125,23 @@ export default {
     }
   },
   components: {
-    "el-dropdown": Dropdown,
-    "el-dropdown-menu": DropdownMenu,
-    "el-dropdown-item": DropdownItem,
-    "markdown-interpreter": markdownInterpreter,
+    'el-dropdown': Dropdown,
+    'el-dropdown-menu': DropdownMenu,
+    'el-dropdown-item': DropdownItem,
+    'markdown-interpreter': markdownInterpreter
   },
   methods: {
-    toArticle: function(id){
-      this.$emit("toArticle", id);
+    toArticle: function (id) {
+      this.$emit('toArticle', id)
     },
-    delArticle: function(id){
-      this.$emit("delArticle", id);
+    delArticle: function (id) {
+      this.$emit('delArticle', id)
     },
-    editArticle: function(id){
-      this.$emit("editArticle", id);
+    editArticle: function (id) {
+      this.$emit('editArticle', id)
     },
-    stickyArticle: function(id, weight) {
-      this.$emit('stickyArticle', id, weight);
+    stickyArticle: function (id, weight) {
+      this.$emit('stickyArticle', id, weight)
     }
   }
 }
@@ -260,8 +258,9 @@ export default {
 }
 #displayer .comment_num {
   position: absolute;
-  bottom: 10px;
-  right: 30px;
+  font-size: 2em;
+  top: -15px;
+  right: 50px;
 }
 @media screen and (max-width: 800px){
 

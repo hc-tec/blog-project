@@ -20,7 +20,6 @@
       </el-input>
     </div>
 
-
   <el-button
     class="waves-effect"
     type="primary"
@@ -51,7 +50,6 @@
           </p>
         </div>
 
-
       </div>
 
       <div class="btn_group" v-if="showWorkBtn">
@@ -73,131 +71,131 @@
 </template>
 
 <script>
-import { Tooltip, Input, Button } from 'element-ui';
-import { postMsg } from '../elem_compo_encap'
+import { Tooltip, Input, Button } from 'element-ui'
+import { postMsg, ajaxPost, ajaxGet } from '../elem_compo_encap'
 import Qs from 'qs'
-import { ajaxPost, ajaxGet } from '../elem_compo_encap'
+
 export default {
   components: {
-    "el-tooltip": Tooltip,
-    "el-input": Input,
-    "el-button": Button,
+    'el-tooltip': Tooltip,
+    'el-input': Input,
+    'el-button': Button
   },
-  data(){
+  data () {
     return {
       info: {
-        "名称": "Name",
-        "个人网站": "Url(选填 也可填 Github 网站)",
-        "头像网址": "Img-Url(选填)",
-        "留言内容": "Text"
+        名称: 'Name',
+        个人网站: 'Url(选填 也可填 Github 网站)',
+        头像网址: 'Img-Url(选填)',
+        留言内容: 'Text'
       },
       content: {
-        "名称": "",
-        "个人网站": "",
-        "头像网址": "",
-        "留言内容": ""
+        名称: '',
+        个人网站: '',
+        头像网址: '',
+        留言内容: ''
       },
       show: {
-        "名称": this.getUserInfo.uuser_name === 'annoy',
-        "个人网站": this.getUserInfo.uuser_name === 'annoy',
-        "头像网址": this.getUserInfo.uuser_name === 'annoy',
-        "留言内容": true
+        名称: this.getUserInfo.uuser_name === 'annoy',
+        个人网站: this.getUserInfo.uuser_name === 'annoy',
+        头像网址: this.getUserInfo.uuser_name === 'annoy',
+        留言内容: true
       },
       messages: null,
       del_btn: {
-        "height": "30px",
-        "width": "30px",
-        "text-align": "centen",
-        "padding": "0px",
+        height: '30px',
+        width: '30px',
+        'text-align': 'centen',
+        padding: '0px'
       },
       edit_btn: {
-        "height": "30px",
-        "width": "30px",
-        "text-align": "centen",
-        "padding": "0px",
+        height: '30px',
+        width: '30px',
+        'text-align': 'centen',
+        padding: '0px'
       },
-      showWorkBtn: this.getUserInfo.power.editMsg,
+      showWorkBtn: this.getUserInfo.power.editMsg
     }
   },
   methods: {
-    titMove: function(el) {
-        let ele = el.currentTarget;
-        let parent = ele.parentNode.parentNode;
-        let span = parent.children[0];
-        span.style.top = "-10px";
-        span.style.opacity = "1";
+    titMove: function (el) {
+      const ele = el.currentTarget
+      const parent = ele.parentNode.parentNode
+      const span = parent.children[0]
+      span.style.top = '-10px'
+      span.style.opacity = '1'
     },
-    titDown: function(el) {
-        let ele = el.currentTarget || el;
-        let parent = ele.parentNode.parentNode;
-        let span = parent.children[0];
-        let label = parent.children[1].innerText;
-        if("" === this.content[label]){
-          span.style.top = "6px";
-          span.style.opacity = ".5";
-        }
+    titDown: function (el) {
+      const ele = el.currentTarget || el
+      const parent = ele.parentNode.parentNode
+      const span = parent.children[0]
+      const label = parent.children[1].innerText
+      if (this.content[label] === '') {
+        span.style.top = '6px'
+        span.style.opacity = '.5'
+      }
     },
-    initSubmit: function() {
-      let data = {
-        "name": this.getUserInfo.uuser_name === 'annoy' ? this.content["名称"] : this.getUserInfo.uuser_name,
-        "url": this.getUserInfo.uuser_name === 'annoy' ? this.content["个人网站"] : this.getUserInfo.ugithub,
-        "text": this.content["留言内容"],
-        "portrait": this.getUserInfo.uuser_name === 'annoy' ? this.content["头像网址"] : this.getUserInfo.uavatar
-      };
+    initSubmit: function () {
+      const data = {
+        name: this.getUserInfo.uuser_name === 'annoy' ? this.content['名称'] : this.getUserInfo.uuser_name,
+        url: this.getUserInfo.uuser_name === 'annoy' ? this.content['个人网站'] : this.getUserInfo.ugithub,
+        text: this.content['留言内容'],
+        portrait: this.getUserInfo.uuser_name === 'annoy' ? this.content['头像网址'] : this.getUserInfo.uavatar
+      }
       ajaxPost(
-        "http://47.115.147.39/add_message.php", data,
-        this.succSubmitComment, (e)=>(console.log(e))
+        'http://47.115.147.39/add_message.php', data,
+        this.succSubmitComment, (e) => (console.log(e))
       )
     },
-    succSubmitComment: function(res){
-      let code = res.data['code'];
-      let msg = res.data['msg'];
-      let info = 'error';
-      if(230 == code){
-        info = 'success';
+    succSubmitComment: function (res) {
+      const code = res.data.code
+      const msg = res.data.msg
+      let info = 'error'
+      if (code == 230) {
+        info = 'success'
         Object.keys(this.content).forEach(ele => {
-          this.content[ele] = "";
-        });
-        let input = document.getElementsByTagName("textarea");
-        for(let el of input){
-          this.titDown(el);
+          this.content[ele] = ''
+        })
+        const input = document.getElementsByTagName('textarea')
+        for (const el of input) {
+          this.titDown(el)
         }
       }
-      this.getMessages();
-      postMsg(msg, info);
+      this.getMessages()
+      postMsg(msg, info)
     },
-    getMessages(){
+    getMessages () {
       ajaxGet(
         'http://47.115.147.39/message.php', {},
-        this.succGetMessage, (e)=>{console.log(e)}
+        this.succGetMessage, (e) => { console.log(e) }
       )
     },
-    succGetMessage: function(req){
-      this.messages = req.data['comment'];
+    succGetMessage: function (req) {
+      this.messages = req.data.comment
     },
-    initDelMsg(el){
-      let ele = el.currentTarget;
-      let classes = ele.getAttribute('class');
-      let regex = /\d+/;
-      let id = classes.match(regex)[0];
+    initDelMsg (el) {
+      const ele = el.currentTarget
+      const classes = ele.getAttribute('class')
+      const regex = /\d+/
+      const id = classes.match(regex)[0]
       ajaxPost(
-        "http://47.115.147.39/del_message.php", {id:id},
-        this.succDelMsg, (e)=>(console.log(e))
+        'http://47.115.147.39/del_message.php', { id: id },
+        this.succDelMsg, (e) => (console.log(e))
       )
     },
-    succDelMsg: function(res){
-      let code = res.data['code'];
-      let msg = res.data['msg'];
-      let info = 'success';
-      if(340 == code){
-        info = 'error';
+    succDelMsg: function (res) {
+      const code = res.data.code
+      const msg = res.data.msg
+      let info = 'success'
+      if (code == 340) {
+        info = 'error'
       }
-      this.getMessages();
-      postMsg(msg, info);
+      this.getMessages()
+      postMsg(msg, info)
     }
   },
-  mounted(){
-    this.getMessages();
+  mounted () {
+    this.getMessages()
   }
 }
 </script>
@@ -258,7 +256,6 @@ span {
   color: gray;
   margin-left: 1%;
 }
-
 
 .comment-info {
   background-color: #fff;

@@ -1,18 +1,20 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-//引入Element-ui 组件
-import { MessageBox,
-         Message,
-         Notification,
-         Icon } from 'element-ui'
+// 引入Element-ui 组件
+import {
+  MessageBox,
+  Message,
+  Notification,
+  Icon
+} from 'element-ui'
 import neumorphic from 'neumorphic-ui-vue'
 import 'element-ui/lib/theme-chalk/index.css'
-//导入 axios 组件
-import vueAxios from "vue-axios"
+// 导入 axios 组件
+import vueAxios from 'vue-axios'
 import axios from 'axios'
 // 获取用户信息
-import user_info from "./global"
+import user_info from './global'
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 
@@ -23,18 +25,18 @@ Vue.use(neumorphic)
 
 // 使用 user_info
 Vue.use(user_info)
-Vue.prototype.global = user_info;
-//使用 axiox 组件
+Vue.prototype.global = user_info
+// 使用 axiox 组件
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 Vue.use(vueAxios, axios)
 
-//使用Element UI组件
+// 使用Element UI组件
 Vue.use(Icon)
 
-Vue.prototype.$confirm = MessageBox.confirm;
-Vue.prototype.$prompt = MessageBox.prompt;
-Vue.prototype.$notify = Notification;
-Vue.prototype.$message = Message;
+Vue.prototype.$confirm = MessageBox.confirm
+Vue.prototype.$prompt = MessageBox.prompt
+Vue.prototype.$notify = Notification
+Vue.prototype.$message = Message
 
 Vue.prototype.fileArticle = null
 

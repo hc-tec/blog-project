@@ -8,7 +8,7 @@
 import program from '../components/program'
 export default {
   components: {
-    program,
+    program
   }
 }
 </script>

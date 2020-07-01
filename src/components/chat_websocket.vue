@@ -46,131 +46,128 @@
 </template>
 
 <script>
-import {Input, Button} from 'element-ui'
+import { Input, Button } from 'element-ui'
 import { GetDateTimeToString, DateTimeDiff } from '../func'
 import { ajaxGet } from '../elem_compo_encap'
 export default {
   components: {
-    "el-input": Input,
-    "el-button": Button,
+    'el-input': Input,
+    'el-button': Button
   },
-  data(){
+  data () {
     return {
       socket: '',
       chat_obj_name: '',
       id: this.getUserInfo !== 'annoy' ? this.getUserInfo.uid : 0,
-      history_message: [],
+      history_message: []
     }
   },
   methods: {
-    connect(chatObj){
-      this.chat_obj_name = chatObj.user_name;
-      this.modifyChatWindow();
-      let chat_room_Id = parseInt(this.id) < parseInt(chatObj.id) ? `u${this.id}-${chatObj.id}` : `${chatObj.id}-u${this.id}`;
+    connect (chatObj) {
+      this.chat_obj_name = chatObj.user_name
+      this.modifyChatWindow()
+      const chat_room_Id = parseInt(this.id) < parseInt(chatObj.id) ? `u${this.id}-${chatObj.id}` : `${chatObj.id}-u${this.id}`
       // this.initGetHistoryMessages(chat_room_Id);
 
-      this.socket = new WebSocket(`ws://${this.host}/websocket/chat/${chat_room_Id}`);
+      this.socket = new WebSocket(`ws://${this.host}/websocket/chat/${chat_room_Id}`)
       this.socket.onopen = _ => {
-        console.log("WebSocket 成功连接");
+        console.log('WebSocket 成功连接')
       }
       this.socket.onmessage = (e) => {
-        this.messagePretty(e);
+        this.messagePretty(e)
       }
     },
     valid: (e) => {
-      return e !== null && e !== "undefined";
+      return e !== null && e !== 'undefined'
     },
-    messagePretty(e){
-      if(this.valid(e.data)){
+    messagePretty (e) {
+      if (this.valid(e.data)) {
         // 将 json 字符串转化为 json
-        let data = JSON.parse(e.data);
+        const data = JSON.parse(e.data)
         // 信息发送时间
         // 计算两段信息发送时间差，如果超过五分钟，则不会再显示发送时间
-        let msg = this.$refs.messages.querySelectorAll('.send-time-content');
-        let exist = (_ => msg.length > 0)();
-        let last_msg_time = exist ? msg[msg.length-1].textContent : null
+        const msg = this.$refs.messages.querySelectorAll('.send-time-content')
+        const exist = (_ => msg.length > 0)()
+        const last_msg_time = exist ? msg[msg.length - 1].textContent : null
 
-        let now_msg_time = data['send_time'];
+        const now_msg_time = data.send_time
 
-        if(last_msg_time && DateTimeDiff(last_msg_time, now_msg_time)){
+        if (last_msg_time && DateTimeDiff(last_msg_time, now_msg_time)) {
 
         } else {
-          let time_div = document.createElement('div');
-          time_div.className = 'send-time-content';
+          const time_div = document.createElement('div')
+          time_div.className = 'send-time-content'
 
-          let time = document.createElement('span');
-          time.textContent = data['send_time'];
+          const time = document.createElement('span')
+          time.textContent = data.send_time
 
-          time_div.appendChild(time);
-          this.$refs.messages.appendChild(time_div);
+          time_div.appendChild(time)
+          this.$refs.messages.appendChild(time_div)
         }
 
-
-
         // 信息内容：包含头像、发送的信息
-        let message_div = document.createElement('div');
-        message_div.className = 'message-content';
+        const message_div = document.createElement('div')
+        message_div.className = 'message-content'
 
-        let avatar = document.createElement('img');
-        avatar.src = data['avatar'];
-        avatar.className = 'user-avatar';
+        const avatar = document.createElement('img')
+        avatar.src = data.avatar
+        avatar.className = 'user-avatar'
 
-        let message = document.createElement('p');
+        const message = document.createElement('p')
         message.className = 'message'
-        message.innerHTML = data['message'];
+        message.innerHTML = data.message
 
         // 如果是自己的话，则特殊处理
-        if(this.getUserInfo.uid === data['id']){
-          message_div.className = 'message-content-self';
-          avatar.className = 'user-avatar-self';
-          message_div.appendChild(message);
-          message_div.appendChild(avatar);
-
+        if (this.getUserInfo.uid === data.id) {
+          message_div.className = 'message-content-self'
+          avatar.className = 'user-avatar-self'
+          message_div.appendChild(message)
+          message_div.appendChild(avatar)
         } else {
-          message_div.appendChild(avatar);
-          message_div.appendChild(message);
+          message_div.appendChild(avatar)
+          message_div.appendChild(message)
         }
 
         this.$refs.messages.appendChild(message_div)
       }
     },
-    initSend(){
-      let val = this.$refs.message.innerHTML;
-      let data = {
+    initSend () {
+      const val = this.$refs.message.innerHTML
+      const data = {
         id: this.getUserInfo.uid,
         user_name: this.getUserInfo.uuser_name,
         avatar: this.getUserInfo.uavatar,
         message: val,
         send_time: GetDateTimeToString()
       }
-      this.send(JSON.stringify(data));
+      this.send(JSON.stringify(data))
       // 情况聊天框内容
-      this.$refs.message.innerHTML = '';
+      this.$refs.message.innerHTML = ''
     },
-    send(message){
-      this.socket.send(message);
+    send (message) {
+      this.socket.send(message)
     },
-    close(){
+    close () {
       this.socket.close()
-      console.log("WebSocket 已关闭");
+      console.log('WebSocket 已关闭')
     },
-    modifyChatWindow(){
-      this.$refs.messages.innerHTML = '';
+    modifyChatWindow () {
+      this.$refs.messages.innerHTML = ''
     },
-    initGetHistoryMessages(chat_room_Id){
+    initGetHistoryMessages (chat_room_Id) {
       ajaxGet(
         `http://${this.host}/websocket/chatInfo/${chat_room_Id}`, {},
-        this.succGetHistoryMessages, (e)=>console.log(e),
+        this.succGetHistoryMessages, (e) => console.log(e)
       )
     },
-    succGetHistoryMessages(res){
-      this.history_message = res.data.results;
+    succGetHistoryMessages (res) {
+      this.history_message = res.data.results
     }
   },
-  mounted(){
+  mounted () {
     // this.connect();
   },
-  beforeDestroy(){
+  beforeDestroy () {
     this.close()
   }
 }

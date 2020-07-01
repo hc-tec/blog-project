@@ -52,7 +52,6 @@
         <neu-button v-if="content.power.isLogin" class="modify-btn" @click="modify">确认修改</neu-button>
       </div>
 
-
     </div>
 
     <creativeCollection :createdArticles="createdArticles" />
@@ -69,26 +68,26 @@ import { USER_INFO_MODIFY } from '../api'
 
 export default {
   components: {
-    "el-link": Link,
+    'el-link': Link,
     creativeCollection
   },
-  data(){
+  data () {
     return {
       notToAdmin: {
-        "pointer-events": "none"
+        'pointer-events': 'none'
       },
       data: {},
-      img: "",
+      img: '',
       content: {},
       activeName: '1',
       name: 1,
       content: this.getUserInfo,
 
-      createdArticles: [],
+      createdArticles: []
     }
   },
   methods: {
-    getUserCreators() {
+    getUserCreators () {
       const request = () => {
         ajaxGet(
           `http://${this.host}/api/createdArticle/${this.getUserInfo.uid}`, {},
@@ -100,21 +99,21 @@ export default {
       }
       request()
     },
-    showModifyBtn() {
-      const btn = document.getElementsByClassName('modify-btn')[0];
-      btn.style.opacity = '1';
-      btn.style.zIndex = '1';
+    showModifyBtn () {
+      const btn = document.getElementsByClassName('modify-btn')[0]
+      btn.style.opacity = '1'
+      btn.style.zIndex = '1'
     },
-    unshowModifyBtn() {
-      const btn = document.getElementsByClassName('modify-btn')[0];
-      btn.style.opacity = '0';
-      btn.style.zIndex = '-1';
+    unshowModifyBtn () {
+      const btn = document.getElementsByClassName('modify-btn')[0]
+      btn.style.opacity = '0'
+      btn.style.zIndex = '-1'
     },
-    modify() {
+    modify () {
       const info = {
-        'hobby': this.content.uhobby,
-        'profile': this.content.uprofile,
-        'github': this.content.ugithub
+        hobby: this.content.uhobby,
+        profile: this.content.uprofile,
+        github: this.content.ugithub
       }
       const request = () => {
         ajaxPatch(
@@ -123,18 +122,17 @@ export default {
         )
       }
       const response = (res) => {
-        if(res.data.code === 289) postMsg('信息修改成功', 'success');
+        if (res.data.code === 289) postMsg('信息修改成功', 'success')
         else postMsg('信息修改失败', 'danger')
       }
       request()
     }
   },
-  mounted() {
+  mounted () {
     this.getUserCreators()
   }
 }
 </script>
-
 
 <style>
 /* src="../assets/css/aboutLink.css" */

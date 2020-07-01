@@ -23,11 +23,11 @@ export default {
     tags: Array
   },
   methods: {
-    initGetArticleByTag(index){
-      document.body.scrollIntoView();
-      this.$emit("initGetArticleByTag", index);
+    initGetArticleByTag (index) {
+      document.body.scrollIntoView()
+      this.$emit('initGetArticleByTag', index)
     },
-    startCloud(){
+    startCloud () {
       try {
         TagCanvas.Start('tag-cloud', 'cloud', {
           textColour: '#66ccff',
@@ -35,14 +35,14 @@ export default {
           reverse: true,
           maxSpeed: 0.1,
           weight: true,
-          weightMode: 'both',
-        });
-      } catch(e) {
-        document.getElementById('tag-cloud').style.display = 'none';
+          weightMode: 'both'
+        })
+      } catch (e) {
+        document.getElementById('tag-cloud').style.display = 'none'
       }
     }
   },
-  mounted(){
+  mounted () {
     this.startCloud()
   }
 }

@@ -3,26 +3,26 @@
 </template>
 
 <script>
-let marked = require('marked');
-let hljs = require('highlight.js');
-import 'highlight.js/styles/default.css';
+import 'highlight.js/styles/default.css'
+const marked = require('marked')
+const hljs = require('highlight.js')
 marked.setOptions({
-    renderer: new marked.Renderer(),
-    gfm: true,
-    tables: true,
-    breaks: false,
-    pedantic: false,
-    sanitize: false,
-    smartLists: true,
-    smartypants: false,
-    highlight: function (code, lang) {
-          if (lang && hljs.getLanguage(lang)) {
-            return hljs.highlight(lang, code, true).value;
-          } else {
-            return hljs.highlightAuto(code).value;
-          }
-      }
-  });
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  highlight: function (code, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      return hljs.highlight(lang, code, true).value
+    } else {
+      return hljs.highlightAuto(code).value
+    }
+  }
+})
 export default {
   props: {
     article: {
@@ -34,11 +34,10 @@ export default {
     }
   },
   methods: {
-    mark(para){
-      if(!this.showAll)
-        return marked((para.slice(0, 140) + '......') || '')
+    mark (para) {
+      if (!this.showAll) { return marked((para.slice(0, 140) + '......') || '') }
       return marked((para || ''))
-    },
+    }
   }
 }
 </script>
@@ -48,7 +47,6 @@ export default {
   margin: 10px;
   white-space: pre-wrap;
 }
-
 
 .markdown a {
   color: #409eff !important;

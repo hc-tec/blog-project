@@ -21,8 +21,8 @@ export default {
     ip,
     img_admin,
     users,
-    "el-tabs": Tabs,
-    "el-tab-pane": TabPane,
+    'el-tabs': Tabs,
+    'el-tab-pane': TabPane
   }
 }
 </script>

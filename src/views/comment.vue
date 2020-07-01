@@ -10,7 +10,7 @@
 import comment from '../components/comment'
 export default {
   components: {
-    comment,
+    comment
   }
 }
 </script>

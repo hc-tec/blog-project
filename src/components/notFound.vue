@@ -11,34 +11,34 @@
 
 <script>
 export default {
-  data(){
+  data () {
     return {
-      se: null,
+      se: null
     }
   },
   methods: {
-    single() {
-      function $(id){
+    single () {
+      function $ (id) {
         return document.getElementById(id)
       }
-      var sourInfo = $("error").innerHTML.toString()
-      $("error").innerHTML = ""
+      var sourInfo = $('error').innerHTML.toString()
+      $('error').innerHTML = ''
 
       var i = 0
       this.se = setInterval(() => {
-        $("error").innerHTML = sourInfo.slice(0, i) + '|'
+        $('error').innerHTML = sourInfo.slice(0, i) + '|'
         i++
-        if(i === sourInfo.length){
-          $("error").innerHTML = sourInfo
+        if (i === sourInfo.length) {
+          $('error').innerHTML = sourInfo
           clearInterval(this.se)
         }
       }, 40)
     }
   },
-  beforeDestroy(){
-    clearInterval(this.se);
+  beforeDestroy () {
+    clearInterval(this.se)
   },
-  mounted(){
+  mounted () {
     this.$nextTick(() => {
       this.single()
     })

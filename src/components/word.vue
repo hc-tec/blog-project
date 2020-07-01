@@ -52,7 +52,6 @@
       </p>
     </div>
 
-
     <div class="prev" v-if="getPrev">
       <i class="el-icon-d-arrow-left"></i>
       <router-link :to="getPrev">{{ getPrev }}</router-link>
@@ -62,76 +61,75 @@
       <router-link :to="getNext">{{ getNext }}</router-link>
     </div>
 
-
   </div>
 </template>
 
 <script>
 import { ajaxGet } from '../elem_compo_encap'
-import {mergeDict} from '../func'
+import { mergeDict } from '../func'
 export default {
-  data(){
+  data () {
     return {
-      word: "",
+      word: '',
       copyWord: this.$route.params.word,
       data: {},
-      getPrev: "",
-      getNext: "",
-      tmpDict: {},
+      getPrev: '',
+      getNext: '',
+      tmpDict: {}
     }
   },
   computed: {
-    showPhrase: function(){
-      return this.word['phrase'].length !== 0 //|| this.words.words[this.copyWord]['phrase'].length !== 0;
+    showPhrase: function () {
+      return this.word.phrase.length !== 0 // || this.words.words[this.copyWord]['phrase'].length !== 0;
     },
-    showSen: function(){
-      return this.word['sentence'].length !== 0 //|| this.words.words[this.copyWord]['sentence'].length !== 0;
+    showSen: function () {
+      return this.word.sentence.length !== 0 // || this.words.words[this.copyWord]['sentence'].length !== 0;
     },
-    showRela: function(){
-      return (this.word['relevant-word'].length !== 0) //|| (this.words.words[this.copyWord]['relevant-word'].length !== 0) || false;
-    },
+    showRela: function () {
+      return (this.word['relevant-word'].length !== 0) // || (this.words.words[this.copyWord]['relevant-word'].length !== 0) || false;
+    }
   },
   methods: {
-    initGetWords: function(url){
+    initGetWords: function (url) {
       ajaxGet(
         url, {},
-        this.succGetWords, (e)=>(console.log(e))
+        this.succGetWords, (e) => (console.log(e))
       )
     },
-    succGetWords: function(res){
-      let wordsList = Object.keys(res.data);
-      let index = wordsList.indexOf(this.copyWord);
-      this.words.wordsList = [...this.words.wordsList, ...wordsList];
-      this.words.words = mergeDict(this.tmpDict, res.data);
-      if(index === -1){
-        this.initGetWords('http://47.115.147.39/words.php');
-        return ;
+    succGetWords: function (res) {
+      const wordsList = Object.keys(res.data)
+      const index = wordsList.indexOf(this.copyWord)
+      this.words.wordsList = [...this.words.wordsList, ...wordsList]
+      this.words.words = mergeDict(this.tmpDict, res.data)
+      if (index === -1) {
+        this.initGetWords('http://47.115.147.39/words.php')
+        return
       }
-      this.word = res.data[this.copyWord];
-      this.getPrev = wordsList[index-1] || "";
-      this.getNext = wordsList[index+1] || "";
+      this.word = res.data[this.copyWord]
+      this.getPrev = wordsList[index - 1] || ''
+      this.getNext = wordsList[index + 1] || ''
     },
-    getWordByGlobalVary: function(){
-      if(null === this.words.words){
-        this.initGetWords('../json/words.json');
+    getWordByGlobalVary: function () {
+      if (this.words.words === null) {
+        this.initGetWords('../json/words.json')
       } else {
-        let index = this.obsGetIndex(this.words.wordsList, this.copyWord);
-        this.word = this.words.words[this.copyWord];
-        if(!this.word){
-          this.initGetWords('http://47.115.147.39/words.php');
+        const index = this.obsGetIndex(this.words.wordsList, this.copyWord)
+        this.word = this.words.words[this.copyWord]
+        if (!this.word) {
+          this.initGetWords('http://47.115.147.39/words.php')
         }
-        this.getPrev = this.words.wordsList[index-1] || "";
-        this.getNext = this.words.wordsList[index+1] || "";
+        this.getPrev = this.words.wordsList[index - 1] || ''
+        this.getNext = this.words.wordsList[index + 1] || ''
       }
     }
   },
-  mounted(){
-    this.getWordByGlobalVary();
+  mounted () {
+    this.getWordByGlobalVary()
   },
   watch: {
     '$route' (to, from) { // 监听路由是否变化
-      this.copyWord = this.$route.params.word;
-      this.getWordByGlobalVary();
+      this.copyWord = this.$route.params.word
+      this.getWordByGlobalVary()
     }
   }
 }

@@ -15,37 +15,36 @@ import chatWindow from '../components/chat_websocket'
 import { ajaxGet } from '../elem_compo_encap'
 export default {
   components: {
-    "friend-list": friendsList,
-    "chat-window": chatWindow,
+    'friend-list': friendsList,
+    'chat-window': chatWindow
   },
-  data(){
+  data () {
     return {
-      briefUserInfo: [],
+      briefUserInfo: []
     }
   },
   methods: {
-    initGetBriefUserInfo(){
+    initGetBriefUserInfo () {
       ajaxGet(
-        `http://${this.host}/api/usersBriefInfo`,{},
-        this.succGetBriefUserInfo, (e)=>(console.log(e))
+        `http://${this.host}/api/usersBriefInfo`, {},
+        this.succGetBriefUserInfo, (e) => (console.log(e))
       )
     },
-    succGetBriefUserInfo(res){
-      this.briefUserInfo = res.data;
+    succGetBriefUserInfo (res) {
+      this.briefUserInfo = res.data
       // 执行 WebSocket 默认连接，找到第一个与登录用户ID不相等的对象
       res.data.some((data, index) => {
-        if(data.id !== this.getUserInfo.uid){
-          this.$refs.chatWindow.connect(res.data[index]);
-          return true;
+        if (data.id !== this.getUserInfo.uid) {
+          this.$refs.chatWindow.connect(res.data[index])
+          return true
         }
       })
-
     },
-    getChatObjID(chatObj){
-      this.$refs.chatWindow.connect(chatObj);
+    getChatObjID (chatObj) {
+      this.$refs.chatWindow.connect(chatObj)
     }
   },
-  mounted(){
+  mounted () {
     this.initGetBriefUserInfo()
   }
 }

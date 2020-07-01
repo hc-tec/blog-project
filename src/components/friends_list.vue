@@ -20,14 +20,14 @@ export default {
     friends: Array
   },
   methods: {
-    getChatObjID(index){
-      this.$emit("getChatObjID", this.friends[index]);
+    getChatObjID (index) {
+      this.$emit('getChatObjID', this.friends[index])
       // 清楚兄弟节点的 active class
       this.$refs.friendList.children.forEach(child => {
-        child.className = '';
-      });
-      this.$refs.friendList.children[index].className = 'active';
-    },
+        child.className = ''
+      })
+      this.$refs.friendList.children[index].className = 'active'
+    }
   }
 }
 </script>

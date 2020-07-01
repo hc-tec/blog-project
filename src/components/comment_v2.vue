@@ -102,19 +102,19 @@
 </template>
 
 <script>
-import { Pagination } from 'element-ui';
+import { Pagination } from 'element-ui'
 import {
   TwemojiTextarea
-} from '@kevinfaguiar/vue-twemoji-picker';
-import EmojiAllData from '@kevinfaguiar/vue-twemoji-picker/emoji-data/zh/emoji-all-groups.json';
-import EmojiDataAnimalsNature from '@kevinfaguiar/vue-twemoji-picker/emoji-data/zh/emoji-group-animals-nature.json';
-import EmojiDataFoodDrink from '@kevinfaguiar/vue-twemoji-picker/emoji-data/zh/emoji-group-food-drink.json';
-import EmojiGroups from '@kevinfaguiar/vue-twemoji-picker/emoji-data/emoji-groups.json';
+} from '@kevinfaguiar/vue-twemoji-picker'
+import EmojiAllData from '@kevinfaguiar/vue-twemoji-picker/emoji-data/zh/emoji-all-groups.json'
+import EmojiDataAnimalsNature from '@kevinfaguiar/vue-twemoji-picker/emoji-data/zh/emoji-group-animals-nature.json'
+import EmojiDataFoodDrink from '@kevinfaguiar/vue-twemoji-picker/emoji-data/zh/emoji-group-food-drink.json'
+import EmojiGroups from '@kevinfaguiar/vue-twemoji-picker/emoji-data/emoji-groups.json'
 
 export default {
   props: {
     comment: {
-      type: Array || Object ,
+      type: Array || Object
     },
     reply: {
       type: Boolean,
@@ -140,36 +140,36 @@ export default {
       type: Object
     }
   },
-  data(){
+  data () {
     return {
-      page: 1,
+      page: 1
     }
   },
   components: {
     'twemoji-textarea': TwemojiTextarea,
-    "el-pagination": Pagination,
+    'el-pagination': Pagination
   },
   methods: {
-    pageChange(){
-      this.$emit("pageChange", this.page)
+    pageChange () {
+      this.$emit('pageChange', this.page)
     },
-    onEnterKey(e) {
+    onEnterKey (e) {
       this.initSubmitComment(e)
     },
-    emojiDataAll() {
-      return EmojiAllData;
+    emojiDataAll () {
+      return EmojiAllData
     },
-    emojiGroups() {
-      return EmojiGroups;
+    emojiGroups () {
+      return EmojiGroups
     },
-    cancelReply(){
-      this.$emit("cancelReply");
+    cancelReply () {
+      this.$emit('cancelReply')
     },
-    initSubmitComment(el){
-      this.$emit("initSubmitComment", el);
+    initSubmitComment (el) {
+      this.$emit('initSubmitComment', el)
     },
-    getCommentId(el){
-      this.$emit("getCommentId", el);
+    getCommentId (el) {
+      this.$emit('getCommentId', el)
     }
   }
 }
@@ -417,7 +417,6 @@ export default {
 	top: 25px;
 	left: -55px;
 }
-
 
 .comments-list li {
 	margin-bottom: 15px;

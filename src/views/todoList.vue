@@ -9,7 +9,7 @@ import todoList from '../components/todoList'
 
 export default {
   components: {
-    todoList,
+    todoList
   }
 }
 </script>

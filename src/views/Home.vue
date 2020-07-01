@@ -22,7 +22,7 @@ export default {
   components: {
     carousel,
     words,
-    login,
+    login
   }
 }
 </script>

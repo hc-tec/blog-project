@@ -8,8 +8,7 @@
 import note from '../components/noteInfo'
 export default {
   components: {
-    note,
+    note
   }
 }
 </script>
-

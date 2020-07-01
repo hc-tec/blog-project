@@ -10,7 +10,7 @@
 import word from '../components/word'
 export default {
   components: {
-    word,
+    word
   }
 }
 </script>

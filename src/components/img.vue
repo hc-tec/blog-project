@@ -25,85 +25,86 @@
 </template>
 
 <script>
-import { Image } from 'element-ui';
-import { ajaxGet, ajaxDel, elconfirm, postMsg, ajaxPost } from '../elem_compo_encap';
+import { Image } from 'element-ui'
+import { ajaxGet, ajaxDel, elconfirm, postMsg, ajaxPost } from '../elem_compo_encap'
+import { IMAGE } from '../api'
 export default {
   components: {
-    "el-image": Image,
+    'el-image': Image
   },
-  data(){
+  data () {
     return {
-      img_list: [],
+      img_list: []
     }
   },
   methods: {
-    initConfirmDelImg: function(index){
-      const title = "删除框框";
-      const tip_text = "此操作将永久删除此图片，是否继续？";
+    initConfirmDelImg: function (index) {
+      const title = '删除框框'
+      const tip_text = '此操作将永久删除此图片，是否继续？'
       elconfirm(
         title, tip_text,
         arguments, this.initDelImg,
-        (e)=>(console.log(e))
+        (e) => (console.log(e))
       )
     },
-    initDelImg: function(){
-      let index = arguments[0];
-      let img_name = this.name(this.img_list[index])
+    initDelImg: function () {
+      const index = arguments[0]
+      const img_name = this.name(this.img_list[index])
       ajaxDel(
-        `http://${this.host}/api/files`, {file_name: img_name},
-        this.succDelImg, (e)=>{console.log(e)}
+        IMAGE, { file_name: img_name },
+        this.succDelImg, (e) => { console.log(e) }
       )
-      this.img_list.splice(index,1);
+      this.img_list.splice(index, 1)
     },
-    succDelImg: function(res){
-      let code = res.data['code'];
-      let msg = res.data['msg'];
+    succDelImg: function (res) {
+      const code = res.data.code
+      const msg = res.data.msg
       postMsg(msg)
     },
-    initGetImg: function(){
+    initGetImg: function () {
       ajaxGet(
-        `http://${this.host}/api/files`,{},
-        this.succGetImg, (e)=>(console.log(e))
+        IMAGE, {},
+        this.succGetImg, (e) => (console.log(e))
       )
     },
-    succGetImg: function(res){
-      let code = res.data['code'];
-      let msg = res.data['msg'];
-      if(284 === code){
-        this.img_list = res.data['data'];
+    succGetImg: function (res) {
+      const code = res.data.code
+      const msg = res.data.msg
+      if (code === 284) {
+        this.img_list = res.data.data
       } else {
         postMsg(msg)
       }
     },
     name: (url) => {
-      let img_split = url.split('/');
-      return img_split[img_split.length-1];
+      const img_split = url.split('/')
+      return img_split[img_split.length - 1]
     },
-    loadCarousel: function(index){
-      const title = "轮播图框框";
-      const tip_text = "确定运用此图片至首页轮播图，是否继续？";
+    loadCarousel: function (index) {
+      const title = '轮播图框框'
+      const tip_text = '确定运用此图片至首页轮播图，是否继续？'
       elconfirm(
         title, tip_text,
         arguments, this.initLoadCarousel,
-        (e)=>(console.log(e))
+        (e) => (console.log(e))
       )
     },
-    initLoadCarousel: function(){
-      let index = arguments[0];
-      let img = this.img_list[index];
+    initLoadCarousel: function () {
+      const index = arguments[0]
+      const img = this.img_list[index]
       ajaxPost(
-        `http://${this.host}/main/carousel/`, {img:img},
-        this.succLoadCarousel, (e)=>(console.log(e))
+        `http://${this.host}/main/carousel/`, { img: img },
+        this.succLoadCarousel, (e) => (console.log(e))
       )
     },
-    succLoadCarousel: function(res){
-      if(res.data['img']){
-        postMsg('成功运用至轮播图', 'success');
+    succLoadCarousel: function (res) {
+      if (res.data.img) {
+        postMsg('成功运用至轮播图', 'success')
       }
     }
   },
-  mounted(){
-    this.initGetImg();
+  mounted () {
+    this.initGetImg()
   }
 }
 </script>
@@ -173,6 +174,5 @@ export default {
   text-align: center;
   margin-bottom: 30px;
 }
-
 
 </style>

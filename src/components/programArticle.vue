@@ -40,10 +40,10 @@ import catalog from './catalog'
 import comment_v2 from './comment_v2'
 import article_v2 from './article'
 import authorInfo from './author-info'
-import { ajaxGet, ajaxPost, postMsg, elnotify } from '../elem_compo_encap';
+import { ajaxGet, ajaxPost, postMsg, elnotify } from '../elem_compo_encap'
 
 export default {
-  data(){
+  data () {
     return {
       id: this.$route.params.web,
       article: {},
@@ -57,7 +57,7 @@ export default {
       reply: false,
       replied_comment_id: '-1',
       replied_user_name: '',
-      total: 0,      // 总评论
+      total: 0, // 总评论
       pagi_count: 5, // 每页评论数
       current_page: 1,
 
@@ -66,86 +66,86 @@ export default {
   },
   components: {
     catalog,
-    "comment-v2": comment_v2,
-    "article-v2": article_v2,
-    authorInfo,
+    'comment-v2': comment_v2,
+    'article-v2': article_v2,
+    authorInfo
   },
   methods: {
-    initMakeCatalog(el){
-      this.articleObject = document.getElementsByClassName(el)[0];
+    initMakeCatalog (el) {
+      this.articleObject = document.getElementsByClassName(el)[0]
     },
 
-    onEnterKey(e) {
+    onEnterKey (e) {
       this.initSubmitComment()
     },
-    emojiDataAll() {
-      return EmojiAllData;
+    emojiDataAll () {
+      return EmojiAllData
     },
-    emojiGroups() {
-      return EmojiGroups;
+    emojiGroups () {
+      return EmojiGroups
     },
-    copy(code){
-      document.addEventListener('copy', save);
-      document.execCommand('copy');
-      document.removeEventListener('copy', save);
-      function save(event){
-        event.clipboardData.setData('text/plain', code);
-        event.preventDefault();
+    copy (code) {
+      document.addEventListener('copy', save)
+      document.execCommand('copy')
+      document.removeEventListener('copy', save)
+      function save (event) {
+        event.clipboardData.setData('text/plain', code)
+        event.preventDefault()
       }
-      elnotify("","复制成功","success");
+      elnotify('', '复制成功', 'success')
     },
-    addCodeLangToPre(content){
-      let pre = document.getElementsByClassName(content)[0].querySelectorAll('pre');
+    addCodeLangToPre (content) {
+      const pre = document.getElementsByClassName(content)[0].querySelectorAll('pre')
       pre.forEach(el => {
         // 获取 pre 的 code 子元素
-        let code = el.children[0];
+        const code = el.children[0]
         // 获取此时的 code，避免后续元素污染
-        let code_content = code.textContent;
+        const code_content = code.textContent
         // 设置为 relative，为之后的 absolute 做准备
-        el.style.position = "relative";
+        el.style.position = 'relative'
         // 获取 code 的lang类型<code class="language-xxx"></code>
-        let lang_code = code.getAttribute('class') || null;
-        if(lang_code){
-          let lang = lang_code.split('-')[1] || None;
+        const lang_code = code.getAttribute('class') || null
+        if (lang_code) {
+          const lang = lang_code.split('-')[1] || None
           // 创建 span 元素，用于显示代码类型
-          let span = document.createElement('p');
-          span.innerHTML = lang.toUpperCase();
-          span.setAttribute('class', 'code-lang');
-          code.appendChild(span);
+          const span = document.createElement('p')
+          span.innerHTML = lang.toUpperCase()
+          span.setAttribute('class', 'code-lang')
+          code.appendChild(span)
         }
         // 创建一个按钮，用于代码复制
-        let button = document.createElement('p');
-        button.innerHTML = "<i class='el-icon-document-copy'></i>";
-        button.setAttribute('class', 'code-copy');
+        const button = document.createElement('p')
+        button.innerHTML = "<i class='el-icon-document-copy'></i>"
+        button.setAttribute('class', 'code-copy')
         // 绑定 click 事件，执行代码复制
         button.onclick = () => this.copy(code_content)
         // 将此元素添加进 code 中
-        code.appendChild(button);
-      });
+        code.appendChild(button)
+      })
     },
 
-    cancelReply: function(){
-      this.reply = false;
+    cancelReply: function () {
+      this.reply = false
     },
-    pageChange: function(page){
-      this.current_page = page;
-      this.ajaxInitComment(page);
+    pageChange: function (page) {
+      this.current_page = page
+      this.ajaxInitComment(page)
       document.getElementById('container').scrollIntoView()
     },
-    getCommentId: function(el){
+    getCommentId: function (el) {
       // 获取所回复评论的 id 值，并启动回复模式
-      this.reply = true;
-      this.replied_comment_id = el.currentTarget.getAttribute('id');
+      this.reply = true
+      this.replied_comment_id = el.currentTarget.getAttribute('id')
       // 获取所回复用户的用户名，用于 @xxx
-      this.replied_user_name = el.currentTarget.previousElementSibling.previousElementSibling.children[0].innerHTML;
+      this.replied_user_name = el.currentTarget.previousElementSibling.previousElementSibling.children[0].innerHTML
       // 滑动至评论组件
       document.getElementById('container').scrollIntoView()
     },
 
-    initSubmitComment: function(){
-      let message = document.getElementById('twemoji-textarea').innerHTML;
-      message = message.replace(/alt=\"\s*\S*\"/g, '');
-      if(!this.reply){
+    initSubmitComment: function () {
+      let message = document.getElementById('twemoji-textarea').innerHTML
+      message = message.replace(/alt=\"\s*\S*\"/g, '')
+      if (!this.reply) {
         ajaxGet(
           `http://${this.host}/api/addComment`, {
             user: this.getUserInfo.uid,
@@ -154,7 +154,7 @@ export default {
           }, this.succSubmitComment, this.failSubmitComment
         )
       } else {
-        let data = {
+        const data = {
           user: this.getUserInfo.uid,
           replied_comment: this.replied_comment_id,
           message: message
@@ -167,130 +167,129 @@ export default {
         // this.post(`http://${this.host}/api/addComment`, data, this.succSubmitComment, this.failSubmitComment);
       }
     },
-    succSubmitComment: function(res){
-      let data = res.data;
-      if(data.code === 1200){
-        postMsg('评论发表成功', 'success');
-        if(this.reply) {
-          this.pageChange(this.current_page);
+    succSubmitComment: function (res) {
+      const data = res.data
+      if (data.code === 1200) {
+        postMsg('评论发表成功', 'success')
+        if (this.reply) {
+          this.pageChange(this.current_page)
           // 取消回复模式
-          this.reply = false;
+          this.reply = false
         } else {
-          this.current_page = 1;
-          this.pageChange(1);
+          this.current_page = 1
+          this.pageChange(1)
         }
         // 清空输入框
-        document.getElementById('twemoji-textarea').innerHTML = "";
+        document.getElementById('twemoji-textarea').innerHTML = ''
       } else {
         postMsg(data.msg, 'danger')
       }
     },
-    failSubmitComment(e){
-      postMsg('评论失败', "danger")
+    failSubmitComment (e) {
+      postMsg('评论失败', 'danger')
       console.log(e)
     },
 
-    ajaxInitComment: function(page){
+    ajaxInitComment: function (page) {
       ajaxGet(
         `http://${this.host}/api/showArticleComment/${this.id}`, {
           page: page
-        }, this.succGetComment, (e)=>(console.log(e))
+        }, this.succGetComment, (e) => (console.log(e))
       )
     },
-    succGetComment: function(res){
-      let data = res.data;
-      this.total = data.count;
-      this.comment = data.results;
+    succGetComment: function (res) {
+      const data = res.data
+      this.total = data.count
+      this.comment = data.results
     },
 
-    slide: function(){
-      let info_column = document.getElementsByClassName("info")[0];
-      let span_arrow = document.getElementById('uarrow');
-      if(this.canSlideOut){
-        if(!this.hasGetInfo)
-          this.getAuthorInfoAjax();
-        this.hasGetInfo = true;
-        info_column.style.width = "20rem";
-        span_arrow.style.transform = "rotate(180deg)";
-        this.canSlideOut = false;
+    slide: function () {
+      const info_column = document.getElementsByClassName('info')[0]
+      const span_arrow = document.getElementById('uarrow')
+      if (this.canSlideOut) {
+        if (!this.hasGetInfo) { this.getAuthorInfoAjax() }
+        this.hasGetInfo = true
+        info_column.style.width = '20rem'
+        span_arrow.style.transform = 'rotate(180deg)'
+        this.canSlideOut = false
       } else {
-        info_column.style.width = 0;
-        span_arrow.style.transform = "rotate(360deg)";
-        this.canSlideOut = true;
+        info_column.style.width = 0
+        span_arrow.style.transform = 'rotate(360deg)'
+        this.canSlideOut = true
       }
     },
 
-    getAuthorInfoAjax: function(){
-      let params = {'user_name':this.article.creator.user_name};
+    getAuthorInfoAjax: function () {
+      const params = { user_name: this.article.creator.user_name }
       ajaxGet(
-        `http://${this.host}/api/userInfo`,params,
-        this.succGetAuthorInfo, (e)=>(console.log(e))
+        `http://${this.host}/api/userInfo`, params,
+        this.succGetAuthorInfo, (e) => (console.log(e))
       )
     },
-    succGetAuthorInfo: function(res){
-      this.authorInfo = res.data.data[0];
+    succGetAuthorInfo: function (res) {
+      this.authorInfo = res.data.data[0]
     },
 
-    getArticle: function(){
+    getArticle: function () {
       ajaxGet(
-        `http://${this.host}/api/article`,{id: this.id},
-        this.succGetArticle, (e)=>(console.log(e))
+        `http://${this.host}/api/article`, { id: this.id },
+        this.succGetArticle, (e) => (console.log(e))
       )
     },
-    succGetArticle: function(res){
-      let data = res.data;
-      let code = data['code'];
-      let msg = data['msg'];
-      if(279 === code){
-        this.article = data['data'];
+    succGetArticle: function (res) {
+      const data = res.data
+      const code = data.code
+      const msg = data.msg
+      if (code === 279) {
+        this.article = data.data
       } else {
-        postMsg(msg, 'error');
+        postMsg(msg, 'error')
       }
     },
 
-    initGet: function(){
-      if(null === this.articles.articles){
-        this.getArticle();
+    initGet: function () {
+      if (this.articles.articles === null) {
+        this.getArticle()
       } else {
-        let flag = true;
-        for(let el of this.articles.articles['results']){
-          if(this.id == el['id']){
-            this.article = el;
+        let flag = true
+        for (const el of this.articles.articles.results) {
+          if (this.id == el.id) {
+            this.article = el
             flag = false
-            break;
+            break
           }
         }
-        if(flag){
-          this.getArticle();
+        if (flag) {
+          this.getArticle()
         }
       }
     },
-    updateClickNum: function(){
+    updateClickNum: function () {
       ajaxGet(
-        `http://${this.host}/api/clickNum`,{id: this.id},
-        ()=>{}, (e)=>{console.log(e)}
+        `http://${this.host}/api/clickNum`, { id: this.id },
+        () => {}, (e) => { console.log(e) }
       )
     }
   },
-  mounted(){
-    this.initGet();
-    this.ajaxInitComment();
+  mounted () {
+    this.initGet()
+    this.ajaxInitComment()
     // 数学公式
-    this.$nextTick(function() {
+    this.$nextTick(function () {
       setTimeout(() => {
-        window.MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        this.initMakeCatalog('markdown');
+        window.MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+        this.initMakeCatalog('markdown')
       }, 5000)
-    });
+    })
     setTimeout(() => {
-      this.addCodeLangToPre('markdown');
-    }, 2000);
+      this.addCodeLangToPre('markdown')
+    }, 2000)
     this.updateClickNum()
   },
   watch: {
-    '$route' (to, from){
-      this.id = to.params.web;
-      this.initGet();
+    '$route' (to, from) {
+      this.id = to.params.web
+      this.initGet()
     }
   }
 }

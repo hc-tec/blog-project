@@ -10,8 +10,6 @@ module.exports = {
   /* 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录 */
   assetsDir: 'assets',
 
-
-
   pages: {
     index: {
       // page 的入口
@@ -23,9 +21,9 @@ module.exports = {
       // 在这个页面中包含的块，默认情况下会包含
       // 提取出来的通用 chunk 和 vendor chunk。
       chunks: ['chunk-vendors', 'chunk-common', 'index']
-    },
+    }
   },
-  //ESLint
+  // ESLint
   lintOnSave: true,
 
   devServer: {
@@ -36,17 +34,16 @@ module.exports = {
     port: 8080,
     https: false,
     hotOnly: false,
-    proxy: false,
+    proxy: false
   },
 
   configureWebpack: {
     resolve: {
       alias: {
         // 启用 runtime 模式
-        vue$: "vue/dist/vue.esm.js",
+        vue$: 'vue/dist/vue.esm.js'
       }
     }
   }
-
 
 }

@@ -8,8 +8,8 @@
 import essay from '../components/essay'
 export default {
   components: {
-    essay,
-  },
+    essay
+  }
 }
 </script>
 

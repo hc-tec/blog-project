@@ -60,12 +60,12 @@ export default {
     }
   },
   components: {
-    "el-divider": Divider,
-    "markdown-interpreter": markdownInterpreter
+    'el-divider': Divider,
+    'markdown-interpreter': markdownInterpreter
   },
   methods: {
-    slide: function(){
-      this.$emit("slide")
+    slide: function () {
+      this.$emit('slide')
     }
   }
 }

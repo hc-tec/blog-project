@@ -34,7 +34,7 @@
 <script>
 import { mergeDict } from '../func'
 export default {
-  data(){
+  data () {
     return {
       wordsNum: 0,
       wordsList: [],
@@ -42,67 +42,64 @@ export default {
       displayWordNum: 13,
       more: true,
       clear: {
-        "width": "100%",
-        "text-align": "center",
-        "font-family": "Georgia, serif",
+        width: '100%',
+        'text-align': 'center',
+        'font-family': 'Georgia, serif'
       },
-      tmpDict: {},
+      tmpDict: {}
     }
   },
   methods: {
-    moreWords: function(){
-      let el = document.getElementById('moreWords')
-      if(this.more){
+    moreWords: function () {
+      const el = document.getElementById('moreWords')
+      if (this.more) {
         this.displayWordNum = this.wordsNum
         this.more = false
-        el.textContent = "折叠"
-      }
-      else {
+        el.textContent = '折叠'
+      } else {
         this.displayWordNum = 13
         this.more = true
-        el.textContent = "查看更多"
+        el.textContent = '查看更多'
       }
     },
-    init: function(data){
+    init: function (data) {
       this.wordsList = [...this.wordsList, ...Object.keys(data)]
-        for(let wordInfo of Object.values(data)){
-          this.timeList.push(wordInfo['learn-day'])
-        }
-        this.wordsNum += Object.keys(data).length
+      for (const wordInfo of Object.values(data)) {
+        this.timeList.push(wordInfo['learn-day'])
+      }
+      this.wordsNum += Object.keys(data).length
     }
   },
-  mounted(){
-    if(null === this.words.words || !this.words.wordsNum){
+  mounted () {
+    if (this.words.words === null || !this.words.wordsNum) {
       this.axios
         .get('./json/words.json')
         .then(response => {
-          this.tmpDict = mergeDict(this.tmpDict, response.data);
-          this.init(response.data);
+          this.tmpDict = mergeDict(this.tmpDict, response.data)
+          this.init(response.data)
         })
-        .catch(function(e){
-          console.log(e);
-        });
+        .catch(function (e) {
+          console.log(e)
+        })
       this.axios
-        .get("http://47.115.147.39/words.php")
+        .get('http://47.115.147.39/words.php')
         .then(response => {
-          this.tmpDict = mergeDict(this.tmpDict, response.data);
-          this.init(response.data);
+          this.tmpDict = mergeDict(this.tmpDict, response.data)
+          this.init(response.data)
         })
         .catch(e => console.log(e))
       setTimeout(() => {
-        this.words.words = this.tmpDict;
-        this.words.wordsNum = this.wordsNum;
-        this.words.timeList = this.timeList;
-        this.words.wordsList = this.wordsList;
+        this.words.words = this.tmpDict
+        this.words.wordsNum = this.wordsNum
+        this.words.timeList = this.timeList
+        this.words.wordsList = this.wordsList
       }, 2000)
     } else {
-      this.wordsNum = this.words.wordsNum;
-      this.timeList = this.words.timeList;
-      this.wordsList = this.words.wordsList;
+      this.wordsNum = this.words.wordsNum
+      this.timeList = this.words.timeList
+      this.wordsList = this.words.wordsList
     }
-
   }
-
 
 }
 </script>

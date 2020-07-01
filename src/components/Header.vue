@@ -49,49 +49,48 @@
 </template>
 
 <script>
-import {Dropdown, DropdownMenu, DropdownItem} from 'element-ui';
+import { Dropdown, DropdownMenu, DropdownItem } from 'element-ui'
 
 export default {
   components: {
-    "el-dropdown": Dropdown,
-    "el-dropdown-menu": DropdownMenu,
-    "el-dropdown-item": DropdownItem,
+    'el-dropdown': Dropdown,
+    'el-dropdown-menu': DropdownMenu,
+    'el-dropdown-item': DropdownItem
   },
-  name: "pageHead",
+  name: 'pageHead',
   data () {
     return {
       iconStyle: {
-            "display": "table-cell",
-            "vertical-align": "middle",
-            "font-size": "1.3em",
+        display: 'table-cell',
+        'vertical-align': 'middle',
+        'font-size': '1.3em'
       },
 
       listStyleObj: {
-        "height": "auto",
-        "padding": 0,
+        height: 'auto',
+        padding: 0
       },
       archStyleObj: {
-        "text-decoration": "none",
-        "font-size": "1.4em",
-        "padding": "1.5em 1.2em",
-      },
+        'text-decoration': 'none',
+        'font-size': '1.4em',
+        padding: '1.5em 1.2em'
+      }
     }
   },
   methods: {
-    adjustScreen: function(){
-      let width = document.body.clientWidth;
-      if(width <= 500){
-        let el = this.navList.pop();
-        this.moreProject.push(el);
-        el = this.navList.pop();
-        this.moreProject.push(el);
+    adjustScreen: function () {
+      const width = document.body.clientWidth
+      if (width <= 500) {
+        let el = this.navList.pop()
+        this.moreProject.push(el)
+        el = this.navList.pop()
+        this.moreProject.push(el)
         this.$forceUpdate()
       }
-    },
+    }
   },
-  mounted(){
-    this.adjustScreen();
-    ;
+  mounted () {
+    this.adjustScreen()
   }
 }
 

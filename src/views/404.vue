@@ -8,7 +8,7 @@
 import notFound from '../components/notFound'
 export default {
   components: {
-    notFound,
+    notFound
   }
 }
 </script>

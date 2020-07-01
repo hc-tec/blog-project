@@ -12,32 +12,31 @@ import File from '../components/file'
 import { ajaxGet } from '../elem_compo_encap'
 export default {
   components: {
-    File,
+    File
   },
-  data(){
+  data () {
     return {
       file: null
     }
   },
   methods: {
-    initGetArticleFile(){
+    initGetArticleFile () {
       ajaxGet(
         `http://${this.host}/api/articleFile`, {},
-        this.succGetArticleFile, (e)=>(console.log(e))
+        this.succGetArticleFile, (e) => (console.log(e))
       )
     },
-    succGetArticleFile(res){
-      this.file = res.data;
-      this.global.fileArticle = this.file;
+    succGetArticleFile (res) {
+      this.file = res.data
+      this.global.fileArticle = this.file
     }
   },
-  mounted(){
-    if(!this.global.fileArticle){
-      this.initGetArticleFile();
+  mounted () {
+    if (!this.global.fileArticle) {
+      this.initGetArticleFile()
     } else {
-      this.file = this.global.fileArticle;
+      this.file = this.global.fileArticle
     }
-
   }
 }
 </script>
