@@ -6,6 +6,7 @@ import {
 import axios from 'axios'
 import { postDataFormat } from './func'
 import NeuMessage from './Message'
+import NeuMessageBox from './MessageBox'
 const neuMessage = (msg, type) => {
   const config = {
     message: msg,
@@ -92,6 +93,7 @@ export {
   ajaxPatch,
   elconfirm,
   elprompt,
-  neuMessage
+  neuMessage,
+  NeuMessageBox
 
 }

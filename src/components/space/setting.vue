@@ -4,10 +4,13 @@
       class="user-space-setting-tabs"
       style="width: 90%;height: 500px;">
       <neu-tab-pane title="背景图片">
-        <imgSetting  />
+        <imgSetting />
       </neu-tab-pane>
       <neu-tab-pane title="信息修改">
         <infoSetting />
+      </neu-tab-pane>
+      <neu-tab-pane title="mini 云盘">
+        <yundisk />
       </neu-tab-pane>
     </neu-tabs>
   </div>
@@ -16,10 +19,12 @@
 <script>
 import imgSetting from './setting/img-setting'
 import infoSetting from './setting/info-setting'
+import yundisk from './setting/yundisk'
 export default {
   components: {
     imgSetting,
-    infoSetting
+    infoSetting,
+    yundisk
   },
   data() {
     return {

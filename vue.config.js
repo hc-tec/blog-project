@@ -37,13 +37,4 @@ module.exports = {
     proxy: false
   },
 
-  configureWebpack: {
-    resolve: {
-      alias: {
-        // 启用 runtime 模式
-        vue$: 'vue/dist/vue.esm.js'
-      }
-    }
-  }
-
 }

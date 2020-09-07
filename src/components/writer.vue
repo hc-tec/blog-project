@@ -32,6 +32,7 @@
 
             <el-form-item label="文章 (支持 MarkDown 语法喔！)">
                 <br />
+
                 <mavon-editor
                   ref="editor"
                   class="markdown"
@@ -83,6 +84,7 @@
                 <a class="sub_btn" @click="pre()">Preview</a>
             </div>
           </el-form>
+
         </div>
     </div>
   </div>
@@ -96,10 +98,11 @@ import {
   Button, CheckboxGroup, CheckboxButton
 } from 'element-ui'
 
-import { postMsg, ajaxPost, ajaxGet, elprompt, elconfirm, ajaxDel } from '../elem_compo_encap'
+import { postMsg, ajaxPost, ajaxGet, elprompt, elconfirm, ajaxDel, ajaxPatch } from '../elem_compo_encap'
 import Message from '../Message'
-import { IMAGE } from '../api'
+import { IMAGE, FILE_LOADER } from '../api'
 import { genericError } from '../func'
+
 export default {
   components: {
     'el-form': Form,
@@ -110,7 +113,7 @@ export default {
     'el-button': Button,
     'el-checkbox-group': CheckboxGroup,
     'el-checkbox-button': CheckboxButton,
-    preview
+    preview,
   },
   data () {
     return {
@@ -123,7 +126,7 @@ export default {
       },
       category: [],
       tags: [],
-      fileList: []
+      fileList: [],
     }
   },
   methods: {
@@ -412,9 +415,10 @@ export default {
   min-height: 500px;
   max-height: 80vh;
 }
-#writer .auto-textarea-block,
-#writer .auto-textarea-input {
-  max-width: 500px;
+#writer .v-note-edit,
+#writer .v-note-show {
+  max-width: 600px;
+  overflow-x: hidden;
 }
 #category {
   margin-bottom: 0;
