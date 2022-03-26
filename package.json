@@ -15,7 +15,7 @@
     "marked": "^1.1.0",
     "mathjax": "^3.0.5",
     "mavon-editor": "^2.9.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "neumorphic-ui-vue": "^1.1.0",
     "prismjs": "^1.19.0",
     "vue": "^2.6.11",
